@@ -154,6 +154,17 @@ h3{font-size:1.32rem;font-weight:600}
 .section-head p{color:var(--mousse);margin-top:1rem}
 .alt{background:var(--parterre)}
 
+/* Prix du m² */
+.prix-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-bottom:1.6rem}
+.prix-card{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:2.2rem 2rem;text-align:center}
+.prix-card h3{margin-bottom:.2rem}
+.prix-type{font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mousse)}
+.prix-num{font-family:"Fraunces",Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.1rem);font-weight:600;color:var(--buis);line-height:1.1;margin:.5rem 0 .2rem}
+.prix-num small{font-size:.45em;font-weight:500;color:var(--mousse)}
+.prix-fourchette{font-size:.92rem;color:var(--mousse)}
+.prix-note{font-size:.85rem;color:var(--mousse)}
+@media (max-width:760px){.prix-grid{grid-template-columns:1fr}}
+
 /* Services */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
 .card{
@@ -252,6 +263,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
     <ul class="nav-links" id="menu">
       <li><a href="#services">Services</a></li>
       <li><a href="#actus">Actu immo</a></li>
+      <li><a href="#prix">Prix du m²</a></li>
       <li><a href="#quartiers">Antony</a></li>
       <li><a href="#apropos">Votre conseillère</a></li>
       <li><a href="#contact" class="btn btn-solid">Estimation offerte</a></li>
@@ -405,6 +417,40 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
   </div>
 </section>
 
+<!-- ================= PRIX DU M² ================= -->
+<!-- Chiffres mis à jour périodiquement par la routine (sources publiques : MeilleursAgents,
+     SeLoger, efficity). Zone à modifier entre PRIX:START et PRIX:END. -->
+<section class="section" id="prix">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Le marché en chiffres</p>
+      <h2>Prix du mètre carré à Antony</h2>
+      <p>Des moyennes constatées sur les ventes récentes — utiles pour se situer, mais chaque bien a son prix : étage, extérieur, état, DPE et quartier font varier fortement la valeur.</p>
+    </div>
+    <!-- PRIX:START -->
+    <div class="prix-grid">
+      <div class="prix-card reveal">
+        <p class="prix-type">Appartements</p>
+        <p class="prix-num">5 005 €<small> / m²</small></p>
+        <p class="prix-fourchette">80 % des ventes entre 3 640 € et 6 510 € / m²</p>
+      </div>
+      <div class="prix-card reveal">
+        <p class="prix-type">Maisons</p>
+        <p class="prix-num">5 400 – 6 100 €<small> / m²</small></p>
+        <p class="prix-fourchette">Selon la rue, le terrain et l'état — les maisons se vendent plus cher que les appartements à Antony</p>
+      </div>
+    </div>
+    <p class="prix-note reveal">
+      Moyenne tous biens confondus : environ 5 139 € / m² au 1er juin 2026. Sources publiques :
+      <a href="https://www.meilleursagents.com/prix-immobilier/antony-92160/" target="_blank" rel="noopener">MeilleursAgents</a>,
+      <a href="https://www.seloger.com/prix-de-l-immo/vente/ile-de-france/hauts-de-seine/antony/920002.htm" target="_blank" rel="noopener">SeLoger</a>,
+      <a href="https://www.efficity.com/prix-immobilier-m2/v_antony_92160/" target="_blank" rel="noopener">efficity</a>.
+      Ces moyennes ne remplacent pas une estimation sur place&nbsp;: <a href="#contact">demandez la vôtre, elle est offerte</a>.
+    </p>
+    <!-- PRIX:END -->
+  </div>
+</section>
+
 <!-- ================= QUARTIERS ================= -->
 <section class="section alt" id="quartiers">
   <div class="container">
@@ -536,6 +582,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
       <ul class="foot-nav">
         <li><a href="#services">Services</a></li>
         <li><a href="#actus">Actu immo</a></li>
+        <li><a href="#prix">Prix du m²</a></li>
         <li><a href="#quartiers">Antony</a></li>
         <li><a href="#apropos">Votre conseillère</a></li>
         <li><a href="#contact">Contact</a></li>

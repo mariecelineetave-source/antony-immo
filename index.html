@@ -163,7 +163,11 @@ h3{font-size:1.32rem;font-weight:600}
 .prix-num small{font-size:.45em;font-weight:500;color:var(--mousse)}
 .prix-fourchette{font-size:.92rem;color:var(--mousse)}
 .prix-note{font-size:.85rem;color:var(--mousse)}
-@media (max-width:760px){.prix-grid{grid-template-columns:1fr}}
+.prix-outil{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:2.2rem 2rem;margin-top:2.4rem}
+.prix-outil h3{margin-bottom:1.2rem}
+.prix-controls{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:640px}
+.prix-resultat{text-align:center;border-top:1px solid var(--ligne);margin-top:1.4rem;padding-top:1.6rem}
+@media (max-width:760px){.prix-grid{grid-template-columns:1fr}.prix-controls{grid-template-columns:1fr}}
 
 /* Services */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
@@ -447,6 +451,36 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
       <a href="https://www.efficity.com/prix-immobilier-m2/v_antony_92160/" target="_blank" rel="noopener">efficity</a>.
       Ces moyennes ne remplacent pas une estimation sur place&nbsp;: <a href="#contact">demandez la vôtre, elle est offerte</a>.
     </p>
+
+    <div class="prix-outil reveal">
+      <h3>Votre quartier, votre type de bien</h3>
+      <div class="prix-controls">
+        <div class="field">
+          <label for="prix-quartier">Quartier</label>
+          <select id="prix-quartier">
+            <option value="antony">Antony — toute la ville</option>
+            <option value="centre">Centre-ville</option>
+            <option value="croix">La Croix de Berny</option>
+            <option value="sceaux">Parc de Sceaux</option>
+            <option value="baconnets">Les Baconnets</option>
+            <option value="pajeaud">Pajeaud – Fontaine Michalon</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="prix-type">Type de bien</label>
+          <select id="prix-type">
+            <option value="a">Appartement</option>
+            <option value="m">Maison</option>
+          </select>
+        </div>
+      </div>
+      <div class="prix-resultat" aria-live="polite">
+        <p class="prix-type" id="prix-r-titre"></p>
+        <p class="prix-num" id="prix-r-num"></p>
+        <p class="prix-fourchette" id="prix-r-detail"></p>
+      </div>
+      <p class="prix-note" style="margin-top:1.4rem">Le prix exact de votre rue et de votre bien dépend de son état, de son étage, de son extérieur et de son DPE&nbsp;: <a href="#contact">l'estimation sur place est offerte</a>.</p>
+    </div>
     <!-- PRIX:END -->
   </div>
 </section>
@@ -636,6 +670,42 @@ document.getElementById('form').addEventListener('submit', e => {
   );
   window.location.href = 'mailto:contact@antony.immo?subject=' + sujet + '&body=' + corps;
 });
+
+// Prix du m² par quartier (sources : MeilleursAgents / SeLoger, juin-juillet 2026)
+// avg/min/max en €/m² ; approx:true = valeur dérivée ; tous = moyenne tous biens confondus
+const PRIX_M2 = {
+  antony:    {nom:"Antony — toute la ville", a:{avg:5005,min:3229,max:7386}, m:{avg:5411,min:3324,max:8968}},
+  centre:    {nom:"Centre-ville", a:{avg:5213,approx:true,note:"Estimation dérivée : dans ce quartier, les maisons se vendent 11,2 % au-dessus des appartements (moyenne du quartier tous biens : 5 415 € / m²)."}, m:{avg:5797,min:3752,max:9099}},
+  croix:     {nom:"La Croix de Berny", tous:5722},
+  sceaux:    {nom:"Parc de Sceaux", a:{avg:4786,min:3424,max:5698}, m:{avg:6243,min:5267,max:7096}},
+  baconnets: {nom:"Les Baconnets", tous:4364},
+  pajeaud:   {nom:"Pajeaud – Fontaine Michalon", tous:5055}
+};
+const eur = n => n.toLocaleString('fr-FR') + ' €';
+const selQ = document.getElementById('prix-quartier');
+const selT = document.getElementById('prix-type');
+function majPrix(){
+  const q = PRIX_M2[selQ.value];
+  const type = selT.value;
+  const titre = document.getElementById('prix-r-titre');
+  const num = document.getElementById('prix-r-num');
+  const detail = document.getElementById('prix-r-detail');
+  titre.textContent = (type === 'a' ? 'Appartement · ' : 'Maison · ') + q.nom;
+  const d = q[type];
+  if (d && !d.approx){
+    num.innerHTML = eur(d.avg) + '<small> / m²</small>';
+    detail.textContent = 'Fourchette constatée : ' + eur(d.min) + ' à ' + eur(d.max) + ' / m² selon l’adresse et l’état.';
+  } else if (d && d.approx){
+    num.innerHTML = '≈ ' + eur(d.avg) + '<small> / m²</small>';
+    detail.textContent = d.note;
+  } else {
+    num.innerHTML = eur(q.tous) + '<small> / m²</small>';
+    detail.textContent = 'Moyenne du quartier tous biens confondus — le détail appartement/maison n’est pas publié pour ce quartier. À l’échelle d’Antony, les maisons se vendent en moyenne 8 % plus cher que les appartements.';
+  }
+}
+selQ.addEventListener('change', majPrix);
+selT.addEventListener('change', majPrix);
+majPrix();
 
 // Année courante
 document.getElementById('annee').textContent = new Date().getFullYear();

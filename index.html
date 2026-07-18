@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marie-Céline Etave · Conseillère immobilière à Antony (92) — antony.immo</title>
+<meta name="description" content="Marie-Céline Etave, conseillère en immobilier à Antony (Hauts-de-Seine). Estimation offerte, vente et recherche de maisons et d'appartements à Antony, la ville-parc.">
+<meta property="og:title" content="antony.immo — Marie-Céline Etave, conseillère immobilière à Antony">
+<meta property="og:description" content="Vendre ou acheter à Antony (92) : estimation offerte, accompagnement de A à Z, connaissance fine des quartiers.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2325462F'/%3E%3Crect x='9' y='9' width='14' height='14' fill='none' stroke='%23ECEFE3' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%239C4A24'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ Base ============ */
+:root{
+  --stone:#ECEFE3;      /* fond principal, gris-vert clair */
+  --craie:#F8F7EF;      /* cartes */
+  --parterre:#DDE4CF;   /* sections alternées */
+  --buis:#25462F;       /* vert buis profond */
+  --ombre:#16301F;      /* vert d'ombre — héros & pied de page */
+  --meuliere:#9C4A24;   /* accent brique meulière */
+  --meuliere-fonce:#7C3A1B;
+  --cuivre:#D08A5C;     /* accent clair sur fonds sombres */
+  --encre:#1C2A1E;
+  --mousse:#5A7160;     /* texte secondaire */
+  --ligne:#C8D1BB;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:"Archivo",system-ui,sans-serif;
+  background:var(--stone);
+  color:var(--encre);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:var(--meuliere);text-decoration:none}
+a:hover{color:var(--meuliere-fonce)}
+:focus-visible{outline:2px solid var(--meuliere);outline-offset:3px;border-radius:2px}
+.container{max-width:1120px;margin-inline:auto;padding-inline:24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--craie);color:var(--encre);padding:.6rem 1rem;z-index:100;border-radius:4px}
+.skip:focus{left:8px}
+
+/* ============ Typographie ============ */
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.12;letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,6vw,4.4rem)}
+h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+h3{font-size:1.32rem;font-weight:600}
+.eyebrow{
+  font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--meuliere);margin-bottom:1.1rem;
+}
+.lead{font-size:1.08rem;color:var(--mousse);max-width:56ch}
+
+/* ============ Boutons ============ */
+.btn{
+  display:inline-block;font-weight:600;font-size:.95rem;
+  padding:.95rem 1.7rem;border-radius:3px;border:1px solid transparent;
+  transition:background-color .2s ease,color .2s ease,border-color .2s ease;
+  cursor:pointer;
+}
+.btn-solid{background:var(--meuliere);color:var(--craie)}
+.btn-solid:hover{background:var(--meuliere-fonce);color:var(--craie)}
+.btn-ghost{border-color:rgba(236,239,227,.45);color:var(--stone)}
+.btn-ghost:hover{border-color:var(--stone);color:#fff}
+.btn-vert{background:var(--buis);color:var(--craie)}
+.btn-vert:hover{background:var(--ombre);color:var(--craie)}
+
+/* ============ Navigation ============ */
+.nav{
+  position:fixed;inset-inline:0;top:0;z-index:50;
+  transition:background-color .25s ease,box-shadow .25s ease;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding-block:1.05rem}
+.brand{font-family:"Fraunces",serif;font-size:1.28rem;font-weight:600;color:var(--stone);letter-spacing:.01em}
+.brand .dot{color:var(--cuivre)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{color:rgba(236,239,227,.85);font-size:.93rem;font-weight:500}
+.nav-links a:hover{color:#fff}
+.nav-links .btn{padding:.62rem 1.15rem}
+.nav.scrolled{background:rgba(248,247,239,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--ligne)}
+.nav.scrolled .brand{color:var(--buis)}
+.nav.scrolled .brand .dot{color:var(--meuliere)}
+.nav.scrolled .nav-links a{color:var(--encre)}
+.nav.scrolled .nav-links a:hover{color:var(--meuliere)}
+.nav.scrolled .nav-links a.btn-solid{color:var(--craie)}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+.burger span{display:block;width:24px;height:2px;background:var(--stone);margin:5px 0;transition:transform .2s ease,opacity .2s ease}
+.nav.scrolled .burger span{background:var(--buis)}
+@media (max-width:840px){
+  .burger{display:block}
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--ombre);padding:.5rem 24px 1.4rem;
+    display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links li{width:100%}
+  .nav-links a{display:block;padding:.8rem 0;font-size:1.05rem;color:var(--stone)}
+  .nav-links .btn{margin-top:.6rem}
+  .nav.scrolled .nav-links{background:var(--ombre)}
+  .nav.scrolled .nav-links a{color:var(--stone)}
+}
+
+/* ============ Héros — plan de jardin ============ */
+.hero{
+  position:relative;min-height:94vh;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--ombre);color:var(--stone);overflow:hidden;
+  padding:8rem 0 6rem;
+}
+.hero-plan{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:820px;padding-inline:24px}
+.hero .eyebrow{color:var(--cuivre)}
+.hero h1{color:#F4F5EC}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--cuivre)}
+.hero p{margin:1.6rem auto 2.4rem;max-width:54ch;color:rgba(236,239,227,.82);font-size:1.08rem}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.pin{animation:pinpulse 3.2s ease-in-out infinite}
+@keyframes pinpulse{0%,100%{opacity:1}50%{opacity:.45}}
+
+/* Entrée du héros */
+.hero .rise{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+.hero .rise.d1{animation-delay:.08s}
+.hero .rise.d2{animation-delay:.2s}
+.hero .rise.d3{animation-delay:.34s}
+.hero .rise.d4{animation-delay:.48s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ============ Bandeau engagements ============ */
+.strip{background:var(--parterre);border-block:1px solid var(--ligne)}
+.strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding-block:2.6rem}
+.strip h3{font-size:1.08rem;margin-bottom:.3rem}
+.strip p{font-size:.94rem;color:var(--mousse)}
+.mark{
+  width:13px;height:13px;border:2px solid var(--meuliere);
+  transform:rotate(45deg);margin-bottom:1rem;
+}
+@media (max-width:760px){.strip-grid{grid-template-columns:1fr;gap:1.8rem}}
+
+/* ============ Sections ============ */
+.section{padding-block:6.5rem}
+.section-head{max-width:640px;margin-bottom:3.5rem}
+.section-head p{color:var(--mousse);margin-top:1rem}
+.alt{background:var(--parterre)}
+
+/* Services */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.card{
+  background:var(--craie);border:1px solid var(--ligne);border-radius:4px;
+  padding:2.2rem 2rem;
+}
+.card h3{margin:1.1rem 0 .7rem}
+.card p{font-size:.97rem;color:#3C4A3E}
+.card ul{list-style:none;margin-top:1.2rem}
+.card li{
+  font-size:.86rem;color:var(--mousse);padding-left:1.1rem;position:relative;margin-top:.35rem;
+}
+.card li::before{content:"";position:absolute;left:0;top:.52em;width:6px;height:6px;border:1.5px solid var(--meuliere);transform:rotate(45deg)}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
+
+/* Bande estimation */
+.band{background:var(--buis);color:var(--stone);text-align:center;padding-block:5.5rem;position:relative;overflow:hidden}
+.band::before,.band::after{
+  content:"";position:absolute;top:0;bottom:0;width:1px;background:rgba(236,239,227,.18);
+}
+.band::before{left:12%}
+.band::after{right:12%}
+.band .eyebrow{color:var(--cuivre)}
+.band h2{color:#F4F5EC}
+.band p{margin:1.2rem auto 2.2rem;max-width:52ch;color:rgba(236,239,227,.8)}
+
+/* Quartiers */
+.q-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.q-card{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:1.8rem 1.7rem}
+.q-card h3{font-size:1.16rem}
+.q-card p{font-size:.92rem;color:#3C4A3E;margin-top:.5rem;min-height:3.2em}
+.chip{
+  display:inline-block;margin-top:1.1rem;font-size:.72rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--buis);
+  border:1px solid var(--ligne);background:var(--stone);
+  padding:.3rem .65rem;border-radius:99px;
+}
+@media (max-width:900px){.q-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.q-grid{grid-template-columns:1fr}.q-card p{min-height:0}}
+
+/* À propos */
+.apropos{display:grid;grid-template-columns:340px 1fr;gap:4rem;align-items:center}
+.portrait{
+  aspect-ratio:4/5;background:var(--buis);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.portrait::before{content:"";position:absolute;inset:14px;border:1px solid rgba(236,239,227,.35);border-radius:2px}
+.monogram{font-family:"Fraunces",serif;font-size:4.2rem;font-weight:500;color:var(--cuivre);font-style:italic}
+.apropos-txt h2{margin-bottom:1.2rem}
+.apropos-txt p{color:#3C4A3E;margin-bottom:1rem;max-width:56ch}
+.apropos-txt .btn{margin-top:1rem}
+@media (max-width:860px){.apropos{grid-template-columns:1fr;gap:2.5rem}.portrait{max-width:300px}}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:4rem;align-items:start}
+.info-item{margin-bottom:1.7rem}
+.info-item .label{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mousse);margin-bottom:.25rem}
+.info-item .value{font-family:"Fraunces",serif;font-size:1.25rem;font-weight:500;color:var(--encre)}
+.info-item a.value:hover{color:var(--meuliere)}
+form{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:2.2rem}
+.field{margin-bottom:1.2rem}
+.field label{display:block;font-size:.83rem;font-weight:600;margin-bottom:.35rem}
+.field input,.field select,.field textarea{
+  width:100%;padding:.78rem .9rem;border:1px solid var(--ligne);border-radius:3px;
+  background:#fff;font:inherit;font-size:.95rem;color:var(--encre);
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--meuliere);outline-offset:1px;border-color:transparent}
+.field textarea{min-height:120px;resize:vertical}
+.form-note{font-size:.8rem;color:var(--mousse);margin-top:.9rem}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr;gap:2.5rem}}
+
+/* ============ Pied de page ============ */
+footer{background:var(--ombre);color:rgba(236,239,227,.75);padding-block:3.5rem 2.2rem;font-size:.9rem}
+.foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start;margin-bottom:2.5rem}
+.foot-top .brand{font-size:1.4rem}
+.foot-nav{display:flex;gap:1.6rem;list-style:none;flex-wrap:wrap}
+.foot-nav a{color:rgba(236,239,227,.75)}
+.foot-nav a:hover{color:#fff}
+.legal{border-top:1px solid rgba(236,239,227,.18);padding-top:1.6rem;font-size:.8rem;line-height:1.9;color:rgba(236,239,227,.55)}
+
+/* ============ Révélation au défilement ============ */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#services">Aller au contenu</a>
+
+<!-- ================= NAVIGATION ================= -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#haut">antony<span class="dot">.</span>immo</a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#quartiers">Antony</a></li>
+      <li><a href="#apropos">Votre conseillère</a></li>
+      <li><a href="#contact" class="btn btn-solid">Estimation offerte</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= HÉROS ================= -->
+<section class="hero" id="haut">
+  <!-- Plan de jardin à la française (clin d'œil au domaine de Sceaux) : une parcelle est marquée en brique — votre bien. -->
+  <svg class="hero-plan" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="#4E7A5C" stroke-width="1.2" fill="none" opacity="0.5">
+      <line x1="600" y1="30" x2="600" y2="730"/>
+      <line x1="30" y1="380" x2="505" y2="380"/>
+      <line x1="695" y1="380" x2="1170" y2="380"/>
+      <circle cx="600" cy="380" r="95"/>
+      <circle cx="600" cy="380" r="58"/>
+      <circle cx="600" cy="380" r="5" fill="#4E7A5C"/>
+      <!-- Parterres hauts -->
+      <rect x="120" y="120" width="360" height="180"/>
+      <rect x="138" y="138" width="324" height="144"/>
+      <line x1="138" y1="138" x2="462" y2="282"/>
+      <line x1="462" y1="138" x2="138" y2="282"/>
+      <rect x="720" y="120" width="360" height="180"/>
+      <rect x="738" y="138" width="324" height="144"/>
+      <!-- Parterres bas -->
+      <rect x="120" y="460" width="360" height="180"/>
+      <circle cx="300" cy="550" r="55"/>
+      <rect x="720" y="460" width="360" height="180"/>
+      <circle cx="900" cy="550" r="55"/>
+      <!-- Alignements d'arbres -->
+      <g fill="#4E7A5C" stroke="none">
+        <circle cx="140" cy="66" r="6"/><circle cx="220" cy="66" r="6"/><circle cx="300" cy="66" r="6"/>
+        <circle cx="380" cy="66" r="6"/><circle cx="460" cy="66" r="6"/>
+        <circle cx="740" cy="66" r="6"/><circle cx="820" cy="66" r="6"/><circle cx="900" cy="66" r="6"/>
+        <circle cx="980" cy="66" r="6"/><circle cx="1060" cy="66" r="6"/>
+        <circle cx="140" cy="696" r="6"/><circle cx="220" cy="696" r="6"/><circle cx="300" cy="696" r="6"/>
+        <circle cx="380" cy="696" r="6"/><circle cx="460" cy="696" r="6"/>
+        <circle cx="740" cy="696" r="6"/><circle cx="820" cy="696" r="6"/><circle cx="900" cy="696" r="6"/>
+        <circle cx="980" cy="696" r="6"/><circle cx="1060" cy="696" r="6"/>
+      </g>
+    </g>
+    <!-- La parcelle mise en valeur -->
+    <g class="pin">
+      <rect x="828" y="196" width="72" height="52" fill="none" stroke="#C9764A" stroke-width="2"/>
+      <circle cx="864" cy="222" r="4.5" fill="#C9764A"/>
+    </g>
+  </svg>
+
+  <div class="hero-inner">
+    <p class="eyebrow rise d1">Antony · Hauts-de-Seine (92)</p>
+    <h1 class="rise d2">Vendre ou acheter à Antony, <em>la ville-parc</em>.</h1>
+    <p class="rise d3">Marie-Céline Etave, conseillère en immobilier, vous accompagne de l'estimation à la signature — avec une connaissance fine des quartiers d'Antony et de leurs maisons, de la meulière au pavillon des années 30.</p>
+    <div class="hero-cta rise d4">
+      <a class="btn btn-solid" href="#contact">Faire estimer mon bien</a>
+      <a class="btn btn-ghost" href="#services">Découvrir mes services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENGAGEMENTS ================= -->
+<div class="strip">
+  <div class="container strip-grid">
+    <div class="reveal">
+      <div class="mark" aria-hidden="true"></div>
+      <h3>Estimation offerte</h3>
+      <p>Une valeur juste et argumentée de votre bien, sans engagement.</p>
+    </div>
+    <div class="reveal">
+      <div class="mark" aria-hidden="true"></div>
+      <h3>Une seule interlocutrice</h3>
+      <p>Marie-Céline vous suit de A à Z, de la première visite au notaire.</p>
+    </div>
+    <div class="reveal">
+      <div class="mark" aria-hidden="true"></div>
+      <h3>Ancrée à Antony</h3>
+      <p>Une connaissance rue par rue, du centre-ville à Antonypole.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Services</p>
+      <h2>Un accompagnement complet, à votre rythme</h2>
+      <p>Chaque projet est différent : voici comment nous pouvons travailler ensemble.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="mark" aria-hidden="true"></div>
+        <h3>Vendre</h3>
+        <p>Estimation, mise en valeur du bien, photos, diffusion, visites qualifiées et négociation : votre vente est pilotée de bout en bout, en toute transparence.</p>
+        <ul>
+          <li>Estimation offerte</li>
+          <li>Diffusion sur les grands portails</li>
+          <li>Compte-rendu après chaque visite</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <div class="mark" aria-hidden="true"></div>
+        <h3>Acheter</h3>
+        <p>Définition du projet, sélection de biens à Antony et aux alentours, visites accompagnées, puis sécurisation de l'offre jusqu'à la signature.</p>
+        <ul>
+          <li>Recherche personnalisée</li>
+          <li>Visites accompagnées</li>
+          <li>Aide à la négociation</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <div class="mark" aria-hidden="true"></div>
+        <h3>Estimer</h3>
+        <p>Analyse de votre bien, des ventes récentes du quartier et de la demande du moment, pour fixer un prix juste dès la mise en vente.</p>
+        <ul>
+          <li>Avis de valeur écrit et argumenté</li>
+          <li>Conseils de valorisation</li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <div class="mark" aria-hidden="true"></div>
+        <h3>Conseiller</h3>
+        <p>Succession, séparation, premier achat ou investissement locatif : un échange clair et confidentiel avant toute décision.</p>
+        <ul>
+          <li>Rendez-vous à domicile ou à distance</li>
+          <li>Mise en relation avec des partenaires de confiance</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BANDE ESTIMATION ================= -->
+<section class="band">
+  <div class="container reveal">
+    <p class="eyebrow">Estimation offerte</p>
+    <h2>Combien vaut votre bien à Antony&nbsp;?</h2>
+    <p>Maison en meulière, appartement en résidence ou pavillon de famille : recevez une estimation offerte, écrite et sans engagement.</p>
+    <a class="btn btn-solid" href="#contact">Demander mon estimation</a>
+  </div>
+</section>
+
+<!-- ================= QUARTIERS ================= -->
+<section class="section alt" id="quartiers">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Antony, quartier par quartier</p>
+      <h2>Une ville, plusieurs visages</h2>
+      <p>À vingt minutes de Paris par le RER B, Antony cultive un esprit de ville-jardin. Chaque quartier a son marché, son ambiance — et sa clientèle.</p>
+    </div>
+    <div class="q-grid">
+      <article class="q-card reveal">
+        <h3>Centre-ville</h3>
+        <p>Marché, commerces et vie de quartier autour de l'église Saint-Saturnin.</p>
+        <span class="chip">RER Antony · Orlyval</span>
+      </article>
+      <article class="q-card reveal">
+        <h3>Parc de Sceaux</h3>
+        <p>Des adresses recherchées aux portes du domaine et de ses perspectives.</p>
+        <span class="chip">RER Parc de Sceaux</span>
+      </article>
+      <article class="q-card reveal">
+        <h3>La Croix de Berny</h3>
+        <p>Résidences bien desservies, entre le parc et les grands axes.</p>
+        <span class="chip">RER B · Tram T10</span>
+      </article>
+      <article class="q-card reveal">
+        <h3>Fontaine Michalon</h3>
+        <p>Esprit village, pavillons et maisons en meulière.</p>
+        <span class="chip">RER Fontaine Michalon</span>
+      </article>
+      <article class="q-card reveal">
+        <h3>Les Baconnets</h3>
+        <p>Un quartier résidentiel calme, prisé des familles.</p>
+        <span class="chip">RER Les Baconnets</span>
+      </article>
+      <article class="q-card reveal">
+        <h3>Pajeaud &amp; les Rabats</h3>
+        <p>Verdure, écoles et maisons familiales au sud de la ville.</p>
+        <span class="chip">Écoles &amp; espaces verts</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= À PROPOS ================= -->
+<section class="section" id="apropos">
+  <div class="container apropos">
+    <!-- Remplacez ce bloc par une photo : <img src="photo.jpg" alt="Marie-Céline Etave"> -->
+    <div class="portrait reveal" role="img" aria-label="Monogramme de Marie-Céline Etave">
+      <span class="monogram">MCE</span>
+    </div>
+    <div class="apropos-txt reveal">
+      <p class="eyebrow">Votre conseillère</p>
+      <h2>Marie-Céline Etave</h2>
+      <p>Conseillère en immobilier à Antony, j'accompagne les propriétaires et les acquéreurs avec une conviction simple : un projet immobilier réussi se mène avec méthode, transparence et disponibilité.</p>
+      <p>De l'estimation à la signature chez le notaire, vous avancez avec une interlocutrice unique, qui connaît la ville, ses rues et son marché — et qui vous dit les choses telles qu'elles sont.</p>
+      <a class="btn btn-vert" href="#contact">Écrire à Marie-Céline</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section alt" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Parlons de votre projet</h2>
+      <p>Un premier échange ne vous engage à rien — il permet simplement d'y voir clair.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <!-- À PERSONNALISER : téléphone et e-mail réels -->
+        <div class="info-item">
+          <p class="label">Téléphone</p>
+          <a class="value" href="tel:+33600000000">06 00 00 00 00</a>
+        </div>
+        <div class="info-item">
+          <p class="label">E-mail</p>
+          <a class="value" href="mailto:contact@antony.immo">contact@antony.immo</a>
+        </div>
+        <div class="info-item">
+          <p class="label">Secteur</p>
+          <p class="value">Antony (92160) et alentours</p>
+        </div>
+        <div class="info-item">
+          <p class="label">Disponibilité</p>
+          <p class="value">Sur rendez-vous, 7j/7</p>
+        </div>
+      </div>
+      <form id="form" class="reveal">
+        <div class="field">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="tel">Téléphone <span style="font-weight:400;color:var(--mousse)">(facultatif)</span></label>
+          <input type="tel" id="tel" name="tel" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="projet">Votre projet</label>
+          <select id="projet" name="projet">
+            <option>Vendre un bien</option>
+            <option>Acheter un bien</option>
+            <option>Faire estimer un bien</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Décrivez votre bien ou votre recherche en quelques mots…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid">Envoyer ma demande</button>
+        <p class="form-note">Ce formulaire ouvre votre messagerie : aucune donnée n'est stockée sur le site.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PIED DE PAGE ================= -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div>
+        <p class="brand">antony<span class="dot" style="color:var(--cuivre)">.</span>immo</p>
+        <p style="margin-top:.4rem;max-width:34ch">L'immobilier à Antony, conseillé avec soin par Marie-Céline Etave.</p>
+      </div>
+      <ul class="foot-nav">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#quartiers">Antony</a></li>
+        <li><a href="#apropos">Votre conseillère</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <!-- À PERSONNALISER : statut juridique, N° RSAC, carte T ou réseau de rattachement, mentions légales -->
+    <div class="legal">
+      <p>© <span id="annee">2026</span> antony.immo — Marie-Céline Etave, conseillère indépendante en immobilier à Antony (92160).</p>
+      <p>N° RSAC : à compléter · Statut et réseau de rattachement : à compléter · Mentions légales &amp; politique de confidentialité : à compléter.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navigation : fond au défilement
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+// Menu mobile
+const burger = document.getElementById('burger');
+const menu = document.getElementById('menu');
+burger.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  menu.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+}));
+
+// Révélation au défilement
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, {threshold: .12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Formulaire → ouvre la messagerie (mailto), aucune donnée stockée
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const sujet = encodeURIComponent('Contact via antony.immo — ' + v('projet'));
+  const corps = encodeURIComponent(
+    'Nom : ' + v('nom') + '\n' +
+    'E-mail : ' + v('email') + '\n' +
+    'Téléphone : ' + (v('tel') || '—') + '\n' +
+    'Projet : ' + v('projet') + '\n\n' +
+    v('message')
+  );
+  window.location.href = 'mailto:contact@antony.immo?subject=' + sujet + '&body=' + corps;
+});
+
+// Année courante
+document.getElementById('annee').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

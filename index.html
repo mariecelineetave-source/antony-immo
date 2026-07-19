@@ -380,7 +380,10 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
 <!-- Rubrique mise à jour automatiquement chaque jour par la routine de veille.
      Règles : 6 cartes maximum, la plus récente en premier, uniquement des faits
      sourcés (jamais d'invention). Zone à modifier : entre ACTUS:START et ACTUS:END.
-     Penser à mettre à jour la date dans ACTUS:DATE. -->
+     Penser à mettre à jour la date dans ACTUS:DATE.
+     IMPORTANT : chaque nouvelle carte doit AUSSI être ajoutée à la page d'archives
+     actualites.html (zone ARCHIVE:START/END, groupée par jour, jamais de suppression
+     là-bas) — voir CLAUDE.md. -->
 <section class="section alt" id="actus">
   <div class="container">
     <div class="section-head reveal">
@@ -424,6 +427,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
     </div>
     <p style="margin-top:1.4rem;font-size:.85rem;color:var(--mousse)">
       <!-- ACTUS:DATE -->Dernière mise à jour : 19 juillet 2026<!-- /ACTUS:DATE --> · Informations générales, ne constituant pas un conseil juridique personnalisé.
+      · <a href="actualites.html">Consulter tout l'historique des actualités →</a>
     </p>
   </div>
 </section>

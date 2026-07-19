@@ -118,23 +118,11 @@ h3{font-size:1.32rem;font-weight:600}
 .nav.scrolled .nav-links a{color:var(--encre)}
 .nav.scrolled .nav-links a:hover{color:var(--meuliere)}
 .nav.scrolled .nav-links a.btn-solid{color:var(--craie)}
-.burger{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
-.burger span{display:block;width:24px;height:2px;background:var(--stone);margin:5px 0;transition:transform .2s ease,opacity .2s ease}
-.nav.scrolled .burger span{background:var(--buis)}
 @media (max-width:840px){
-  .burger{display:block}
-  .nav-links{
-    position:absolute;top:100%;left:0;right:0;
-    flex-direction:column;align-items:flex-start;gap:0;
-    background:var(--ombre);padding:.5rem 24px 1.4rem;
-    display:none;
-  }
-  .nav-links.open{display:flex}
-  .nav-links li{width:100%}
-  .nav-links a{display:block;padding:.8rem 0;font-size:1.05rem;color:var(--stone)}
-  .nav-links .btn{margin-top:.6rem}
-  .nav.scrolled .nav-links{background:var(--ombre)}
-  .nav.scrolled .nav-links a{color:var(--stone)}
+  .nav-inner{flex-direction:column;gap:.45rem;padding-block:.7rem}
+  .nav-links{flex-wrap:wrap;justify-content:center;gap:.35rem 1.15rem}
+  .nav-links a{font-size:.86rem}
+  .nav-links .btn{padding:.5rem .95rem;font-size:.85rem}
 }
 
 /* ============ Héros — photo d'Antony ============ */
@@ -288,9 +276,6 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a class="brand" href="#haut">antony<span class="dot">.</span>immo</a>
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span><span></span>
-    </button>
     <ul class="nav-links" id="menu">
       <li><a href="#services">Services</a></li>
       <li><a href="#actus">Actu immo</a></li>
@@ -669,18 +654,6 @@ const nav = document.getElementById('nav');
 const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
 window.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
-
-// Menu mobile
-const burger = document.getElementById('burger');
-const menu = document.getElementById('menu');
-burger.addEventListener('click', () => {
-  const open = menu.classList.toggle('open');
-  burger.setAttribute('aria-expanded', open);
-});
-menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  menu.classList.remove('open');
-  burger.setAttribute('aria-expanded', 'false');
-}));
 
 // Révélation au défilement
 const io = new IntersectionObserver(entries => {

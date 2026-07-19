@@ -24,12 +24,20 @@ ligne (https://antony.immo). Branche de travail : `claude/anthony-imo-setup-dev-
    n'existe pas, les jours les plus récents en haut). **On ne supprime jamais
    rien des archives.** Les cartes qui sortent de l'accueil (au-delà de 6) sont
    simplement retirées de `index.html` : elles existent déjà dans les archives.
-3. Dans les archives, les cartes n'ont pas la classe `reveal` (pas de JS sur
-   cette page).
-4. Contenu : uniquement des faits sourcés issus de recherches (WebSearch), avec
+3. Dans les archives, les cartes n'ont pas la classe `reveal`, mais chaque
+   `<article>` porte un **id unique et stable** au format
+   `actu-AAAA-MM-JJ-sujet-court` : c'est l'ancre de partage permanente.
+4. **Partage** : chaque carte (accueil ET archives) se termine, après le
+   `<span class="chip">`, par un bouton
+   `<button class="partage" type="button" data-url="actualites.html#ID">Partager</button>`
+   où ID est l'id de la carte dans les archives. Le script de partage existe
+   déjà sur les deux pages : il construit toujours l'URL absolue
+   https://antony.immo/actualites.html#ID — le lien partagé est TOUJOURS celui
+   d'antony.immo, jamais celui de la source.
+5. Contenu : uniquement des faits sourcés issus de recherches (WebSearch), avec
    lien source réel — jamais d'invention. Angle : ce que ça change pour un
    vendeur ou propriétaire à Antony. Priorité au juridique.
-5. Avant tout commit : vérifier l'équilibre des balises HTML des deux fichiers
+6. Avant tout commit : vérifier l'équilibre des balises HTML des deux fichiers
    (python `html.parser`).
 
 ## Publication

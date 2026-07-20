@@ -7,6 +7,17 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-07-20
+
+Rien de nouveau par rapport à la veille du 2026-07-19 : les mêmes annonces
+(maison PAP 775 000 €, 5 lots aux enchères notariales 36h-immo) sont
+toujours en ligne, sans annonce individuelle inédite identifiée. Les
+recherches par quartier (Croix-de-Berny, Pajeaud/Fontaine-Michalon) et sur
+les communes limitrophes (Bourg-la-Reine, Sceaux, Fresnes) ne remontent
+que des pages d'agrégateurs, comme la veille.
+
+---
+
 ## 2026-07-19 — Première exécution
 
 Aucun historique préexistant : toutes les pistes ci-dessous sont donc

@@ -97,8 +97,14 @@ h3{font-size:1.22rem;font-weight:600}
 .res-corps{display:none}
 .res-corps.on{display:block}
 .res-label{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mousse)}
-.res-fourchette{font-family:"Fraunces",Georgia,serif;font-size:clamp(1.9rem,4.4vw,2.7rem);font-weight:600;color:var(--buis);line-height:1.14;margin:.35rem 0 .1rem}
-.res-m2{font-size:.98rem;color:var(--mousse);margin-bottom:1.3rem}
+.res-triple{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:.45rem;align-items:stretch;margin:.5rem 0 1rem;text-align:center}
+.res-col{display:flex;flex-direction:column;justify-content:flex-end;padding:.7rem .3rem;border-radius:5px}
+.res-col-label{font-size:.68rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--mousse);margin-bottom:.3rem}
+.res-col-val{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--buis);line-height:1.08;font-size:1.12rem}
+.res-col-mid{background:var(--stone);border:1px solid var(--ligne)}
+.res-col-mid .res-col-label{color:var(--buis)}
+.res-col-mid .res-col-val{font-size:clamp(1.5rem,4.2vw,2.05rem);color:var(--meuliere-fonce)}
+.res-m2{font-size:.98rem;color:var(--mousse);margin-bottom:1.3rem;text-align:center}
 .res-recap{list-style:none;border-top:1px solid var(--ligne);padding-top:1.1rem;margin-bottom:1.4rem}
 .res-recap li{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;padding:.28rem 0;color:#33465C}
 .res-recap li span:last-child{font-weight:600;color:var(--encre);text-align:right}
@@ -236,7 +242,20 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
         <p class="res-vide" id="res-vide">Renseignez au moins la <strong>surface</strong> pour afficher une première fourchette de prix.</p>
         <div class="res-corps" id="res-corps">
           <p class="res-label">Prix de vente estimé</p>
-          <p class="res-fourchette" id="res-fourchette">—</p>
+          <div class="res-triple">
+            <div class="res-col">
+              <span class="res-col-label">Bas</span>
+              <span class="res-col-val" id="res-bas">—</span>
+            </div>
+            <div class="res-col res-col-mid">
+              <span class="res-col-label">Prix probable</span>
+              <span class="res-col-val" id="res-probable">—</span>
+            </div>
+            <div class="res-col">
+              <span class="res-col-label">Haut</span>
+              <span class="res-col-val" id="res-haut">—</span>
+            </div>
+          </div>
           <p class="res-m2" id="res-m2"></p>
           <ul class="res-recap" id="res-recap"></ul>
           <div class="res-cta">
@@ -388,9 +407,12 @@ function calcule(){
   const pm2 = base * mEtat * mExt * mDpe * mEtage;
   const total = surface * pm2;
   const bas = arr(total * 0.93, 1000);
+  const probable = arr(total, 1000);
   const haut = arr(total * 1.07, 1000);
 
-  $('res-fourchette').textContent = eur(bas) + ' – ' + eur(haut);
+  $('res-bas').textContent = eur(bas);
+  $('res-probable').textContent = eur(probable);
+  $('res-haut').textContent = eur(haut);
   $('res-m2').textContent = 'soit environ ' + eur(arr(pm2, 10)) + ' / m² · ' + surface + ' m²';
 
   const recap = [
@@ -414,7 +436,7 @@ function calcule(){
     (type === 'a' ? '• Étage : ' + LABELS.etage[$('etage').value] + '\n' : '') +
     '• Extérieur : ' + LABELS.ext[$('ext').value] + '\n' +
     '• DPE : ' + $('dpe').value + '\n' +
-    '• Fourchette en ligne : ' + eur(bas) + ' – ' + eur(haut) + '\n\n' +
+    '• Estimation en ligne : ' + eur(bas) + ' (bas) · ' + eur(probable) + ' (probable) · ' + eur(haut) + ' (haut)\n\n' +
     'Mes coordonnées :\nNom :\nTéléphone :\nAdresse du bien :\n\nMerci !';
   $('res-mail').href = 'mailto:contact@antony.immo?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corpsMail);
 }

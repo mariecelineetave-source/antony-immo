@@ -40,15 +40,36 @@ ligne (https://antony.immo). Branche de travail : `claude/anthony-imo-setup-dev-
 6. Avant tout commit : vérifier l'équilibre des balises HTML des deux fichiers
    (python `html.parser`).
 
+## Règles de l'estimateur en ligne (`estimation.html`, mise à jour quotidienne)
+
+1. `estimation.html` est un estimateur instantané : le visiteur saisit son bien
+   (type, secteur, surface, état, étage, extérieur, DPE) et obtient une
+   fourchette de prix calculée dans son navigateur. **Aucune donnée saisie n'est
+   stockée** ; le contact se fait via un lien `mailto:` pré-rempli.
+2. **Seule zone mise à jour automatiquement** : la grille de prix au m², entre
+   `<!-- ESTIM:DATA:START -->` et `<!-- ESTIM:DATA:END -->` (un bloc JSON avec le
+   champ `maj` = date). `"a"` = prix appartement, `"m"` = prix maison, en €/m².
+   Les modificateurs (état, étage, extérieur, DPE) sont de la **méthodologie fixe
+   dans le JS** : ne jamais y toucher automatiquement.
+3. **Données Antony uniquement** — ne pas ajouter Massy ni d'autres communes sur
+   antony.immo, même si Marie-Céline y travaille.
+4. Chiffres **uniquement sourcés** (MeilleursAgents, SeLoger, efficity, PAP…),
+   jamais inventés. Les prix bougent ~1×/mois : la plupart des jours, il n'y a
+   **rien à changer** — dans ce cas, ne rien committer. `"src":"publie"` = valeur
+   publiée par la source ; `"src":"derive"` = dérivée du prix tous biens du
+   quartier. Ne changer `maj` que si un chiffre change réellement.
+
 ## Publication
 
 - La mise à jour de la rubrique Actu immo (`index.html` section `#actus` +
-  `actualites.html`) et du dossier `veille/` est autorisée en publication
+  `actualites.html`), de la grille de prix de `estimation.html` (bloc
+  `ESTIM:DATA` uniquement) et du dossier `veille/` est autorisée en publication
   automatique sur `main` par Marie-Céline.
 - Toute autre modification (design, sections, textes) reste sur la branche de
   travail et attend sa validation explicite (« publie »).
 - Sur `main`, ne jamais modifier autre chose que la section actus,
-  `actualites.html` et `veille/` sans validation.
+  `actualites.html`, le bloc `ESTIM:DATA` de `estimation.html` et `veille/` sans
+  validation.
 
 ## Divers
 

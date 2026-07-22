@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estimation en ligne — Marie-Céline Etave · antony.immo</title>
+<meta name="description" content="Estimez gratuitement et en une minute la valeur de votre appartement ou maison à Antony (92). Fourchette de prix immédiate, sourcée sur les ventes récentes.">
+<meta property="og:title" content="Estimez votre bien en ligne — antony.immo">
+<meta property="og:description" content="Une fourchette de prix immédiate pour votre bien à Antony, à partir des prix constatés — puis une estimation offerte sur place avec Marie-Céline Etave.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://antony.immo/estimation.html">
+<meta property="og:locale" content="fr_FR">
+<link rel="canonical" href="https://antony.immo/estimation.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E2E52'/%3E%3Crect x='9' y='9' width='14' height='14' fill='none' stroke='%23EBF2F9' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%231E88E5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ Base (identique au site) ============ */
+:root{
+  --stone:#EBF2F9;--craie:#F7FAFD;--parterre:#DCE8F4;--buis:#1C5A9E;--ombre:#0E2E52;
+  --meuliere:#1E88E5;--meuliere-fonce:#1668B5;--cuivre:#8FC6F2;--encre:#12263C;
+  --mousse:#4C6B8A;--ligne:#C5D6E6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{font-family:"Archivo",system-ui,sans-serif;background:var(--stone);color:var(--encre);line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:var(--meuliere);text-decoration:none}
+a:hover{color:var(--meuliere-fonce)}
+:focus-visible{outline:2px solid var(--meuliere);outline-offset:3px;border-radius:2px}
+.container{max-width:1120px;margin-inline:auto;padding-inline:24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--craie);color:var(--encre);padding:.6rem 1rem;z-index:100;border-radius:4px}
+.skip:focus{left:8px}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.12;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,5vw,3.4rem)}
+h2{font-size:clamp(1.7rem,3.2vw,2.4rem)}
+h3{font-size:1.22rem;font-weight:600}
+.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--meuliere);margin-bottom:1.1rem}
+.lead{font-size:1.08rem;color:var(--mousse);max-width:58ch}
+.btn{display:inline-block;font-weight:600;font-size:.95rem;padding:.95rem 1.7rem;border-radius:3px;border:1px solid transparent;transition:background-color .2s ease,color .2s ease,border-color .2s ease;cursor:pointer}
+.btn-solid{background:var(--meuliere);color:var(--craie)}
+.btn-solid:hover{background:var(--meuliere-fonce);color:var(--craie)}
+.btn-ghost{border-color:rgba(235,242,249,.5);color:var(--stone)}
+.btn-ghost:hover{border-color:var(--stone);color:#fff}
+.btn-vert{background:var(--buis);color:var(--craie)}
+.btn-vert:hover{background:var(--ombre);color:var(--craie)}
+
+/* ============ Navigation ============ */
+.nav{position:fixed;inset-inline:0;top:0;z-index:50;transition:background-color .25s ease,box-shadow .25s ease}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding-block:1.05rem}
+.brand{font-family:"Fraunces",serif;font-size:1.28rem;font-weight:600;color:var(--stone);letter-spacing:.01em}
+.brand .dot{color:var(--cuivre)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{color:rgba(235,242,249,.88);font-size:.93rem;font-weight:500}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff;border-bottom:2px solid var(--cuivre);padding-bottom:2px}
+.nav-links .btn{padding:.62rem 1.15rem}
+.nav.scrolled{background:rgba(247,250,253,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--ligne)}
+.nav.scrolled .brand{color:var(--buis)}
+.nav.scrolled .brand .dot{color:var(--meuliere)}
+.nav.scrolled .nav-links a{color:var(--encre)}
+.nav.scrolled .nav-links a:hover{color:var(--meuliere)}
+.nav.scrolled .nav-links a.active{color:var(--buis);border-color:var(--meuliere)}
+.nav.scrolled .nav-links a.btn-solid{color:var(--craie)}
+@media (max-width:840px){
+  .nav-inner{flex-direction:column;gap:.45rem;padding-block:.7rem}
+  .nav-links{flex-wrap:wrap;justify-content:center;gap:.35rem 1.15rem}
+  .nav-links a{font-size:.86rem}
+  .nav-links .btn{padding:.5rem .95rem;font-size:.85rem}
+}
+
+/* ============ En-tête ============ */
+.tete{background:var(--ombre);color:var(--stone);padding:9rem 0 3.4rem;text-align:center}
+.tete .eyebrow{color:var(--cuivre)}
+.tete h1{color:#F5F9FD}
+.tete h1 em{font-style:italic;font-weight:400;color:var(--cuivre)}
+.tete p{margin:1.3rem auto 0;max-width:56ch;color:rgba(235,242,249,.85);font-size:1.06rem}
+
+/* ============ Outil d'estimation ============ */
+.outil{padding-block:3.5rem 5rem}
+.estim{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:start;margin-top:-2.6rem;position:relative;z-index:2}
+.estim-form,.estim-res{background:var(--craie);border:1px solid var(--ligne);border-radius:6px;padding:2.2rem 2rem;box-shadow:0 18px 40px -28px rgba(14,46,82,.5)}
+.estim-form h2,.estim-res h2{font-size:1.3rem;margin-bottom:1.4rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:.83rem;font-weight:600;margin-bottom:.35rem}
+.field input,.field select{width:100%;padding:.78rem .9rem;border:1px solid var(--ligne);border-radius:3px;background:#fff;font:inherit;font-size:.95rem;color:var(--encre)}
+.field input:focus,.field select:focus{outline:2px solid var(--meuliere);outline-offset:1px;border-color:transparent}
+.hint{font-size:.78rem;color:var(--mousse);margin-top:.3rem}
+.field.cache{display:none}
+
+/* Résultat */
+.estim-res{position:sticky;top:96px}
+.res-vide{color:var(--mousse);font-size:.97rem}
+.res-corps{display:none}
+.res-corps.on{display:block}
+.res-label{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mousse)}
+.res-fourchette{font-family:"Fraunces",Georgia,serif;font-size:clamp(1.9rem,4.4vw,2.7rem);font-weight:600;color:var(--buis);line-height:1.14;margin:.35rem 0 .1rem}
+.res-m2{font-size:.98rem;color:var(--mousse);margin-bottom:1.3rem}
+.res-recap{list-style:none;border-top:1px solid var(--ligne);padding-top:1.1rem;margin-bottom:1.4rem}
+.res-recap li{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;padding:.28rem 0;color:#33465C}
+.res-recap li span:last-child{font-weight:600;color:var(--encre);text-align:right}
+.res-cta{display:flex;flex-direction:column;gap:.7rem}
+.res-note{font-size:.82rem;color:var(--mousse);margin-top:1.1rem;line-height:1.6}
+.badge{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--buis);border:1px solid var(--ligne);background:var(--stone);padding:.28rem .6rem;border-radius:99px;margin-bottom:1.1rem}
+@media (max-width:860px){.estim{grid-template-columns:1fr;margin-top:-1.6rem}.estim-res{position:static}.grid2{grid-template-columns:1fr}}
+
+/* ============ Méthode / confiance ============ */
+.section{padding-block:4.5rem}
+.alt{background:var(--parterre)}
+.section-head{max-width:640px;margin-bottom:2.6rem}
+.section-head p{color:var(--mousse);margin-top:1rem}
+.meth{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.meth-card{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:1.8rem 1.6rem}
+.meth-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.meth-card p{font-size:.93rem;color:#33465C}
+.mark{width:13px;height:13px;border:2px solid var(--meuliere);transform:rotate(45deg);margin-bottom:1rem}
+@media (max-width:760px){.meth{grid-template-columns:1fr}}
+
+/* ============ Bande CTA ============ */
+.band{background:var(--buis);color:var(--stone);text-align:center;padding-block:5rem}
+.band .eyebrow{color:var(--cuivre)}
+.band h2{color:#F5F9FD}
+.band p{margin:1.1rem auto 2rem;max-width:52ch;color:rgba(235,242,249,.82)}
+
+/* ============ Pied de page ============ */
+footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 2.2rem;font-size:.9rem}
+.foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start;margin-bottom:2.5rem}
+.foot-top .brand{font-size:1.4rem}
+.foot-nav{display:flex;gap:1.6rem;list-style:none;flex-wrap:wrap}
+.foot-nav a{color:rgba(235,242,249,.75)}
+.foot-nav a:hover{color:#fff}
+.legal{border-top:1px solid rgba(235,242,249,.18);padding-top:1.6rem;font-size:.8rem;line-height:1.9;color:rgba(235,242,249,.55)}
+</style>
+</head>
+<body>
+<a class="skip" href="#outil">Aller à l'estimateur</a>
+
+<!-- ================= NAVIGATION ================= -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html#haut">antony<span class="dot">.</span>immo</a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#actus">Actu immo</a></li>
+      <li><a href="index.html#prix">Prix du m²</a></li>
+      <li><a href="estimation.html" class="active">Estimer en ligne</a></li>
+      <li><a href="index.html#contact" class="btn btn-solid">Me contacter</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= EN-TÊTE ================= -->
+<section class="tete">
+  <div class="container">
+    <p class="eyebrow">Estimation en ligne · offerte</p>
+    <h1>Combien vaut votre bien&nbsp;? <em>Réponse en une minute.</em></h1>
+    <p>Renseignez votre appartement ou votre maison à Antony : vous obtenez immédiatement une fourchette de prix, calculée à partir des prix réellement constatés sur les ventes récentes. Puis, si vous le souhaitez, une estimation précise et offerte sur place avec Marie-Céline.</p>
+  </div>
+</section>
+
+<!-- ================= OUTIL ================= -->
+<section class="outil" id="outil">
+  <div class="container">
+    <div class="estim">
+      <!-- Formulaire -->
+      <div class="estim-form">
+        <h2>Votre bien</h2>
+        <div class="field">
+          <label for="type">Type de bien</label>
+          <select id="type">
+            <option value="a">Appartement</option>
+            <option value="m">Maison</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="secteur">Secteur</label>
+          <select id="secteur"></select>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label for="surface">Surface habitable (m²)</label>
+            <input type="number" id="surface" min="8" max="600" step="1" inputmode="numeric" placeholder="ex. 68">
+          </div>
+          <div class="field">
+            <label for="etat">État général</label>
+            <select id="etat">
+              <option value="bon" selected>Bon état</option>
+              <option value="refait">Refait à neuf</option>
+              <option value="travaux">Quelques travaux à prévoir</option>
+              <option value="renover">À rénover</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field" id="champ-etage">
+            <label for="etage">Étage &amp; ascenseur</label>
+            <select id="etage">
+              <option value="asc" selected>Étage avec ascenseur</option>
+              <option value="dernier">Dernier étage avec ascenseur</option>
+              <option value="sansasc">Étage sans ascenseur</option>
+              <option value="rdc">Rez-de-chaussée</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="ext">Extérieur</label>
+            <select id="ext">
+              <option value="aucun" selected>Aucun</option>
+              <option value="balcon">Balcon</option>
+              <option value="terrasse">Terrasse</option>
+              <option value="jardin">Jardin</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="dpe">Classe énergie (DPE)</label>
+          <select id="dpe">
+            <option value="D" selected>Je ne sais pas / D</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="E">E</option>
+            <option value="F">F (passoire)</option>
+            <option value="G">G (passoire)</option>
+          </select>
+          <p class="hint">Le DPE pèse de plus en plus lourd dans le prix : un F ou un G se négocie nettement en dessous.</p>
+        </div>
+      </div>
+
+      <!-- Résultat -->
+      <div class="estim-res" aria-live="polite">
+        <span class="badge">Estimation indicative</span>
+        <h2>Votre fourchette</h2>
+        <p class="res-vide" id="res-vide">Renseignez au moins la <strong>surface</strong> pour afficher une première fourchette de prix.</p>
+        <div class="res-corps" id="res-corps">
+          <p class="res-label">Prix de vente estimé</p>
+          <p class="res-fourchette" id="res-fourchette">—</p>
+          <p class="res-m2" id="res-m2"></p>
+          <ul class="res-recap" id="res-recap"></ul>
+          <div class="res-cta">
+            <a class="btn btn-solid" id="res-mail" href="#">Affiner avec Marie-Céline (offert)</a>
+            <a class="btn btn-vert" href="tel:+33679213212">06 79 21 32 12</a>
+          </div>
+          <p class="res-note">Cette fourchette est une <strong>estimation automatique et indicative</strong>, calculée sur des moyennes de quartier — elle ne remplace pas une estimation sur place. L'étage exact, la luminosité, les charges, la copropriété, les travaux récents ou le calme font varier le prix. La visite d'estimation avec Marie-Céline est offerte et sans engagement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MÉTHODE ================= -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Comment ce chiffre est calculé</p>
+      <h2>Des prix réels, pas une boule de cristal</h2>
+      <p>L'estimateur croise le prix au m² constaté dans votre secteur avec les caractéristiques de votre bien. C'est un point de départ fiable — l'estimation fine, elle, se fait sur place.</p>
+    </div>
+    <div class="meth">
+      <div class="meth-card">
+        <div class="mark" aria-hidden="true"></div>
+        <h3>Sources publiques</h3>
+        <p>Les prix au m² proviennent des moyennes constatées sur les ventes récentes (MeilleursAgents, SeLoger, efficity, PAP), par secteur et par type de bien.</p>
+      </div>
+      <div class="meth-card">
+        <div class="mark" aria-hidden="true"></div>
+        <h3>Ajusté à votre bien</h3>
+        <p>État, étage, ascenseur, extérieur et DPE modulent la fourchette — ce sont les critères qui font le plus varier un prix d'une vente à l'autre.</p>
+      </div>
+      <div class="meth-card">
+        <div class="mark" aria-hidden="true"></div>
+        <h3>Mis à jour en continu</h3>
+        <p>La grille de prix est rafraîchie automatiquement à partir des sources publiques, pour rester au plus près du marché d'Antony.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BANDE CTA ================= -->
+<section class="band">
+  <div class="container">
+    <p class="eyebrow">L'étape suivante</p>
+    <h2>Une estimation juste, argumentée et offerte</h2>
+    <p>Vous pensez vendre&nbsp;? Avant de mettre en ligne, parlons-en. Marie-Céline se déplace, analyse votre bien et les ventes récentes de votre rue, et vous remet un avis de valeur écrit — sans engagement.</p>
+    <a class="btn btn-solid" href="index.html#contact">Demander mon estimation sur place</a>
+  </div>
+</section>
+
+<!-- ================= PIED DE PAGE ================= -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div>
+        <p class="brand">antony<span class="dot" style="color:var(--cuivre)">.</span>immo</p>
+        <p style="margin-top:.4rem;max-width:34ch">L'immobilier à Antony, conseillé avec soin par Marie-Céline Etave.</p>
+      </div>
+      <ul class="foot-nav">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#actus">Actu immo</a></li>
+        <li><a href="index.html#prix">Prix du m²</a></li>
+        <li><a href="estimation.html">Estimer en ligne</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <p>© <span id="annee">2026</span> antony.immo — Marie-Céline Etave, conseillère indépendante en immobilier à Antony (92160).</p>
+      <p>Estimation en ligne indicative fournie à titre gratuit et informatif, sans valeur d'avis de valeur ni d'expertise. Aucune donnée saisie dans cet outil n'est stockée : le calcul est réalisé dans votre navigateur.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Grille de prix au m² — mise à jour automatique par la routine quotidienne.
+     Zone à modifier UNIQUEMENT entre ESTIM:DATA:START et ESTIM:DATA:END.
+     Chiffres = prix moyens €/m² par secteur : "a" = appartement, "m" = maison.
+     "src":"publie" = valeur publiée par la source ; "src":"derive" = dérivée du prix
+     tous biens du quartier (répartition appart/maison au ratio ville). Ne jamais inventer. -->
+<!-- ESTIM:DATA:START -->
+<script id="estim-data" type="application/json">
+{
+  "maj": "22 juillet 2026",
+  "secteurs": {
+    "antony-ville":     {"nom": "Antony — toute la ville",             "a": 5005, "m": 5411, "src": "publie"},
+    "antony-centre":    {"nom": "Antony · Centre-ville",               "a": 5213, "m": 5797, "src": "publie"},
+    "antony-croix":     {"nom": "Antony · La Croix de Berny",          "a": 5610, "m": 6065, "src": "derive"},
+    "antony-sceaux":    {"nom": "Antony · Parc de Sceaux",             "a": 4786, "m": 6243, "src": "publie"},
+    "antony-baconnets": {"nom": "Antony · Les Baconnets",              "a": 4277, "m": 4626, "src": "derive"},
+    "antony-pajeaud":   {"nom": "Antony · Pajeaud – Fontaine Michalon", "a": 4954, "m": 5358, "src": "derive"}
+  }
+}
+</script>
+<!-- ESTIM:DATA:END -->
+
+<script>
+// ============ Navigation : fond au défilement ============
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+document.getElementById('annee').textContent = new Date().getFullYear();
+
+// ============ Données de prix (bloc ESTIM:DATA) ============
+const DATA = JSON.parse(document.getElementById('estim-data').textContent);
+
+// Modificateurs (méthodologie fixe — indépendants du marché, non mis à jour par la routine)
+const ETAT  = {refait:1.08, bon:1.00, travaux:0.94, renover:0.86};
+const ETAGE = {asc:1.03, dernier:1.06, sansasc:0.98, rdc:0.96}; // appartement uniquement
+const EXT   = {aucun:1.00, balcon:1.03, terrasse:1.06, jardin:1.08};
+const DPE   = {A:1.06, B:1.05, C:1.02, D:1.00, E:0.96, F:0.90, G:0.85};
+const LABELS = {
+  etat:  {refait:"Refait à neuf", bon:"Bon état", travaux:"Travaux à prévoir", renover:"À rénover"},
+  etage: {asc:"Étage avec ascenseur", dernier:"Dernier étage", sansasc:"Étage sans ascenseur", rdc:"Rez-de-chaussée"},
+  ext:   {aucun:"Sans extérieur", balcon:"Balcon", terrasse:"Terrasse", jardin:"Jardin"}
+};
+
+// Remplissage de la liste des secteurs
+const $ = id => document.getElementById(id);
+const selSecteur = $('secteur');
+for (const [cle, s] of Object.entries(DATA.secteurs)){
+  const o = document.createElement('option');
+  o.value = cle; o.textContent = s.nom;
+  selSecteur.appendChild(o);
+}
+
+const eur = n => Math.round(n).toLocaleString('fr-FR') + ' €';
+const arr = (n, pas) => Math.round(n / pas) * pas; // arrondi
+
+function calcule(){
+  const type = $('type').value;              // 'a' | 'm'
+  const s = DATA.secteurs[$('secteur').value];
+  const surface = parseFloat($('surface').value);
+  const vide = $('res-vide'), corps = $('res-corps');
+
+  // Champ étage masqué pour les maisons
+  $('champ-etage').classList.toggle('cache', type === 'm');
+
+  if (!surface || surface < 5){
+    corps.classList.remove('on'); vide.style.display = 'block'; return;
+  }
+  vide.style.display = 'none'; corps.classList.add('on');
+
+  const base = s[type];                                   // €/m² du secteur pour le type
+  const mEtat = ETAT[$('etat').value];
+  const mExt  = EXT[$('ext').value];
+  const mDpe  = DPE[$('dpe').value];
+  const mEtage = type === 'a' ? ETAGE[$('etage').value] : 1;
+  const pm2 = base * mEtat * mExt * mDpe * mEtage;
+  const total = surface * pm2;
+  const bas = arr(total * 0.93, 1000);
+  const haut = arr(total * 1.07, 1000);
+
+  $('res-fourchette').textContent = eur(bas) + ' – ' + eur(haut);
+  $('res-m2').textContent = 'soit environ ' + eur(arr(pm2, 10)) + ' / m² · ' + surface + ' m²';
+
+  const recap = [
+    ['Type', type === 'a' ? 'Appartement' : 'Maison'],
+    ['Secteur', s.nom],
+    ['État', LABELS.etat[$('etat').value]],
+    ['Extérieur', LABELS.ext[$('ext').value]],
+    ['DPE', $('dpe').value]
+  ];
+  if (type === 'a') recap.splice(3, 0, ['Étage', LABELS.etage[$('etage').value]]);
+  $('res-recap').innerHTML = recap.map(r => '<li><span>' + r[0] + '</span><span>' + r[1] + '</span></li>').join('');
+
+  // Lien mailto pré-rempli → lead qualifié, sans stockage
+  const sujet = 'Estimation en ligne — ' + (type === 'a' ? 'appartement ' : 'maison ') + surface + ' m² · ' + s.nom;
+  const corpsMail =
+    'Bonjour Marie-Céline,\n\nJ\'ai utilisé l\'estimateur en ligne et je souhaiterais une estimation précise de mon bien.\n\n' +
+    '• Type : ' + (type === 'a' ? 'Appartement' : 'Maison') + '\n' +
+    '• Secteur : ' + s.nom + '\n' +
+    '• Surface : ' + surface + ' m²\n' +
+    '• État : ' + LABELS.etat[$('etat').value] + '\n' +
+    (type === 'a' ? '• Étage : ' + LABELS.etage[$('etage').value] + '\n' : '') +
+    '• Extérieur : ' + LABELS.ext[$('ext').value] + '\n' +
+    '• DPE : ' + $('dpe').value + '\n' +
+    '• Fourchette en ligne : ' + eur(bas) + ' – ' + eur(haut) + '\n\n' +
+    'Mes coordonnées :\nNom :\nTéléphone :\nAdresse du bien :\n\nMerci !';
+  $('res-mail').href = 'mailto:contact@antony.immo?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corpsMail);
+}
+
+['type','secteur','surface','etat','etage','ext','dpe'].forEach(id => {
+  $(id).addEventListener('input', calcule);
+  $(id).addEventListener('change', calcule);
+});
+calcule();
+</script>
+</body>
+</html>

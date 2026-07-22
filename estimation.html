@@ -90,6 +90,9 @@ h3{font-size:1.22rem;font-weight:600}
 .field input:focus,.field select:focus{outline:2px solid var(--meuliere);outline-offset:1px;border-color:transparent}
 .hint{font-size:.78rem;color:var(--mousse);margin-top:.3rem}
 .field.cache{display:none}
+.adr{display:flex;gap:8px}
+.adr #num{flex:0 0 82px}
+.adr #rue{flex:1}
 
 /* Résultat */
 .estim-res{position:sticky;top:96px}
@@ -182,10 +185,13 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
           </select>
         </div>
         <div class="field">
-          <label for="rue">Votre rue à Antony</label>
-          <input type="text" id="rue" list="rues-list" autocomplete="off" placeholder="Tapez le nom de votre rue…">
+          <label for="rue">Votre adresse à Antony</label>
+          <div class="adr">
+            <input type="text" id="num" inputmode="numeric" autocomplete="off" placeholder="N°">
+            <input type="text" id="rue" list="rues-list" autocomplete="off" placeholder="Tapez le nom de votre rue…">
+          </div>
           <datalist id="rues-list"></datalist>
-          <p class="hint">Saisissez votre rue. Si elle n'est pas encore répertoriée, l'estimation se cale sur le marché d'Antony — affinée sur place.</p>
+          <p class="hint">Indiquez le numéro et la rue. Si la rue n'est pas encore répertoriée, l'estimation se cale au plus proche (marché d'Antony) — affinée sur place.</p>
         </div>
         <div class="grid2">
           <div class="field">
@@ -427,6 +433,9 @@ function calcule(){
 
   const R = resolveRue(type);
   const base = R.prix;                                    // €/m² : prix de la rue si connu, sinon marché d'Antony
+  const num = $('num').value.trim();
+  const rueLabel = R.base === 'ville' ? '' : R.label;
+  const adresse = [num, rueLabel].filter(Boolean).join(' ') || 'Antony (indiquez votre rue)';
   const mEtat = ETAT[$('etat').value];
   const mExt  = EXT[$('ext').value];
   const mDpe  = DPE[$('dpe').value];
@@ -446,10 +455,11 @@ function calcule(){
     : R.base === 'ville-type'     ? 'Votre rue est répertoriée, mais pas pour ce type de bien : fourchette à l’échelle d’Antony, affinée sur place.'
     : R.base === 'ville-inconnue' ? 'Votre rue n’est pas encore répertoriée : fourchette à l’échelle d’Antony, affinée sur place.'
     :                               'Indiquez votre rue pour préciser — fourchette à l’échelle d’Antony.';
+  if (num) $('res-base').textContent += ' Adresse prise en compte (n° ' + num + ') — le prix exact à votre numéro s’affine lors de la visite.';
 
   const recap = [
     ['Type', type === 'a' ? 'Appartement' : 'Maison'],
-    ['Rue', R.label],
+    ['Adresse', adresse],
     ['État', LABELS.etat[$('etat').value]],
     ['Extérieur', LABELS.ext[$('ext').value]],
     ['DPE', $('dpe').value]
@@ -458,11 +468,11 @@ function calcule(){
   $('res-recap').innerHTML = recap.map(r => '<li><span>' + r[0] + '</span><span>' + r[1] + '</span></li>').join('');
 
   // Lien mailto pré-rempli → lead qualifié, sans stockage
-  const sujet = 'Estimation en ligne — ' + (type === 'a' ? 'appartement ' : 'maison ') + surface + ' m² · ' + R.label;
+  const sujet = 'Estimation en ligne — ' + (type === 'a' ? 'appartement ' : 'maison ') + surface + ' m² · ' + adresse;
   const corpsMail =
     'Bonjour Marie-Céline,\n\nJ\'ai utilisé l\'estimateur en ligne et je souhaiterais une estimation précise de mon bien.\n\n' +
     '• Type : ' + (type === 'a' ? 'Appartement' : 'Maison') + '\n' +
-    '• Rue : ' + R.label + '\n' +
+    '• Adresse : ' + adresse + '\n' +
     '• Surface : ' + surface + ' m²\n' +
     '• État : ' + LABELS.etat[$('etat').value] + '\n' +
     (type === 'a' ? '• Étage : ' + LABELS.etage[$('etage').value] + '\n' : '') +
@@ -473,7 +483,7 @@ function calcule(){
   $('res-mail').href = 'mailto:contact@antony.immo?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corpsMail);
 }
 
-['type','rue','surface','etat','etage','ext','dpe'].forEach(id => {
+['type','num','rue','surface','etat','etage','ext','dpe'].forEach(id => {
   $(id).addEventListener('input', calcule);
   $(id).addEventListener('change', calcule);
 });

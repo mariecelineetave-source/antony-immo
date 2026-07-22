@@ -7,6 +7,19 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-07-22
+
+Rien de nouveau par rapport aux veilles précédentes : les mêmes annonces déjà
+signalées (maison PAP 775 000 €, 5 lots aux enchères notariales 36h-immo)
+restent en ligne. Les recherches par quartier (Croix-de-Berny, Pajeaud,
+Fontaine-Michalon) et sur les communes limitrophes (Bourg-la-Reine, Sceaux,
+Fresnes, Verrières-le-Buisson, Massy) ne remontent que des pages
+d'agrégateurs (PAP, SeLoger, ParuVendu), sans annonce individuelle nouvelle
+identifiable avec certitude. Aucun nouveau signal d'enchère, de succession ou
+de permis de construire distinct de ceux déjà relevés le 19 juillet.
+
+---
+
 ## 2026-07-21
 
 Rien de nouveau par rapport aux veilles des 19 et 20 juillet : les mêmes

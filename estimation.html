@@ -182,8 +182,10 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
           </select>
         </div>
         <div class="field">
-          <label for="secteur">Secteur</label>
-          <select id="secteur"></select>
+          <label for="rue">Votre rue à Antony</label>
+          <input type="text" id="rue" list="rues-list" autocomplete="off" placeholder="Tapez le nom de votre rue…">
+          <datalist id="rues-list"></datalist>
+          <p class="hint">Saisissez votre rue. Si elle n'est pas encore répertoriée, l'estimation se cale sur le marché d'Antony — affinée sur place.</p>
         </div>
         <div class="grid2">
           <div class="field">
@@ -257,12 +259,13 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
             </div>
           </div>
           <p class="res-m2" id="res-m2"></p>
+          <p class="res-note" id="res-base" style="margin-top:.1rem"></p>
           <ul class="res-recap" id="res-recap"></ul>
           <div class="res-cta">
             <a class="btn btn-solid" id="res-mail" href="#">Affiner avec Marie-Céline (offert)</a>
             <a class="btn btn-vert" href="tel:+33679213212">06 79 21 32 12</a>
           </div>
-          <p class="res-note">Cette fourchette est une <strong>estimation automatique et indicative</strong>, calculée sur des moyennes de quartier — elle ne remplace pas une estimation sur place. L'étage exact, la luminosité, les charges, la copropriété, les travaux récents ou le calme font varier le prix. La visite d'estimation avec Marie-Céline est offerte et sans engagement.</p>
+          <p class="res-note">Cette fourchette est une <strong>estimation automatique et indicative</strong>, calculée sur les prix de votre rue (ou de votre secteur) — elle ne remplace pas une estimation sur place. L'étage exact, la luminosité, les charges, la copropriété, les travaux récents ou le calme font varier le prix. La visite d'estimation avec Marie-Céline est offerte et sans engagement.</p>
         </div>
       </div>
     </div>
@@ -275,13 +278,13 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
     <div class="section-head">
       <p class="eyebrow">Comment ce chiffre est calculé</p>
       <h2>Des prix réels, pas une boule de cristal</h2>
-      <p>L'estimateur croise le prix au m² constaté dans votre secteur avec les caractéristiques de votre bien. C'est un point de départ fiable — l'estimation fine, elle, se fait sur place.</p>
+      <p>L'estimateur croise le prix au m² constaté dans votre rue (ou, à défaut, dans votre secteur) avec les caractéristiques de votre bien. C'est un point de départ fiable — l'estimation fine, elle, se fait sur place.</p>
     </div>
     <div class="meth">
       <div class="meth-card">
         <div class="mark" aria-hidden="true"></div>
         <h3>Sources publiques</h3>
-        <p>Les prix au m² proviennent des moyennes constatées sur les ventes récentes (MeilleursAgents, SeLoger, efficity, PAP), par secteur et par type de bien.</p>
+        <p>Les prix au m² proviennent des moyennes constatées sur les ventes récentes (MeilleursAgents, SeLoger, efficity, PAP), par rue quand la donnée existe, sinon par secteur.</p>
       </div>
       <div class="meth-card">
         <div class="mark" aria-hidden="true"></div>
@@ -332,9 +335,11 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
 
 <!-- Grille de prix au m² — mise à jour automatique par la routine quotidienne.
      Zone à modifier UNIQUEMENT entre ESTIM:DATA:START et ESTIM:DATA:END.
-     Chiffres = prix moyens €/m² par secteur : "a" = appartement, "m" = maison.
+     "secteurs" = repli à l'échelle du quartier / de la ville ; "rues" = prix par rue
+     quand une source publique le donne. "a" = appartement, "m" = maison (€/m²).
      "src":"publie" = valeur publiée par la source ; "src":"derive" = dérivée du prix
-     tous biens du quartier (répartition appart/maison au ratio ville). Ne jamais inventer. -->
+     tous biens du quartier. Antony uniquement. Ne jamais inventer un prix de rue :
+     si une rue n'est pas sourcée, on ne l'ajoute pas (le calcul retombe sur la ville). -->
 <!-- ESTIM:DATA:START -->
 <script id="estim-data" type="application/json">
 {
@@ -346,6 +351,16 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
     "antony-sceaux":    {"nom": "Antony · Parc de Sceaux",             "a": 4786, "m": 6243, "src": "publie"},
     "antony-baconnets": {"nom": "Antony · Les Baconnets",              "a": 4277, "m": 4626, "src": "derive"},
     "antony-pajeaud":   {"nom": "Antony · Pajeaud – Fontaine Michalon", "a": 4954, "m": 5358, "src": "derive"}
+  },
+  "rues": {
+    "rue-du-sud":          {"nom": "Rue du Sud",              "a": 5613, "m": 6361, "src": "publie"},
+    "av-beausejour":       {"nom": "Avenue Beauséjour",       "a": 4737, "m": 6322, "src": "publie"},
+    "av-aristide-briand":  {"nom": "Avenue Aristide Briand",  "a": 5649, "m": 5904, "src": "publie"},
+    "rue-auguste-mounie":  {"nom": "Rue Auguste Mounié",      "a": 6758, "m": 6393, "src": "publie"},
+    "av-providence":       {"nom": "Avenue de la Providence", "a": 6205, "src": "publie"},
+    "av-provence":         {"nom": "Avenue de Provence",      "a": 4948, "src": "publie"},
+    "av-leon-jouhaux":     {"nom": "Avenue Léon Jouhaux",     "a": 4403, "src": "publie"},
+    "place-du-marche":     {"nom": "Place du Marché",         "a": 6271, "src": "publie"}
   }
 }
 </script>
@@ -373,13 +388,25 @@ const LABELS = {
   ext:   {aucun:"Sans extérieur", balcon:"Balcon", terrasse:"Terrasse", jardin:"Jardin"}
 };
 
-// Remplissage de la liste des secteurs
+// Rues : autocomplétion + index normalisé ; "antony-ville" = repli honnête
 const $ = id => document.getElementById(id);
-const selSecteur = $('secteur');
-for (const [cle, s] of Object.entries(DATA.secteurs)){
-  const o = document.createElement('option');
-  o.value = cle; o.textContent = s.nom;
-  selSecteur.appendChild(o);
+const VILLE = DATA.secteurs['antony-ville'];
+const norm = s => (s || '').toLowerCase().normalize('NFD').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+const RUES_IDX = {};
+const dl = $('rues-list');
+Object.values(DATA.rues || {}).forEach(r => {
+  RUES_IDX[norm(r.nom)] = r;
+  const o = document.createElement('option'); o.value = r.nom; dl.appendChild(o);
+});
+
+// Résout la rue saisie → prix au m² pour le type, avec repli honnête sur le marché d'Antony
+function resolveRue(type){
+  const saisie = $('rue').value.trim();
+  const r = RUES_IDX[norm(saisie)];
+  if (r && r[type] != null) return { prix: r[type], label: r.nom, base: 'rue' };
+  if (r)                    return { prix: VILLE[type], label: r.nom, base: 'ville-type' };
+  if (saisie)               return { prix: VILLE[type], label: saisie, base: 'ville-inconnue' };
+  return { prix: VILLE[type], label: 'Antony (indiquez votre rue)', base: 'ville' };
 }
 
 const eur = n => Math.round(n).toLocaleString('fr-FR') + ' €';
@@ -387,7 +414,6 @@ const arr = (n, pas) => Math.round(n / pas) * pas; // arrondi
 
 function calcule(){
   const type = $('type').value;              // 'a' | 'm'
-  const s = DATA.secteurs[$('secteur').value];
   const surface = parseFloat($('surface').value);
   const vide = $('res-vide'), corps = $('res-corps');
 
@@ -399,7 +425,8 @@ function calcule(){
   }
   vide.style.display = 'none'; corps.classList.add('on');
 
-  const base = s[type];                                   // €/m² du secteur pour le type
+  const R = resolveRue(type);
+  const base = R.prix;                                    // €/m² : prix de la rue si connu, sinon marché d'Antony
   const mEtat = ETAT[$('etat').value];
   const mExt  = EXT[$('ext').value];
   const mDpe  = DPE[$('dpe').value];
@@ -414,10 +441,15 @@ function calcule(){
   $('res-probable').textContent = eur(probable);
   $('res-haut').textContent = eur(haut);
   $('res-m2').textContent = 'soit environ ' + eur(arr(pm2, 10)) + ' / m² · ' + surface + ' m²';
+  $('res-base').textContent =
+      R.base === 'rue'            ? 'Prix constaté dans votre rue (source publique) — indicatif, affiné sur place.'
+    : R.base === 'ville-type'     ? 'Votre rue est répertoriée, mais pas pour ce type de bien : fourchette à l’échelle d’Antony, affinée sur place.'
+    : R.base === 'ville-inconnue' ? 'Votre rue n’est pas encore répertoriée : fourchette à l’échelle d’Antony, affinée sur place.'
+    :                               'Indiquez votre rue pour préciser — fourchette à l’échelle d’Antony.';
 
   const recap = [
     ['Type', type === 'a' ? 'Appartement' : 'Maison'],
-    ['Secteur', s.nom],
+    ['Rue', R.label],
     ['État', LABELS.etat[$('etat').value]],
     ['Extérieur', LABELS.ext[$('ext').value]],
     ['DPE', $('dpe').value]
@@ -426,11 +458,11 @@ function calcule(){
   $('res-recap').innerHTML = recap.map(r => '<li><span>' + r[0] + '</span><span>' + r[1] + '</span></li>').join('');
 
   // Lien mailto pré-rempli → lead qualifié, sans stockage
-  const sujet = 'Estimation en ligne — ' + (type === 'a' ? 'appartement ' : 'maison ') + surface + ' m² · ' + s.nom;
+  const sujet = 'Estimation en ligne — ' + (type === 'a' ? 'appartement ' : 'maison ') + surface + ' m² · ' + R.label;
   const corpsMail =
     'Bonjour Marie-Céline,\n\nJ\'ai utilisé l\'estimateur en ligne et je souhaiterais une estimation précise de mon bien.\n\n' +
     '• Type : ' + (type === 'a' ? 'Appartement' : 'Maison') + '\n' +
-    '• Secteur : ' + s.nom + '\n' +
+    '• Rue : ' + R.label + '\n' +
     '• Surface : ' + surface + ' m²\n' +
     '• État : ' + LABELS.etat[$('etat').value] + '\n' +
     (type === 'a' ? '• Étage : ' + LABELS.etage[$('etage').value] + '\n' : '') +
@@ -441,7 +473,7 @@ function calcule(){
   $('res-mail').href = 'mailto:contact@antony.immo?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corpsMail);
 }
 
-['type','secteur','surface','etat','etage','ext','dpe'].forEach(id => {
+['type','rue','surface','etat','etage','ext','dpe'].forEach(id => {
   $(id).addEventListener('input', calcule);
   $(id).addEventListener('change', calcule);
 });

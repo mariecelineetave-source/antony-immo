@@ -43,14 +43,18 @@ ligne (https://antony.immo). Branche de travail : `claude/anthony-imo-setup-dev-
 ## Règles de l'estimateur en ligne (`estimation.html`, mise à jour quotidienne)
 
 1. `estimation.html` est un estimateur instantané : le visiteur saisit son bien
-   (type, secteur, surface, état, étage, extérieur, DPE) et obtient une
+   (type, **rue**, surface, état, étage, extérieur, DPE) et obtient une
    fourchette de prix calculée dans son navigateur. **Aucune donnée saisie n'est
    stockée** ; le contact se fait via un lien `mailto:` pré-rempli.
 2. **Seule zone mise à jour automatiquement** : la grille de prix au m², entre
    `<!-- ESTIM:DATA:START -->` et `<!-- ESTIM:DATA:END -->` (un bloc JSON avec le
-   champ `maj` = date). `"a"` = prix appartement, `"m"` = prix maison, en €/m².
-   Les modificateurs (état, étage, extérieur, DPE) sont de la **méthodologie fixe
-   dans le JS** : ne jamais y toucher automatiquement.
+   champ `maj` = date). Le bloc contient `secteurs` (repli à l'échelle du
+   quartier / de la ville) et `rues` (prix par rue quand une source publique le
+   donne). `"a"` = prix appartement, `"m"` = prix maison, en €/m². **Ne jamais
+   inventer un prix de rue** : si une rue n'est pas sourcée, on ne l'ajoute pas
+   (le calcul retombe automatiquement sur le prix de la ville). Les modificateurs
+   (état, étage, extérieur, DPE) sont de la **méthodologie fixe dans le JS** :
+   ne jamais y toucher automatiquement.
 3. **Données Antony uniquement** — ne pas ajouter Massy ni d'autres communes sur
    antony.immo, même si Marie-Céline y travaille.
 4. Chiffres **uniquement sourcés** (MeilleursAgents, SeLoger, efficity, PAP…),

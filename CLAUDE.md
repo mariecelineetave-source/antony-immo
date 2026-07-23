@@ -40,15 +40,45 @@ ligne (https://antony.immo). Branche de travail : `claude/anthony-imo-setup-dev-
 6. Avant tout commit : vérifier l'équilibre des balises HTML des deux fichiers
    (python `html.parser`).
 
+## Règles de l'estimateur en ligne (`estimation.html`, mise à jour quotidienne)
+
+1. `estimation.html` est un estimateur instantané : le visiteur saisit son bien
+   (type, **rue**, surface, état, étage, extérieur, DPE) et obtient une
+   fourchette de prix calculée dans son navigateur. **Aucune donnée saisie n'est
+   stockée** ; le contact se fait via un lien `mailto:` pré-rempli.
+2. **Seule zone mise à jour automatiquement** : la grille de prix au m², entre
+   `<!-- ESTIM:DATA:START -->` et `<!-- ESTIM:DATA:END -->` (un bloc JSON avec le
+   champ `maj` = date). Le bloc contient `secteurs` (repli à l'échelle du
+   quartier / de la ville) et `rues` (prix par rue quand une source publique le
+   donne). `"a"` = prix appartement, `"m"` = prix maison, en €/m². **Ne jamais
+   inventer un prix de rue** : si une rue n'est pas sourcée, on ne l'ajoute pas
+   (le calcul retombe automatiquement sur le prix de la ville). Les modificateurs
+   (état, étage, extérieur, DPE) sont de la **méthodologie fixe dans le JS** :
+   ne jamais y toucher automatiquement.
+3. **Données Antony uniquement** — ne pas ajouter Massy ni d'autres communes sur
+   antony.immo, même si Marie-Céline y travaille.
+4. Chiffres **uniquement sourcés**, jamais inventés. `"src":"publie"` = valeur
+   publiée par une source (MeilleursAgents, SeLoger, efficity, PAP…) ;
+   `"src":"derive"` = dérivée du prix tous biens du quartier ; `"src":"dvf"` =
+   médiane des **ventes réelles** de la rue, calculée à partir de la base **DVF**
+   officielle (fichiers `geo-dvf` de data.gouv.fr, années glissantes). Les rues
+   (`rues`) sont issues de DVF ; on peut les recalculer en retéléchargeant les
+   CSV `geo-dvf` de la commune 92002 et en prenant la médiane du prix/m² par rue
+   (ventes « Vente » à une seule unité bâtie, seuils : ≥5 ventes appart., ≥4
+   maison). Les prix bougent lentement : la plupart des jours, **rien à changer**
+   — dans ce cas, ne rien committer. Ne changer `maj` que si un chiffre change.
+
 ## Publication
 
 - La mise à jour de la rubrique Actu immo (`index.html` section `#actus` +
-  `actualites.html`) et du dossier `veille/` est autorisée en publication
+  `actualites.html`), de la grille de prix de `estimation.html` (bloc
+  `ESTIM:DATA` uniquement) et du dossier `veille/` est autorisée en publication
   automatique sur `main` par Marie-Céline.
 - Toute autre modification (design, sections, textes) reste sur la branche de
   travail et attend sa validation explicite (« publie »).
 - Sur `main`, ne jamais modifier autre chose que la section actus,
-  `actualites.html` et `veille/` sans validation.
+  `actualites.html`, le bloc `ESTIM:DATA` de `estimation.html` et `veille/` sans
+  validation.
 
 ## Divers
 

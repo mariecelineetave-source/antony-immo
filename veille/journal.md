@@ -7,6 +7,35 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-07-23
+
+Une nouvelle piste confirmée par rapport aux veilles précédentes :
+
+- **Appartement 2 pièces, 52 m², Antony (92160) — mise à prix 210 000 €**,
+  vente aux enchères notariale (référence AI21793), distincte des 5 lots
+  déjà signalés le 19 juillet.
+  [Voir l'annonce (36h-immo)](https://www.36h-immo.com/annonce/AI21793/appartement-vente-encheres-92160-antony-2-pieces-52m2-210000euros.html)
+  — Signal de succession ou de liquidation, piste de mandat de revente
+  potentielle pour l'acquéreur.
+
+Une piste PAP non confirmée est également apparue dans les résultats de
+recherche (https://www.pap.fr/annonces/appartement-antony-92160-r456101404,
+« Vente Antony (92160) ») sans type de bien, prix ni date récupérables, et
+introuvable lors d'une recherche de suivi : à vérifier manuellement avant
+de la considérer comme exploitable, non retenue ici comme piste confirmée.
+
+Par ailleurs, un résumé de recherche a mentionné des annonces LeBonCoin
+« du jour » (maisons Croix-de-Berny, 830 000 € et 850 000 €, 518 000 €)
+mais sans lien individuel vérifiable — uniquement des pages de catégorie :
+non retenues, à vérifier manuellement sur leboncoin.fr.
+
+Aucun autre signal nouveau (succession, permis de construire, projet
+urbain) au-delà de ceux déjà connus (Antonypole / ligne 18, Allées
+d'Antony). Les recherches par quartier et sur les communes limitrophes ne
+remontent toujours que des pages d'agrégateurs ou d'agences.
+
+---
+
 ## 2026-07-21
 
 Rien de nouveau par rapport aux veilles des 19 et 20 juillet : les mêmes

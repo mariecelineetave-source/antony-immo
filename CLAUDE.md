@@ -67,6 +67,10 @@ ligne (https://antony.immo). Branche de travail : `claude/anthony-imo-setup-dev-
    (ventes « Vente » à une seule unité bâtie, seuils : ≥5 ventes appart., ≥4
    maison). Les prix bougent lentement : la plupart des jours, **rien à changer**
    — dans ce cas, ne rien committer. Ne changer `maj` que si un chiffre change.
+   Ce recalcul DVF est **automatisé mensuellement** via `tools/refresh_dvf.py`
+   (routine planifiée) : le script retélécharge les CSV geo-dvf (fenêtre des 4
+   dernières années), recalcule, et ne réécrit `estimation.html` que si un prix
+   change. Lancement manuel : `python3 tools/refresh_dvf.py` (ou `--check`).
 
 ## Publication
 

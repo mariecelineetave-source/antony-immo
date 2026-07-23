@@ -200,6 +200,25 @@ h3{font-size:1.5rem;font-weight:600}
 .prix-resultat{text-align:center;border-top:1px solid var(--ligne);margin-top:1.4rem;padding-top:1.6rem}
 @media (max-width:760px){.prix-grid{grid-template-columns:1fr}.prix-controls{grid-template-columns:1fr}}
 
+/* Expertise en valeur vénale */
+.exp-lead{max-width:70ch;color:#33465C;margin-bottom:.7rem}
+.exp-compare{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin:2rem 0 2.6rem}
+.exp-compare .card-x{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:1.8rem}
+.exp-compare .card-x.accent{border-color:var(--meuliere);box-shadow:0 0 0 1px var(--meuliere)}
+.exp-compare h3{font-size:1.25rem;margin-bottom:.6rem}
+.exp-compare p{font-size:.95rem;color:#33465C}
+.exp-steps{list-style:none;counter-reset:etape;padding:0;margin:1.4rem 0 0;max-width:80ch}
+.exp-steps li{counter-increment:etape;position:relative;padding:0 0 1.4rem 3.2rem;border-left:2px solid var(--ligne);margin-left:1.1rem}
+.exp-steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.exp-steps li::before{content:counter(etape);position:absolute;left:-1.1rem;top:-.15rem;width:2.2rem;height:2.2rem;background:var(--meuliere);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.exp-steps h3{font-size:1.1rem;margin-bottom:.2rem}
+.exp-steps p{font-size:.94rem;color:#33465C}
+.exp-price{display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem 2rem;background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:1.8rem 2rem;margin-top:2.6rem}
+.exp-price .num{font-family:"Fraunces",Georgia,serif;font-size:2.4rem;font-weight:600;color:var(--buis);line-height:1}
+.exp-price .num small{font-size:.42em;font-weight:500;color:var(--mousse)}
+.exp-price .txt{flex:1;min-width:220px;font-size:.95rem;color:#33465C}
+@media (max-width:760px){.exp-compare{grid-template-columns:1fr}}
+
 /* Services */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
 .card{
@@ -305,6 +324,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
       <li><a href="#services">Services</a></li>
       <li><a href="#actus">Actu immo</a></li>
       <li><a href="#prix">Prix du m²</a></li>
+      <li><a href="#expertise">Expertise</a></li>
       <li><a href="#apropos">Votre conseillère</a></li>
       <li><a href="estimation.html" class="btn btn-solid">⚡ Estimer en ligne</a></li>
     </ul>
@@ -604,6 +624,58 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
   </div>
 </section>
 
+<!-- ================= EXPERTISE EN VALEUR VÉNALE ================= -->
+<section class="section" id="expertise">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Expertise en valeur vénale</p>
+      <h2>L'expertise immobilière, au-delà de l'estimation</h2>
+    </div>
+
+    <p class="exp-lead reveal">Une estimation et une expertise n'ont ni le même objet, ni la même valeur. Voici la différence, et comment se déroule une expertise en valeur vénale.</p>
+
+    <div class="exp-compare reveal">
+      <div class="card-x">
+        <h3>L'estimation</h3>
+        <p>L'estimation est un avis de valeur : un professionnel donne une fourchette de prix indicative, gratuitement, pour vous aider à fixer le prix de mise en vente d'un bien. C'est un outil commercial, utile pour vendre, mais qui n'a pas de portée juridique.</p>
+      </div>
+      <div class="card-x accent">
+        <h3>L'expertise en valeur vénale</h3>
+        <p>L'expertise en valeur vénale est un acte technique, écrit et engageant, réalisé par un expert selon une méthodologie normée. Elle détermine la valeur réelle d'un bien à une date donnée, de façon argumentée, neutre et opposable. On y recourt pour une succession, un divorce, une donation, un partage, un litige, une déclaration fiscale (IFI) ou une garantie bancaire. Là où l'estimation prépare une vente, l'expertise fait foi devant un notaire, un juge ou l'administration. L'expert est indépendant et ne défend aucune des parties : c'est cette impartialité qui donne au rapport toute sa valeur.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.4rem;margin-bottom:.4rem">Comment se déroule une expertise en valeur vénale&nbsp;?</h3>
+    <ol class="exp-steps reveal">
+      <li>
+        <h3>Définition de la mission</h3>
+        <p>Nous précisons ensemble l'objet de l'expertise (succession, divorce, donation, litige…) et le bien concerné.</p>
+      </li>
+      <li>
+        <h3>Convocation des parties</h3>
+        <p>Lorsque plusieurs parties sont concernées, je les convoque par lettre recommandée avec accusé de réception, afin que l'expertise soit contradictoire et que chacun puisse être présent.</p>
+      </li>
+      <li>
+        <h3>Visite et relevé du bien</h3>
+        <p>Visite détaillée sur place : mesures, état, prestations, environnement et contraintes éventuelles, en présence des parties convoquées.</p>
+      </li>
+      <li>
+        <h3>Analyse et valorisation</h3>
+        <p>Étude du marché local et des ventes comparables, puis application de plusieurs méthodes de valorisation reconnues.</p>
+      </li>
+      <li>
+        <h3>Remise du rapport d'expertise</h3>
+        <p>Un rapport écrit, daté et motivé, concluant sur la valeur vénale du bien, remis à chacune des parties.</p>
+      </li>
+    </ol>
+
+    <div class="exp-price reveal">
+      <div class="num">990&nbsp;€<small> TTC</small></div>
+      <p class="txt">Tarif d'une expertise en valeur vénale, rapport écrit et motivé compris. J'interviens sur <strong>toute l'Île-de-France</strong>. <a href="#contact">Demander une expertise →</a></p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CONTACT ================= -->
 <section class="section alt" id="contact">
   <div class="container">
@@ -676,6 +748,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
         <li><a href="#services">Services</a></li>
         <li><a href="#actus">Actu immo</a></li>
         <li><a href="#prix">Prix du m²</a></li>
+        <li><a href="#expertise">Expertise</a></li>
         <li><a href="estimation.html">Estimer en ligne</a></li>
         <li><a href="#apropos">Votre conseillère</a></li>
         <li><a href="#contact">Contact</a></li>

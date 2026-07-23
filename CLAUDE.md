@@ -57,11 +57,16 @@ ligne (https://antony.immo). Branche de travail : `claude/anthony-imo-setup-dev-
    ne jamais y toucher automatiquement.
 3. **Données Antony uniquement** — ne pas ajouter Massy ni d'autres communes sur
    antony.immo, même si Marie-Céline y travaille.
-4. Chiffres **uniquement sourcés** (MeilleursAgents, SeLoger, efficity, PAP…),
-   jamais inventés. Les prix bougent ~1×/mois : la plupart des jours, il n'y a
-   **rien à changer** — dans ce cas, ne rien committer. `"src":"publie"` = valeur
-   publiée par la source ; `"src":"derive"` = dérivée du prix tous biens du
-   quartier. Ne changer `maj` que si un chiffre change réellement.
+4. Chiffres **uniquement sourcés**, jamais inventés. `"src":"publie"` = valeur
+   publiée par une source (MeilleursAgents, SeLoger, efficity, PAP…) ;
+   `"src":"derive"` = dérivée du prix tous biens du quartier ; `"src":"dvf"` =
+   médiane des **ventes réelles** de la rue, calculée à partir de la base **DVF**
+   officielle (fichiers `geo-dvf` de data.gouv.fr, années glissantes). Les rues
+   (`rues`) sont issues de DVF ; on peut les recalculer en retéléchargeant les
+   CSV `geo-dvf` de la commune 92002 et en prenant la médiane du prix/m² par rue
+   (ventes « Vente » à une seule unité bâtie, seuils : ≥5 ventes appart., ≥4
+   maison). Les prix bougent lentement : la plupart des jours, **rien à changer**
+   — dans ce cas, ne rien committer. Ne changer `maj` que si un chiffre change.
 
 ## Publication
 

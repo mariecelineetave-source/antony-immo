@@ -271,7 +271,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
             <a class="btn btn-solid" id="res-mail" href="#">Affiner avec Marie-Céline (offert)</a>
             <a class="btn btn-vert" href="tel:+33679213212">06 79 21 32 12</a>
           </div>
-          <p class="res-note">Cette fourchette est une <strong>estimation automatique et indicative</strong>, calculée sur les prix de votre rue (ou de votre secteur) — elle ne remplace pas une estimation sur place. L'étage exact, la luminosité, les charges, la copropriété, les travaux récents ou le calme font varier le prix. La visite d'estimation avec Marie-Céline est offerte et sans engagement.</p>
+          <p class="res-note">Cette fourchette est une <strong>estimation automatique et indicative</strong>, calculée sur les ventes réelles de votre rue (ou la médiane d'Antony) — elle ne remplace pas une estimation sur place. L'étage exact, la luminosité, les charges, la copropriété, les travaux récents ou le calme font varier le prix. La visite d'estimation avec Marie-Céline est offerte et sans engagement.</p>
         </div>
       </div>
     </div>
@@ -284,13 +284,13 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
     <div class="section-head">
       <p class="eyebrow">Comment ce chiffre est calculé</p>
       <h2>Des prix réels, pas une boule de cristal</h2>
-      <p>L'estimateur croise le prix au m² constaté dans votre rue (ou, à défaut, dans votre secteur) avec les caractéristiques de votre bien. C'est un point de départ fiable — l'estimation fine, elle, se fait sur place.</p>
+      <p>L'estimateur croise le prix au m² des ventes réelles de votre rue (ou, à défaut, la médiane d'Antony) avec les caractéristiques de votre bien. C'est un point de départ fiable — l'estimation fine, elle, se fait sur place.</p>
     </div>
     <div class="meth">
       <div class="meth-card">
         <div class="mark" aria-hidden="true"></div>
         <h3>Sources publiques</h3>
-        <p>Les prix au m² proviennent des moyennes constatées sur les ventes récentes (MeilleursAgents, SeLoger, efficity, PAP), par rue quand la donnée existe, sinon par secteur.</p>
+        <p>Les prix au m² proviennent des <strong>ventes réelles enregistrées (base DVF officielle des impôts, 2022-2025)</strong> : médiane par rue quand les ventes sont assez nombreuses, sinon médiane de la ville.</p>
       </div>
       <div class="meth-card">
         <div class="mark" aria-hidden="true"></div>
@@ -349,24 +349,815 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
 <!-- ESTIM:DATA:START -->
 <script id="estim-data" type="application/json">
 {
-  "maj": "22 juillet 2026",
+  "maj": "23 juillet 2026",
   "secteurs": {
-    "antony-ville":     {"nom": "Antony — toute la ville",             "a": 5005, "m": 5411, "src": "publie"},
-    "antony-centre":    {"nom": "Antony · Centre-ville",               "a": 5213, "m": 5797, "src": "publie"},
-    "antony-croix":     {"nom": "Antony · La Croix de Berny",          "a": 5610, "m": 6065, "src": "derive"},
-    "antony-sceaux":    {"nom": "Antony · Parc de Sceaux",             "a": 4786, "m": 6243, "src": "publie"},
-    "antony-baconnets": {"nom": "Antony · Les Baconnets",              "a": 4277, "m": 4626, "src": "derive"},
-    "antony-pajeaud":   {"nom": "Antony · Pajeaud – Fontaine Michalon", "a": 4954, "m": 5358, "src": "derive"}
+    "antony-ville": {
+      "nom": "Antony — toute la ville",
+      "a": 5210,
+      "m": 6235,
+      "src": "dvf"
+    },
+    "antony-centre": {
+      "nom": "Antony · Centre-ville",
+      "a": 5213,
+      "m": 5797,
+      "src": "publie"
+    },
+    "antony-croix": {
+      "nom": "Antony · La Croix de Berny",
+      "a": 5610,
+      "m": 6065,
+      "src": "derive"
+    },
+    "antony-sceaux": {
+      "nom": "Antony · Parc de Sceaux",
+      "a": 4786,
+      "m": 6243,
+      "src": "publie"
+    },
+    "antony-baconnets": {
+      "nom": "Antony · Les Baconnets",
+      "a": 4277,
+      "m": 4626,
+      "src": "derive"
+    },
+    "antony-pajeaud": {
+      "nom": "Antony · Pajeaud – Fontaine Michalon",
+      "a": 4954,
+      "m": 5358,
+      "src": "derive"
+    }
   },
   "rues": {
-    "rue-du-sud":          {"nom": "Rue du Sud",              "a": 5613, "m": 6361, "src": "publie"},
-    "av-beausejour":       {"nom": "Avenue Beauséjour",       "a": 4737, "m": 6322, "src": "publie"},
-    "av-aristide-briand":  {"nom": "Avenue Aristide Briand",  "a": 5649, "m": 5904, "src": "publie"},
-    "rue-auguste-mounie":  {"nom": "Rue Auguste Mounié",      "a": 6758, "m": 6393, "src": "publie"},
-    "av-providence":       {"nom": "Avenue de la Providence", "a": 6205, "src": "publie"},
-    "av-provence":         {"nom": "Avenue de Provence",      "a": 4948, "src": "publie"},
-    "av-leon-jouhaux":     {"nom": "Avenue Léon Jouhaux",     "a": 4403, "src": "publie"},
-    "place-du-marche":     {"nom": "Place du Marché",         "a": 6271, "src": "publie"}
+    "all-astrida": {
+      "nom": "Allée Astrida",
+      "a": 7070,
+      "src": "dvf"
+    },
+    "all-d-orleans": {
+      "nom": "Allée d Orleans",
+      "a": 5870,
+      "src": "dvf"
+    },
+    "all-de-l-ile-verte": {
+      "nom": "Allée de l Ile Verte",
+      "a": 6290,
+      "src": "dvf"
+    },
+    "all-des-quatre-vents": {
+      "nom": "Allée des Quatre Vents",
+      "m": 5680,
+      "src": "dvf"
+    },
+    "all-fernand-braudel": {
+      "nom": "Allée Fernand Braudel",
+      "a": 6250,
+      "src": "dvf"
+    },
+    "all-julia": {
+      "nom": "Allée Julia",
+      "a": 5920,
+      "src": "dvf"
+    },
+    "all-suzanne": {
+      "nom": "Allée Suzanne",
+      "a": 4210,
+      "src": "dvf"
+    },
+    "av-aristide-briand": {
+      "nom": "Avenue Aristide Briand",
+      "a": 5330,
+      "src": "dvf"
+    },
+    "av-armand-guillebaud": {
+      "nom": "Avenue Armand Guillebaud",
+      "a": 6010,
+      "src": "dvf"
+    },
+    "av-bois-de-verrieres": {
+      "nom": "Avenue Bois de Verrieres",
+      "a": 5250,
+      "m": 5870,
+      "src": "dvf"
+    },
+    "av-de-l-europe": {
+      "nom": "Avenue de l Europe",
+      "m": 6030,
+      "src": "dvf"
+    },
+    "av-de-l-ile-de-france": {
+      "nom": "Avenue de l Ile de France",
+      "m": 6940,
+      "src": "dvf"
+    },
+    "av-de-la-concorde": {
+      "nom": "Avenue de la Concorde",
+      "a": 5810,
+      "m": 7650,
+      "src": "dvf"
+    },
+    "av-de-la-marne": {
+      "nom": "Avenue de la Marne",
+      "a": 5580,
+      "m": 5410,
+      "src": "dvf"
+    },
+    "av-de-la-providence": {
+      "nom": "Avenue de la Providence",
+      "a": 6580,
+      "src": "dvf"
+    },
+    "av-de-la-residence": {
+      "nom": "Avenue de la Residence",
+      "a": 4100,
+      "src": "dvf"
+    },
+    "av-de-provence": {
+      "nom": "Avenue de Provence",
+      "m": 6200,
+      "src": "dvf"
+    },
+    "av-division-leclerc": {
+      "nom": "Avenue Division Leclerc",
+      "a": 5520,
+      "src": "dvf"
+    },
+    "av-du-noyer-dore": {
+      "nom": "Avenue du Noyer Dore",
+      "a": 4900,
+      "src": "dvf"
+    },
+    "av-du-onze-novembre": {
+      "nom": "Avenue du Onze Novembre",
+      "a": 6340,
+      "m": 6520,
+      "src": "dvf"
+    },
+    "av-du-president-j-f-kennedy": {
+      "nom": "Avenue du President J F Kennedy",
+      "a": 5640,
+      "m": 5370,
+      "src": "dvf"
+    },
+    "av-duchesse-du-maine": {
+      "nom": "Avenue Duchesse du Maine",
+      "a": 4800,
+      "src": "dvf"
+    },
+    "av-fernand-fenzy": {
+      "nom": "Avenue Fernand Fenzy",
+      "m": 8030,
+      "src": "dvf"
+    },
+    "av-francois-mole": {
+      "nom": "Avenue Francois Mole",
+      "a": 5170,
+      "m": 6850,
+      "src": "dvf"
+    },
+    "av-gabriel-peri": {
+      "nom": "Avenue Gabriel Peri",
+      "a": 7420,
+      "src": "dvf"
+    },
+    "av-guyenne": {
+      "nom": "Avenue Guyenne",
+      "m": 7610,
+      "src": "dvf"
+    },
+    "av-jacques-chirac": {
+      "nom": "Avenue Jacques Chirac",
+      "a": 6740,
+      "src": "dvf"
+    },
+    "av-jean-monnet": {
+      "nom": "Avenue Jean Monnet",
+      "a": 4740,
+      "src": "dvf"
+    },
+    "av-jeanne-d-arc": {
+      "nom": "Avenue Jeanne d Arc",
+      "a": 5810,
+      "src": "dvf"
+    },
+    "av-jules-ferry": {
+      "nom": "Avenue Jules Ferry",
+      "m": 6910,
+      "src": "dvf"
+    },
+    "av-leon-blum": {
+      "nom": "Avenue Leon Blum",
+      "a": 6390,
+      "m": 8530,
+      "src": "dvf"
+    },
+    "av-leon-jouhaux": {
+      "nom": "Avenue Leon Jouhaux",
+      "a": 4630,
+      "src": "dvf"
+    },
+    "av-montaigne": {
+      "nom": "Avenue Montaigne",
+      "a": 5660,
+      "src": "dvf"
+    },
+    "av-paul-valery": {
+      "nom": "Avenue Paul Valery",
+      "m": 5740,
+      "src": "dvf"
+    },
+    "av-rabelais": {
+      "nom": "Avenue Rabelais",
+      "a": 5460,
+      "src": "dvf"
+    },
+    "av-raymond-aron": {
+      "nom": "Avenue Raymond Aron",
+      "a": 5650,
+      "src": "dvf"
+    },
+    "av-rene-morin": {
+      "nom": "Avenue Rene Morin",
+      "m": 7510,
+      "src": "dvf"
+    },
+    "av-saint-exupery": {
+      "nom": "Avenue Saint Exupery",
+      "a": 4110,
+      "src": "dvf"
+    },
+    "av-victor-hugo": {
+      "nom": "Avenue Victor Hugo",
+      "m": 6190,
+      "a": 5810,
+      "src": "dvf"
+    },
+    "bd-colbert": {
+      "nom": "Boulevard Colbert",
+      "a": 4660,
+      "src": "dvf"
+    },
+    "bd-pierre-brossolette": {
+      "nom": "Boulevard Pierre Brossolette",
+      "m": 7700,
+      "src": "dvf"
+    },
+    "che-lateral": {
+      "nom": "Chemin Lateral",
+      "m": 4400,
+      "src": "dvf"
+    },
+    "imp-curie": {
+      "nom": "Impasse Curie",
+      "a": 4960,
+      "src": "dvf"
+    },
+    "imp-des-sept-vertus": {
+      "nom": "Impasse des Sept Vertus",
+      "a": 4920,
+      "src": "dvf"
+    },
+    "mail-robert-doisneau": {
+      "nom": "Mail Robert Doisneau",
+      "a": 3710,
+      "src": "dvf"
+    },
+    "parvis-du-breuil": {
+      "nom": "Parvis du Breuil",
+      "a": 2970,
+      "src": "dvf"
+    },
+    "pl-olomouc": {
+      "nom": "Place Olomouc",
+      "a": 6450,
+      "src": "dvf"
+    },
+    "pl-simone-veil": {
+      "nom": "Place Simone Veil",
+      "a": 6970,
+      "src": "dvf"
+    },
+    "rle-a-riou": {
+      "nom": "Rle a Riou",
+      "a": 7190,
+      "src": "dvf"
+    },
+    "rue-adolphe-pajeaud": {
+      "nom": "Rue Adolphe Pajeaud",
+      "a": 3880,
+      "m": 5500,
+      "src": "dvf"
+    },
+    "rue-albert-camus": {
+      "nom": "Rue Albert Camus",
+      "a": 4340,
+      "src": "dvf"
+    },
+    "rue-alfred-de-musset": {
+      "nom": "Rue Alfred de Musset",
+      "m": 6690,
+      "src": "dvf"
+    },
+    "rue-andre-chenier": {
+      "nom": "Rue Andre Chenier",
+      "m": 4690,
+      "src": "dvf"
+    },
+    "rue-angelique": {
+      "nom": "Rue Angelique",
+      "m": 7900,
+      "src": "dvf"
+    },
+    "rue-augusta": {
+      "nom": "Rue Augusta",
+      "a": 6670,
+      "src": "dvf"
+    },
+    "rue-auguste-mounie": {
+      "nom": "Rue Auguste Mounie",
+      "a": 7320,
+      "src": "dvf"
+    },
+    "rue-bourgneuf": {
+      "nom": "Rue Bourgneuf",
+      "a": 7290,
+      "src": "dvf"
+    },
+    "rue-buffon": {
+      "nom": "Rue Buffon",
+      "m": 6380,
+      "src": "dvf"
+    },
+    "rue-camille-pelletan": {
+      "nom": "Rue Camille Pelletan",
+      "a": 4620,
+      "m": 5380,
+      "src": "dvf"
+    },
+    "rue-carnot": {
+      "nom": "Rue Carnot",
+      "m": 6490,
+      "src": "dvf"
+    },
+    "rue-charles-lebeau": {
+      "nom": "Rue Charles Lebeau",
+      "m": 5380,
+      "src": "dvf"
+    },
+    "rue-d-alsace-lorraine": {
+      "nom": "Rue d Alsace Lorraine",
+      "m": 7070,
+      "src": "dvf"
+    },
+    "rue-d-aquitaine": {
+      "nom": "Rue d Aquitaine",
+      "a": 4190,
+      "src": "dvf"
+    },
+    "rue-d-arras": {
+      "nom": "Rue d Arras",
+      "m": 5890,
+      "src": "dvf"
+    },
+    "rue-d-olomouc": {
+      "nom": "Rue D'olomouc",
+      "a": 5960,
+      "src": "dvf"
+    },
+    "rue-de-bellevue": {
+      "nom": "Rue de Bellevue",
+      "m": 4880,
+      "src": "dvf"
+    },
+    "rue-de-chatenay": {
+      "nom": "Rue de Chatenay",
+      "a": 5260,
+      "src": "dvf"
+    },
+    "rue-de-l-abbaye": {
+      "nom": "Rue de l Abbaye",
+      "a": 5290,
+      "src": "dvf"
+    },
+    "rue-de-l-ancien-chateau": {
+      "nom": "Rue de l Ancien Chateau",
+      "m": 6200,
+      "src": "dvf"
+    },
+    "rue-de-l-eglise": {
+      "nom": "Rue de l Eglise",
+      "a": 6920,
+      "src": "dvf"
+    },
+    "rue-de-la-cite-moderne": {
+      "nom": "Rue de la Cite Moderne",
+      "m": 7440,
+      "src": "dvf"
+    },
+    "rue-de-la-mediterranee": {
+      "nom": "Rue de la Mediterranee",
+      "a": 2960,
+      "src": "dvf"
+    },
+    "rue-de-la-mutualite": {
+      "nom": "Rue de la Mutualite",
+      "a": 3550,
+      "m": 5850,
+      "src": "dvf"
+    },
+    "rue-de-la-station": {
+      "nom": "Rue de la Station",
+      "m": 7370,
+      "src": "dvf"
+    },
+    "rue-de-massy": {
+      "nom": "Rue de Massy",
+      "m": 6220,
+      "src": "dvf"
+    },
+    "rue-de-reims": {
+      "nom": "Rue de Reims",
+      "m": 6650,
+      "src": "dvf"
+    },
+    "rue-de-verdun": {
+      "nom": "Rue de Verdun",
+      "a": 5770,
+      "src": "dvf"
+    },
+    "rue-des-baconnets": {
+      "nom": "Rue des Baconnets",
+      "a": 3890,
+      "m": 6420,
+      "src": "dvf"
+    },
+    "rue-des-chardonnerets": {
+      "nom": "Rue des Chardonnerets",
+      "m": 5730,
+      "src": "dvf"
+    },
+    "rue-des-chenes": {
+      "nom": "Rue des Chenes",
+      "m": 4550,
+      "src": "dvf"
+    },
+    "rue-des-coquelicots": {
+      "nom": "Rue des Coquelicots",
+      "m": 7420,
+      "src": "dvf"
+    },
+    "rue-des-crocheteurs": {
+      "nom": "Rue des Crocheteurs",
+      "a": 4350,
+      "src": "dvf"
+    },
+    "rue-des-garennes": {
+      "nom": "Rue des Garennes",
+      "m": 6090,
+      "src": "dvf"
+    },
+    "rue-des-glaises": {
+      "nom": "Rue des Glaises",
+      "m": 4910,
+      "src": "dvf"
+    },
+    "rue-des-gouttieres": {
+      "nom": "Rue des Gouttieres",
+      "m": 6850,
+      "src": "dvf"
+    },
+    "rue-des-hautes-bievres": {
+      "nom": "Rue des Hautes Bievres",
+      "a": 4150,
+      "m": 5920,
+      "src": "dvf"
+    },
+    "rue-des-iris": {
+      "nom": "Rue des Iris",
+      "a": 6060,
+      "src": "dvf"
+    },
+    "rue-des-marchais": {
+      "nom": "Rue des Marchais",
+      "m": 6380,
+      "src": "dvf"
+    },
+    "rue-des-marguerites": {
+      "nom": "Rue des Marguerites",
+      "m": 7800,
+      "src": "dvf"
+    },
+    "rue-des-mimosas": {
+      "nom": "Rue des Mimosas",
+      "m": 6590,
+      "src": "dvf"
+    },
+    "rue-des-morteaux": {
+      "nom": "Rue des Morteaux",
+      "a": 6420,
+      "src": "dvf"
+    },
+    "rue-des-mures": {
+      "nom": "Rue des Mures",
+      "a": 4370,
+      "m": 3730,
+      "src": "dvf"
+    },
+    "rue-des-paquerettes": {
+      "nom": "Rue des Paquerettes",
+      "m": 6610,
+      "src": "dvf"
+    },
+    "rue-des-pivoines": {
+      "nom": "Rue des Pivoines",
+      "m": 6930,
+      "src": "dvf"
+    },
+    "rue-des-pres": {
+      "nom": "Rue des Pres",
+      "m": 6510,
+      "src": "dvf"
+    },
+    "rue-des-rabats": {
+      "nom": "Rue des Rabats",
+      "m": 5040,
+      "a": 4040,
+      "src": "dvf"
+    },
+    "rue-des-sorrieres": {
+      "nom": "Rue des Sorrieres",
+      "m": 4490,
+      "src": "dvf"
+    },
+    "rue-des-sources": {
+      "nom": "Rue des Sources",
+      "m": 6470,
+      "a": 4840,
+      "src": "dvf"
+    },
+    "rue-du-capricorne": {
+      "nom": "Rue du Capricorne",
+      "a": 4900,
+      "src": "dvf"
+    },
+    "rue-du-colonel-fabien": {
+      "nom": "Rue du Colonel Fabien",
+      "a": 4780,
+      "m": 6000,
+      "src": "dvf"
+    },
+    "rue-du-coteau": {
+      "nom": "Rue du Coteau",
+      "m": 5180,
+      "src": "dvf"
+    },
+    "rue-du-jubile": {
+      "nom": "Rue du Jubile",
+      "a": 5150,
+      "src": "dvf"
+    },
+    "rue-du-marche": {
+      "nom": "Rue du Marche",
+      "a": 7250,
+      "src": "dvf"
+    },
+    "rue-du-nord": {
+      "nom": "Rue du Nord",
+      "a": 5290,
+      "src": "dvf"
+    },
+    "rue-du-progres": {
+      "nom": "Rue du Progres",
+      "m": 5280,
+      "src": "dvf"
+    },
+    "rue-du-soleil-levant": {
+      "nom": "Rue du Soleil Levant",
+      "m": 6520,
+      "src": "dvf"
+    },
+    "rue-du-vallon": {
+      "nom": "Rue du Vallon",
+      "a": 3780,
+      "src": "dvf"
+    },
+    "rue-dupressoir-chailloux": {
+      "nom": "Rue Dupressoir Chailloux",
+      "m": 7550,
+      "src": "dvf"
+    },
+    "rue-einstein": {
+      "nom": "Rue Einstein",
+      "m": 5020,
+      "src": "dvf"
+    },
+    "rue-florian": {
+      "nom": "Rue Florian",
+      "m": 6180,
+      "src": "dvf"
+    },
+    "rue-frederic-chopin": {
+      "nom": "Rue Frederic Chopin",
+      "m": 7450,
+      "src": "dvf"
+    },
+    "rue-georges-charpak": {
+      "nom": "Rue Georges Charpak",
+      "a": 4770,
+      "src": "dvf"
+    },
+    "rue-guynemer": {
+      "nom": "Rue Guynemer",
+      "m": 6440,
+      "src": "dvf"
+    },
+    "rue-jean-charles-persil": {
+      "nom": "Rue Jean Charles Persil",
+      "a": 5300,
+      "src": "dvf"
+    },
+    "rue-jean-moulin": {
+      "nom": "Rue Jean Moulin",
+      "a": 4330,
+      "src": "dvf"
+    },
+    "rue-joseph-fouriaux": {
+      "nom": "Rue Joseph Fouriaux",
+      "m": 5450,
+      "src": "dvf"
+    },
+    "rue-julien-perin": {
+      "nom": "Rue Julien Perin",
+      "a": 4460,
+      "m": 5440,
+      "src": "dvf"
+    },
+    "rue-lafontaine": {
+      "nom": "Rue Lafontaine",
+      "a": 5430,
+      "src": "dvf"
+    },
+    "rue-louis-barthou": {
+      "nom": "Rue Louis Barthou",
+      "a": 6460,
+      "src": "dvf"
+    },
+    "rue-louis-gaudry": {
+      "nom": "Rue Louis Gaudry",
+      "m": 8010,
+      "src": "dvf"
+    },
+    "rue-lutece": {
+      "nom": "Rue Lutece",
+      "m": 5240,
+      "src": "dvf"
+    },
+    "rue-marcel-maillard": {
+      "nom": "Rue Marcel Maillard",
+      "m": 5790,
+      "src": "dvf"
+    },
+    "rue-marie-laure": {
+      "nom": "Rue Marie Laure",
+      "m": 8160,
+      "src": "dvf"
+    },
+    "rue-maurice-brouard": {
+      "nom": "Rue Maurice Brouard",
+      "a": 3770,
+      "src": "dvf"
+    },
+    "rue-maurice-labrousse": {
+      "nom": "Rue Maurice Labrousse",
+      "a": 6430,
+      "src": "dvf"
+    },
+    "rue-mirabeau": {
+      "nom": "Rue Mirabeau",
+      "a": 3100,
+      "m": 5610,
+      "src": "dvf"
+    },
+    "rue-moliere": {
+      "nom": "Rue Moliere",
+      "a": 5020,
+      "src": "dvf"
+    },
+    "rue-mozart": {
+      "nom": "Rue Mozart",
+      "m": 6670,
+      "src": "dvf"
+    },
+    "rue-paul-bourget": {
+      "nom": "Rue Paul Bourget",
+      "a": 4680,
+      "src": "dvf"
+    },
+    "rue-pierre-et-marie-curie": {
+      "nom": "Rue Pierre et Marie Curie",
+      "m": 7070,
+      "src": "dvf"
+    },
+    "rue-pierre-gilles-de-gennes": {
+      "nom": "Rue Pierre Gilles de Gennes",
+      "a": 4970,
+      "src": "dvf"
+    },
+    "rue-pierre-vermeir": {
+      "nom": "Rue Pierre Vermeir",
+      "m": 5130,
+      "src": "dvf"
+    },
+    "rue-prosper-legoute": {
+      "nom": "Rue Prosper Legoute",
+      "a": 6060,
+      "src": "dvf"
+    },
+    "rue-rameau": {
+      "nom": "Rue Rameau",
+      "m": 5540,
+      "src": "dvf"
+    },
+    "rue-rene-barthelemy": {
+      "nom": "Rue Rene Barthelemy",
+      "a": 6420,
+      "src": "dvf"
+    },
+    "rue-robert-doisy": {
+      "nom": "Rue Robert Doisy",
+      "m": 7090,
+      "src": "dvf"
+    },
+    "rue-robert-scherrer": {
+      "nom": "Rue Robert Scherrer",
+      "a": 3900,
+      "src": "dvf"
+    },
+    "rue-roger-salengro": {
+      "nom": "Rue Roger Salengro",
+      "m": 6400,
+      "src": "dvf"
+    },
+    "rue-soeur-emmanuelle": {
+      "nom": "Rue Soeur Emmanuelle",
+      "a": 6470,
+      "src": "dvf"
+    },
+    "rue-thierry": {
+      "nom": "Rue Thierry",
+      "m": 7370,
+      "src": "dvf"
+    },
+    "rue-velpeau": {
+      "nom": "Rue Velpeau",
+      "a": 5950,
+      "src": "dvf"
+    },
+    "rue-victor-schoelcher": {
+      "nom": "Rue Victor Schoelcher",
+      "a": 4790,
+      "src": "dvf"
+    },
+    "rue-voltaire": {
+      "nom": "Rue Voltaire",
+      "m": 5910,
+      "src": "dvf"
+    },
+    "sq-claude-debussy": {
+      "nom": "Square Claude Debussy",
+      "a": 4160,
+      "src": "dvf"
+    },
+    "sq-francois-couperin": {
+      "nom": "Square Francois Couperin",
+      "a": 4000,
+      "src": "dvf"
+    },
+    "sq-gabriel-faure": {
+      "nom": "Square Gabriel Faure",
+      "a": 3990,
+      "src": "dvf"
+    },
+    "vla-de-la-providence": {
+      "nom": "Villa de la Providence",
+      "a": 6180,
+      "src": "dvf"
+    },
+    "vla-henriette": {
+      "nom": "Villa Henriette",
+      "a": 4650,
+      "src": "dvf"
+    },
+    "vla-thorain": {
+      "nom": "Villa Thorain",
+      "a": 6740,
+      "src": "dvf"
+    },
+    "vla-yvonne": {
+      "nom": "Villa Yvonne",
+      "m": 5440,
+      "src": "dvf"
+    }
   }
 }
 </script>
@@ -451,7 +1242,7 @@ function calcule(){
   $('res-haut').textContent = eur(haut);
   $('res-m2').textContent = 'soit environ ' + eur(arr(pm2, 10)) + ' / m² · ' + surface + ' m²';
   $('res-base').textContent =
-      R.base === 'rue'            ? 'Prix constaté dans votre rue (source publique) — indicatif, affiné sur place.'
+      R.base === 'rue'            ? 'Médiane des ventes réelles de votre rue (DVF 2022-2025) — indicative, affinée sur place.'
     : R.base === 'ville-type'     ? 'Votre rue est répertoriée, mais pas pour ce type de bien : fourchette à l’échelle d’Antony, affinée sur place.'
     : R.base === 'ville-inconnue' ? 'Votre rue n’est pas encore répertoriée : fourchette à l’échelle d’Antony, affinée sur place.'
     :                               'Indiquez votre rue pour préciser — fourchette à l’échelle d’Antony.';

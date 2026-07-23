@@ -37,7 +37,15 @@ ligne (https://antony.immo). Branche de travail : `claude/anthony-imo-setup-dev-
 5. Contenu : uniquement des faits sourcés issus de recherches (WebSearch), avec
    lien source réel — jamais d'invention. Angle : ce que ça change pour un
    vendeur ou propriétaire à Antony. Priorité au juridique.
-6. Avant tout commit : vérifier l'équilibre des balises HTML des deux fichiers
+6. **Angle expertise en valeur vénale** : régulièrement (dès qu'une actualité
+   pertinente et sourcée existe), couvrir aussi des sujets liés au métier
+   d'expert immobilier en valeur vénale de Marie-Céline — jurisprudence sur les
+   successions et partages, évaluation d'un bien en cas de divorce, barèmes et
+   seuils de l'IFI, donation, valeur vénale et fiscalité. Angle : ce que ça
+   change pour quelqu'un qui a besoin d'une expertise (succession, divorce,
+   IFI…), avec un renvoi possible vers `expertise.html`. Ne pas forcer : si rien
+   de neuf sur ce terrain un jour donné, ne rien inventer.
+7. Avant tout commit : vérifier l'équilibre des balises HTML des deux fichiers
    (python `html.parser`).
 
 ## Règles de l'estimateur en ligne (`estimation.html`, mise à jour quotidienne)

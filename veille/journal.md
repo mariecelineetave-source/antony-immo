@@ -7,6 +7,25 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-07-24
+
+Rien de nouveau par rapport à la veille du 2026-07-23 : les mêmes annonces
+déjà signalées (maison PAP 775 000 €, 5 lots aux enchères notariales
+36h-immo dont l'appartement 52 m² à 210 000 €) restent en ligne, sans
+annonce individuelle inédite identifiée. Les recherches par quartier
+(Croix-de-Berny, Pajeaud/Fontaine-Michalon) et sur les communes limitrophes
+(Bourg-la-Reine, Sceaux, Fresnes, Verrières-le-Buisson) ne remontent que
+des pages d'agrégateurs (ParuVendu, SeLoger, PAP, Logic-Immo,
+Immobilier-entre-particuliers, EtreProprio, Orpi), sans lien vers une
+annonce individuelle nouvelle et identifiable avec certitude. Aucun
+nouveau signal d'enchère, de succession ou de permis de construire
+distinct de ceux déjà relevés. Côté expertise en valeur vénale, les
+recherches sur succession/donation/IFI ne remontent que du contenu
+généraliste non daté, rien d'assez récent ou sourcé pour être signalé
+comme actualité du jour.
+
+---
+
 ## 2026-07-23
 
 Une nouvelle piste confirmée par rapport aux veilles précédentes :

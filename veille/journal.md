@@ -7,6 +7,40 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-07-26
+
+Rien de nouveau par rapport à la veille du 25 juillet : la maison PAP à
+775 000 €, les 5 lots aux enchères notariales 36h-immo et le lot AI21793
+(appartement 2 p., 52 m², mise à prix 210 000 €) restent les seules pistes
+confirmées, toujours en ligne. Les recherches par quartier (Croix-de-Berny,
+Pajeaud/Fontaine-Michalon) et sur les communes limitrophes (Bourg-la-Reine,
+Sceaux, Fresnes, Verrières-le-Buisson, Massy) ne remontent que des pages
+d'agrégateurs ou d'estimation de prix (SeLoger, ParuVendu, Logic-Immo,
+Bien'ici, Orpi, MeilleursAgents), sans annonce individuelle nouvelle et
+identifiable avec certitude — notamment une maison de 130 m² évoquée rue
+de la Mutualité, repérée seulement via des pages d'estimation de prix
+(MeilleursAgents), sans lien vers une annonce individuelle vérifiable :
+non retenue. Aucun nouveau signal de succession, permis de construire ou
+projet urbain distinct de ceux déjà connus (Antonypole / ligne 18).
+
+---
+
+## 2026-07-25
+
+Rien de nouveau par rapport à la veille du 23 juillet : la maison PAP à
+775 000 €, les 5 lots aux enchères notariales 36h-immo et le lot
+AI21793 (appartement 2 p., 52 m², mise à prix 210 000 €) restent les
+seules pistes confirmées. Les recherches par quartier (Croix-de-Berny,
+Pajeaud/Fontaine-Michalon) et sur les communes limitrophes (Bourg-la-Reine,
+Sceaux, Fresnes, Verrières-le-Buisson, Massy) ne remontent toujours que des
+pages d'agrégateurs ou d'estimation de prix (SeLoger, ParuVendu,
+Logic-Immo, Bien'ici, Orpi), sans annonce individuelle nouvelle et
+identifiable avec certitude. Aucun nouveau signal de succession, permis de
+construire ou projet urbain distinct de ceux déjà connus (Antonypole /
+ligne 18).
+
+---
+
 ## 2026-07-23
 
 Une nouvelle piste confirmée par rapport aux veilles précédentes :

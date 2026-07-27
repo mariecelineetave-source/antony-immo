@@ -7,6 +7,22 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-07-27
+
+Rien de nouveau par rapport à la veille du 26 juillet : la maison PAP à
+775 000 €, les 5 lots aux enchères notariales 36h-immo et le lot AI21793
+(appartement 2 p., 52 m², mise à prix 210 000 €) restent les seules pistes
+confirmées, toujours en ligne. Les recherches par quartier (Croix-de-Berny,
+Pajeaud/Fontaine-Michalon) et sur les communes limitrophes (Bourg-la-Reine,
+Sceaux, Fresnes, Verrières-le-Buisson, Massy) ne remontent que des pages
+d'agrégateurs (PAP, SeLoger, Logic-Immo, entreparticuliers.com,
+immobilier-entre-particuliers.fr, leboncoin) sans annonce individuelle
+nouvelle et identifiable avec certitude. Aucun nouveau signal de
+succession, permis de construire ou projet urbain distinct de ceux déjà
+connus (Antonypole / ligne 18).
+
+---
+
 ## 2026-07-26
 
 Rien de nouveau par rapport à la veille du 25 juillet : la maison PAP à

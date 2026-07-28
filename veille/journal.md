@@ -7,6 +7,38 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-07-28
+
+Une nouvelle piste confirmée par rapport aux veilles précédentes :
+
+- **Maison 155 m², Antony (92160) — 670 000 €, quartier Beauvallon / Bois de
+  l'Aurore**, annonce entre particuliers. Maison agrandie en 1999, double
+  exposition sud-est/nord-ouest, 4 chambres, garage et stationnement pour
+  3 véhicules, deux terrasses (14 m² et 20 m²), rue calme d'un quartier
+  résidentiel proche du Bois de l'Aurore.
+  [Voir l'annonce (PAP)](https://www.pap.fr/annonces/maison-antony-92160-r452301068)
+  — Piste de mandat solide : vendeur particulier, bien familial de belle
+  taille, pas d'agence en place. Référence absente de toutes les veilles
+  précédentes : piste réellement nouvelle.
+
+Statut des pistes déjà connues : la maison PAP à 775 000 €, les 5 lots aux
+enchères notariales 36h-immo et le lot AI21793 (appartement 2 p., 52 m²,
+mise à prix 210 000 €) réapparaissent tous dans les résultats du jour avec
+les mêmes prix — ils semblent toujours en ligne, sans certitude absolue sur
+leur date de clôture (fetch direct impossible). Le signal Antonypole /
+ligne 18 se confirme : les travaux d'aménagement des espaces publics autour
+de la future gare ont démarré début mars 2026 et se poursuivront jusqu'à
+fin 2028, ouverture toujours annoncée pour 2027.
+
+Les autres résultats du jour (appartement 4 p. 74 m² résidence La
+Fontaine ; appartement 2 p. 44 m² ; maisons de quartier à Croix-de-Berny,
+Fontaine-Michalon, Les Baconnets ; annonces PAP par commune à
+Bourg-la-Reine, Sceaux, Fresnes, Verrières-le-Buisson) ne remontent que via
+des pages d'agrégateurs ou de catégorie, sans lien individuel vérifiable
+avec certitude : non retenus.
+
+---
+
 ## 2026-07-27
 
 Rien de nouveau par rapport à la veille du 26 juillet : la maison PAP à

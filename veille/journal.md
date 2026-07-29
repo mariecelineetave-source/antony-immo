@@ -7,6 +7,28 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-07-29
+
+Rien de nouveau par rapport à la veille du 28 juillet : la maison PAP à
+775 000 €, la maison quartier Beauvallon / Bois de l'Aurore à 670 000 €, les
+5 lots aux enchères notariales 36h-immo et le lot AI21793 (appartement 2 p.,
+52 m², mise à prix 210 000 €) restent les seules pistes confirmées, toujours
+en ligne. Deux annonces PAP potentiellement nouvelles sont apparues dans les
+résultats du jour — une maison neuve de 145 m² (DPE A, achevée en décembre
+2024, terrain de 545 m²) et une maison de 137 m² rue des Rabats — mais
+uniquement via des pages de catégorie PAP, sans lien individuel vérifiable :
+non retenues, à vérifier manuellement sur pap.fr avant de les considérer
+comme des pistes exploitables. Les recherches par quartier (Croix-de-Berny,
+Pajeaud/Fontaine-Michalon) et sur les communes limitrophes (Bourg-la-Reine,
+Sceaux, Fresnes, Verrières-le-Buisson, Massy) ne remontent toujours que des
+pages d'agrégateurs, sans annonce individuelle nouvelle et identifiable avec
+certitude. Aucun nouveau signal de succession, permis de construire ou projet
+urbain distinct de ceux déjà connus (Antonypole / ligne 18) : l'activité de
+permis de construire à Antony en 2026 reste faible (15 autorisations
+enregistrées entre janvier et fin mai 2026, source Airplan/basedespermis).
+
+---
+
 ## 2026-07-28
 
 Une nouvelle piste confirmée par rapport aux veilles précédentes :

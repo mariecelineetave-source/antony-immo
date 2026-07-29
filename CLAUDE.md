@@ -10,6 +10,12 @@ ligne (https://antony.immo). Branche de travail : `claude/anthony-imo-setup-dev-
 - `actualites.html` — archives de la rubrique « Actu immo », groupées par jour.
 - `veille/journal.md` — journal quotidien de la veille vendeurs (jamais publié sur le site, mais le dépôt est public : ne jamais y mettre de données personnelles).
 - `CNAME` — domaine personnalisé, ne pas toucher.
+- `sitemap.xml` / `robots.txt` — référencement (Google Search Console). **Quand tu
+  modifies le contenu d'une page publiée (actu immo, estimation…), mets à jour la
+  balise `<lastmod>` de cette page ET de l'accueil dans `sitemap.xml` à la date du
+  jour (format AAAA-MM-JJ). C'est ce qui incite Google à réindexer plus vite.** Ne
+  jamais retirer d'URL du sitemap ; en ajouter une seulement si une nouvelle page
+  publique est créée.
 
 ## Règles de la rubrique « Actu immo » (mise à jour quotidienne)
 

@@ -7,6 +7,27 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-07-30
+
+Rien de nouveau par rapport à la veille du 29 juillet : la maison PAP à
+775 000 €, la maison quartier Beauvallon / Bois de l'Aurore à 670 000 €, et
+les 5 lots aux enchères notariales 36h-immo (dont le lot AI19530, appartement
+2 p. 30 m² à 159 000 €) restent les seules pistes confirmées, toujours en
+ligne aux mêmes prix. Les deux annonces PAP repérées hier via des pages de
+catégorie (maison neuve 145 m² DPE A, terrain 545 m² ; maison 137 m² rue des
+Rabats) réapparaissent dans les résultats du jour avec la même description,
+mais toujours sans lien individuel vérifiable : non retenues, à vérifier
+manuellement sur pap.fr avant de les considérer comme des pistes
+exploitables. Les recherches par quartier (Croix-de-Berny, Pajeaud/Fontaine-
+Michalon, Les Baconnets) et sur les communes limitrophes (Bourg-la-Reine,
+Sceaux, Fresnes, Verrières-le-Buisson, Massy) ne remontent toujours que des
+pages d'agrégateurs (ParuVendu, iad, Logic-Immo, Foncia), sans annonce
+individuelle nouvelle et identifiable avec certitude. Aucun nouveau signal de
+succession, permis de construire ou projet urbain distinct de ceux déjà
+connus (Antonypole / ligne 18).
+
+---
+
 ## 2026-07-29
 
 Rien de nouveau par rapport à la veille du 28 juillet : la maison PAP à

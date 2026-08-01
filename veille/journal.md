@@ -7,6 +7,26 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-08-01
+
+Rien de nouveau par rapport à la veille du 31 juillet : la maison PAP à
+775 000 €, la maison quartier Beauvallon / Bois de l'Aurore à 670 000 €, et
+les lots aux enchères notariales 36h-immo déjà signalés (dont AI19530,
+appartement 2 p. 30 m² à 159 000 €) restent les seules pistes confirmées,
+toujours en ligne aux mêmes prix. Les recherches par quartier
+(Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets) et sur les
+communes limitrophes (Bourg-la-Reine, Sceaux, Fresnes, Verrières-le-Buisson,
+Massy) ne remontent toujours que des pages d'agrégateurs (SeLoger, PAP,
+ParuVendu, Logic-Immo, Orpi, Bienici, entreparticuliers.com), sans annonce
+individuelle nouvelle et identifiable avec certitude. Aucun nouveau signal
+de succession distinct de ceux déjà connus. Rien de neuf non plus côté
+permis de construire ou projets urbains : le chantier d'aménagement des
+espaces publics autour de la future gare Antonypole – Wissous Centre (ligne
+18, ouverture prévue octobre 2027) se poursuit sans évolution notable
+depuis le point du 19 juillet.
+
+---
+
 ## 2026-07-31
 
 Rien de nouveau par rapport à la veille du 30 juillet : la maison PAP à

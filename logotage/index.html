@@ -1,0 +1,902 @@
+<meta name="robots" content="noindex, nofollow">
+<title>Logotage Twingo — paris7e.immo</title>
+<style>
+/* ============================ Jetons ============================ */
+:root{
+  color-scheme: light dark;
+
+  /* Neutres — zinc parisien, légèrement bleutés */
+  --fond:      #E6EAEC;
+  --surface:   #F4F7F8;
+  --surface-2: #EDF1F3;
+  --ligne:     #CBD4D9;
+  --ligne-fine:#DCE3E7;
+
+  /* Encres */
+  --encre:     #10233C;
+  --encre-doux:#4A5D74;
+  --sourdine:  #6B7C8F;
+
+  /* Accent : l'or du Dôme. Employé avec parcimonie. */
+  --or:        #A8802A;
+  --or-vif:    #C79A34;
+
+  /* Matières du véhicule — constantes dans les deux thèmes :
+     une carrosserie ne change pas de couleur avec le thème du lecteur. */
+  --twingo:      #CFE1E8;
+  --twingo-haut: #E2EEF2;
+  --twingo-bas:  #A9C4D0;
+  --plastique:   #262C30;
+  --vitre:       #1F262B;
+  --vitre-clair: #3B474E;
+  --pneu:        #1C1F22;
+  --jante:       #BAC3C8;
+  --contour:     #8CA9B6;
+  --refend:      #9FBAC6;
+
+  --mesure: 1100px;
+  --pas: clamp(1.1rem, 2.4vw, 1.9rem);
+
+  --serif: Didot, "Bodoni 72", "Bodoni MT", "Playfair Display", "Hoefler Text", Georgia, "Times New Roman", serif;
+  --sans: "Avenir Next", Avenir, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --fond:#10161B; --surface:#182027; --surface-2:#1E272F;
+    --ligne:#2E3A44; --ligne-fine:#242F38;
+    --encre:#E4EDF3; --encre-doux:#A9BAC8; --sourdine:#8496A6;
+    --or:#D2A94E; --or-vif:#E4BE68;
+  }
+}
+:root[data-theme="dark"]{
+  --fond:#10161B; --surface:#182027; --surface-2:#1E272F;
+  --ligne:#2E3A44; --ligne-fine:#242F38;
+  --encre:#E4EDF3; --encre-doux:#A9BAC8; --sourdine:#8496A6;
+  --or:#D2A94E; --or-vif:#E4BE68;
+}
+:root[data-theme="light"]{
+  --fond:#E6EAEC; --surface:#F4F7F8; --surface-2:#EDF1F3;
+  --ligne:#CBD4D9; --ligne-fine:#DCE3E7;
+  --encre:#10233C; --encre-doux:#4A5D74; --sourdine:#6B7C8F;
+  --or:#A8802A; --or-vif:#C79A34;
+}
+
+/* ============================ Base ============================ */
+body{
+  margin:0; background:var(--fond); color:var(--encre);
+  font-family:var(--sans); font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important}
+}
+:where(a):focus-visible,:where(button):focus-visible{
+  outline:2px solid var(--or-vif); outline-offset:3px; border-radius:2px;
+}
+a{color:inherit; text-decoration-color:var(--or); text-underline-offset:3px}
+
+.enveloppe{ max-width:var(--mesure); margin-inline:auto; padding-inline:var(--pas) }
+h1,h2,h3{ text-wrap:balance; margin:0; font-weight:400 }
+p{margin:0}
+.oeil{ font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--sourdine); font-weight:600 }
+
+/* ============================ Tête ============================ */
+.tete{ padding-block:clamp(2.6rem,7vw,5rem) clamp(1.8rem,4vw,3rem); border-bottom:1px solid var(--ligne) }
+.tete .enveloppe{ display:grid; gap:1.25rem }
+.tete h1{
+  font-family:var(--serif); font-size:clamp(2.3rem,6.4vw,4.1rem);
+  line-height:1.02; letter-spacing:-.012em;
+}
+.tete h1 em{ font-style:italic; color:var(--or) }
+.chapeau{ max-width:62ch; color:var(--encre-doux); font-size:clamp(1rem,1.6vw,1.12rem) }
+.jetons{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.35rem }
+.jeton{
+  font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+  padding:.36rem .7rem; border:1px solid var(--ligne); border-radius:999px;
+  color:var(--encre-doux); background:var(--surface);
+}
+
+/* ============================ Sections ============================ */
+.bloc{ padding-block:clamp(2.4rem,5.5vw,4rem) }
+.bloc + .bloc{ border-top:1px solid var(--ligne-fine) }
+.entete-bloc{ display:grid; gap:.5rem; margin-bottom:1.8rem; max-width:66ch }
+.entete-bloc h2{ font-family:var(--serif); font-size:clamp(1.5rem,3.2vw,2.1rem); line-height:1.12 }
+
+/* ============================ Contraintes ============================ */
+.grille-contraintes{
+  display:grid; gap:1px; background:var(--ligne-fine);
+  border:1px solid var(--ligne-fine); border-radius:3px; overflow:hidden;
+  grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
+}
+.contrainte{ background:var(--surface); padding:1.15rem 1.2rem; display:grid; gap:.3rem; align-content:start }
+.contrainte dt{ font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--or); font-weight:600 }
+.contrainte dd{ margin:0; font-size:.93rem; color:var(--encre-doux); line-height:1.5 }
+
+/* ============================ Emblème ============================ */
+.plateau-embleme{
+  display:grid; gap:var(--pas);
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); align-items:end;
+}
+.decli{
+  background:var(--surface); border:1px solid var(--ligne-fine);
+  padding:1.8rem 1.2rem 1.1rem; display:grid; gap:1.1rem; justify-items:center;
+  text-align:center; border-radius:3px;
+}
+.decli.sur-caisse{ background:var(--twingo); border-color:#A9C3CE }
+.decli svg{ width:auto; height:150px }
+.decli .nom{ font-size:.8rem; letter-spacing:.09em; text-transform:uppercase; font-weight:600 }
+.decli .note{ font-size:.8rem; color:var(--sourdine); line-height:1.45 }
+.decli.sur-caisse .nom,.decli.sur-caisse .note{ color:#1B3348 }
+
+/* ============================ Jauge ============================ */
+.jauge{ display:inline-flex; gap:4px; align-items:center }
+.jauge i{ width:7px; height:7px; border-radius:50%; border:1px solid var(--or); display:block }
+.jauge i.plein{ background:var(--or) }
+.nom-prop{ font-family:var(--serif); font-size:1.05rem; white-space:nowrap; font-weight:400 }
+.nom-prop b{
+  color:var(--or); font-family:var(--sans); font-size:.72rem; font-weight:700;
+  letter-spacing:.1em; margin-right:.5rem; vertical-align:.12em;
+}
+
+/* ============================ Planches ============================ */
+.planche{ padding-block:clamp(2.6rem,6vw,4.4rem); border-top:1px solid var(--ligne-fine) }
+.planche-tete{ display:grid; grid-template-columns:auto 1fr; gap:.35rem 1.15rem; align-items:baseline; margin-bottom:1.5rem }
+.lettre{ font-family:var(--serif); font-size:clamp(2.4rem,5vw,3.2rem); line-height:.85; color:var(--or); grid-row:span 2 }
+.planche-tete h2{ font-family:var(--serif); font-size:clamp(1.45rem,3vw,2rem); line-height:1.1 }
+.planche-tete .resume{ color:var(--encre-doux); font-size:.98rem; max-width:62ch; grid-column:2 }
+.recommande{
+  display:inline-flex; align-items:center; gap:.45rem; font-size:.68rem;
+  letter-spacing:.13em; text-transform:uppercase; font-weight:700; color:var(--or);
+  border:1px solid currentColor; padding:.22rem .6rem; border-radius:999px;
+  grid-column:2; justify-self:start; margin-top:.35rem;
+}
+
+.vue{ background:var(--surface); border:1px solid var(--ligne-fine); border-radius:3px; padding:.6rem; margin-bottom:1rem }
+.vue svg{ display:block; width:100%; height:auto }
+.vue-titre{
+  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  padding:.55rem .55rem .75rem; font-size:.74rem; letter-spacing:.11em;
+  text-transform:uppercase; color:var(--sourdine); font-weight:600;
+}
+.duo{ display:grid; gap:1rem; grid-template-columns:1fr 1fr }
+.vue.toit svg{ height:clamp(340px,52vw,520px); width:auto; margin-inline:auto }
+@media (max-width:760px){ .duo{ grid-template-columns:1fr } }
+
+.specs{
+  display:grid; gap:1px; background:var(--ligne-fine);
+  border:1px solid var(--ligne-fine); border-radius:3px; overflow:hidden;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); margin-top:1rem;
+}
+.spec{ background:var(--surface-2); padding:.85rem 1rem; display:grid; gap:.18rem }
+.spec .k{ font-size:.68rem; letter-spacing:.11em; text-transform:uppercase; color:var(--sourdine); font-weight:600 }
+.spec .v{ font-size:.92rem; font-variant-numeric:tabular-nums }
+
+/* ============================ Tableaux ============================ */
+.rouleau{ overflow-x:auto; border:1px solid var(--ligne-fine); border-radius:3px }
+table{ border-collapse:collapse; width:100%; min-width:620px; background:var(--surface) }
+caption{ text-align:left; padding:.9rem 1rem; font-size:.8rem; color:var(--sourdine); border-bottom:1px solid var(--ligne-fine) }
+th,td{ padding:.72rem 1rem; text-align:left; border-bottom:1px solid var(--ligne-fine); font-size:.9rem; font-weight:400 }
+thead th{ font-size:.68rem; letter-spacing:.11em; text-transform:uppercase; color:var(--sourdine); font-weight:600; background:var(--surface-2) }
+td.n{ font-variant-numeric:tabular-nums; white-space:nowrap }
+tbody tr:last-child td,tbody tr:last-child th{ border-bottom:0 }
+
+/* ============================ Listes ============================ */
+.liste{ display:grid; gap:.9rem; max-width:70ch; margin:0; padding:0; list-style:none }
+.liste li{ display:grid; grid-template-columns:auto 1fr; gap:.85rem; align-items:baseline; font-size:.96rem; color:var(--encre-doux) }
+.liste li::before{ content:""; width:15px; height:1px; background:var(--or); transform:translateY(-4px) }
+.liste strong{ color:var(--encre); font-weight:600 }
+
+.pied{ border-top:1px solid var(--ligne); padding-block:2.2rem 3rem; color:var(--sourdine); font-size:.84rem }
+.pied .enveloppe{ display:grid; gap:.4rem }
+</style>
+
+<!-- ======================= Bibliothèque SVG ======================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="grad-caisse" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--twingo-haut)"/>
+      <stop offset=".52" stop-color="var(--twingo)"/>
+      <stop offset="1" stop-color="var(--twingo-bas)"/>
+    </linearGradient>
+    <linearGradient id="grad-vitre" x1="0" y1="0" x2=".35" y2="1">
+      <stop offset="0" stop-color="var(--vitre-clair)"/>
+      <stop offset="1" stop-color="var(--vitre)"/>
+    </linearGradient>
+    <radialGradient id="ombre-sol" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#000" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Zone marquable du flanc : sous la ceinture de caisse,
+         au-dessus du jonc plastique noir. -->
+    <clipPath id="zone-flanc"><rect x="344" y="228" width="662" height="124"/></clipPath>
+    <mask id="arches"><rect width="1240" height="560" fill="#fff"/><circle cx="241" cy="416" r="102" fill="#000"/><circle cx="939" cy="416" r="102" fill="#000"/></mask>
+    <!-- Zone marquable du capot, entre le pare-brise et les optiques. -->
+    <clipPath id="zone-capot"><rect x="250" y="180" width="220" height="70"/></clipPath>
+  </defs>
+
+  <!-- ---------- Emblème : le Dôme des Invalides ---------- -->
+  <symbol id="dome" viewBox="0 0 200 262">
+    <g fill="currentColor">
+      <path d="M98.6 4h2.8v27h-2.8z"/>
+      <path d="M91 11h18v3H91z"/>
+      <path d="M89 52c2-10 6-18 11-22 5 4 9 12 11 22z"/>
+      <path d="M91 52h18v12H91z"/>
+      <path d="M85 64h30v5H85z"/>
+    </g>
+    <path fill="var(--dome, #A8802A)"
+          d="M55 152c0-22 5-41 15-55 9-13 19-21 30-28 11 7 21 15 30 28 10 14 15 33 15 55z"/>
+    <g fill="none" stroke="var(--nervure, #F2E6C9)" stroke-width="1.5" opacity=".8">
+      <path d="M100 69v83"/>
+      <path d="M86 76c-10 20-16 47-17 76"/>
+      <path d="M114 76c10 20 16 47 17 76"/>
+      <path d="M74 92c-8 18-13 38-13 60"/>
+      <path d="M126 92c8 18 13 38 13 60"/>
+    </g>
+    <g fill="currentColor">
+      <path d="M46 152h108v9H46z"/>
+      <path d="M53 161h94v44H53z"/>
+    </g>
+    <g stroke="var(--evide, #CFE1E8)" stroke-width="2.4" opacity=".6">
+      <path d="M65 165v36M77 165v36M89 165v36M101 165v36M113 165v36M125 165v36M137 165v36"/>
+    </g>
+    <g fill="currentColor">
+      <path d="M42 205h116v9H42z"/>
+      <path d="M49 214h102v32H49z"/>
+      <path d="M34 246h132v8H34z"/>
+    </g>
+    <g stroke="var(--evide, #CFE1E8)" stroke-width="2.6" opacity=".55">
+      <path d="M62 218v24M77 218v24M92 218v24M108 218v24M123 218v24M138 218v24"/>
+    </g>
+  </symbol>
+
+  <!-- ---------- Emblème large : le Dôme et les ailes de l'Hôtel ---------- -->
+  <symbol id="dome-ailes" viewBox="0 0 440 262">
+    <g transform="translate(120,0)"><use href="#dome" width="200" height="262"/></g>
+    <g fill="currentColor" opacity=".95">
+      <path d="M8 212h110v9H8zM16 221h102v25H16zM2 246h130v8H2z"/>
+      <path d="M322 212h110v9H322zM322 221h102v25H322zM308 246h130v8H308z"/>
+    </g>
+    <g stroke="var(--evide, #CFE1E8)" stroke-width="2.4" opacity=".55">
+      <path d="M30 225v18M46 225v18M62 225v18M78 225v18M94 225v18M110 225v18"/>
+      <path d="M332 225v18M348 225v18M364 225v18M380 225v18M396 225v18M412 225v18"/>
+    </g>
+  </symbol>
+
+  <!-- ---------- Twingo III — profil gauche (avant à gauche) ---------- -->
+  <symbol id="twingo-flanc" viewBox="0 0 1240 560">
+    <ellipse cx="600" cy="500" rx="500" ry="18" fill="url(#ombre-sol)"/>
+    <circle cx="241" cy="416" r="102" fill="#1B2125"/>
+    <circle cx="939" cy="416" r="102" fill="#1B2125"/>
+    <g mask="url(#arches)">
+      <!-- silhouette : nez 100, arrière 1113, pavillon 90, bas de caisse 416 -->
+      <path fill="url(#grad-caisse)" stroke="var(--contour)" stroke-width="1.6" stroke-linejoin="round"
+            d="M108 416 L100 352 L118 300 L176 276 L320 254 L452 110 L500 96 L892 90
+               L1000 140 L1074 250 L1090 340 L1084 416 Z"/>
+      <!-- encadrement de vitrage -->
+      <path fill="var(--plastique)" d="M336 224 L462 116 L504 104 L884 98 L974 146 L1006 224 Z"/>
+      <path fill="url(#grad-vitre)" d="M356 216 L474 120 L590 116 L590 216 Z"/>
+      <path fill="url(#grad-vitre)" d="M608 116 L786 112 L786 216 L608 216 Z"/>
+      <path fill="url(#grad-vitre)" d="M804 112 L878 108 L958 152 L984 216 L804 216 Z"/>
+      <path fill="#14181B" d="M886 118 L922 140 L934 168 L896 150 Z"/>
+      <!-- jonc plastique de bas de caisse -->
+      <rect x="340" y="352" width="666" height="48" rx="6" fill="var(--plastique)"/>
+      <text x="908" y="384" font-family="var(--sans)" font-size="14" fill="#69777E" letter-spacing="3.4">TWINGO</text>
+      <!-- refends de portes -->
+      <g fill="none" stroke="var(--refend)" stroke-width="1.5">
+        <path d="M332 232V416M612 224V416M946 220V416"/>
+      </g>
+      <rect x="545" y="268" width="60" height="18" rx="9" fill="#C2D8E0" stroke="var(--contour)" stroke-width="1.2"/>
+    </g>
+    <!-- roues -->
+    <g>
+      <circle cx="241" cy="415" r="85" fill="var(--pneu)"/><circle cx="241" cy="415" r="52" fill="var(--jante)"/>
+      <g stroke="#7C868B" stroke-width="7" fill="none" stroke-linecap="round"><path d="M241 370v90M202 393l78 44M202 437l78-44"/></g>
+      <circle cx="241" cy="415" r="12" fill="#8A949A"/>
+      <circle cx="939" cy="415" r="85" fill="var(--pneu)"/><circle cx="939" cy="415" r="52" fill="var(--jante)"/>
+      <g stroke="#7C868B" stroke-width="7" fill="none" stroke-linecap="round"><path d="M939 370v90M900 393l78 44M900 437l78-44"/></g>
+      <circle cx="939" cy="415" r="12" fill="#8A949A"/>
+    </g>
+    <!-- rétroviseur et antenne -->
+    <path fill="var(--plastique)" d="M338 228 L296 236 L292 256 L336 252 Z"/>
+    <path fill="var(--plastique)" d="M948 116 L986 58 L992 62 L958 122 Z"/>
+  </symbol>
+
+  <!-- ---------- Twingo III — face avant ---------- -->
+  <symbol id="twingo-face" viewBox="0 0 720 560">
+    <ellipse cx="360" cy="486" rx="230" ry="16" fill="url(#ombre-sol)"/>
+    <rect x="152" y="404" width="58" height="66" rx="8" fill="var(--pneu)"/>
+    <rect x="510" y="404" width="58" height="66" rx="8" fill="var(--pneu)"/>
+    <!-- rétroviseurs -->
+    <path fill="var(--plastique)" d="M152 206 L108 212 L104 236 L150 234 Z"/>
+    <path fill="var(--plastique)" d="M568 206 L612 212 L616 236 L570 234 Z"/>
+    <!-- silhouette : largeur 1,65 m, hauteur 1,55 m -->
+    <path fill="url(#grad-caisse)" stroke="var(--contour)" stroke-width="1.6" stroke-linejoin="round"
+          d="M228 58 L492 58 L534 176 L576 250 L596 330 L590 402 L566 432 L154 432 L130 402 L124 330 L144 250 L186 176 Z"/>
+    <path fill="var(--plastique)" d="M232 64 L488 64 L526 172 L194 172 Z"/>
+    <path fill="url(#grad-vitre)" d="M240 74 L480 74 L514 164 L206 164 Z"/>
+    <!-- optiques -->
+    <path fill="#EDF3F6" stroke="var(--contour)" stroke-width="1.4" d="M144 258 L240 250 L244 300 L150 306 Z"/>
+    <path fill="#EDF3F6" stroke="var(--contour)" stroke-width="1.4" d="M576 258 L480 250 L476 300 L570 306 Z"/>
+    <!-- calandre et losange -->
+    <rect x="252" y="256" width="216" height="48" rx="7" fill="var(--plastique)"/>
+    <path fill="#C6D0D5" d="M360 260 L386 280 L360 300 L334 280 Z"/>
+    <path fill="var(--plastique)" d="M360 271 L373 280 L360 289 L347 280 Z"/>
+    <path fill="none" stroke="var(--refend)" stroke-width="1.5" d="M136 330h448"/>
+    <!-- plaque -->
+    <rect x="284" y="346" width="152" height="38" rx="4" fill="#F1F3F1" stroke="var(--contour)" stroke-width="1.4"/>
+    <rect x="284" y="346" width="15" height="38" rx="4" fill="#1E3491"/>
+    <text x="370" y="373" text-anchor="middle" font-family="var(--sans)" font-size="20" font-weight="600" fill="#22282C" letter-spacing="1">GW-425-SW</text>
+    <rect x="200" y="396" width="320" height="30" rx="12" fill="var(--plastique)"/>
+  </symbol>
+
+  <!-- ---------- Twingo III — vue de dessus (avant en haut) ---------- -->
+  <symbol id="twingo-toit" viewBox="0 0 440 960">
+    <ellipse cx="220" cy="470" rx="190" ry="420" fill="url(#ombre-sol)"/>
+    <path fill="var(--plastique)" d="M42 294 L10 300 L8 322 L44 324 Z"/>
+    <path fill="var(--plastique)" d="M398 294 L430 300 L432 322 L396 324 Z"/>
+    <!-- silhouette : 3,62 m sur 1,65 m -->
+    <path fill="url(#grad-caisse)" stroke="var(--contour)" stroke-width="1.6" stroke-linejoin="round"
+          d="M110 44 L330 44 L368 110 L390 220 L400 340 L404 560 L398 744 L384 842 L344 900
+             L96 900 L56 842 L42 744 L36 560 L40 340 L50 220 L72 110 Z"/>
+    <path fill="none" stroke="var(--refend)" stroke-width="1.5" d="M84 240h272"/>
+    <!-- pare-brise -->
+    <path fill="var(--plastique)" d="M88 246 L352 246 L368 424 L72 424 Z"/>
+    <path fill="url(#grad-vitre)" d="M100 258 L340 258 L354 412 L86 412 Z"/>
+    <g fill="none" stroke="var(--refend)" stroke-width="1.5"><path d="M76 424h288M80 676h280"/></g>
+    <rect x="214" y="654" width="12" height="24" fill="var(--plastique)"/>
+    <!-- lunette et hayon -->
+    <path fill="var(--plastique)" d="M76 682 L364 682 L346 838 L302 888 L138 888 L94 838 Z"/>
+    <path fill="url(#grad-vitre)" d="M92 696 L348 696 L330 824 L110 824 Z"/>
+  </symbol>
+
+</svg>
+
+<!-- ============================ Page ============================ -->
+<header class="tete">
+  <div class="enveloppe">
+    <p class="oeil">Habillage véhicule · Renault Twingo III · Bleu clair</p>
+    <h1>Cinq façons de <em>logoter</em> la Twingo</h1>
+    <p class="chapeau">
+      Deux flancs, le capot et le toit, pour Marie-Céline — conseillère et experts
+      immobiliers, Paris 7<sup>e</sup>, 06 60 98 92 92. Chaque proposition part du
+      Dôme des Invalides, redessiné pour le vinyle découpé, et des contraintes
+      réelles de la voiture relevées sur vos photos. Peu d'éléments, beaucoup de
+      vide : sur une petite voiture, c'est là que se joue le chic.
+    </p>
+    <div class="jetons">
+      <span class="jeton">4 surfaces</span>
+      <span class="jeton">Marine &amp; or</span>
+      <span class="jeton">Vues à l'échelle</span>
+      <span class="jeton">paris7e.immo</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ Relevé ============ -->
+  <section class="bloc">
+    <div class="enveloppe">
+      <div class="entete-bloc">
+        <p class="oeil">Relevé</p>
+        <h2>Ce que la voiture impose</h2>
+        <p class="chapeau">
+          Sur une Twingo, la surface utile est petite et découpée. Ces six points,
+          relevés sur vos photos, ont dicté toutes les compositions qui suivent.
+        </p>
+      </div>
+      <dl class="grille-contraintes">
+        <div class="contrainte">
+          <dt>Jonc noir</dt>
+          <dd>Un bandeau plastique noir court en bas des portes. Rien ne s'y colle proprement : le lettrage s'arrête au-dessus.</dd>
+        </div>
+        <div class="contrainte">
+          <dt>Bande utile</dt>
+          <dd>Entre la ceinture de caisse et ce jonc : environ <strong>50 cm de haut sur 2,30 m</strong>. C'est tout le flanc disponible.</dd>
+        </div>
+        <div class="contrainte">
+          <dt>Poignée avant</dt>
+          <dd>Elle tombe au milieu de la porte conducteur ; celles de l'arrière sont cachées dans le montant. Les compositions passent dessous.</dd>
+        </div>
+        <div class="contrainte">
+          <dt>Trappe à carburant</dt>
+          <dd>Sur l'aile arrière <strong>droite</strong>. Côté droit, la composition s'arrête avant l'aile ; côté gauche elle peut filer plus loin.</dd>
+        </div>
+        <div class="contrainte">
+          <dt>Capot court</dt>
+          <dd>Bombé, encadré par les optiques et la calandre noire : <strong>45 cm de large</strong> exploitables, pas davantage.</dd>
+        </div>
+        <div class="contrainte">
+          <dt>Toit</dt>
+          <dd>Panneau plat d'environ <strong>110 × 100 cm</strong>, antenne à l'arrière. La plus belle surface de la voiture.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ Emblème ============ -->
+  <section class="bloc">
+    <div class="enveloppe">
+      <div class="entete-bloc">
+        <p class="oeil">Signe</p>
+        <h2>Le Dôme, en trois déclinaisons</h2>
+        <p class="chapeau">
+          Un seul dessin, redessiné pour la découpe : traits pleins, pas de dégradé,
+          lisible à 3 cm comme à 40 cm. La coupole est dorée — l'or des Invalides est
+          la seule couleur d'accent de tout l'habillage.
+        </p>
+      </div>
+      <div class="plateau-embleme">
+        <figure class="decli">
+          <svg viewBox="0 0 200 262" role="img" aria-label="Dôme des Invalides, coupole dorée sur base bleu marine">
+            <use href="#dome" style="color:var(--encre); --dome:var(--or-vif); --nervure:#F6EDD6; --evide:var(--surface)"/>
+          </svg>
+          <figcaption>
+            <div class="nom">Bicolore</div>
+            <p class="note">Marine et or. La version principale, sur les quatre faces.</p>
+          </figcaption>
+        </figure>
+        <figure class="decli">
+          <svg viewBox="0 0 440 262" role="img" aria-label="Dôme des Invalides encadré par les ailes de l'Hôtel des Invalides">
+            <use href="#dome-ailes" style="color:var(--encre); --dome:var(--or-vif); --nervure:#F6EDD6; --evide:var(--surface)"/>
+          </svg>
+          <figcaption>
+            <div class="nom">Avec les ailes</div>
+            <p class="note">Le Dôme et sa façade. Pour le toit et les compositions larges.</p>
+          </figcaption>
+        </figure>
+        <figure class="decli sur-caisse">
+          <svg viewBox="0 0 200 262" role="img" aria-label="Dôme des Invalides en marine monochrome, posé sur la carrosserie bleu clair">
+            <use href="#dome" style="color:#10233C; --dome:#10233C; --nervure:#CFE1E8; --evide:#CFE1E8"/>
+          </svg>
+          <figcaption>
+            <div class="nom">Monochrome</div>
+            <p class="note">Un seul ton marine, sur le bleu de la caisse. Le moins cher à poser.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Boussole ============ -->
+  <section class="bloc">
+    <div class="enveloppe">
+      <div class="entete-bloc">
+        <p class="oeil">Boussole</p>
+        <h2>Cinq propositions, deux curseurs</h2>
+        <p class="chapeau">
+          Tout se joue entre le chic et la lisibilité de loin : sur une Twingo, on ne
+          peut pas pousser les deux à fond. À vous de dire où vous voulez vous placer.
+        </p>
+      </div>
+      <div class="rouleau">
+        <table>
+          <caption>Plus la jauge est pleine, plus le critère est fort.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Proposition</th><th scope="col">Esprit</th>
+              <th scope="col">Chic</th><th scope="col">Lisible à 30 m</th><th scope="col">Coût</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="nom-prop"><b>A</b> Le Dôme</th>
+              <td>Carte de visite gravée</td>
+              <td><span class="jauge" role="img" aria-label="4 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i><i></i></span></td>
+              <td><span class="jauge" role="img" aria-label="3 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i></i><i></i></span></td>
+              <td><span class="jauge" role="img" aria-label="3 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i></i><i></i></span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="nom-prop"><b>B</b> L'Esplanade</th>
+              <td>Enseigne roulante</td>
+              <td><span class="jauge" role="img" aria-label="2 sur 5"><i class="plein"></i><i class="plein"></i><i></i><i></i><i></i></span></td>
+              <td><span class="jauge" role="img" aria-label="5 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i></span></td>
+              <td><span class="jauge" role="img" aria-label="4 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i><i></i></span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="nom-prop"><b>C</b> Ligne claire</th>
+              <td>Une adresse, rien d'autre</td>
+              <td><span class="jauge" role="img" aria-label="3 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i></i><i></i></span></td>
+              <td><span class="jauge" role="img" aria-label="5 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i></span></td>
+              <td><span class="jauge" role="img" aria-label="2 sur 5"><i class="plein"></i><i class="plein"></i><i></i><i></i><i></i></span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="nom-prop"><b>D</b> Or fin</th>
+              <td>Monogramme de maison</td>
+              <td><span class="jauge" role="img" aria-label="5 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i></span></td>
+              <td><span class="jauge" role="img" aria-label="1 sur 5"><i class="plein"></i><i></i><i></i><i></i><i></i></span></td>
+              <td><span class="jauge" role="img" aria-label="2 sur 5"><i class="plein"></i><i class="plein"></i><i></i><i></i><i></i></span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="nom-prop"><b>E</b> La Plaque</th>
+              <td>Plaque de rue parisienne</td>
+              <td><span class="jauge" role="img" aria-label="5 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i></span></td>
+              <td><span class="jauge" role="img" aria-label="4 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i class="plein"></i><i></i></span></td>
+              <td><span class="jauge" role="img" aria-label="3 sur 5"><i class="plein"></i><i class="plein"></i><i class="plein"></i><i></i><i></i></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ A ============ -->
+  <section class="planche" id="proposition-a">
+    <div class="enveloppe">
+      <div class="planche-tete">
+        <div class="lettre">A</div>
+        <h2>Le Dôme</h2>
+        <p class="resume">
+          L'emblème à gauche, le nom en didone, la ligne de service en petites
+          capitales, le site et le téléphone détachés par un filet doré. Discret de
+          près, net de loin : la version qui ressemble le plus à une carte de visite
+          gravée.
+        </p>
+        <span class="recommande">La plus polyvalente</span>
+      </div>
+
+      <div class="vue">
+        <div class="vue-titre"><span>Flanc gauche — côté conducteur</span><span>Échelle 1/16</span></div>
+        <svg viewBox="0 0 1240 560" role="img" aria-label="Twingo bleu clair de profil, emblème du Dôme et nom Marie-Céline sur les portes">
+          <use href="#twingo-flanc"/>
+          <g clip-path="url(#zone-flanc)">
+            <g transform="translate(352,232)"><use href="#dome" width="92" height="120" style="color:#10233C; --dome:#B8912F; --nervure:#F2E6C9; --evide:#CFE1E8"/></g>
+            <text x="480" y="258" font-family="var(--serif)" font-size="40" fill="#10233C">Marie-Céline</text>
+            <path d="M480 292h378" stroke="#B8912F" stroke-width="1.8" fill="none"/>
+            <text x="482" y="316" font-family="var(--sans)" font-size="12" font-weight="600" letter-spacing="2.8" fill="#10233C">CONSEILLÈRE &amp; EXPERTS IMMOBILIERS</text>
+            <text x="482" y="346" font-family="var(--sans)" font-size="22" font-weight="700" fill="#10233C">paris7e.immo</text>
+            <text x="858" y="346" text-anchor="end" font-family="var(--sans)" font-size="22" font-weight="500" fill="#10233C">06 60 98 92 92</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="duo">
+        <div class="vue">
+          <div class="vue-titre"><span>Capot</span><span>Bloc 45 cm</span></div>
+          <svg viewBox="0 0 720 600" role="img" aria-label="Face avant, emblème du Dôme et adresse du site sur le capot">
+            <use href="#twingo-face"/>
+            <g clip-path="url(#zone-capot)">
+              <g transform="translate(343,182)"><use href="#dome" width="34" height="44" style="color:#10233C; --dome:#B8912F; --nervure:#F2E6C9; --evide:#CFE1E8"/></g>
+              <text x="360" y="244" text-anchor="middle" font-family="var(--sans)" font-size="16" font-weight="700" fill="#10233C">paris7e.immo</text>
+            </g>
+          </svg>
+        </div>
+        <div class="vue toit">
+          <div class="vue-titre"><span>Toit</span><span>Lu depuis l'avant</span></div>
+          <svg viewBox="0 0 440 960" role="img" aria-label="Vue de dessus, marquage du toit avec le site, le nom et le téléphone">
+            <use href="#twingo-toit"/>
+            <g transform="translate(155,430)"><use href="#dome-ailes" width="130" height="77" style="color:#10233C; --dome:#B8912F; --nervure:#F2E6C9; --evide:#CFE1E8"/></g>
+            <text x="220" y="552" text-anchor="middle" font-family="var(--sans)" font-size="36" font-weight="700" letter-spacing="-.4" fill="#10233C">paris7e.immo</text>
+            <text x="220" y="586" text-anchor="middle" font-family="var(--serif)" font-size="28" fill="#10233C">Marie-Céline</text>
+            <path d="M145 602h150" stroke="#B8912F" stroke-width="1.8" fill="none"/>
+            <text x="220" y="634" text-anchor="middle" font-family="var(--sans)" font-size="26" font-weight="500" fill="#10233C">06 60 98 92 92</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="specs">
+        <div class="spec"><span class="k">Couleurs</span><span class="v">Marine + or, 2 vinyles</span></div>
+        <div class="spec"><span class="k">Hauteur du nom</span><span class="v">13 cm</span></div>
+        <div class="spec"><span class="k">Site / téléphone</span><span class="v">7 cm</span></div>
+        <div class="spec"><span class="k">Emprise par flanc</span><span class="v">231 × 43 cm</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ B ============ -->
+  <section class="planche" id="proposition-b">
+    <div class="enveloppe">
+      <div class="planche-tete">
+        <div class="lettre">B</div>
+        <h2>L'Esplanade</h2>
+        <p class="resume">
+          Un bandeau marine plein posé juste au-dessus du jonc noir, texte en réserve
+          blanche. C'est la version qui se lit le plus vite dans la circulation et sur
+          une place de stationnement — au prix d'une voiture nettement plus marquée.
+        </p>
+      </div>
+
+      <div class="vue">
+        <div class="vue-titre"><span>Flanc gauche — côté conducteur</span><span>Échelle 1/16</span></div>
+        <svg viewBox="0 0 1240 560" role="img" aria-label="Twingo avec un bandeau marine sur les portes et le texte en blanc">
+          <use href="#twingo-flanc"/>
+          <g clip-path="url(#zone-flanc)">
+            <rect x="344" y="232" width="514" height="118" rx="4" fill="#10233C"/>
+            <g transform="translate(356,242)"><use href="#dome" width="76" height="99" style="color:#FFFFFF; --dome:#D8B14F; --nervure:#10233C; --evide:#10233C"/></g>
+            <text x="446" y="262" font-family="var(--serif)" font-size="32" fill="#FFFFFF">Marie-Céline</text>
+            <text x="448" y="316" font-family="var(--sans)" font-size="10" font-weight="600" letter-spacing="2" fill="#D8B14F">CONSEILLÈRE &amp; EXPERTS IMMOBILIERS</text>
+            <text x="448" y="344" font-family="var(--sans)" font-size="18" font-weight="700" fill="#FFFFFF">paris7e.immo</text>
+            <text x="846" y="344" text-anchor="end" font-family="var(--sans)" font-size="16" font-weight="500" fill="#FFFFFF">06 60 98 92 92</text>
+            <rect x="545" y="268" width="60" height="18" rx="9" fill="#C2D8E0" stroke="#8CA9B6" stroke-width="1.2"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="duo">
+        <div class="vue">
+          <div class="vue-titre"><span>Capot</span><span>Bloc 45 cm</span></div>
+          <svg viewBox="0 0 720 600" role="img" aria-label="Face avant avec une pastille marine sur le capot">
+            <use href="#twingo-face"/>
+            <g clip-path="url(#zone-capot)">
+              <rect x="276" y="180" width="168" height="66" rx="3" fill="#10233C"/>
+              <g transform="translate(286,188)"><use href="#dome" width="26" height="34" style="color:#FFFFFF; --dome:#D8B14F; --nervure:#10233C; --evide:#10233C"/></g>
+              <text x="320" y="212" font-family="var(--sans)" font-size="14" font-weight="700" fill="#FFFFFF">paris7e.immo</text>
+              <text x="320" y="232" font-family="var(--sans)" font-size="10" font-weight="500" letter-spacing="1" fill="#D8B14F">06 60 98 92 92</text>
+            </g>
+          </svg>
+        </div>
+        <div class="vue toit">
+          <div class="vue-titre"><span>Toit</span><span>Lu depuis l'avant</span></div>
+          <svg viewBox="0 0 440 960" role="img" aria-label="Vue de dessus avec un bandeau marine sur le pavillon">
+            <use href="#twingo-toit"/>
+            <rect x="76" y="424" width="288" height="252" rx="5" fill="#10233C"/>
+            <g transform="translate(160,438)"><use href="#dome-ailes" width="120" height="71" style="color:#FFFFFF; --dome:#D8B14F; --nervure:#10233C; --evide:#10233C"/></g>
+            <text x="220" y="570" text-anchor="middle" font-family="var(--sans)" font-size="34" font-weight="700" letter-spacing="-.4" fill="#FFFFFF">paris7e.immo</text>
+            <text x="220" y="602" text-anchor="middle" font-family="var(--serif)" font-size="27" fill="#FFFFFF">Marie-Céline</text>
+            <text x="220" y="622" text-anchor="middle" font-family="var(--sans)" font-size="9" font-weight="600" letter-spacing="1" fill="#D8B14F">CONSEILLÈRE &amp; EXPERTS IMMOBILIERS</text>
+            <text x="220" y="654" text-anchor="middle" font-family="var(--sans)" font-size="24" font-weight="500" fill="#FFFFFF">06 60 98 92 92</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="specs">
+        <div class="spec"><span class="k">Couleurs</span><span class="v">Marine + blanc + or</span></div>
+        <div class="spec"><span class="k">Bandeau</span><span class="v">36 cm de haut</span></div>
+        <div class="spec"><span class="k">Visibilité</span><span class="v">La plus forte</span></div>
+        <div class="spec"><span class="k">Emprise par flanc</span><span class="v">137 × 39 cm</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ C ============ -->
+  <section class="planche" id="proposition-c">
+    <div class="enveloppe">
+      <div class="planche-tete">
+        <div class="lettre">C</div>
+        <h2>Ligne claire</h2>
+        <p class="resume">
+          L'adresse du site en très grand, le Dôme réduit à un filet doré, le reste en
+          appui. Une seule chose à retenir, lisible d'un trottoir à l'autre. C'est la
+          pose la plus simple, donc la moins chère, et la plus facile à retirer.
+        </p>
+      </div>
+
+      <div class="vue">
+        <div class="vue-titre"><span>Flanc gauche — côté conducteur</span><span>Échelle 1/16</span></div>
+        <svg viewBox="0 0 1240 560" role="img" aria-label="Twingo avec le site paris7e.immo en très grandes lettres sur les portes">
+          <use href="#twingo-flanc"/>
+          <g clip-path="url(#zone-flanc)">
+            <g transform="translate(352,232)"><use href="#dome" width="88" height="114" style="color:#B8912F; --dome:#B8912F; --nervure:#CFE1E8; --evide:#CFE1E8"/></g>
+            <text x="480" y="256" font-family="var(--sans)" font-size="8.5" font-weight="600" letter-spacing="1.8" fill="#10233C">MARIE-CÉLINE · CONSEILLÈRE &amp; EXPERTS IMMOBILIERS</text>
+            <text x="480" y="330" font-family="var(--sans)" font-size="44" font-weight="700" letter-spacing="-.8" fill="#10233C">paris7e.immo</text>
+            <text x="1000" y="256" text-anchor="end" font-family="var(--sans)" font-size="18" font-weight="500" fill="#10233C">06 60 98 92 92</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="duo">
+        <div class="vue">
+          <div class="vue-titre"><span>Capot</span><span>Emblème seul</span></div>
+          <svg viewBox="0 0 720 600" role="img" aria-label="Face avant avec le Dôme doré seul sur le capot">
+            <use href="#twingo-face"/>
+            <g clip-path="url(#zone-capot)">
+              <g transform="translate(342,180)"><use href="#dome" width="36" height="47" style="color:#B8912F; --dome:#B8912F; --nervure:#CFE1E8; --evide:#CFE1E8"/></g>
+              <text x="360" y="246" text-anchor="middle" font-family="var(--sans)" font-size="13" font-weight="600" letter-spacing="2" fill="#10233C">PARIS7E.IMMO</text>
+            </g>
+          </svg>
+        </div>
+        <div class="vue toit">
+          <div class="vue-titre"><span>Toit</span><span>Lu depuis l'avant</span></div>
+          <svg viewBox="0 0 440 960" role="img" aria-label="Vue de dessus, site en très grand sur le pavillon">
+            <use href="#twingo-toit"/>
+            <g transform="translate(192,428)"><use href="#dome" width="56" height="73" style="color:#B8912F; --dome:#B8912F; --nervure:#CFE1E8; --evide:#CFE1E8"/></g>
+            <text x="220" y="560" text-anchor="middle" font-family="var(--sans)" font-size="36" font-weight="700" letter-spacing="-.4" fill="#10233C">paris7e.immo</text>
+            <text x="220" y="604" text-anchor="middle" font-family="var(--sans)" font-size="30" font-weight="500" fill="#10233C">06 60 98 92 92</text>
+            <text x="220" y="636" text-anchor="middle" font-family="var(--sans)" font-size="12" font-weight="600" letter-spacing="2.2" fill="#10233C">MARIE-CÉLINE · PARIS 7ᵉ</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="specs">
+        <div class="spec"><span class="k">Couleurs</span><span class="v">Marine + or, 2 vinyles</span></div>
+        <div class="spec"><span class="k">Hauteur du site</span><span class="v">15 cm</span></div>
+        <div class="spec"><span class="k">Pose</span><span class="v">La plus simple</span></div>
+        <div class="spec"><span class="k">Emprise par flanc</span><span class="v">233 × 44 cm</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ D ============ -->
+  <section class="planche" id="proposition-d">
+    <div class="enveloppe">
+      <div class="planche-tete">
+        <div class="lettre">D</div>
+        <h2>Or fin</h2>
+        <p class="resume">
+          Pas de marine du tout : tout l'habillage est tiré dans un seul vinyle or,
+          posé sur le bleu de la caisse comme une dorure sur une devanture. La plus
+          élégante des cinq, et la moins lisible de loin — l'or sur bleu clair se lit
+          à quelques mètres, pas au bout de la rue.
+        </p>
+      </div>
+
+      <div class="vue">
+        <div class="vue-titre"><span>Flanc gauche — côté conducteur</span><span>Échelle 1/16</span></div>
+        <svg viewBox="0 0 1240 560" role="img" aria-label="Twingo avec un lettrage entièrement doré sur la caisse bleu clair">
+          <use href="#twingo-flanc"/>
+          <g clip-path="url(#zone-flanc)">
+            <g transform="translate(352,232)"><use href="#dome" width="84" height="110" style="color:#A87F27; --dome:#A87F27; --nervure:#CFE1E8; --evide:#CFE1E8"/></g>
+            <text x="480" y="258" font-family="var(--serif)" font-size="40" fill="#A87F27">Marie-Céline</text>
+            <path d="M480 292h378" stroke="#A87F27" stroke-width="1.4" fill="none"/>
+            <text x="482" y="316" font-family="var(--sans)" font-size="10.5" font-weight="600" letter-spacing="2.4" fill="#A87F27">CONSEILLÈRE &amp; EXPERTS IMMOBILIERS · PARIS 7ᵉ</text>
+            <text x="482" y="346" font-family="var(--sans)" font-size="21" font-weight="600" fill="#A87F27">paris7e.immo</text>
+            <text x="858" y="346" text-anchor="end" font-family="var(--sans)" font-size="21" font-weight="500" fill="#A87F27">06 60 98 92 92</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="duo">
+        <div class="vue">
+          <div class="vue-titre"><span>Capot</span><span>Bloc 40 cm</span></div>
+          <svg viewBox="0 0 720 600" role="img" aria-label="Face avant avec le Dôme et le site en or sur le capot">
+            <use href="#twingo-face"/>
+            <g clip-path="url(#zone-capot)">
+              <g transform="translate(343,180)"><use href="#dome" width="34" height="44" style="color:#A87F27; --dome:#A87F27; --nervure:#CFE1E8; --evide:#CFE1E8"/></g>
+              <text x="360" y="244" text-anchor="middle" font-family="var(--sans)" font-size="14" font-weight="600" letter-spacing="1.8" fill="#A87F27">paris7e.immo</text>
+            </g>
+          </svg>
+        </div>
+        <div class="vue toit">
+          <div class="vue-titre"><span>Toit</span><span>Lu depuis l'avant</span></div>
+          <svg viewBox="0 0 440 960" role="img" aria-label="Vue de dessus avec le marquage doré sur le pavillon">
+            <use href="#twingo-toit"/>
+            <g transform="translate(150,428)"><use href="#dome-ailes" width="140" height="82" style="color:#A87F27; --dome:#A87F27; --nervure:#CFE1E8; --evide:#CFE1E8"/></g>
+            <text x="220" y="560" text-anchor="middle" font-family="var(--serif)" font-size="36" fill="#A87F27">Marie-Céline</text>
+            <path d="M145 576h150" stroke="#A87F27" stroke-width="1.4" fill="none"/>
+            <text x="220" y="612" text-anchor="middle" font-family="var(--sans)" font-size="28" font-weight="600" fill="#A87F27">paris7e.immo</text>
+            <text x="220" y="646" text-anchor="middle" font-family="var(--sans)" font-size="25" font-weight="500" fill="#A87F27">06 60 98 92 92</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="specs">
+        <div class="spec"><span class="k">Couleurs</span><span class="v">Or seul, 1 vinyle</span></div>
+        <div class="spec"><span class="k">Hauteur du nom</span><span class="v">13 cm</span></div>
+        <div class="spec"><span class="k">Chic</span><span class="v">Maximal</span></div>
+        <div class="spec"><span class="k">Réserve</span><span class="v">Contraste faible de loin</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ E ============ -->
+  <section class="planche" id="proposition-e">
+    <div class="enveloppe">
+      <div class="planche-tete">
+        <div class="lettre">E</div>
+        <h2>La Plaque</h2>
+        <p class="resume">
+          Tout est rassemblé dans un seul rectangle marine cerné d'un filet doré,
+          comme une plaque de rue du 7<sup>e</sup> ou une plaque professionnelle sur
+          une porte cochère. Le reste de la carrosserie reste nu : un seul objet à
+          poser par face, franc et lisible, sans que la voiture devienne un panneau.
+        </p>
+        <span class="recommande">Recommandée</span>
+      </div>
+
+      <div class="vue">
+        <div class="vue-titre"><span>Flanc gauche — côté conducteur</span><span>Échelle 1/16</span></div>
+        <svg viewBox="0 0 1240 560" role="img" aria-label="Twingo avec une plaque marine cernée d'or au centre des portes">
+          <use href="#twingo-flanc"/>
+          <g clip-path="url(#zone-flanc)">
+            <rect x="616" y="232" width="264" height="98" rx="4" fill="#10233C"/>
+            <rect x="623" y="239" width="250" height="84" rx="2" fill="none" stroke="#D8B14F" stroke-width="1.4"/>
+            <g transform="translate(628,242)"><use href="#dome" width="56" height="73" style="color:#FFFFFF; --dome:#D8B14F; --nervure:#10233C; --evide:#10233C"/></g>
+            <text x="694" y="268" font-family="var(--serif)" font-size="24" fill="#D8B14F">Marie-Céline</text>
+            <text x="694" y="284" font-family="var(--sans)" font-size="8" font-weight="600" letter-spacing="1.2" fill="#FFFFFF">CONSEILLÈRE &amp; EXPERTS</text>
+            <text x="694" y="296" font-family="var(--sans)" font-size="8" font-weight="600" letter-spacing="1.2" fill="#FFFFFF">IMMOBILIERS · PARIS 7ᵉ</text>
+            <path d="M694 304h172" stroke="#D8B14F" stroke-width="1.2" fill="none"/>
+            <text x="694" y="318" font-family="var(--sans)" font-size="9" font-weight="600" fill="#FFFFFF">paris7e.immo · 06 60 98 92 92</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="duo">
+        <div class="vue">
+          <div class="vue-titre"><span>Capot</span><span>Plaque 43 × 17 cm</span></div>
+          <svg viewBox="0 0 720 600" role="img" aria-label="Face avant avec une petite plaque marine sur le capot">
+            <use href="#twingo-face"/>
+            <g clip-path="url(#zone-capot)">
+              <rect x="288" y="182" width="144" height="60" rx="3" fill="#10233C"/>
+              <rect x="293" y="187" width="134" height="50" rx="2" fill="none" stroke="#D8B14F" stroke-width="1.2"/>
+              <g transform="translate(299,191)"><use href="#dome" width="22" height="29" style="color:#FFFFFF; --dome:#D8B14F; --nervure:#10233C; --evide:#10233C"/></g>
+              <text x="328" y="210" font-family="var(--sans)" font-size="12" font-weight="700" fill="#FFFFFF">paris7e.immo</text>
+              <text x="328" y="228" font-family="var(--sans)" font-size="8" font-weight="600" letter-spacing="1.2" fill="#D8B14F">PARIS 7ᵉ</text>
+            </g>
+          </svg>
+        </div>
+        <div class="vue toit">
+          <div class="vue-titre"><span>Toit</span><span>Lu depuis l'avant</span></div>
+          <svg viewBox="0 0 440 960" role="img" aria-label="Vue de dessus avec une grande plaque marine sur le pavillon">
+            <use href="#twingo-toit"/>
+            <rect x="84" y="428" width="272" height="244" rx="5" fill="#10233C"/>
+            <rect x="92" y="436" width="256" height="228" rx="3" fill="none" stroke="#D8B14F" stroke-width="1.6"/>
+            <g transform="translate(155,446)"><use href="#dome-ailes" width="130" height="77" style="color:#FFFFFF; --dome:#D8B14F; --nervure:#10233C; --evide:#10233C"/></g>
+            <text x="220" y="566" text-anchor="middle" font-family="var(--serif)" font-size="30" fill="#D8B14F">Marie-Céline</text>
+            <path d="M150 580h140" stroke="#D8B14F" stroke-width="1.2" fill="none"/>
+            <text x="220" y="612" text-anchor="middle" font-family="var(--sans)" font-size="26" font-weight="700" fill="#FFFFFF">paris7e.immo</text>
+            <text x="220" y="646" text-anchor="middle" font-family="var(--sans)" font-size="23" font-weight="500" fill="#FFFFFF">06 60 98 92 92</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="specs">
+        <div class="spec"><span class="k">Couleurs</span><span class="v">Marine + or + blanc</span></div>
+        <div class="spec"><span class="k">Plaque de flanc</span><span class="v">137 × 39 cm</span></div>
+        <div class="spec"><span class="k">Pose</span><span class="v">Un élément par face</span></div>
+        <div class="spec"><span class="k">Dépose</span><span class="v">La plus propre</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Fiche poseur ============ -->
+  <section class="bloc">
+    <div class="enveloppe">
+      <div class="entete-bloc">
+        <p class="oeil">À transmettre</p>
+        <h2>Fiche pour le poseur</h2>
+        <p class="chapeau">
+          Cotes valables pour les cinq propositions. Le côté droit reprend le côté
+          gauche en miroir, raccourci d'une vingtaine de centimètres pour dégager la
+          trappe à carburant.
+        </p>
+      </div>
+      <div class="rouleau">
+        <table>
+          <caption>Renault Twingo III phase 2 · 5 portes · GW-425-SW</caption>
+          <thead>
+            <tr><th scope="col">Surface</th><th scope="col">Zone utile</th><th scope="col">Marquage</th><th scope="col">À dégager</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Flanc gauche</td><td class="n">230 × 50 cm</td><td class="n">200–230 × 36–42 cm</td><td>Poignée de porte, jonc noir</td></tr>
+            <tr><td>Flanc droit</td><td class="n">210 × 50 cm</td><td class="n">180–210 × 36–42 cm</td><td>Poignée, jonc noir, trappe à carburant</td></tr>
+            <tr><td>Capot</td><td class="n">45 × 22 cm</td><td class="n">40 × 18 cm</td><td>Optiques, calandre, base de pare-brise</td></tr>
+            <tr><td>Toit</td><td class="n">110 × 100 cm</td><td class="n">100 × 80 cm</td><td>Antenne arrière, joints de pavillon</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ul class="liste" style="margin-top:1.8rem">
+        <li><strong>Matière.</strong> Vinyle polymère coulé, découpe de forme, indispensable sur les surfaces bombées du capot et des portes. Un laminé anti-UV maintient l'or stable plusieurs saisons.</li>
+        <li><strong>Couleurs.</strong> Marine profond et or. À faire caler par le poseur sur un nuancier de vinyle : un doré ne se valide pas à l'écran.</li>
+        <li><strong>Polices.</strong> Le nom en didone à fort contraste, les lignes de service et le site en linéale géométrique. Ces maquettes les approchent avec les polices de votre appareil ; le poseur travaillera sur les fichiers vectoriels définitifs.</li>
+        <li><strong>Rien sur les vitres.</strong> Pare-brise, vitres latérales, plaques et feux restent entièrement dégagés.</li>
+        <li><strong>Assurance.</strong> Signalez le marquage à votre assureur : le véhicule affiche désormais un usage professionnel.</li>
+        <li><strong>Budget.</strong> Ordre de grandeur pour quatre surfaces en découpe deux couleurs, pose comprise : quelques centaines d'euros. La proposition B, avec ses aplats, coûte sensiblement plus. À confirmer par devis.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Suite ============ -->
+  <section class="bloc">
+    <div class="enveloppe">
+      <div class="entete-bloc">
+        <p class="oeil">Prochaine étape</p>
+        <h2>Ce qu'il reste à trancher</h2>
+      </div>
+      <ul class="liste">
+        <li><strong>La proposition.</strong> E pour le plus chic tout en restant lisible, A pour une image de conseil classique, C pour ne retenir que l'adresse du site, D si le raffinement prime sur la visibilité, B seulement si le but est d'être vue avant tout.</li>
+        <li><strong>La formule exacte.</strong> « Conseillère et experts immobiliers » figure ici tel que vous l'avez écrit. « Conseillère &amp; expert immobilier » au singulier collerait à votre activité d'expert en valeur vénale : à choisir avant de graver quoi que ce soit.</li>
+        <li><strong>L'arrière.</strong> Le hayon noir brillant accepterait très bien le site en blanc, sous la lunette. Il n'était pas dans votre demande — dites-moi si vous le voulez.</li>
+        <li><strong>Les fichiers.</strong> Une fois la proposition choisie, je sors le tracé vectoriel du Dôme et les gabarits cotés, prêts pour le découpeur.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <p>Maquettes d'étude — Marie-Céline, paris7e.immo, 06 60 98 92 92.</p>
+    <p>Vues dessinées à l'échelle d'après les photographies du véhicule ; les proportions de la voiture sont approchées, les cotes de marquage sont à vérifier au mètre avant découpe.</p>
+  </div>
+</footer>

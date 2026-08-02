@@ -7,6 +7,25 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-08-02
+
+Rien de nouveau par rapport à la veille du 1ᵉʳ août : la maison PAP à
+775 000 € ([annonce](https://www.pap.fr/annonces/maison-antony-92160-r462201384)),
+la maison 155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €
+([annonce](https://www.pap.fr/annonces/maison-antony-92160-r452301068)), et
+les 5 lots aux enchères notariales 36h-immo déjà signalés (dont AI19530,
+appartement 2 p. 30 m² à 159 000 €) restent les seules pistes confirmées,
+toujours en ligne aux mêmes prix. Les recherches par quartier
+(Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets) et sur les
+communes limitrophes (Bourg-la-Reine, Sceaux, Fresnes, Verrières-le-Buisson,
+Massy) ne remontent toujours que des pages d'agrégateurs (SeLoger, PAP,
+ParuVendu, Logic-Immo, leboncoin, Bien'ici), sans annonce individuelle
+nouvelle et identifiable avec certitude. Aucun nouveau signal de succession,
+permis de construire ou projet urbain distinct de ceux déjà connus
+(Antonypole / ligne 18, 36 permis délivrés en 2025).
+
+---
+
 ## 2026-08-01
 
 Rien de nouveau par rapport à la veille du 31 juillet : la maison PAP à

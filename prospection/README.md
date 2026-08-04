@@ -145,6 +145,7 @@ sur l'effort, et il décourage pour rien pendant les trois premières semaines.
 | `README.md` | Ce plan |
 | `emails.md` | 6 modèles de messages + script d'appel + règles d'envoi |
 | `trame-rapport.md` | Structure du rapport et procédure d'anonymisation du modèle |
+| `attestation-independance.md` | Modèle d'attestation à signer et à joindre à chaque rapport |
 | `suivi-prescripteurs.csv` | Colonnes du fichier de suivi — **modèle vide, à remplir hors du dépôt** |
 | `../plaquette-prescripteurs.html` | Plaquette 1 page A4, imprimable en PDF |
 | `../expertise.html` | Page publique, section « Vous êtes notaire ou avocat ? » |

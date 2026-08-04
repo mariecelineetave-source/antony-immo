@@ -5,15 +5,14 @@ produire le **rapport-modèle anonymisé** qui est l'outil de vente principal
 auprès des prescripteurs.
 
 Structure conforme aux usages de la profession (Charte de l'expertise en
-évaluation immobilière). Un rapport résidentiel complet fait **25 à 40 pages**
-annexes comprises ; un avis de valeur motivé reprend les sections marquées
-**[AV]** et s'arrête à 4-6 pages.
+évaluation immobilière). Un rapport résidentiel complet fait **25 à 40 pages**,
+annexes comprises.
 
 ---
 
-## Page de garde **[AV]**
+## Page de garde
 
-- Titre : « Rapport d'expertise en valeur vénale » ou « Avis de valeur motivé »
+- Titre : « Rapport d'expertise en valeur vénale »
 - Désignation courte du bien et adresse
 - **Date de valeur** (date du décès, du partage, de l'assignation…) — à ne pas
   confondre avec la date du rapport
@@ -21,7 +20,7 @@ annexes comprises ; un avis de valeur motivé reprend les sections marquées
 - Référence de dossier, date de remise, nombre de pages
 - Identité et qualité de l'expert, mention « exemplaire n° … sur … »
 
-## 1. Cadre de la mission **[AV]**
+## 1. Cadre de la mission
 
 1.1 Demandeur et destinataire du rapport
 1.2 Objet de la mission et contexte (succession, divorce, IFI, litige)
@@ -48,7 +47,7 @@ alignements, périmètre ABF, servitudes d'utilité publique
 2.6 Risques : état des risques (ERP), zone d'exposition retrait-gonflement des
 argiles, plan de prévention
 
-## 3. Description du bien **[AV, en version courte]**
+## 3. Description du bien
 
 3.1 Environnement immédiat : quartier, desserte, commerces, écoles, nuisances
 3.2 Immeuble ou terrain : époque, structure, état des parties communes
@@ -64,7 +63,7 @@ obligations qui en découlent (audit, interdiction de location)
 3.7 **Reportage photographique commenté** — chaque photo porte une légende qui
 sert l'argumentation, jamais une photo muette
 
-## 4. Analyse du marché local **[AV]**
+## 4. Analyse du marché local
 
 4.1 Contexte du marché communal et de son quartier : volumes, tendance,
 délai de vente moyen
@@ -72,7 +71,7 @@ délai de vente moyen
 4.3 Positionnement du bien dans ce marché : liquidité attendue, profil
 d'acquéreur, points de friction
 
-## 5. Méthodes de valorisation **[AV, méthode par comparaison seule]**
+## 5. Méthodes de valorisation
 
 5.1 **Méthode par comparaison** (méthode principale en résidentiel)
 - Tableau des comparables : adresse, date de vente, surface, prix, prix/m²,
@@ -92,7 +91,7 @@ pourquoi. C'est la section que lit un juge ou un contrôleur.
 > **Règle absolue** : un chiffre sans source ni justification d'ajustement est
 > une faiblesse du rapport. Tout écart doit être motivé en une phrase.
 
-## 6. Conclusion **[AV]**
+## 6. Conclusion
 
 6.1 **Valeur vénale à la date de valeur**, en chiffres et en lettres
 6.2 Fourchette d'appréciation (± 5 à 10 % selon la liquidité du bien)

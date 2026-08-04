@@ -3,8 +3,7 @@
 Document **interne**, non publié sur le site (exclu de l'indexation via `robots.txt`).
 
 Objectif : décrocher des missions d'expertise en valeur vénale auprès des
-professionnels du droit et du chiffre. Cible : notaires, avocats en droit de la
-famille, experts-comptables et conseillers en gestion de patrimoine des
+professionnels du droit. Cible : notaires et avocats en droit de la famille des
 Hauts-de-Seine sud, de l'Essonne nord et du Val-de-Marne ouest.
 
 ---
@@ -17,9 +16,9 @@ Hauts-de-Seine sud, de l'Essonne nord et du Val-de-Marne ouest.
 2. **Objet court et factuel**, jamais commercial. Un notaire ouvre « Expertise
    en valeur vénale — successions », pas « Découvrez nos services ».
 3. **Le délai avant la compétence.** Ce qui manque à une étude ou à un cabinet,
-   ce n'est pas un avis de valeur, c'est un avis de valeur *rapide*. Le « sous
-   10 jours ouvrés » est l'argument principal — il doit être dans les trois
-   premières lignes.
+   ce n'est pas une évaluation, c'est une évaluation *rapide*. Le « sous 10 jours
+   ouvrés » est l'argument principal — il doit être dans les trois premières
+   lignes.
 4. **Un seul appel à l'action** par message : le rapport-modèle. C'est un
    engagement gratuit et sans risque, donc le taux de réponse est bien meilleur
    qu'avec « prenons rendez-vous ».
@@ -48,10 +47,9 @@ période de congés. La convocation des parties par lettre recommandée est à m
 charge, et l'expertise est contradictoire lorsque les héritiers ne s'accordent
 pas.
 
-Deux formats selon le dossier : un avis de valeur motivé de 4 à 6 pages
-(390 € net) quand une justification simple suffit, et une expertise complète et
-opposable (1 190 € net) quand le dossier est conflictuel ou destiné à être
-produit. Honoraires forfaitaires, sans lien avec la valeur du bien.
+L'expertise complète, contradictoire et opposable, est à 1 190 € net.
+Honoraires forfaitaires, connus à l'avance, sans aucun lien avec la valeur du
+bien, avec un devis avant chaque mission.
 
 **Souhaitez-vous que je vous adresse un rapport-modèle anonymisé ?** C'est le
 moyen le plus rapide de juger du travail avant de me confier un premier dossier.
@@ -104,40 +102,7 @@ immédiatement de mes contacts.*
 
 ---
 
-## 3. Premier contact — expert-comptable / CGP
-
-> **Objet :** Justification de valeur IFI et parts de SCI — avis de valeur motivé
-
-Bonjour,
-
-Vos clients détenteurs d'un patrimoine immobilier au-delà du seuil de l'IFI
-doivent justifier chaque année la valeur des biens déclarés. Une estimation
-d'agence gratuite ne constitue pas une justification opposable en cas de
-contrôle.
-
-Je suis expert immobilier en valeur vénale et je produis pour cet usage un
-**avis de valeur motivé de 4 à 6 pages à 390 € net** : ventes comparables du
-secteur, ajustements justifiés, conclusion datée et signée. Le document est
-actualisable les années suivantes à tarif réduit, ce qui en fait un point de
-passage annuel simple pour vos dossiers.
-
-Même logique pour la valorisation de parts de SCI familiale et pour les
-évaluations préalables à une donation ou à un démembrement.
-
-**Souhaitez-vous voir un exemple anonymisé ?** Je vous l'adresse le jour même.
-
-Bien cordialement,
-
-Marie-Céline Etave
-Expert immobilier en valeur vénale — Antony (92160)
-06 60 98 92 92 · contact@antony.immo
-Présentation : https://antony.immo/plaquette-prescripteurs.html
-
-*Pour ne plus recevoir de message de ma part, répondez « stop ».*
-
----
-
-## 4. Script d'appel — 30 secondes (2 à 3 jours après le mail)
+## 3. Script d'appel — 30 secondes (2 à 3 jours après le mail)
 
 > **Au secrétariat / à l'accueil**
 >
@@ -169,7 +134,7 @@ pour envoyer le rapport-modèle** — c'est lui qui vend.
 
 ---
 
-## 5. Relance — J+12, sans réponse
+## 4. Relance — J+12, sans réponse
 
 > **Objet :** Re: Expertise en valeur vénale — successions et partages
 
@@ -188,11 +153,11 @@ Bien respectueusement,
 
 Marie-Céline Etave — 06 60 98 92 92
 
-**Une seule relance.** Au-delà, on passe en réactivation à trois mois (message 8).
+**Une seule relance.** Au-delà, on passe en réactivation à trois mois (message 7).
 
 ---
 
-## 6. Envoi du rapport-modèle (réponse positive)
+## 5. Envoi du rapport-modèle (réponse positive)
 
 > **Objet :** Rapport-modèle anonymisé — expertise en valeur vénale
 
@@ -220,7 +185,7 @@ Marie-Céline Etave — 06 60 98 92 92 · contact@antony.immo
 
 ---
 
-## 7. Après la première mission livrée (J+15)
+## 6. Après la première mission livrée (J+15)
 
 > **Objet :** Dossier [référence] — retour et suite
 
@@ -245,7 +210,7 @@ mission unique en flux régulier. Ne jamais le sauter.
 
 ---
 
-## 8. Réactivation — 3 mois après un contact resté sans suite
+## 7. Réactivation — 3 mois après un contact resté sans suite
 
 > **Objet :** Prix de l'immobilier à Antony — point de marché
 

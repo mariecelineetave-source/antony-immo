@@ -13,14 +13,11 @@ Document **interne**, non publié sur le site (exclu de l'indexation via
 | Cotisations à prévoir (micro-BNC, ordre de grandeur) | ~25 % |
 | **Chiffre d'affaires à viser** | **~4 000 € / mois** |
 
-Deux façons d'y arriver, toutes deux atteignables :
+**4 expertises à 1 190 € = 4 760 €**, soit environ 3 500 € net.
 
-- **4 expertises à 1 190 €** = 4 760 € — soit **une par semaine** ;
-- **2 expertises + 5 avis de valeur** = 4 330 € — mix plus réaliste au démarrage,
-  parce que l'avis de valeur à 390 € se décide beaucoup plus vite.
-
-C'est tout. Il n'y a pas de volume à faire : **l'objectif tient en une mission
-par semaine.**
+C'est tout. Il n'y a pas de volume à faire : **l'objectif tient en une expertise
+par semaine.** Certains mois en donneront cinq, d'autres trois — l'important est
+le flux régulier, pas le pic.
 
 ## Pourquoi les prescripteurs, et pas les particuliers
 
@@ -28,7 +25,7 @@ Un particulier qui a besoin d'une expertise en cherche une **une fois dans sa
 vie**. Le coût d'acquisition est élevé et le cycle est long.
 
 Un notaire traite plusieurs successions par mois avec un bien à évaluer. Un
-avocat en droit de la famille, plusieurs liquidations. Une fois qu'ils ont
+avocat en droit de la famille, plusieurs liquidations par mois. Une fois qu'ils ont
 validé la qualité du travail, ils rappellent sans qu'on ait à revendre.
 
 **Il suffit de 4 prescripteurs actifs pour tenir l'objectif indéfiniment.**
@@ -38,10 +35,10 @@ Tout le plan consiste à en trouver 4.
 
 | Étape | Volume |
 |---|---|
-| Contacts identifiés | **90** (40 notaires, 30 avocats, 20 experts-comptables) |
-| Mails envoyés puis appelés | 90 |
-| Interlocuteur utile identifié (clerc, collaborateur) | ~45 |
-| Rapports-modèles envoyés | ~20 |
+| Contacts identifiés | **70** (40 notaires, 30 avocats en droit de la famille) |
+| Mails envoyés puis appelés | 70 |
+| Interlocuteur utile identifié (clerc, collaborateur) | ~35 |
+| Rapports-modèles envoyés | ~18 |
 | Prescripteurs qui confient un premier dossier | **5 à 8** |
 | Prescripteurs qui deviennent réguliers | **3 à 5** |
 
@@ -60,30 +57,27 @@ résultat final par trois : le mail seul ne suffit pas sur cette cible.
 - [ ] Relire et publier la page `expertise.html` enrichie et la
       `plaquette-prescripteurs.html` (une page A4, imprimable en PDF depuis le
       navigateur).
-- [ ] Constituer la liste des 90 contacts, **hors de ce dépôt**, avec le modèle
+- [ ] Constituer la liste des 70 contacts, **hors de ce dépôt**, avec le modèle
       de colonnes de `suivi-prescripteurs.csv`. Sources : annuaire des notaires
-      de France, annuaire du barreau des Hauts-de-Seine (rubrique droit de la
-      famille), annuaire de l'Ordre des experts-comptables Paris Île-de-France.
-      Périmètre : Antony, Sceaux, Bourg-la-Reine, Châtenay-Malabry, Fontenay-aux-Roses,
+      de France et annuaire du barreau des Hauts-de-Seine (rubrique droit de
+      la famille). Périmètre : Antony, Sceaux, Bourg-la-Reine, Châtenay-Malabry, Fontenay-aux-Roses,
       Massy, Verrières, Wissous, Chevilly, L'Haÿ-les-Roses, Cachan, Bagneux,
       Fresnes, Rungis, Palaiseau, Igny.
-- [ ] Décider du tarif de l'avis de valeur. **390 € est une proposition** :
-      c'est le prix qui rend la décision facile pour un expert-comptable sans
-      dévaloriser l'expertise à 1 190 €. À ajuster, voir « Où changer les prix ».
 
 ### Semaines 2 à 5 — le démarchage (le vrai travail)
 
 Le rythme qui fonctionne, sans y passer ses journées :
 
-> **10 mails le lundi et le mardi, les appels de suivi le jeudi et le vendredi.**
-> Environ 3 heures par semaine. Sur 4 semaines, les 90 contacts sont traités.
+> **Une vingtaine de mails le lundi et le mardi, les appels de suivi le jeudi et
+> le vendredi.** Environ 3 heures par semaine. Sur 4 semaines, les 70 contacts
+> sont traités.
 
 - [ ] Mails personnalisés, un par un — jamais d'envoi groupé (les mails groupés
       partent en indésirable et se voient immédiatement). Modèles dans
-      `emails.md`, un par cible.
+      `emails.md` : un pour les notaires, un pour les avocats.
 - [ ] Appel 2 à 3 jours après chaque mail. **Objectif de l'appel : le nom du
       clerc ou du collaborateur qui suit les évaluations**, puis son accord pour
-      recevoir le rapport-modèle. Script au point 4 de `emails.md`.
+      recevoir le rapport-modèle. Script au point 3 de `emails.md`.
 - [ ] Envoi du rapport-modèle le jour même de l'accord, jamais le lendemain.
 - [ ] Une relance unique à J+12 pour les silencieux, puis on passe à autre chose.
 - [ ] Tenir le fichier de suivi à jour après chaque appel. Sans lui, on rappelle
@@ -94,7 +88,7 @@ Le rythme qui fonctionne, sans y passer ses journées :
 - [ ] Premières missions. **Tenir le délai de 10 jours ouvrés est plus important
       que tout le reste** : c'est l'unique promesse sur laquelle on est jugée,
       et c'est ce qui fait rappeler.
-- [ ] Message de retour à J+15 après chaque rapport livré (point 7 de
+- [ ] Message de retour à J+15 après chaque rapport livré (point 6 de
       `emails.md`). C'est le message qui transforme une mission isolée en flux.
 - [ ] Vers la semaine 6, ouvrir un second front à faible effort : proposer aux
       2 ou 3 agences du secteur le pack contenu + home staging virtuel. À ne
@@ -118,9 +112,9 @@ sur l'effort, et il décourage pour rien pendant les trois premières semaines.
 
 ## Les pièges
 
-1. **Vendre l'expertise, pas le délai.** La compétence est supposée acquise chez
-   un expert ; ce qui manque au prescripteur, c'est un rapport *rapide*. Le
-   « 10 jours ouvrés » ouvre les portes, pas la méthodologie.
+1. **Vendre la méthode au lieu du délai.** La compétence est supposée acquise
+   chez un expert ; ce qui manque au prescripteur, c'est un rapport *rapide*.
+   C'est le « 10 jours ouvrés » qui ouvre les portes, pas la méthodologie.
 2. **Parler au notaire plutôt qu'au clerc.** Le notaire signe, le collaborateur
    choisit l'expert. C'est lui l'interlocuteur.
 3. **Baisser le prix.** Un forfait bas inquiète un notaire : il y lit un travail
@@ -149,15 +143,15 @@ sur l'effort, et il décourage pour rien pendant les trois premières semaines.
 | Fichier | À quoi ça sert |
 |---|---|
 | `README.md` | Ce plan |
-| `emails.md` | 8 modèles de messages + script d'appel + règles d'envoi |
+| `emails.md` | 6 modèles de messages + script d'appel + règles d'envoi |
 | `trame-rapport.md` | Structure du rapport et procédure d'anonymisation du modèle |
 | `suivi-prescripteurs.csv` | Colonnes du fichier de suivi — **modèle vide, à remplir hors du dépôt** |
 | `../plaquette-prescripteurs.html` | Plaquette 1 page A4, imprimable en PDF |
-| `../expertise.html` | Page publique, section « Vous êtes notaire, avocat… » |
+| `../expertise.html` | Page publique, section « Vous êtes notaire ou avocat ? » |
 
 ### Colonnes du fichier de suivi
 
-`categorie` (notaire / avocat / EC) · `etude_ou_cabinet` · `commune` ·
+`categorie` (notaire / avocat) · `etude_ou_cabinet` · `commune` ·
 `contact_utile` · `fonction` · `date_mail` · `date_appel` ·
 `interlocuteur_identifie` (oui/non) · `modele_envoye` · `date_relance` ·
 `statut` (à contacter / relancé / modèle envoyé / mission / refus / stop) ·
@@ -167,15 +161,12 @@ sur l'effort, et il décourage pour rien pendant les trois premières semaines.
 > contiendrait des coordonnées professionnelles nominatives. Le remplir dans un
 > tableur conservé sur l'ordinateur.
 
-### Où changer les prix
+### Où changer le prix
 
-Le tarif de l'avis de valeur (390 €) apparaît à quatre endroits. Si vous le
-modifiez, changez-le partout :
+Un seul tarif est affiché : **1 190 € net** pour l'expertise en valeur vénale.
+Si vous le modifiez, changez-le aux quatre endroits :
 
-- `expertise.html` — bloc JSON-LD en tête de page, et section « Vous êtes
-  notaire, avocat ou expert-comptable ? »
+- `expertise.html` — bloc JSON-LD en tête de page, et section « Tarif »
 - `plaquette-prescripteurs.html` — section « Honoraires »
-- `prospection/emails.md` — messages 1 et 3
-
-Le tarif de l'expertise (1 190 €) est inchangé, et figure aussi sur
-`index.html`.
+- `prospection/emails.md` — messages 1 et 2
+- `index.html` — bloc tarif de la section expertise

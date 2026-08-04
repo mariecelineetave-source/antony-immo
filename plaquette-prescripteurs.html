@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expertise en valeur vénale — plaquette prescripteurs · antony.immo</title>
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Plaquette de présentation destinée aux notaires, avocats et experts-comptables : expertise immobilière en valeur vénale par Marie-Céline Etave.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E2E52'/%3E%3Crect x='9' y='9' width='14' height='14' fill='none' stroke='%23EBF2F9' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%231E88E5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --stone:#EBF2F9; --craie:#F7FAFD; --parterre:#DCE8F4; --buis:#1C5A9E;
+  --ombre:#0E2E52; --meuliere:#1E88E5; --cuivre:#8FC6F2;
+  --encre:#12263C; --mousse:#4C6B8A; --ligne:#C5D6E6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Archivo",system-ui,sans-serif;background:var(--stone);color:var(--encre);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--meuliere);text-decoration:none}
+
+/* Barre d'action — masquée à l'impression */
+.barre{max-width:210mm;margin:0 auto;padding:18px 8mm;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.barre p{font-size:.85rem;color:var(--mousse);max-width:52ch}
+.barre .btn{background:var(--meuliere);color:#fff;border:0;border-radius:3px;padding:.7rem 1.3rem;font:inherit;font-weight:600;font-size:.9rem;cursor:pointer}
+.barre .btn:hover{background:#1668B5}
+.barre a.lien{font-size:.85rem;font-weight:600}
+
+/* La feuille A4 */
+.feuille{
+  width:210mm;min-height:297mm;margin:0 auto 24px;padding:12mm 13mm 10mm;
+  background:#fff;box-shadow:0 4px 24px rgba(14,46,82,.16);
+  display:flex;flex-direction:column;
+}
+
+/* En-tête */
+.tete{background:var(--ombre);color:#fff;margin:-12mm -13mm 5mm;padding:5.5mm 13mm 5mm}
+.tete .marque{font-family:"Fraunces",Georgia,serif;font-size:.95rem;font-weight:600;color:#F5F9FD;letter-spacing:.01em}
+.tete .marque .dot{color:var(--cuivre)}
+.tete h1{font-family:"Fraunces",Georgia,serif;font-size:1.5rem;font-weight:500;line-height:1.1;color:#fff;margin:.3rem 0 .25rem;letter-spacing:-.01em}
+.tete .sous{font-size:.8rem;color:rgba(235,242,249,.86);max-width:74ch}
+.tete .ident{margin-top:3mm;padding-top:2.4mm;border-top:1px solid rgba(235,242,249,.22);display:flex;flex-wrap:wrap;gap:.25rem 1.4rem;font-size:.75rem;color:rgba(235,242,249,.9)}
+.tete .ident strong{color:#fff;font-weight:600}
+
+h2{font-family:"Fraunces",Georgia,serif;font-size:.98rem;font-weight:600;color:var(--buis);margin-bottom:1.6mm}
+h2::after{content:"";display:block;width:32px;height:2px;background:var(--meuliere);margin-top:1.2mm}
+section{margin-bottom:3.2mm}
+
+/* Colonnes prescripteurs */
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:3.2mm}
+.tri article{background:var(--craie);border:1px solid var(--ligne);border-top:3px solid var(--meuliere);border-radius:3px;padding:2.8mm 3.2mm}
+.tri .role{display:block;font-size:.58rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--meuliere);margin-bottom:1.5mm}
+.tri h3{font-family:"Fraunces",Georgia,serif;font-size:.87rem;font-weight:600;color:var(--encre);margin-bottom:1.5mm;line-height:1.2}
+.tri p{font-size:.70rem;line-height:1.42;color:#33465C}
+
+/* Deux colonnes : contenu du rapport + engagements */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+ul.puces{list-style:none}
+ul.puces li{position:relative;padding-left:4.2mm;font-size:.72rem;line-height:1.4;color:#33465C;margin-bottom:1.1mm}
+ul.puces li::before{content:"";position:absolute;left:0;top:1.9mm;width:1.5mm;height:1.5mm;background:var(--meuliere);border-radius:50%}
+ul.puces li strong{color:var(--encre);font-weight:600}
+.texte{font-size:.72rem;line-height:1.42;color:#33465C;margin-bottom:1.5mm}
+.texte strong{color:var(--encre);font-weight:600}
+
+/* Tarifs */
+.tarifs{display:grid;grid-template-columns:1fr 1fr;gap:3.2mm}
+.tarifs article{border:1px solid var(--ligne);border-radius:3px;padding:2.8mm 3.5mm;background:#fff}
+.tarifs article.fort{background:var(--parterre);border-color:var(--meuliere)}
+.tarifs .n{font-family:"Fraunces",Georgia,serif;font-size:1.3rem;font-weight:600;color:var(--buis);line-height:1}
+.tarifs .n small{font-size:.42em;font-weight:500;color:var(--mousse)}
+.tarifs h3{font-family:"Archivo",sans-serif;font-size:.83rem;font-weight:700;margin:1.2mm 0 .8mm}
+.tarifs p{font-size:.70rem;line-height:1.4;color:#33465C}
+.mention{font-size:.66rem;color:var(--mousse);margin-top:1.6mm}
+
+/* Bandeau final */
+.appel{margin-top:auto;background:var(--ombre);color:#fff;border-radius:3px;padding:3.2mm 4.5mm;display:flex;flex-wrap:wrap;gap:2.5mm 5mm;align-items:center;justify-content:space-between}
+.appel .txt{max-width:44ch;flex:1;min-width:200px}
+.appel h3{font-family:"Fraunces",Georgia,serif;font-size:.92rem;font-weight:600;color:#fff;margin-bottom:.8mm}
+.appel p{font-size:.72rem;color:rgba(235,242,249,.88)}
+.appel .coord{font-size:.9rem;font-weight:700;color:#fff;white-space:nowrap}
+.appel .coord span{display:block;font-size:.74rem;font-weight:500;color:var(--cuivre);margin-top:.5mm}
+
+.pied{margin-top:2.5mm;padding-top:2mm;border-top:1px solid var(--ligne);font-size:.57rem;line-height:1.4;color:var(--mousse)}
+
+/* Écrans étroits : la feuille reste lisible */
+@media screen and (max-width:230mm){
+  .feuille{width:100%;min-height:0;padding:20px;box-shadow:none}
+  .tete{margin:-20px -20px 24px;padding:24px 20px}
+  .tri,.duo,.tarifs{grid-template-columns:1fr}
+  .barre{padding:18px 20px}
+}
+
+/* Impression : une page A4 propre */
+@page{size:A4;margin:0}
+@media print{
+  html,body{background:#fff}
+  .barre{display:none}
+  .feuille{width:auto;min-height:0;margin:0;padding:12mm 13mm 10mm;box-shadow:none;page-break-after:avoid}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{color:var(--encre)}
+}
+</style>
+</head>
+<body>
+
+<div class="barre">
+  <p>Plaquette de présentation destinée aux notaires, avocats et experts-comptables. Utilisez le bouton pour l'imprimer ou l'enregistrer en PDF (une page A4).</p>
+  <div>
+    <a class="lien" href="expertise.html">← La page expertise</a>
+    &nbsp;&nbsp;
+    <button class="btn" type="button" onclick="window.print()">Imprimer / enregistrer en PDF</button>
+  </div>
+</div>
+
+<div class="feuille">
+
+  <header class="tete">
+    <p class="marque">antony<span class="dot">.</span>immo</p>
+    <h1>Expertise immobilière en valeur vénale</h1>
+    <p class="sous">Une valeur écrite, motivée et opposable, pour vos dossiers de succession, de divorce, de partage et de fiscalité. Rapport remis <strong>sous 10 jours ouvrés après la visite</strong>.</p>
+    <div class="ident">
+      <span><strong>Marie-Céline Etave</strong> — expert immobilier en valeur vénale</span>
+      <span>06 60 98 92 92</span>
+      <span>contact@antony.immo</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Ce que j'apporte à votre dossier</h2>
+    <div class="tri">
+      <article>
+        <span class="role">Notaires</span>
+        <h3>Successions et partages</h3>
+        <p>Valeur motivée à la date du décès ou du partage. Quand les héritiers ne s'accordent pas, une valeur écrite par un tiers neutre débloque le dossier et sécurise l'acte.</p>
+      </article>
+      <article>
+        <span class="role">Avocats</span>
+        <h3>Divorce et liquidation</h3>
+        <p>Évaluation du bien commun ou indivis : liquidation du régime, attribution préférentielle, calcul d'une soulte. Expertise contradictoire, conçue pour être produite.</p>
+      </article>
+      <article>
+        <span class="role">Experts-comptables &amp; CGP</span>
+        <h3>IFI, SCI, transmission</h3>
+        <p>Justification annuelle des valeurs déclarées à l'IFI, valorisation de parts de SCI, évaluation préalable à une donation. Document actualisable chaque année.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="duo">
+    <section>
+      <h2>Le rapport</h2>
+      <p class="texte">Cadre de la mission et date de valeur retenue · identification juridique, cadastrale et urbanistique · description, surfaces et photographies commentées · analyse du marché local.</p>
+      <p class="texte">Puis le cœur du document : les <strong>ventes comparables du secteur</strong>, avec les ajustements appliqués et leur justification, confrontées à une seconde méthode reconnue. Conclusion motivée sur la valeur vénale à la date retenue, valeur en cas de vente rapide, réserves. Attestation d'indépendance jointe.</p>
+    </section>
+
+    <section>
+      <h2>Mes engagements</h2>
+      <ul class="puces">
+        <li><strong>Délai tenu</strong> : visite sous une semaine, rapport sous 10 jours ouvrés, toute l'année.</li>
+        <li><strong>Contradictoire</strong> : convocation des parties par lettre recommandée, à ma charge.</li>
+        <li><strong>Indépendance</strong> : aucun mandat de vente accepté sur un bien que j'ai expertisé.</li>
+        <li><strong>Forfait</strong> : honoraires connus à l'avance, sans lien avec la valeur du bien.</li>
+        <li><strong>Terrain</strong> : les comparables ne sortent pas d'un fichier — je connais les rues et les acheteurs.</li>
+      </ul>
+    </section>
+  </div>
+
+  <section>
+    <h2>Honoraires</h2>
+    <div class="tarifs">
+      <article>
+        <div class="n">390&nbsp;€<small> net</small></div>
+        <h3>Avis de valeur motivé</h3>
+        <p>4 à 6 pages argumentées, sans convocation des parties. Pour une justification simple : IFI, actualisation annuelle, valorisation de parts, arbitrage préalable.</p>
+      </article>
+      <article class="fort">
+        <div class="n">1 190&nbsp;€<small> net</small></div>
+        <h3>Expertise en valeur vénale</h3>
+        <p>Rapport complet, contradictoire et opposable. Pour les successions conflictuelles, les divorces et les litiges.</p>
+      </article>
+    </div>
+    <p class="mention">TVA non applicable, article 293 B du CGI. Biens résidentiels d'Île-de-France, frais de recommandés inclus. Devis sur mesure pour un immeuble, un local commercial ou un bien atypique.</p>
+  </section>
+
+  <div class="appel">
+    <div class="txt">
+      <h3>Un rapport-modèle anonymisé, sur simple demande</h3>
+      <p>Le moyen le plus rapide de juger du travail avant de confier un premier dossier. Un appel ou un courriel suffit : je vous l'adresse le jour même.</p>
+    </div>
+    <div class="coord">
+      06 60 98 92 92
+      <span>contact@antony.immo</span>
+    </div>
+  </div>
+
+  <p class="pied">Marie-Céline ETAVE (entreprise individuelle), expert immobilier en valeur vénale et agent commercial en immobilier auprès de BSK Immobilier, immatriculée au RSAC de Nanterre (92000) sous le numéro 431 897 958 00051. Carte professionnelle BSK Immobilier n° CP 3101 2018 000 030 369 (CCI de Toulouse, 20/04/2024). TVA non applicable, article 293 B du CGI. L'expertise en valeur vénale est une activité distincte de l'entremise immobilière et n'entre pas dans le champ de la loi du 2 janvier 1970.</p>
+
+</div>
+
+</body>
+</html>

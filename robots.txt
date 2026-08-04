@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /prospection/
 
 Sitemap: https://antony.immo/sitemap.xml

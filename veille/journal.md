@@ -7,6 +7,36 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-08-04
+
+Une nouvelle piste repérée par rapport aux veilles précédentes :
+
+- **Maison 9 pièces, 422 m² habitables (502 m² au sol), terrain 1 460 m²,
+  Antony (92160) — 1 300 000 €**, vente aux enchères en ligne, secteur avec
+  accès direct au parc Heller, à 15 min à pied du centre-ville et du RER B.
+  [Voir l'annonce (immo-interactif.fr)](https://www.immo-interactif.fr/encheres-en-ligne/maison/antony-92/1656702)
+  — Bien de très grande taille et de valeur, vendu aux enchères : signal
+  possible de succession ou de liquidation, piste de mandat de revente pour
+  l'acquéreur.
+
+Une annonce vue sur encheres-immo.com (« Maison centre-ville sur Antony »,
+150 m², 6 pièces, terrain 510 m², mise à prix 700 000 €) correspond à une
+vente déjà **terminée** (enchère de janvier 2024) : non retenue.
+
+Les autres pistes déjà connues restent en ligne aux mêmes conditions : la
+maison PAP à 775 000 €, la maison 155 m² quartier Beauvallon / Bois de
+l'Aurore à 670 000 €, et les 5 lots aux enchères notariales 36h-immo (dont
+AI19530, appartement 2 p. 30 m² à 159 000 €). Les recherches par quartier
+(Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets) et sur les
+communes limitrophes (Bourg-la-Reine, Sceaux, Fresnes, Verrières-le-Buisson,
+L'Haÿ-les-Roses, Massy) ne remontent toujours que des pages d'agrégateurs
+(SeLoger, PAP, ParuVendu, Logic-Immo, leboncoin, Bien'ici, entreparticuliers,
+IAD), sans annonce individuelle nouvelle et identifiable avec certitude.
+Aucun nouveau signal de succession, de permis de construire ou de projet
+urbain distinct de ceux déjà connus (Antonypole / ligne 18).
+
+---
+
 ## 2026-08-02
 
 Rien de nouveau par rapport à la veille du 1ᵉʳ août : la maison PAP à

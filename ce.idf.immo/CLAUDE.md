@@ -85,5 +85,17 @@ Ne pas mélanger : pas d'actu immo ni d'estimateur de prix ici, pas de contenu
   besoin.
 - **Honoraires minimum** : aucun plancher n'est annoncé sur le site (ex.
   « 3 %, minimum X € »). À ajouter si elle en pratique un.
-- **Adresse de contact** : le site utilise `contact@antony.immo`. Une adresse
-  dédiée (`contact@ce.idf.immo`) est possible.
+## Contact — règle stricte
+
+- **Adresse e-mail : `contact@ce.idf.immo` uniquement.** Ne jamais remettre
+  `contact@antony.immo` sur ce site : chaque site a son adresse.
+  ⚠️ Cette boîte doit être créée (ou redirigée) chez le registrar du domaine
+  `idf.immo` pour que les formulaires aboutissent.
+- **Téléphone : 06 60 98 92 92** — le même que sur antony.immo.
+
+## Vocabulaire
+
+Dire **« comité d'entreprise »** dans le texte visible, et **« CSE »** (comité
+social et économique) seulement en rappel : première mention du héros, section
+« Rôle du comité », balises meta et données structurées (les élus cherchent
+« CSE » sur Google). Ne pas truffer les pages de sigles.

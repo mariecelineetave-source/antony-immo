@@ -11,9 +11,16 @@ L'offre faite aux salariés des entreprises partenaires :
 
 | Prestation | Tarif |
 |---|---|
-| Vente du bien personnel d'un salarié | **3 %** du prix de vente (honoraires d'agence, à la charge du vendeur, dus uniquement si la vente se conclut) |
-| Recherche / accompagnement à l'achat | Aucun honoraire de recherche supplémentaire pour le salarié |
+| **Mandat de vente** (salarié qui vend son bien personnel) | **3 %** du prix de vente, à la charge du vendeur, dus à la signature de l'acte authentique |
+| **Mandat de recherche** (salarié qui cherche un bien) | **3 %** du prix d'acquisition, à la charge du salarié acquéreur, dus uniquement si l'acquisition aboutit |
 | Expertise en valeur vénale | **990 €** au lieu de 1 190 € |
+
+**Le 3 % est fixe et sans aucun minimum d'honoraires**, quel que soit le prix du
+bien. C'est un argument central et il est confirmé par Marie-Céline : ne jamais
+introduire de plancher, de palier ni de barème dégressif dans les textes. Pas de
+frais de dossier, de photos ni de publicité ; rien n'est dû si l'opération ne se
+fait pas. Le site doit toujours nommer explicitement **les deux mandats** — de
+vente et de recherche — et non parler vaguement d'« accompagnement ».
 
 Le CSE, lui, ne paie rien, ne perçoit rien, ne signe aucun engagement financier
 et n'a rien à gérer. C'est l'argument central du site : **il faut donner envie

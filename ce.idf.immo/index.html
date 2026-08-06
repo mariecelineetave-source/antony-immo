@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3 % d'honoraires pour vos salariés — l'avantage immobilier des comités d'entreprise · ce.idf.immo</title>
-<meta name="description" content="Proposition aux comités d'entreprise (CSE) d'Île-de-France : 3 % d'honoraires d'agence sur la vente du bien personnel de vos salariés, accompagnement à la recherche, expertise en valeur vénale à 990 €. Aucun coût, aucun engagement pour le CSE.">
+<title>3 % fixe, sans minimum — l'avantage immobilier des comités d'entreprise · ce.idf.immo</title>
+<meta name="description" content="Proposition aux comités d'entreprise (CSE) d'Île-de-France : 3 % d'honoraires d'agence, fixes et sans minimum, sur le mandat de vente comme sur le mandat de recherche du bien personnel de vos salariés. Expertise en valeur vénale à 990 €. Aucun coût, aucun engagement pour le CSE.">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="ce.idf.immo — L'avantage immobilier de votre comité d'entreprise">
-<meta property="og:description" content="3 % d'honoraires sur la vente du bien personnel de vos salariés, au lieu des taux couramment pratiqués. Rien à payer, rien à gérer pour le CSE. Toute l'Île-de-France.">
+<meta property="og:description" content="3 % d'honoraires fixes, sans minimum, pour vendre ou pour chercher le bien personnel de vos salariés. Rien à payer, rien à gérer pour le CSE. Toute l'Île-de-France.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ce.idf.immo/">
 <meta property="og:locale" content="fr_FR">
@@ -23,12 +23,17 @@
   "telephone": "+33660989292",
   "email": "contact@ce.idf.immo",
   "areaServed": {"@type": "AdministrativeArea", "name": "Île-de-France"},
-  "description": "Offre réservée aux salariés des entreprises dont le comité d'entreprise (CSE) est partenaire : 3 % d'honoraires d'agence sur la vente d'un bien personnel, accompagnement à la recherche, expertise en valeur vénale à 990 €. Toute l'Île-de-France.",
+  "description": "Offre réservée aux salariés des entreprises dont le comité d'entreprise (CSE) est partenaire : 3 % d'honoraires d'agence, fixes et sans minimum, sur le mandat de vente comme sur le mandat de recherche d'un bien personnel. Expertise en valeur vénale à 990 €. Toute l'Île-de-France.",
   "makesOffer": [
     {
       "@type": "Offer",
-      "description": "Vente du bien personnel d'un salarié : 3 % d'honoraires d'agence sur le prix de vente, dus uniquement si la vente se conclut.",
+      "description": "Mandat de vente du bien personnel d'un salarié : 3 % du prix de vente, sans minimum d'honoraires, à la charge du vendeur et dus uniquement si la vente se conclut.",
       "itemOffered": {"@type": "Service", "serviceType": "Vente immobilière"}
+    },
+    {
+      "@type": "Offer",
+      "description": "Mandat de recherche pour un salarié acquéreur : 3 % du prix d'acquisition, sans minimum d'honoraires, dus uniquement si l'acquisition aboutit.",
+      "itemOffered": {"@type": "Service", "serviceType": "Recherche immobilière pour acquéreur"}
     },
     {
       "@type": "Offer",
@@ -211,6 +216,24 @@ h3{font-size:1.35rem;font-weight:600}
 .offre .pied{margin-top:auto;padding-top:1.3rem;font-size:.85rem;color:var(--mousse)}
 @media (max-width:900px){.offres{grid-template-columns:1fr}}
 
+.offres.deux{grid-template-columns:1fr 1fr}
+@media (max-width:900px){.offres.deux{grid-template-columns:1fr}}
+
+/* Bloc « aucune mauvaise surprise » */
+.transparence{background:var(--ombre);color:#F5F9FD;border-radius:6px;padding:2.1rem 2.2rem;margin-top:1.4rem}
+.transparence h3{color:#fff;font-size:1.35rem;margin-bottom:.6rem}
+.transparence p{color:rgba(235,242,249,.85);font-size:.98rem}
+.transparence ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:.45rem 2rem;margin-top:1.2rem}
+.transparence li{position:relative;padding-left:1.7rem;font-size:.95rem;color:rgba(235,242,249,.92)}
+.transparence li::before{content:"×";position:absolute;left:0;top:-.12rem;font-size:1.25rem;font-weight:700;color:var(--cuivre)}
+@media (max-width:700px){.transparence{padding:1.6rem}.transparence ul{grid-template-columns:1fr}}
+
+/* Barre expertise */
+.expertise-bar{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;background:var(--craie);border:1px solid var(--ligne);border-radius:6px;padding:1.7rem 2rem;margin-top:1.4rem}
+.expertise-bar .n{font-family:"Fraunces",Georgia,serif;font-size:2.1rem;font-weight:600;color:var(--buis);line-height:1}
+.expertise-bar .n small{font-size:.4em;font-weight:500;color:var(--mousse)}
+.expertise-bar p{flex:1;min-width:280px;font-size:.96rem;color:#33465C}
+
 /* ============ Deux colonnes « ce que / ce que pas » ============ */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.4rem}
 .duo .bloc{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:2rem}
@@ -330,7 +353,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
     <div class="hero-inner">
       <p class="eyebrow rise d1">Comités d'entreprise · Île-de-France</p>
       <h1 class="rise d2">Le plus bel avantage que vous puissiez offrir <em>ne vous coûtera rien</em>.</h1>
-      <p class="intro rise d3">Vendre ou acheter un logement, c'est la décision financière la plus lourde d'une vie — et celle où vos salariés sont le plus seuls. Je propose aux comités d'entreprise (les CSE) d'Île-de-France un tarif négocié pour leurs salariés&nbsp;: <strong>3&nbsp;% d'honoraires d'agence</strong> sur la vente de leur bien personnel, et un accompagnement complet pour leur recherche. Le comité ne paie rien, ne signe aucun engagement financier, et fait gagner à ses salariés plusieurs milliers d'euros.</p>
+      <p class="intro rise d3">Vendre ou acheter un logement, c'est la décision financière la plus lourde d'une vie — et celle où vos salariés sont le plus seuls. Je propose aux comités d'entreprise (les CSE) d'Île-de-France un tarif négocié pour leurs salariés&nbsp;: <strong>3&nbsp;% d'honoraires d'agence, fixes et sans minimum</strong> — sur un mandat de vente comme sur un mandat de recherche. Le comité ne paie rien, ne signe aucun engagement financier, et fait gagner à ses salariés plusieurs milliers d'euros.</p>
       <div class="hero-cta rise d4">
         <a class="btn btn-solid" href="#proposition">Recevoir la proposition</a>
         <a class="btn btn-ghost" href="#simulateur">Voir ce que ça représente</a>
@@ -345,8 +368,8 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
   <div class="container strip-grid">
     <div class="reveal">
       <p class="gros">3 %</p>
-      <h3>d'honoraires à la vente</h3>
-      <p>Sur le prix de vente, à la charge du vendeur, et dus uniquement si la vente se conclut.</p>
+      <h3>fixes, sans minimum</h3>
+      <p>Le même taux sur un mandat de vente et sur un mandat de recherche, quel que soit le prix du bien — et dus uniquement si l'opération se conclut.</p>
     </div>
     <div class="reveal">
       <p class="gros">0 €</p>
@@ -416,7 +439,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
           <p class="n" id="out-gain">8 000 €</p>
         </div>
       </div>
-      <p class="simu-note">Calcul indicatif : honoraires appliqués au prix de vente. Le taux de comparaison est celui que vous choisissez — je n'avance aucun « taux moyen » que je ne pourrais pas prouver. Seul mon engagement est ferme : <strong>3 % pour les salariés d'un comité partenaire</strong>.</p>
+      <p class="simu-note">Calcul indicatif : honoraires appliqués au prix de vente. Le taux de comparaison est celui que vous choisissez — je n'avance aucun « taux moyen » que je ne pourrais pas prouver. Seul mon engagement est ferme : <strong>3 % pour les salariés d'un comité partenaire, sans minimum et quel que soit le prix du bien</strong>.</p>
     </div>
   </div>
 </section>
@@ -426,43 +449,50 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">L'offre</p>
-      <h2>Trois besoins, trois réponses</h2>
-      <p>L'offre couvre tout le parcours immobilier personnel d'un salarié : vendre, chercher, ou simplement savoir ce que vaut un bien.</p>
+      <h2>Deux mandats, un seul taux</h2>
+      <p>Un salarié qui vend me confie un <strong>mandat de vente</strong>. Un salarié qui cherche me confie un <strong>mandat de recherche</strong>. Dans les deux cas, mes honoraires sont de <strong>3 %</strong> — le même taux, sans minimum, et dus uniquement si l'opération aboutit.</p>
     </div>
-    <div class="offres">
+    <div class="offres deux">
       <article class="offre accent reveal">
         <p class="tarif">3 %<small> du prix de vente</small></p>
-        <h3>Vendre son bien</h3>
-        <p>La vente pilotée de bout en bout : estimation, mise en valeur, photos, diffusion sur les grands portails, visites qualifiées, négociation et suivi jusqu'à la signature chez le notaire.</p>
+        <h3>Le mandat de vente</h3>
+        <p>Pour le salarié qui vend son logement. Il me confie un mandat, et à partir de là tout est piloté : estimation argumentée, conseils de mise en valeur, photos, diffusion sur les grands portails, visites qualifiées — je ne fais pas défiler des curieux chez lui —, négociation, puis suivi du dossier jusqu'à la signature chez le notaire.</p>
         <ul>
-          <li>Estimation offerte, avant tout engagement</li>
+          <li>Estimation offerte, avant toute signature de mandat</li>
           <li>Compte-rendu après chaque visite</li>
-          <li>Aucun honoraire si la vente ne se fait pas</li>
+          <li>3 % du prix de vente, sans minimum</li>
+          <li>Rien à payer si le bien ne se vend pas</li>
         </ul>
-        <p class="pied">Honoraires à la charge du vendeur, dus à la signature de l'acte.</p>
+        <p class="pied">Honoraires à la charge du vendeur, dus le jour de la signature de l'acte authentique.</p>
       </article>
-      <article class="offre reveal">
-        <p class="tarif">Sans surcoût<small> pour le salarié</small></p>
-        <h3>Chercher un bien</h3>
-        <p>La recherche menée pour lui : définition précise du projet et du budget, sélection des biens, visites accompagnées, analyse des points de vigilance, puis sécurisation de l'offre jusqu'à la signature.</p>
+      <article class="offre accent reveal">
+        <p class="tarif">3 %<small> du prix d'acquisition</small></p>
+        <h3>Le mandat de recherche</h3>
+        <p>C'est le mandat que peu de gens connaissent, et c'est le plus utile pour un acheteur. Dans une vente ordinaire, l'agent immobilier travaille pour le vendeur : c'est son prix à lui qu'il défend. Avec un mandat de recherche, votre salarié a enfin <strong>quelqu'un de son côté</strong> : je cherche à sa place, y compris des biens qui ne sont pas encore en annonce, je l'accompagne en visite, je lui dis franchement ce qui ne va pas, et je négocie dans son intérêt.</p>
         <ul>
           <li>Recherche personnalisée, y compris hors annonces</li>
           <li>Visites accompagnées et avis franc sur chaque bien</li>
-          <li>Aide à la négociation et au montage du dossier</li>
+          <li>Négociation menée pour lui, pas contre lui</li>
+          <li>3 % du prix d'acquisition, sans minimum</li>
         </ul>
-        <p class="pied">Aucun honoraire de recherche supplémentaire n'est facturé au salarié.</p>
+        <p class="pied">Honoraires à la charge du salarié acquéreur, dus uniquement si l'acquisition aboutit.</p>
       </article>
-      <article class="offre reveal">
-        <p class="tarif">990 €<small> au lieu de 1 190 €</small></p>
-        <h3>Faire expertiser un bien</h3>
-        <p>L'expertise en valeur vénale : un rapport écrit, daté et motivé, qui établit la valeur d'un bien pour une succession, un divorce, une donation, l'IFI ou un litige. Un acte tout autre qu'une estimation.</p>
-        <ul>
-          <li>Rapport opposable, remis à chaque partie</li>
-          <li>Expertise contradictoire, parties convoquées</li>
-          <li>Tarif réservé aux salariés des comités partenaires</li>
-        </ul>
-        <p class="pied"><a href="expertise.html">Comprendre l'expertise en valeur vénale →</a></p>
-      </article>
+    </div>
+
+    <div class="transparence reveal">
+      <h3>3 % fixe. Aucune mauvaise surprise.</h3>
+      <p>Un taux unique, quel que soit le prix du bien : 3 %, que le logement se vende 180 000 € ou 900 000 €. Pas de palier, pas de barème dégressif à déchiffrer, et surtout <strong>aucun montant plancher</strong> — c'est souvent là que se cachent les mauvaises surprises, un bien modeste se retrouvant facturé l'équivalent de 6 ou 7 %. Ici, votre salarié connaît le montant exact dès le premier rendez-vous, et il ne découvre rien en cours de route.</p>
+      <ul>
+        <li>Aucun minimum d'honoraires</li>
+        <li>Aucun frais de dossier</li>
+        <li>Aucun frais de photos ni de publicité</li>
+        <li>Aucun frais si l'opération ne se fait pas</li>
+      </ul>
+    </div>
+
+    <div class="expertise-bar reveal">
+      <p class="n">990 €<small> au lieu de 1 190 €</small></p>
+      <p>Troisième volet de l'offre : <strong>l'expertise en valeur vénale</strong>, pour les salariés confrontés à une succession, un divorce, une donation ou l'IFI. Un rapport écrit, daté et motivé — un acte tout autre qu'une estimation. <a href="expertise.html">Comprendre l'expertise →</a></p>
     </div>
   </div>
 </section>
@@ -590,7 +620,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
     <div class="faq reveal">
       <details>
         <summary>Est-ce que cela engage financièrement le comité ?</summary>
-        <p>Non. Le comité ne verse rien, ne perçoit rien et ne s'engage sur aucun volume. Aucun flux financier ne passe par le comité : les honoraires sont réglés par le salarié vendeur, au moment de la signature de l'acte, exactement comme dans une vente classique. Le rôle du comité s'arrête à l'information de ses salariés.</p>
+        <p>Non. Le comité ne verse rien, ne perçoit rien et ne s'engage sur aucun volume. Aucun flux financier ne passe par le comité : les honoraires sont réglés directement par le salarié — le vendeur sur un mandat de vente, l'acquéreur sur un mandat de recherche — au moment où l'opération se conclut, exactement comme dans une transaction ordinaire. Le rôle du comité s'arrête à l'information de ses salariés.</p>
       </details>
       <details>
         <summary>Le comité touche-t-il une commission ou une rétrocession ?</summary>
@@ -601,8 +631,16 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
         <p>Non. Vous restez libres de référencer d'autres professionnels, et vos salariés restent évidemment libres de choisir qui ils veulent. Le partenariat n'a pas de durée d'engagement : il s'interrompt sur simple demande, sans formalité ni indemnité.</p>
       </details>
       <details>
+        <summary>Y a-t-il un minimum d'honoraires ?</summary>
+        <p><strong>Non, aucun.</strong> C'est un point sur lequel je suis catégorique, parce que c'est là que se logent la plupart des mauvaises surprises du métier : beaucoup d'agences annoncent un pourcentage attractif, puis appliquent un plancher — 6 000 €, 8 000 € — qui fait grimper le taux réel sur les biens modestes. Ici, c'est 3 % du premier au dernier euro, que le bien vaille 150 000 € ou un million. Le salarié peut faire le calcul lui-même, il tombera juste.</p>
+      </details>
+      <details>
         <summary>Que couvre exactement le taux de 3 % ?</summary>
-        <p>Il s'agit des honoraires d'agence sur la vente du bien personnel d'un salarié, calculés sur le prix de vente et à la charge du vendeur. Ils ne sont dus qu'en cas de vente conclue : si le bien ne se vend pas, le salarié ne paie rien. L'estimation préalable est offerte, sans engagement de confier le mandat.</p>
+        <p>Il couvre l'intégralité de la mission, dans les deux sens. Sur un <strong>mandat de vente</strong> : les honoraires sont calculés sur le prix de vente, à la charge du vendeur, et dus le jour de la signature de l'acte authentique. Sur un <strong>mandat de recherche</strong> : ils sont calculés sur le prix d'acquisition, à la charge du salarié acquéreur, et dus uniquement si l'acquisition aboutit. Dans les deux cas, rien n'est facturé si l'opération ne se fait pas — ni frais de dossier, ni frais de photos, ni frais de publicité. L'estimation préalable est offerte, sans obligation de signer quoi que ce soit ensuite.</p>
+      </details>
+      <details>
+        <summary>Qu'est-ce qu'un mandat de recherche, exactement ?</summary>
+        <p>C'est le contrat par lequel un acheteur me confie la mission de trouver son bien — l'exact symétrique du mandat de vente. La différence est loin d'être un détail : dans une transaction ordinaire, l'agent immobilier est mandaté par le vendeur, donc c'est le prix du vendeur qu'il défend. Un salarié qui visite seul n'a personne de son côté de la table. Avec un mandat de recherche, il a une professionnelle qui cherche pour lui, qui lui signale ce qui cloche dans un bien au lieu de le lui vendre, et qui négocie dans son intérêt. Pour un premier achat, c'est souvent ce qui fait la différence entre une bonne et une mauvaise opération.</p>
       </details>
       <details>
         <summary>Et si un salarié possède un bien hors Île-de-France ?</summary>

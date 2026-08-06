@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expert immobilier en valeur vénale en Île-de-France · Marie-Céline Etave — ce.idf.immo</title>
-<meta name="description" content="Expertise immobilière en valeur vénale sur toute l'Île-de-France : succession, divorce, donation, partage, IFI, litige. Rapport écrit, motivé et opposable. 1 190 € net. Marie-Céline Etave, expert immobilier.">
+<title>3 % d'honoraires pour vos salariés — l'avantage immobilier des comités d'entreprise · ce.idf.immo</title>
+<meta name="description" content="Proposition aux comités d'entreprise (CSE) d'Île-de-France : 3 % d'honoraires d'agence sur la vente du bien personnel de vos salariés, accompagnement à la recherche, expertise en valeur vénale à 990 €. Aucun coût, aucun engagement pour le CSE.">
 <meta name="robots" content="index,follow">
-<meta property="og:title" content="ce.idf.immo — Expertise immobilière en valeur vénale, Île-de-France">
-<meta property="og:description" content="Succession, divorce, donation, IFI : une valeur écrite, motivée et opposable, par un expert indépendant. Toute l'Île-de-France, 1 190 € net.">
+<meta property="og:title" content="ce.idf.immo — L'avantage immobilier de votre comité d'entreprise">
+<meta property="og:description" content="3 % d'honoraires sur la vente du bien personnel de vos salariés, au lieu des taux couramment pratiqués. Rien à payer, rien à gérer pour le CSE. Toute l'Île-de-France.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ce.idf.immo/">
 <meta property="og:locale" content="fr_FR">
@@ -17,31 +17,27 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Marie-Céline Etave — Expert immobilier en valeur vénale",
+  "@type": "RealEstateAgent",
+  "name": "Marie-Céline Etave — ce.idf.immo",
   "url": "https://ce.idf.immo/",
   "telephone": "+33660989292",
   "email": "contact@antony.immo",
-  "priceRange": "1190 EUR",
   "areaServed": {"@type": "AdministrativeArea", "name": "Île-de-France"},
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Antony",
-    "postalCode": "92160",
-    "addressRegion": "Île-de-France",
-    "addressCountry": "FR"
-  },
-  "description": "Expertise immobilière en valeur vénale sur toute l'Île-de-France : succession, divorce, donation, partage, IFI, litige, garantie bancaire. Rapport écrit, daté et motivé, réalisé par un expert indépendant.",
-  "makesOffer": {
-    "@type": "Offer",
-    "price": "1190",
-    "priceCurrency": "EUR",
-    "description": "Expertise en valeur vénale, rapport écrit et motivé compris. TVA non applicable, article 293 B du CGI.",
-    "itemOffered": {
-      "@type": "Service",
-      "serviceType": "Expertise immobilière en valeur vénale"
+  "description": "Offre réservée aux salariés des entreprises dont le comité d'entreprise (CSE) est partenaire : 3 % d'honoraires d'agence sur la vente d'un bien personnel, accompagnement à la recherche, expertise en valeur vénale à 990 €. Toute l'Île-de-France.",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "description": "Vente du bien personnel d'un salarié : 3 % d'honoraires d'agence sur le prix de vente, dus uniquement si la vente se conclut.",
+      "itemOffered": {"@type": "Service", "serviceType": "Vente immobilière"}
+    },
+    {
+      "@type": "Offer",
+      "price": "990",
+      "priceCurrency": "EUR",
+      "description": "Expertise en valeur vénale avec rapport écrit et motivé, tarif réservé aux salariés des CSE partenaires. TVA non applicable, article 293 B du CGI.",
+      "itemOffered": {"@type": "Service", "serviceType": "Expertise immobilière en valeur vénale"}
     }
-  }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,6 +57,8 @@
   --encre:#12263C;
   --mousse:#4C6B8A;     /* texte secondaire */
   --ligne:#C5D6E6;
+  --or:#0F8A5F;         /* vert « économie » */
+  --or-clair:#E4F4EC;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -85,9 +83,9 @@ a:hover{color:var(--meuliere-fonce)}
 
 /* ============ Typographie ============ */
 h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.14;letter-spacing:-.01em}
-h1{font-size:clamp(2.5rem,6vw,4.4rem)}
-h2{font-size:clamp(2rem,4vw,2.9rem)}
-h3{font-size:1.4rem;font-weight:600}
+h1{font-size:clamp(2.4rem,5.6vw,4.2rem)}
+h2{font-size:clamp(1.95rem,4vw,2.9rem)}
+h3{font-size:1.35rem;font-weight:600}
 .eyebrow{
   font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
   color:var(--meuliere);margin-bottom:1.1rem;
@@ -113,7 +111,7 @@ h3{font-size:1.4rem;font-weight:600}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding-block:1.05rem}
 .brand{font-family:"Fraunces",serif;font-size:1.28rem;font-weight:600;color:var(--stone);letter-spacing:.01em}
 .brand .dot{color:var(--cuivre)}
-.nav-links{display:flex;align-items:center;gap:1.9rem;list-style:none}
+.nav-links{display:flex;align-items:center;gap:1.7rem;list-style:none}
 .nav-links a{color:rgba(235,242,249,.88);font-size:.93rem;font-weight:500}
 .nav-links a:hover{color:#fff}
 .nav-links .btn{padding:.62rem 1.15rem}
@@ -123,21 +121,21 @@ h3{font-size:1.4rem;font-weight:600}
 .nav.scrolled .nav-links a{color:var(--encre)}
 .nav.scrolled .nav-links a:hover{color:var(--meuliere)}
 .nav.scrolled .nav-links a.btn-solid{color:#fff}
-@media (max-width:900px){
+@media (max-width:960px){
   .nav-inner{flex-direction:column;gap:.45rem;padding-block:.7rem}
   .nav-links{flex-wrap:wrap;justify-content:center;gap:.35rem 1.1rem}
-  .nav-links a{font-size:.86rem}
-  .nav-links .btn{padding:.5rem .95rem;font-size:.85rem}
+  .nav-links a{font-size:.85rem}
+  .nav-links .btn{padding:.5rem .95rem;font-size:.84rem}
 }
 
 /* ============ Héros ============ */
 .hero{
-  position:relative;min-height:92vh;
+  position:relative;min-height:94vh;
   display:flex;align-items:center;
   background:var(--ombre);color:var(--stone);overflow:hidden;
   padding:9rem 0 6rem;
 }
-/* Trame discrète évoquant un plan cadastral — aucune ressource externe. */
+/* Trame discrète évoquant un plan — aucune ressource externe. */
 .hero-plan{
   position:absolute;inset:0;pointer-events:none;opacity:.5;
   background-image:
@@ -149,15 +147,15 @@ h3{font-size:1.4rem;font-weight:600}
 }
 .hero-veil{
   position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(120% 90% at 20% 15%, rgba(28,90,158,.55) 0%, rgba(14,46,82,0) 65%);
+  background:radial-gradient(120% 90% at 18% 12%, rgba(28,90,158,.55) 0%, rgba(14,46,82,0) 65%);
 }
-.hero-inner{position:relative;z-index:2;max-width:780px}
+.hero-inner{position:relative;z-index:2;max-width:800px}
 .hero .eyebrow{color:var(--cuivre)}
 .hero h1{color:#F5F9FD}
 .hero h1 em{font-style:italic;font-weight:400;color:var(--cuivre)}
-.hero p.intro{margin:1.6rem 0 2.4rem;max-width:58ch;color:rgba(235,242,249,.85);font-size:1.08rem}
+.hero p.intro{margin:1.6rem 0 2.4rem;max-width:60ch;color:rgba(235,242,249,.86);font-size:1.08rem}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
-.hero-sig{margin-top:2.6rem;font-size:.88rem;color:rgba(235,242,249,.62);max-width:52ch}
+.hero-sig{margin-top:2.6rem;font-size:.88rem;color:rgba(235,242,249,.62);max-width:56ch}
 .rise{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
 .rise.d1{animation-delay:.06s}
 .rise.d2{animation-delay:.18s}
@@ -165,37 +163,66 @@ h3{font-size:1.4rem;font-weight:600}
 .rise.d4{animation-delay:.42s}
 @keyframes rise{to{opacity:1;transform:none}}
 
-/* ============ Bandeau engagements ============ */
+/* ============ Bandeau chiffres ============ */
 .strip{background:var(--parterre);border-block:1px solid var(--ligne)}
 .strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding-block:2.6rem}
-.strip h3{font-size:1.2rem;margin-bottom:.3rem}
-.strip p{font-size:.94rem;color:var(--mousse)}
-.mark{width:13px;height:13px;border:2px solid var(--meuliere);transform:rotate(45deg);margin-bottom:1rem}
+.strip .gros{font-family:"Fraunces",Georgia,serif;font-size:2.6rem;font-weight:600;color:var(--buis);line-height:1}
+.strip h3{font-size:1.1rem;margin:.5rem 0 .25rem}
+.strip p{font-size:.93rem;color:var(--mousse)}
 @media (max-width:760px){.strip-grid{grid-template-columns:1fr;gap:1.8rem}}
 
 /* ============ Sections ============ */
 .section{padding-block:6rem}
-.section-head{max-width:660px;margin-bottom:3.2rem}
+.section-head{max-width:680px;margin-bottom:3.2rem}
 .section-head p{color:var(--mousse);margin-top:1rem}
 .alt{background:var(--parterre)}
+.prose{max-width:70ch}
+.prose p{color:#33465C;margin-top:1rem}
+.prose p.fort{font-size:1.12rem;color:var(--encre);font-weight:500}
 
-/* Comparaison estimation / expertise */
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-.card-x{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:2rem}
-.card-x.accent{border-color:var(--meuliere);box-shadow:0 0 0 1px var(--meuliere)}
-.card-x h3{font-size:1.3rem;margin-bottom:.6rem}
-.card-x p{font-size:.96rem;color:#33465C}
-@media (max-width:760px){.compare{grid-template-columns:1fr}}
+/* ============ Simulateur d'économie ============ */
+.simu{background:var(--craie);border:1px solid var(--ligne);border-radius:6px;padding:2.4rem;margin-top:2.4rem}
+.simu-controls{display:grid;grid-template-columns:1.4fr 1fr;gap:1.4rem;align-items:end}
+.simu label{display:block;font-size:.83rem;font-weight:600;margin-bottom:.4rem}
+.simu input[type=range]{width:100%;accent-color:var(--meuliere)}
+.simu .valeur{font-family:"Fraunces",Georgia,serif;font-size:1.9rem;font-weight:600;color:var(--buis);line-height:1.1;margin-bottom:.3rem}
+.simu select{width:100%;padding:.7rem .8rem;border:1px solid var(--ligne);border-radius:3px;background:#fff;font:inherit;font-size:.95rem;color:var(--encre)}
+.simu-out{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+.simu-box{border:1px solid var(--ligne);border-radius:4px;padding:1.3rem 1.4rem;background:var(--stone)}
+.simu-box .t{font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mousse)}
+.simu-box .n{font-family:"Fraunces",Georgia,serif;font-size:1.85rem;font-weight:600;color:var(--encre);line-height:1.15;margin-top:.3rem}
+.simu-box.gain{background:var(--or-clair);border-color:#B8E0CD}
+.simu-box.gain .t{color:var(--or)}
+.simu-box.gain .n{color:var(--or)}
+.simu-note{font-size:.85rem;color:var(--mousse);margin-top:1.4rem}
+@media (max-width:760px){.simu{padding:1.6rem}.simu-controls{grid-template-columns:1fr}.simu-out{grid-template-columns:1fr}}
 
-/* Cas de recours */
-.cas{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;list-style:none;padding:0}
-.cas li{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:1.6rem 1.5rem}
-.cas b{display:block;font-family:"Fraunces",Georgia,serif;font-size:1.2rem;font-weight:600;color:var(--buis);margin-bottom:.35rem}
-.cas span{font-size:.93rem;color:#33465C}
-@media (max-width:860px){.cas{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.cas{grid-template-columns:1fr}}
+/* ============ Offres ============ */
+.offres{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.offre{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:2rem 1.9rem;display:flex;flex-direction:column}
+.offre.accent{border-color:var(--meuliere);box-shadow:0 0 0 1px var(--meuliere)}
+.offre .tarif{font-family:"Fraunces",Georgia,serif;font-size:2.5rem;font-weight:600;color:var(--buis);line-height:1;margin-bottom:.2rem}
+.offre .tarif small{font-size:.34em;font-weight:500;color:var(--mousse)}
+.offre h3{margin:.9rem 0 .6rem}
+.offre p{font-size:.95rem;color:#33465C}
+.offre ul{list-style:none;margin-top:1.1rem}
+.offre li{font-size:.88rem;color:var(--mousse);padding-left:1.1rem;position:relative;margin-top:.4rem}
+.offre li::before{content:"";position:absolute;left:0;top:.52em;width:6px;height:6px;border:1.5px solid var(--meuliere);transform:rotate(45deg)}
+.offre .pied{margin-top:auto;padding-top:1.3rem;font-size:.85rem;color:var(--mousse)}
+@media (max-width:900px){.offres{grid-template-columns:1fr}}
 
-/* Étapes */
+/* ============ Deux colonnes « ce que / ce que pas » ============ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.4rem}
+.duo .bloc{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:2rem}
+.duo h3{font-size:1.25rem;margin-bottom:1rem}
+.duo ul{list-style:none}
+.duo li{position:relative;padding-left:1.9rem;margin-top:.7rem;font-size:.96rem;color:#33465C}
+.duo li::before{position:absolute;left:0;top:0;font-weight:700}
+.duo .oui li::before{content:"✓";color:var(--or)}
+.duo .non li::before{content:"×";color:var(--mousse);font-size:1.15em;line-height:1.4}
+@media (max-width:760px){.duo{grid-template-columns:1fr}}
+
+/* ============ Étapes ============ */
 .steps{list-style:none;counter-reset:etape;padding:0;margin:0;max-width:78ch}
 .steps li{counter-increment:etape;position:relative;padding:0 0 1.6rem 3.2rem;border-left:2px solid var(--ligne);margin-left:1.1rem}
 .steps li:last-child{border-left-color:transparent;padding-bottom:0}
@@ -203,40 +230,46 @@ h3{font-size:1.4rem;font-weight:600}
 .steps h3{font-size:1.12rem;margin-bottom:.2rem}
 .steps p{font-size:.95rem;color:#33465C}
 
-/* Bande tarif */
+/* ============ Bande ============ */
 .band{background:var(--buis);color:var(--stone);padding-block:5rem;position:relative;overflow:hidden}
 .band::before,.band::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:rgba(235,242,249,.18)}
 .band::before{left:10%}
 .band::after{right:10%}
 .band .eyebrow{color:var(--cuivre)}
 .band h2{color:#F5F9FD}
-.band-grid{display:flex;flex-wrap:wrap;align-items:center;gap:1.6rem 3rem;margin-top:1.6rem}
-.band .num{font-family:"Fraunces",Georgia,serif;font-size:clamp(3rem,7vw,4.4rem);font-weight:600;line-height:1;color:#fff}
-.band .num small{font-size:.32em;font-weight:500;color:rgba(235,242,249,.75)}
-.band .txt{flex:1;min-width:260px;color:rgba(235,242,249,.88);font-size:1rem}
-.band .txt strong{color:#fff}
-.band .tva{margin-top:1.4rem;font-size:.85rem;color:rgba(235,242,249,.6)}
+.band p{margin-top:1.2rem;max-width:62ch;color:rgba(235,242,249,.85)}
+.band .hero-cta{margin-top:2rem}
 
-/* Zone d'intervention */
-.depts{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;list-style:none;padding:0}
-.depts li{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:1.1rem 1.2rem}
-.depts .num-dept{font-family:"Fraunces",Georgia,serif;font-size:1.5rem;font-weight:600;color:var(--meuliere);line-height:1}
-.depts .nom{display:block;font-size:.92rem;font-weight:600;color:var(--encre);margin-top:.2rem}
-@media (max-width:860px){.depts{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:480px){.depts{grid-template-columns:1fr}}
+/* ============ Salarié ============ */
+.salarie{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;list-style:none;padding:0;margin-top:2rem}
+.salarie li{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:1.3rem 1.3rem}
+.salarie b{display:block;font-family:"Fraunces",Georgia,serif;font-size:1.1rem;font-weight:600;color:var(--buis);margin-bottom:.3rem}
+.salarie span{font-size:.9rem;color:#33465C}
+@media (max-width:900px){.salarie{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.salarie{grid-template-columns:1fr}}
 
-/* À propos */
-.apropos{display:grid;grid-template-columns:320px 1fr;gap:4rem;align-items:center}
+/* ============ FAQ ============ */
+.faq{max-width:80ch;margin-top:1rem}
+.faq details{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:1.1rem 1.4rem;margin-top:.8rem}
+.faq details[open]{border-color:var(--meuliere)}
+.faq summary{font-weight:600;cursor:pointer;list-style:none;position:relative;padding-right:2rem;color:var(--encre)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:-.1rem;font-size:1.4rem;font-weight:400;color:var(--meuliere);line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{font-size:.96rem;color:#33465C;margin-top:.8rem}
+
+/* ============ À propos ============ */
+.apropos{display:grid;grid-template-columns:300px 1fr;gap:4rem;align-items:center}
 .portrait{aspect-ratio:4/5;background:var(--buis);border-radius:4px;display:flex;align-items:center;justify-content:center;position:relative}
 .portrait::before{content:"";position:absolute;inset:14px;border:1px solid rgba(235,242,249,.35);border-radius:2px}
-.monogram{font-family:"Fraunces",serif;font-size:4rem;font-weight:500;color:var(--cuivre);font-style:italic}
+.monogram{font-family:"Fraunces",serif;font-size:3.8rem;font-weight:500;color:var(--cuivre);font-style:italic}
 .apropos-txt h2{margin-bottom:1.2rem}
 .apropos-txt p{color:#33465C;margin-bottom:1rem;max-width:58ch}
 .creds{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem;margin:1.2rem 0 1.4rem;padding:0}
 .creds li{font-size:.82rem;font-weight:600;color:var(--buis);background:var(--parterre);border:1px solid var(--ligne);border-radius:99px;padding:.32rem .8rem}
-@media (max-width:860px){.apropos{grid-template-columns:1fr;gap:2.5rem}.portrait{max-width:280px}}
+@media (max-width:860px){.apropos{grid-template-columns:1fr;gap:2.5rem}.portrait{max-width:260px}}
 
-/* Contact */
+/* ============ Contact ============ */
 .contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:4rem;align-items:start}
 .info-item{margin-bottom:1.7rem}
 .info-item .label{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mousse);margin-bottom:.25rem}
@@ -250,7 +283,7 @@ form{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;pad
   background:#fff;font:inherit;font-size:.95rem;color:var(--encre);
 }
 .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--meuliere);outline-offset:1px;border-color:transparent}
-.field textarea{min-height:120px;resize:vertical}
+.field textarea{min-height:110px;resize:vertical}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-note{font-size:.8rem;color:var(--mousse);margin-top:.9rem}
 @media (max-width:860px){.contact-grid{grid-template-columns:1fr;gap:2.5rem}.grid2{grid-template-columns:1fr}}
@@ -271,19 +304,20 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
 </style>
 </head>
 <body>
-<a class="skip" href="#expertise">Aller au contenu</a>
+<a class="skip" href="#pourquoi">Aller au contenu</a>
 
 <!-- ================= NAVIGATION ================= -->
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a class="brand" href="#haut">ce<span class="dot">.</span>idf<span class="dot">.</span>immo</a>
     <ul class="nav-links" id="menu">
-      <li><a href="#expertise">L'expertise</a></li>
-      <li><a href="#cas">Dans quels cas</a></li>
-      <li><a href="#deroulement">Déroulement</a></li>
-      <li><a href="#tarif">Tarif</a></li>
-      <li><a href="#expert">L'expert</a></li>
-      <li><a href="#demande" class="btn btn-solid">Demander une expertise</a></li>
+      <li><a href="#pourquoi">Pourquoi</a></li>
+      <li><a href="#simulateur">Le calcul</a></li>
+      <li><a href="#offre">L'offre</a></li>
+      <li><a href="#cse">Rôle du CSE</a></li>
+      <li><a href="expertise.html">Expertise</a></li>
+      <li><a href="#questions">Questions</a></li>
+      <li><a href="#proposition" class="btn btn-solid">Recevoir la proposition</a></li>
     </ul>
   </div>
 </header>
@@ -294,177 +328,305 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-inner">
-      <p class="eyebrow rise d1">Expert immobilier · Île-de-France</p>
-      <h1 class="rise d2">La valeur d'un bien, <em>écrite et motivée</em>.</h1>
-      <p class="intro rise d3">Succession, divorce, donation, partage, IFI ou litige : ces décisions se prennent sur une valeur qu'on peut défendre. Marie-Céline Etave, expert immobilier en valeur vénale, établit cette valeur par un rapport écrit, daté et argumenté — sur les huit départements d'Île-de-France.</p>
+      <p class="eyebrow rise d1">Comités d'entreprise · Île-de-France</p>
+      <h1 class="rise d2">Le plus bel avantage que vous puissiez offrir <em>ne vous coûtera rien</em>.</h1>
+      <p class="intro rise d3">Vendre ou acheter un logement, c'est la décision financière la plus lourde d'une vie — et celle où vos salariés sont le plus seuls. Je propose aux comités d'entreprise d'Île-de-France un tarif négocié pour leurs salariés&nbsp;: <strong>3&nbsp;% d'honoraires d'agence</strong> sur la vente de leur bien personnel, et un accompagnement complet pour leur recherche. Le CSE ne paie rien, ne signe aucun engagement financier, et fait gagner à ses salariés plusieurs milliers d'euros.</p>
       <div class="hero-cta rise d4">
-        <a class="btn btn-solid" href="#demande">Demander une expertise</a>
-        <a class="btn btn-ghost" href="#expertise">Expertise ou estimation&nbsp;?</a>
+        <a class="btn btn-solid" href="#proposition">Recevoir la proposition</a>
+        <a class="btn btn-ghost" href="#simulateur">Voir ce que ça représente</a>
       </div>
-      <p class="hero-sig rise d4">Expert indépendant, sans mandat de vente sur le bien expertisé : c'est cette impartialité qui donne au rapport sa valeur devant un notaire, un juge ou l'administration.</p>
+      <p class="hero-sig rise d4">Marie-Céline Etave, conseillère en immobilier indépendante depuis plus de 15 ans et expert en valeur vénale. Une seule interlocutrice, jointe directement par vos salariés.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= ENGAGEMENTS ================= -->
+<!-- ================= CHIFFRES CLÉS ================= -->
 <div class="strip">
   <div class="container strip-grid">
     <div class="reveal">
-      <div class="mark" aria-hidden="true"></div>
-      <h3>Un rapport opposable</h3>
-      <p>Écrit, daté et motivé : une valeur qui se défend devant un notaire, un juge ou l'administration fiscale.</p>
+      <p class="gros">3 %</p>
+      <h3>d'honoraires à la vente</h3>
+      <p>Sur le prix de vente, à la charge du vendeur, et dus uniquement si la vente se conclut.</p>
     </div>
     <div class="reveal">
-      <div class="mark" aria-hidden="true"></div>
-      <h3>Une expertise contradictoire</h3>
-      <p>Toutes les parties sont convoquées et peuvent assister aux opérations : personne n'est mis devant le fait accompli.</p>
+      <p class="gros">0 €</p>
+      <h3>pour le comité d'entreprise</h3>
+      <p>Aucun budget engagé, aucune convention financière, aucun flux d'argent par le CSE.</p>
     </div>
     <div class="reveal">
-      <div class="mark" aria-hidden="true"></div>
-      <h3>Toute l'Île-de-France</h3>
-      <p>Paris et les sept départements de la couronne, du pavillon de famille à l'immeuble de rapport.</p>
+      <p class="gros">8</p>
+      <h3>départements couverts</h3>
+      <p>Paris, la petite et la grande couronne : vos salariés où qu'ils habitent en Île-de-France.</p>
     </div>
   </div>
 </div>
 
-<!-- ================= L'EXPERTISE ================= -->
-<section class="section" id="expertise">
+<!-- ================= POURQUOI ================= -->
+<section class="section" id="pourquoi">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">L'expertise</p>
-      <h2>Expertise ou estimation&nbsp;: ce n'est pas la même chose</h2>
-      <p>Les deux donnent un prix. Une seule engage son auteur et fait foi. Confondre les deux, c'est prendre une décision importante sur un document qui n'a aucune portée.</p>
+      <p class="eyebrow">Pourquoi cet avantage</p>
+      <h2>Un avantage qui se compte en milliers d'euros</h2>
     </div>
-    <div class="compare">
-      <div class="card-x reveal">
-        <h3>L'estimation</h3>
-        <p>Un avis de valeur : un professionnel donne une fourchette de prix indicative, gratuitement, pour aider à fixer le prix de mise en vente d'un bien. C'est un outil commercial — utile pour vendre, mais sans portée juridique, et rendu par quelqu'un qui a intérêt à obtenir le mandat.</p>
-      </div>
-      <div class="card-x accent reveal">
-        <h3>L'expertise en valeur vénale</h3>
-        <p>Un acte technique, écrit et engageant, réalisé selon une méthodologie normée. Elle détermine la valeur réelle d'un bien <strong>à une date donnée</strong>, de façon argumentée, neutre et opposable. Là où l'estimation prépare une vente, l'expertise fait foi devant un notaire, un juge ou l'administration — parce que l'expert est indépendant et ne défend aucune des parties.</p>
-      </div>
+    <div class="prose reveal">
+      <p class="fort">Les chèques-cadeaux, les places de cinéma et les réductions vacances comptent vraiment : ils allègent le quotidien, et vos salariés y sont attachés. Mais leur ordre de grandeur est celui de la dizaine ou de la centaine d'euros.</p>
+      <p>Une ou deux fois dans sa vie, un salarié vend son appartement ou cherche une maison. Ce jour-là, un point d'honoraires en moins pèse plus lourd, à lui seul, que l'ensemble des actions sociales de l'année. C'est l'un des rares avantages que vous pouvez offrir dont le bénéfice se chiffre en <strong>milliers d'euros</strong>, sans prélever un centime sur le budget des activités sociales et culturelles.</p>
+      <p>C'est aussi un moment où l'on se sent seul. Un salarié qui vend sans être accompagné se trompe souvent de prix — trop haut, le bien s'use sur le marché et finit par se brader ; trop bas, il perd sans le savoir. Un salarié qui cherche affronte des délais, des visites à prendre sur ses congés, une négociation qu'il n'a pas l'habitude de mener. Ce que le CSE apporte ici, ce n'est pas seulement une réduction : c'est <strong>une professionnelle identifiée, jointe directement, qui répond</strong>.</p>
+      <p>Et pour le comité, c'est un avantage qui ne demande ni gestion, ni suivi, ni permanence : une information à diffuser, et rien d'autre.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= DANS QUELS CAS ================= -->
-<section class="section alt" id="cas">
+<!-- ================= SIMULATEUR ================= -->
+<section class="section alt" id="simulateur">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Dans quels cas</p>
-      <h2>Quand une valeur doit pouvoir se défendre</h2>
-      <p>À chaque fois qu'un bien immobilier doit être chiffré autrement que pour le vendre — et que ce chiffre sera lu par un tiers.</p>
+      <p class="eyebrow">Le calcul</p>
+      <h2>Combien vos salariés économisent, concrètement</h2>
+      <p>Déplacez le curseur sur un prix de vente représentatif de votre région, et choisissez le taux d'honoraires auquel vous voulez me comparer — celui que vous constatez autour de vous.</p>
     </div>
-    <ul class="cas">
-      <li class="reveal"><b>Succession</b><span>Partage équitable entre héritiers, déclaration de succession, valeur retenue au jour du décès.</span></li>
-      <li class="reveal"><b>Divorce &amp; séparation</b><span>Liquidation du régime matrimonial, valeur du bien commun, rachat de part, prestation compensatoire.</span></li>
-      <li class="reveal"><b>Donation &amp; partage</b><span>Anticiper une transmission sur une base juste, et limiter le risque de contestation ultérieure.</span></li>
-      <li class="reveal"><b>IFI &amp; fiscalité</b><span>Une valeur documentée et défendable en cas de contrôle ou de demande de l'administration.</span></li>
-      <li class="reveal"><b>Litige &amp; expertise amiable</b><span>Une base neutre pour trancher un désaccord entre indivisaires, associés ou voisins, sans passer par le tribunal.</span></li>
-      <li class="reveal"><b>Garantie bancaire</b><span>Valeur de référence pour un prêt, une garantie hypothécaire ou une opération patrimoniale.</span></li>
+    <div class="simu reveal">
+      <div class="simu-controls">
+        <div>
+          <label for="prix">Prix de vente du bien</label>
+          <p class="valeur" id="prix-val">400 000 €</p>
+          <input type="range" id="prix" min="100000" max="1200000" step="10000" value="400000">
+        </div>
+        <div>
+          <label for="taux">Comparer à un taux d'honoraires de</label>
+          <select id="taux">
+            <option value="4">4 %</option>
+            <option value="5" selected>5 %</option>
+            <option value="6">6 %</option>
+            <option value="7">7 %</option>
+          </select>
+        </div>
+      </div>
+      <div class="simu-out" aria-live="polite">
+        <div class="simu-box">
+          <p class="t">Honoraires ailleurs</p>
+          <p class="n" id="out-marche">20 000 €</p>
+        </div>
+        <div class="simu-box">
+          <p class="t">Avec votre CSE — 3 %</p>
+          <p class="n" id="out-cse">12 000 €</p>
+        </div>
+        <div class="simu-box gain">
+          <p class="t">Économisé par le salarié</p>
+          <p class="n" id="out-gain">8 000 €</p>
+        </div>
+      </div>
+      <p class="simu-note">Calcul indicatif : honoraires appliqués au prix de vente. Le taux de comparaison est celui que vous choisissez — je n'avance aucun « taux moyen » que je ne pourrais pas prouver. Seul mon engagement est ferme : <strong>3 % pour les salariés d'un CSE partenaire</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= L'OFFRE ================= -->
+<section class="section" id="offre">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">L'offre</p>
+      <h2>Trois besoins, trois réponses</h2>
+      <p>L'offre couvre tout le parcours immobilier personnel d'un salarié : vendre, chercher, ou simplement savoir ce que vaut un bien.</p>
+    </div>
+    <div class="offres">
+      <article class="offre accent reveal">
+        <p class="tarif">3 %<small> du prix de vente</small></p>
+        <h3>Vendre son bien</h3>
+        <p>La vente pilotée de bout en bout : estimation, mise en valeur, photos, diffusion sur les grands portails, visites qualifiées, négociation et suivi jusqu'à la signature chez le notaire.</p>
+        <ul>
+          <li>Estimation offerte, avant tout engagement</li>
+          <li>Compte-rendu après chaque visite</li>
+          <li>Aucun honoraire si la vente ne se fait pas</li>
+        </ul>
+        <p class="pied">Honoraires à la charge du vendeur, dus à la signature de l'acte.</p>
+      </article>
+      <article class="offre reveal">
+        <p class="tarif">Sans surcoût<small> pour le salarié</small></p>
+        <h3>Chercher un bien</h3>
+        <p>La recherche menée pour lui : définition précise du projet et du budget, sélection des biens, visites accompagnées, analyse des points de vigilance, puis sécurisation de l'offre jusqu'à la signature.</p>
+        <ul>
+          <li>Recherche personnalisée, y compris hors annonces</li>
+          <li>Visites accompagnées et avis franc sur chaque bien</li>
+          <li>Aide à la négociation et au montage du dossier</li>
+        </ul>
+        <p class="pied">Aucun honoraire de recherche supplémentaire n'est facturé au salarié.</p>
+      </article>
+      <article class="offre reveal">
+        <p class="tarif">990 €<small> au lieu de 1 190 €</small></p>
+        <h3>Faire expertiser un bien</h3>
+        <p>L'expertise en valeur vénale : un rapport écrit, daté et motivé, qui établit la valeur d'un bien pour une succession, un divorce, une donation, l'IFI ou un litige. Un acte tout autre qu'une estimation.</p>
+        <ul>
+          <li>Rapport opposable, remis à chaque partie</li>
+          <li>Expertise contradictoire, parties convoquées</li>
+          <li>Tarif réservé aux salariés des CSE partenaires</li>
+        </ul>
+        <p class="pied"><a href="expertise.html">Comprendre l'expertise en valeur vénale →</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CE QUE REÇOIT LE SALARIÉ ================= -->
+<section class="section alt" id="salaries">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Côté salarié</p>
+      <h2>Ce que vos salariés reçoivent vraiment</h2>
+      <p>Au-delà du tarif, c'est la qualité de l'accompagnement qui fera qu'ils vous remercieront de la mise en relation.</p>
+    </div>
+    <ul class="salarie">
+      <li class="reveal"><b>Une interlocutrice unique</b><span>La même personne du premier appel à la signature. Pas de standard, pas de dossier qui change de mains.</span></li>
+      <li class="reveal"><b>Un prix juste, argumenté</b><span>Une estimation appuyée sur les ventes réellement constatées dans le secteur — pas sur une promesse pour obtenir le mandat.</span></li>
+      <li class="reveal"><b>Des rendez-vous compatibles</b><span>Soirées et week-ends : un salarié n'a pas à poser des congés pour vendre ou visiter.</span></li>
+      <li class="reveal"><b>De la franchise</b><span>Ce qui va freiner la vente lui est dit d'emblée, et ce qui ne va pas dans un bien qu'il visite aussi.</span></li>
     </ul>
   </div>
 </section>
 
-<!-- ================= DÉROULEMENT ================= -->
-<section class="section" id="deroulement">
+<!-- ================= RÔLE DU CSE ================= -->
+<section class="section" id="cse">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Déroulement</p>
-      <h2>Comment se déroule une expertise</h2>
-      <p>Cinq étapes, du premier échange à la remise du rapport. Un devis est établi avant toute mission.</p>
+      <p class="eyebrow">Rôle du comité</p>
+      <h2>Ce que le CSE a à faire — et ce qu'il n'a pas à faire</h2>
+      <p>La question que se posent d'abord les élus n'est pas « combien ça rapporte », mais « qu'est-ce que ça nous engage ». Réponse&nbsp;: presque rien.</p>
+    </div>
+    <div class="duo">
+      <div class="bloc oui reveal">
+        <h3>Ce que fait le CSE</h3>
+        <ul>
+          <li>Un échange de vingt minutes, en visio ou sur place, pour vérifier que l'offre a du sens pour vos salariés.</li>
+          <li>La diffusion d'une information : je fournis un texte prêt à publier, une affiche et un encart pour l'intranet ou la lettre du CSE.</li>
+          <li>C'est tout. Les salariés me contactent ensuite directement, quand ils en ont besoin.</li>
+        </ul>
+      </div>
+      <div class="bloc non reveal">
+        <h3>Ce que le CSE n'a pas à faire</h3>
+        <ul>
+          <li>Aucun budget à engager, aucune subvention à verser, aucun achat à effectuer.</li>
+          <li>Aucun flux financier : le CSE ne perçoit ni commission, ni rétrocession, ni contrepartie d'aucune sorte.</li>
+          <li>Aucune exclusivité, aucun engagement de durée : le partenariat s'arrête quand vous le décidez, sans formalité.</li>
+          <li>Aucune gestion : pas de permanence à tenir, pas de dossier à instruire, pas de suivi à assurer.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MISE EN PLACE ================= -->
+<section class="section alt" id="mise-en-place">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Mise en place</p>
+      <h2>Opérationnel en une semaine</h2>
     </div>
     <ol class="steps reveal">
       <li>
-        <h3>Définition de la mission</h3>
-        <p>Nous précisons ensemble l'objet de l'expertise (succession, divorce, donation, litige…), le bien concerné et la <strong>date de valeur</strong> retenue — un point décisif, notamment en succession.</p>
+        <h3>Un premier échange</h3>
+        <p>Vingt minutes, par téléphone ou en visio, avec les élus ou la commission concernée. Je présente l'offre, vous posez vos questions, notamment sur ce qui engage — ou non — le comité.</p>
       </li>
       <li>
-        <h3>Convocation des parties</h3>
-        <p>Lorsque plusieurs parties sont concernées, je les convoque par lettre recommandée avec accusé de réception, afin que l'expertise soit contradictoire et que chacun puisse assister aux opérations.</p>
+        <h3>Une proposition écrite</h3>
+        <p>Je vous adresse la proposition détaillée : périmètre, tarifs, zone d'intervention, engagements réciproques. Vous la présentez en réunion si vous le souhaitez — elle est faite pour être lue par des élus, pas par des commerciaux.</p>
       </li>
       <li>
-        <h3>Visite et relevé du bien</h3>
-        <p>Visite détaillée sur place : mesures, état, prestations, environnement et contraintes éventuelles (servitudes, urbanisme, règlement de copropriété, occupation).</p>
+        <h3>Les supports de communication</h3>
+        <p>Une fois votre accord donné, je vous remets un texte prêt à publier, une affiche et un encart pour l'intranet ou la lettre du CSE. Vous n'avez rien à rédiger.</p>
       </li>
       <li>
-        <h3>Analyse et valorisation</h3>
-        <p>Étude du marché local et des ventes comparables, puis application de plusieurs méthodes de valorisation reconnues pour aboutir à une valeur motivée, et non à une simple moyenne.</p>
-      </li>
-      <li>
-        <h3>Remise du rapport</h3>
-        <p>Un rapport écrit, daté et argumenté, concluant sur la valeur vénale du bien, remis à chacune des parties concernées.</p>
+        <h3>Vos salariés me contactent</h3>
+        <p>Directement, par téléphone ou par e-mail, au moment où ils en ont besoin. Le CSE n'intervient plus. Sur simple demande, je peux venir tenir une permanence d'information dans l'entreprise.</p>
       </li>
     </ol>
   </div>
 </section>
 
-<!-- ================= TARIF ================= -->
-<section class="band" id="tarif">
+<!-- ================= EXPERTISE ================= -->
+<section class="band">
   <div class="container reveal">
-    <p class="eyebrow">Tarif</p>
-    <h2>Un prix unique, connu d'avance</h2>
-    <div class="band-grid">
-      <div class="num">1 190&nbsp;€<small> net</small></div>
-      <p class="txt">Expertise en valeur vénale, <strong>rapport écrit et motivé compris</strong>, sur toute l'Île-de-France. Frais d'envois recommandés aux parties inclus. Un devis est établi avant toute mission.</p>
+    <p class="eyebrow">Expertise en valeur vénale — 990 € pour vos salariés</p>
+    <h2>Quand il ne s'agit pas de vendre, mais de partager</h2>
+    <p>Une succession à répartir entre héritiers, un divorce à liquider, une donation à préparer, un bien à déclarer à l'IFI : dans ces situations, une estimation ne suffit pas. Il faut une expertise en valeur vénale — un rapport écrit, daté et motivé, qui fait foi devant un notaire, un juge ou l'administration. Ce sont des moments difficiles, où vos salariés se retrouvent souvent démunis face à des chiffres qu'ils ne savent pas contester.</p>
+    <p>Pour les salariés des entreprises dont le CSE est partenaire, ce rapport est à <strong>990 € au lieu de 1 190 €</strong>.</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="expertise.html">Comprendre l'expertise en valeur vénale</a>
+      <a class="btn btn-ghost" href="#proposition">Recevoir la proposition</a>
     </div>
-    <p class="tva">TVA non applicable, article 293 B du code général des impôts.</p>
   </div>
 </section>
 
-<!-- ================= ZONE D'INTERVENTION ================= -->
-<section class="section" id="zone">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Zone d'intervention</p>
-      <h2>Les huit départements franciliens</h2>
-      <p>Paris intra-muros, la petite et la grande couronne. Pour un bien situé hors Île-de-France, écrivez-moi : je vous orienterai vers un confrère.</p>
-    </div>
-    <ul class="depts">
-      <li class="reveal"><span class="num-dept">75</span><span class="nom">Paris</span></li>
-      <li class="reveal"><span class="num-dept">92</span><span class="nom">Hauts-de-Seine</span></li>
-      <li class="reveal"><span class="num-dept">93</span><span class="nom">Seine-Saint-Denis</span></li>
-      <li class="reveal"><span class="num-dept">94</span><span class="nom">Val-de-Marne</span></li>
-      <li class="reveal"><span class="num-dept">91</span><span class="nom">Essonne</span></li>
-      <li class="reveal"><span class="num-dept">78</span><span class="nom">Yvelines</span></li>
-      <li class="reveal"><span class="num-dept">95</span><span class="nom">Val-d'Oise</span></li>
-      <li class="reveal"><span class="num-dept">77</span><span class="nom">Seine-et-Marne</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= L'EXPERT ================= -->
-<section class="section alt" id="expert">
+<!-- ================= L'INTERLOCUTRICE ================= -->
+<section class="section" id="interlocutrice">
   <div class="container apropos">
     <!-- Remplacer ce bloc par une photo : <img src="photo.jpg" alt="Marie-Céline Etave"> -->
     <div class="portrait reveal" role="img" aria-label="Monogramme de Marie-Céline Etave">
       <span class="monogram">MCE</span>
     </div>
     <div class="apropos-txt reveal">
-      <p class="eyebrow">L'expert</p>
+      <p class="eyebrow">Votre interlocutrice</p>
       <h2>Marie-Céline Etave</h2>
-      <p>Professionnelle de l'immobilier depuis <strong>plus de 15 ans</strong> et <strong>expert immobilier en valeur vénale</strong>, j'interviens sur toute l'Île-de-France pour établir la valeur d'un bien lorsque l'enjeu n'est pas de le vendre, mais de le partager, de le transmettre ou de le déclarer.</p>
-      <p>Ma conviction tient en une phrase : une valeur ne vaut que par les faits qui la soutiennent. Chaque rapport s'appuie sur une visite complète du bien, sur les ventes réellement constatées dans son secteur et sur des méthodes de valorisation reconnues — jamais sur une impression de marché.</p>
-      <p>Sur le bien que j'expertise, je n'ai aucun mandat de vente et aucun intérêt à ce que la valeur soit haute ou basse. C'est la condition pour que le rapport tienne face à un notaire, à un avocat ou à l'administration fiscale.</p>
+      <p>Conseillère en immobilier indépendante depuis <strong>plus de 15 ans</strong> et <strong>expert immobilier en valeur vénale</strong>, j'accompagne des particuliers en Île-de-France — et non des investisseurs ou des marchands de biens. Ce sont les projets de gens qui déménagent, s'agrandissent, se séparent ou héritent.</p>
+      <p>Si je propose 3 % aux comités d'entreprise, ce n'est pas un tarif d'appel : c'est un choix. Travailler avec des salariés adressés par leur CSE m'évite une grande partie des frais de prospection d'une agence classique. Cette économie, je préfère la rendre plutôt que la garder — et travailler avec des gens qui viennent en confiance plutôt que par hasard.</p>
+      <p>En échange, je m'engage sur une chose simple : chaque salarié que vous m'adressez est traité comme un client, pas comme un dossier à volume. Si un projet n'est pas mûr ou si un prix n'est pas tenable, je le dis.</p>
       <ul class="creds">
         <li>15+ ans d'expérience</li>
         <li>Expert en valeur vénale</li>
-        <li>Expertise contradictoire</li>
+        <li>Indépendante</li>
         <li>Toute l'Île-de-France</li>
       </ul>
-      <p style="font-size:.92rem;color:var(--mousse)">Pour un projet de vente ou d'achat à Antony et dans les Hauts-de-Seine, retrouvez-moi également sur <a href="https://antony.immo/" target="_blank" rel="noopener">antony.immo</a>.</p>
+      <p style="font-size:.92rem;color:var(--mousse)">Également présente à Antony et dans les Hauts-de-Seine sur <a href="https://antony.immo/" target="_blank" rel="noopener">antony.immo</a>.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= DEMANDE ================= -->
-<section class="section" id="demande">
+<!-- ================= QUESTIONS ================= -->
+<section class="section alt" id="questions">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Demander une expertise</p>
-      <h2>Parlons de votre situation</h2>
-      <p>Décrivez-la en quelques mots ou appelez-moi : je vous rappelle pour convenir d'un rendez-vous et vous adresser un devis. Un premier échange ne vous engage à rien.</p>
+      <p class="eyebrow">Questions</p>
+      <h2>Ce que demandent les élus</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Est-ce que cela engage financièrement le comité ?</summary>
+        <p>Non. Le CSE ne verse rien, ne perçoit rien et ne s'engage sur aucun volume. Aucun flux financier ne passe par le comité : les honoraires sont réglés par le salarié vendeur, au moment de la signature de l'acte, exactement comme dans une vente classique. Le rôle du comité s'arrête à l'information de ses salariés.</p>
+      </details>
+      <details>
+        <summary>Le CSE touche-t-il une commission ou une rétrocession ?</summary>
+        <p>Non, et c'est volontaire. Aucune rétrocession n'est versée au comité, sous quelque forme que ce soit. L'intégralité de l'avantage va au salarié — c'est ce qui rend l'offre simple à présenter en réunion et sans ambiguïté vis-à-vis des salariés.</p>
+      </details>
+      <details>
+        <summary>Le partenariat est-il exclusif ?</summary>
+        <p>Non. Vous restez libres de référencer d'autres professionnels, et vos salariés restent évidemment libres de choisir qui ils veulent. Le partenariat n'a pas de durée d'engagement : il s'interrompt sur simple demande, sans formalité ni indemnité.</p>
+      </details>
+      <details>
+        <summary>Que couvre exactement le taux de 3 % ?</summary>
+        <p>Il s'agit des honoraires d'agence sur la vente du bien personnel d'un salarié, calculés sur le prix de vente et à la charge du vendeur. Ils ne sont dus qu'en cas de vente conclue : si le bien ne se vend pas, le salarié ne paie rien. L'estimation préalable est offerte, sans engagement de confier le mandat.</p>
+      </details>
+      <details>
+        <summary>Et si un salarié possède un bien hors Île-de-France ?</summary>
+        <p>J'interviens sur les huit départements franciliens. Pour un bien situé ailleurs, je le dis franchement plutôt que d'accepter une mission que je ne pourrais pas mener correctement — et j'oriente le salarié vers un confrère de sa région lorsque c'est possible.</p>
+      </details>
+      <details>
+        <summary>Peut-on organiser une information dans l'entreprise ?</summary>
+        <p>Oui, sur demande : une permanence d'une demi-journée ou une réunion d'information sur le temps du déjeuner, pour répondre aux questions des salariés — vendre, acheter, estimer, mais aussi succession et séparation. C'est souvent là que les projets se déclenchent, parce que les gens osent poser des questions qu'ils ne poseraient pas à une agence.</p>
+      </details>
+      <details>
+        <summary>Combien de temps faut-il pour mettre l'offre en place ?</summary>
+        <p>Une semaine suffit : un échange, une proposition écrite, puis les supports de communication prêts à diffuser. Il n'y a ni dossier à instruire, ni plateforme à ouvrir, ni compte à créer.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROPOSITION ================= -->
+<section class="section" id="proposition">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Recevoir la proposition</p>
+      <h2>Parlons-en vingt minutes</h2>
+      <p>Dites-moi simplement qui vous êtes et je vous adresse la proposition écrite, présentable en réunion d'élus. Aucun engagement, aucune relance commerciale.</p>
     </div>
     <div class="contact-grid">
       <div class="reveal">
@@ -485,7 +647,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
           <p class="value">Sur rendez-vous, 7j/7</p>
         </div>
       </div>
-      <form id="form-exp" class="reveal">
+      <form id="form-cse" class="reveal">
         <div class="grid2">
           <div class="field">
             <label for="nom">Nom</label>
@@ -498,40 +660,42 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
         </div>
         <div class="grid2">
           <div class="field">
+            <label for="entreprise">Entreprise</label>
+            <input type="text" id="entreprise" name="entreprise" autocomplete="organization">
+          </div>
+          <div class="field">
             <label for="tel">Téléphone <span style="font-weight:400;color:var(--mousse)">(facultatif)</span></label>
             <input type="tel" id="tel" name="tel" autocomplete="tel">
           </div>
+        </div>
+        <div class="grid2">
           <div class="field">
-            <label for="motif">Motif de l'expertise</label>
-            <select id="motif" name="motif">
-              <option>Succession</option>
-              <option>Divorce / séparation</option>
-              <option>Donation / partage</option>
-              <option>IFI / fiscalité</option>
-              <option>Litige / expertise amiable</option>
-              <option>Garantie bancaire</option>
+            <label for="role">Vous êtes</label>
+            <select id="role" name="role">
+              <option>Élu(e) du CSE</option>
+              <option>Secrétaire du CSE</option>
+              <option>Trésorier(ère) du CSE</option>
+              <option>Responsable des activités sociales</option>
+              <option>Ressources humaines</option>
+              <option>Salarié(e) de l'entreprise</option>
               <option>Autre</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="effectif">Nombre de salariés</label>
+            <select id="effectif" name="effectif">
+              <option>Moins de 50</option>
+              <option>50 à 250</option>
+              <option>250 à 1 000</option>
+              <option>Plus de 1 000</option>
             </select>
           </div>
         </div>
         <div class="field">
-          <label for="ville">Commune du bien</label>
-          <input type="text" id="ville" name="ville" placeholder="Ville et code postal (Île-de-France)">
+          <label for="message">Votre demande <span style="font-weight:400;color:var(--mousse)">(facultatif)</span></label>
+          <textarea id="message" name="message" placeholder="Une question, un point à éclaircir, une date de réunion à laquelle la proposition doit être prête…"></textarea>
         </div>
-        <div class="field">
-          <label for="qualite">Vous êtes</label>
-          <select id="qualite" name="qualite">
-            <option>Un particulier</option>
-            <option>Un notaire</option>
-            <option>Un avocat</option>
-            <option>Un autre professionnel</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="message">Votre situation</label>
-          <textarea id="message" name="message" placeholder="Type de bien, contexte, nombre de parties concernées, délai souhaité…"></textarea>
-        </div>
-        <button type="submit" class="btn btn-solid">Envoyer ma demande</button>
+        <button type="submit" class="btn btn-solid">Recevoir la proposition</button>
         <p class="form-note">Ce formulaire ouvre votre messagerie : aucune donnée n'est stockée sur le site.</p>
       </form>
     </div>
@@ -544,22 +708,23 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
     <div class="foot-top">
       <div>
         <p class="brand">ce<span class="dot" style="color:var(--cuivre)">.</span>idf<span class="dot" style="color:var(--cuivre)">.</span>immo</p>
-        <p style="margin-top:.4rem;max-width:36ch">L'expertise immobilière en valeur vénale, partout en Île-de-France.</p>
+        <p style="margin-top:.4rem;max-width:36ch">L'avantage immobilier des comités d'entreprise d'Île-de-France.</p>
       </div>
       <ul class="foot-nav">
-        <li><a href="#expertise">L'expertise</a></li>
-        <li><a href="#cas">Dans quels cas</a></li>
-        <li><a href="#deroulement">Déroulement</a></li>
-        <li><a href="#tarif">Tarif</a></li>
-        <li><a href="#expert">L'expert</a></li>
-        <li><a href="#demande">Demander une expertise</a></li>
+        <li><a href="#pourquoi">Pourquoi</a></li>
+        <li><a href="#simulateur">Le calcul</a></li>
+        <li><a href="#offre">L'offre</a></li>
+        <li><a href="#cse">Rôle du CSE</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="#questions">Questions</a></li>
+        <li><a href="#proposition">Recevoir la proposition</a></li>
         <li><a href="mentions-legales.html">Mentions légales</a></li>
       </ul>
     </div>
     <div class="legal">
-      <p>© <span id="annee">2026</span> ce.idf.immo — Marie-Céline Etave, expert immobilier en valeur vénale, Île-de-France.</p>
-      <p>Marie-Céline ETAVE (entreprise individuelle), agent commercial en immobilier auprès de BSK Immobilier, immatriculée au RSAC de Nanterre (92000) sous le numéro 431 897 958 00051. Carte professionnelle BSK Immobilier n° CP 3101 2018 000 030 369 (CCI de Toulouse, 20/04/2024). TVA non applicable, article 293 B du CGI. Site hébergé par GitHub, Inc. (GitHub Pages). <a href="mentions-legales.html">Mentions légales &amp; confidentialité</a>.</p>
-      <p>Les informations de ce site sont générales et ne constituent ni un conseil juridique ni un conseil fiscal personnalisé.</p>
+      <p>© <span id="annee">2026</span> ce.idf.immo — Marie-Céline Etave, conseillère indépendante en immobilier et expert en valeur vénale, Île-de-France.</p>
+      <p>Marie-Céline ETAVE (entreprise individuelle), agent commercial en immobilier auprès de BSK Immobilier, immatriculée au RSAC de Nanterre (92000) sous le numéro 431 897 958 00051. Carte professionnelle BSK Immobilier n° CP 3101 2018 000 030 369 (CCI de Toulouse, 20/04/2024). Site hébergé par GitHub, Inc. (GitHub Pages). <a href="mentions-legales.html">Mentions légales &amp; confidentialité</a>.</p>
+      <p>Les informations de ce site sont générales et ne constituent ni un conseil juridique ni un conseil fiscal personnalisé. Les simulations d'honoraires sont indicatives et ne valent pas offre contractuelle.</p>
     </div>
   </div>
 </footer>
@@ -577,19 +742,36 @@ const io = new IntersectionObserver(entries => {
 }, {threshold: .12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+// Simulateur d'économie : 3 % contre le taux choisi par le visiteur
+const TAUX_CSE = 3;
+const prix = document.getElementById('prix');
+const taux = document.getElementById('taux');
+const eur = n => Math.round(n).toLocaleString('fr-FR') + ' €';
+function majSimu(){
+  const p = Number(prix.value);
+  const t = Number(taux.value);
+  document.getElementById('prix-val').textContent = eur(p);
+  document.getElementById('out-marche').textContent = eur(p * t / 100);
+  document.getElementById('out-cse').textContent = eur(p * TAUX_CSE / 100);
+  document.getElementById('out-gain').textContent = eur(p * (t - TAUX_CSE) / 100);
+}
+prix.addEventListener('input', majSimu);
+taux.addEventListener('change', majSimu);
+majSimu();
+
 // Formulaire → ouvre la messagerie (mailto), aucune donnée stockée
-document.getElementById('form-exp').addEventListener('submit', e => {
+document.getElementById('form-cse').addEventListener('submit', e => {
   e.preventDefault();
   const v = id => document.getElementById(id).value.trim();
-  const sujet = encodeURIComponent('Demande d’expertise en valeur vénale — ' + v('motif'));
+  const sujet = encodeURIComponent('Proposition CSE — ' + (v('entreprise') || 'demande via ce.idf.immo'));
   const corps = encodeURIComponent(
     'Nom : ' + v('nom') + '\n' +
     'E-mail : ' + v('email') + '\n' +
+    'Entreprise : ' + (v('entreprise') || '—') + '\n' +
     'Téléphone : ' + (v('tel') || '—') + '\n' +
-    'Qualité : ' + v('qualite') + '\n' +
-    'Motif : ' + v('motif') + '\n' +
-    'Commune du bien : ' + (v('ville') || '—') + '\n\n' +
-    'Situation :\n' + (v('message') || '—') + '\n\n' +
+    'Fonction : ' + v('role') + '\n' +
+    'Effectif : ' + v('effectif') + '\n\n' +
+    'Demande :\n' + (v('message') || '—') + '\n\n' +
     '— Envoyé depuis ce.idf.immo'
   );
   window.location.href = 'mailto:contact@antony.immo?subject=' + sujet + '&body=' + corps;

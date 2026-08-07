@@ -1,4 +1,4 @@
-# ce.idf.immo — consignes pour les sessions automatisées
+# cse.idf.immo — consignes pour les sessions automatisées
 
 **CE = comité d'entreprise** (aujourd'hui CSE), **IDF = Île-de-France.**
 
@@ -37,7 +37,7 @@ aux élus, en levant d'abord la crainte que ça les engage.**
 
 - **antony.immo** — transaction locale à Antony (92), actu immo quotidienne,
   estimateur en ligne, expertise à 1 190 €. Grand public.
-- **ce.idf.immo** — offre comités d'entreprise, toute l'Île-de-France. Cible :
+- **cse.idf.immo** — offre comités d'entreprise, toute l'Île-de-France. Cible :
   les élus de CSE d'abord, les salariés ensuite.
 
 Ne pas mélanger : pas d'actu immo ni d'estimateur de prix ici, pas de contenu
@@ -53,7 +53,7 @@ Ne pas mélanger : pas d'actu immo ni d'estimateur de prix ici, pas de contenu
 - `expertise.html` — l'expertise en valeur vénale, tarif CSE à 990 €.
 - `mentions-legales.html` — mentions légales, RGPD, portée du simulateur et de
   l'offre CSE.
-- `CNAME` — domaine personnalisé (`ce.idf.immo`), ne pas toucher.
+- `CNAME` — domaine personnalisé (`cse.idf.immo`), ne pas toucher.
 - `sitemap.xml` / `robots.txt` — référencement. **Quand le contenu d'une page
   publiée change, mettre sa balise `<lastmod>` à la date du jour (AAAA-MM-JJ).**
 
@@ -101,7 +101,7 @@ Ne pas mélanger : pas d'actu immo ni d'estimateur de prix ici, pas de contenu
   « 3 %, minimum X € »). À ajouter si elle en pratique un.
 ## Contact — règle stricte
 
-- **Adresse e-mail : `contact@ce.idf.immo` uniquement.** Ne jamais remettre
+- **Adresse e-mail : `contact@cse.idf.immo` uniquement.** Ne jamais remettre
   `contact@antony.immo` sur ce site : chaque site a son adresse.
   ⚠️ Cette boîte doit être créée (ou redirigée) chez le registrar du domaine
   `idf.immo` pour que les formulaires aboutissent.

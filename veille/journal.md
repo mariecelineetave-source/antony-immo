@@ -64,7 +64,7 @@ publication d'une annonce par un vendeur ne vaut plus consentement pour
 
 ## 2026-08-10
 
-Rien de nouveau par rapport à la veille du 7 août : la maison PAP à
+Rien de nouveau par rapport à la veille du 9 août : la maison PAP à
 775 000 € ([annonce](https://www.pap.fr/annonces/maison-antony-92160-r462201384)),
 la maison 155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €
 ([annonce](https://www.pap.fr/annonces/maison-antony-92160-r452301068)), la
@@ -73,14 +73,77 @@ maison 9 pièces 422 m² aux enchères en ligne près du parc Heller à
 et les lots aux enchères notariales 36h-immo déjà signalés (dont AI19530,
 appartement 2 p. 30 m² à 159 000 €) restent les seules pistes confirmées,
 toujours en ligne aux mêmes conditions. Les recherches par quartier
-(Croix-de-Berny, Noyer Doré/Pajeaud/Fontaine-Michalon, Les Baconnets,
-centre-ville) et sur les communes limitrophes (Bourg-la-Reine, Sceaux,
-Fresnes, Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent
+(Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville) et
+sur les communes limitrophes (Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent toujours que des
+pages d'agrégateurs (SeLoger, PAP, leboncoin, ParuVendu, Logic-Immo,
+entreparticuliers, Belles Demeures), sans annonce individuelle nouvelle et
+identifiable avec certitude. Aucun nouveau signal de succession, de permis
+de construire ou de projet urbain distinct de ceux déjà connus (Antonypole /
+ligne 18).
+
+---
+
+## 2026-08-09
+
+Rien de nouveau confirmé par rapport à la veille du 8 août : la maison PAP à
+775 000 € ([annonce](https://www.pap.fr/annonces/maison-antony-92160-r462201384)),
+la maison 155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €
+([annonce](https://www.pap.fr/annonces/maison-antony-92160-r452301068)), la
+maison 9 pièces 422 m² aux enchères en ligne près du parc Heller à
+1 300 000 € ([annonce](https://www.immo-interactif.fr/encheres-en-ligne/maison/antony-92/1656702)),
+et les lots aux enchères notariales 36h-immo déjà signalés (dont AI19530,
+appartement 2 p. 30 m² à 159 000 €, et AI21793, appartement 2 p. 52 m² à
+210 000 €) restent les seules pistes confirmées, toujours en ligne aux mêmes
+conditions.
+
+Les deux annonces PAP potentiellement nouvelles signalées le 8 août (maison
+130 m² rue de la Mutualité sur terrain de 365 m² ; maison neuve 145 m² DPE A
+près du RER B à Fontaine-Michalon) restent introuvables via un lien
+individuel direct — toujours uniquement des pages de catégorie g43266 — donc
+toujours **non retenues** comme pistes confirmées, à vérifier manuellement
+sur pap.fr.
+
+Les recherches par quartier (Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les
+Baconnets, centre-ville) et sur les communes limitrophes (Bourg-la-Reine,
+Sceaux, Fresnes, Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent
+toujours que des pages d'agrégateurs (SeLoger, PAP, leboncoin, ParuVendu,
+Logic-Immo, entreparticuliers, Belles Demeures), sans annonce individuelle
+nouvelle et identifiable avec certitude. Aucun nouveau signal de succession,
+de permis de construire ou de projet urbain distinct de ceux déjà connus
+(Antonypole / ligne 18).
+
+---
+
+## 2026-08-08
+
+Rien de nouveau confirmé par rapport à la veille du 7 août : la maison PAP à
+775 000 € ([annonce](https://www.pap.fr/annonces/maison-antony-92160-r462201384)),
+la maison 155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €
+([annonce](https://www.pap.fr/annonces/maison-antony-92160-r452301068)), la
+maison 9 pièces 422 m² aux enchères en ligne près du parc Heller à
+1 300 000 € ([annonce](https://www.immo-interactif.fr/encheres-en-ligne/maison/antony-92/1656702)),
+et les lots aux enchères notariales 36h-immo déjà signalés (dont AI19530,
+appartement 2 p. 30 m² à 159 000 €) restent les seules pistes confirmées,
+toujours en ligne aux mêmes conditions.
+
+Deux annonces PAP potentiellement nouvelles sont apparues dans les résultats
+de recherche mais sans lien individuel récupérable (uniquement des pages de
+catégorie g43266), donc **non retenues** comme pistes confirmées à ce stade —
+à vérifier manuellement sur pap.fr avant exploitation :
+- une maison de 130 m² rue de la Mutualité, sur un terrain arboré de 365 m² ;
+- une maison neuve de 145 m² (DPE A), en retrait de rue sur parcelle de
+  545 m², achevée en décembre 2024, à deux pas du RER B (Fontaine-Michalon).
+
+Les recherches par quartier (Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les
+Baconnets, centre-ville) et sur les communes limitrophes (Bourg-la-Reine,
+Sceaux, Fresnes, Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent
 toujours que des pages d'agrégateurs (SeLoger, PAP, ParuVendu, Logic-Immo,
-Bien'ici, EtreProprio, Belles Demeures, Orpi, OptimHome), sans annonce
-individuelle nouvelle et identifiable avec certitude. Aucun nouveau signal
-de succession, de permis de construire ou de projet urbain distinct de
-ceux déjà connus (Antonypole / ligne 18).
+entreparticuliers, EtreProprio, Belles Demeures, La Côte Immo), sans annonce
+individuelle nouvelle et identifiable avec certitude. Aucun nouveau signal de
+succession, de permis de construire ou de projet urbain distinct de ceux déjà
+connus (Antonypole / ligne 18 ; 36 permis délivrés à Antony en 2025, 15
+enregistrés depuis le 1er janvier 2026).
 
 ---
 

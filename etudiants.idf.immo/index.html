@@ -112,7 +112,9 @@ main,header,footer{position:relative;z-index:1}
   font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
 }
 .hero h1{font-size:clamp(2.5rem,8.2vw,5.1rem);margin:1.3rem 0 0}
-.surli{background:linear-gradient(100deg,var(--lime),var(--cyan));
+/* Dégradé inversé (bleu → vert) : l'accroche commence par « 800 € », et ces
+   chiffres doivent rester dans le turquoise qu'ils avaient à l'origine. */
+.surli{background:linear-gradient(100deg,var(--cyan),var(--lime));
   -webkit-background-clip:text;background-clip:text;color:transparent}
 .chapo{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--gris);max-width:40ch;margin:1.3rem 0 0}
 .chapo b{color:var(--blanc);font-weight:600}
@@ -283,6 +285,39 @@ footer a:hover{color:var(--blanc)}
 .avert{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--ligne);font-size:.82rem;line-height:1.6}
 .toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(20px);background:var(--lime);color:#0A0A0F;font-weight:700;padding:.75rem 1.3rem;border-radius:100px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:60;font-size:.92rem;box-shadow:0 10px 34px rgba(0,0,0,.5)}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ============================ Impression ============================
+   « Imprimer » ou « Enregistrer en PDF » doit donner un document lisible
+   en noir sur blanc : pas de fond sombre qui vide les cartouches, pas de
+   boutons inutiles, et les adresses des liens écrites en toutes lettres. */
+@media print{
+  @page{size:A4;margin:14mm}
+  html,body{background:#fff!important;color:#000!important}
+  body{padding-bottom:0;font-size:11pt;line-height:1.45}
+  .glow,.barre-fixe,.toast,.nav-liens,.ctrl,.phone,.partages,.telech,
+  .hero-cta,.contact-btns,.qr-legende,#b-share,button{display:none!important}
+  a{color:#000!important;text-decoration:none}
+  main,header,footer,section{position:static}
+  section{padding:.5rem 0;page-break-inside:avoid}
+  .wrap{width:100%}
+  h1,h2,h3,h4,.marque,.num{color:#000!important}
+  .surli,.gain .n,.stat .n,.dcarte .somme,.oeil,.marque .pt,
+  .script .quoi,.txt-item .quoi,.oreille .veut{
+    -webkit-text-fill-color:#000!important;color:#000!important;background:none!important}
+  .stat,.dcarte,.etape,.bloc,.regle,.script,.txt-item,.oreille,.total,
+  .accord,.contact-bloc,.simu,.partage-bloc,details{
+    background:#fff!important;border:1px solid #bbb!important;
+    box-shadow:none!important;page-break-inside:avoid}
+  .script .phrase,.accord .phrase{background:#f3f3f3!important;border-left:3px solid #000!important;color:#000!important}
+  p,li,.sous,.chapo,.mini,.avert{color:#222!important}
+  strong,b,em,i{color:#000!important}
+  details{page-break-inside:avoid}
+  details .rep{display:block!important;padding:0 1.3rem 1rem}
+  summary::after{content:""!important}
+  .qr-zone{border:1px solid #bbb}
+  /* L'adresse et le numéro doivent survivre à l'impression */
+  .marque::after{content:" — etudiants.idf.immo · 06 60 98 92 92";font-size:9pt;font-weight:400}
+}
 </style>
 </head>
 <body>
@@ -610,10 +645,15 @@ footer a:hover{color:var(--blanc)}
           <div class="qr-zone" id="qr-zone" aria-hidden="true"></div>
           <p class="qr-legende">Scannable par n'importe quel téléphone.<br>Colle-le où tu veux.</p>
           <div class="telech">
-            <button class="btn btn-s btn-sm" id="b-png" type="button">⬇ QR code en PNG</button>
+            <button class="btn btn-p btn-sm" id="b-affiche-pdf" type="button">⬇ Affiche A4 en PDF (à imprimer)</button>
             <button class="btn btn-s btn-sm" id="b-story" type="button">⬇ Visuel story (1080×1920)</button>
-            <button class="btn btn-s btn-sm" id="b-affiche" type="button">⬇ Affiche A4 à imprimer</button>
+            <button class="btn btn-s btn-sm" id="b-affiche" type="button">⬇ Affiche en image (PNG)</button>
+            <button class="btn btn-s btn-sm" id="b-png" type="button">⬇ QR code seul (PNG)</button>
           </div>
+          <p class="qr-legende" style="margin-top:.8rem">
+            Pour imprimer, prends le <b>PDF</b> : il sort à la bonne taille sur
+            n'importe quelle imprimante.
+          </p>
         </div>
       </div>
     </div>
@@ -651,7 +691,10 @@ footer a:hover{color:var(--blanc)}
       <div class="regle">
         <h4>Une convention écrite avant tout versement</h4>
         <p>Avant de te payer, je t'envoie une convention d'indicateur d'affaires à signer
-           (montant, conditions, durée). C'est obligatoire, et c'est aussi ta garantie.</p>
+           (montant, conditions, durée). C'est obligatoire, et c'est aussi ta garantie.
+           Tu peux la lire dès maintenant :
+           <a href="convention.html" style="color:var(--lime);font-weight:600">voir la convention</a>
+           — elle s'imprime ou s'enregistre en PDF en un clic.</p>
       </div>
       <div class="regle">
         <h4>Le bien doit être en Île-de-France</h4>
@@ -786,7 +829,8 @@ footer a:hover{color:var(--blanc)}
         <a href="#quoi-dire">Quoi dire</a>
         <a href="#regles">Les règles</a>
         <a href="#faq">FAQ</a>
-        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="mentions-legales.html">Mentions légales &amp; règlement</a>
+        <a href="convention.html">Convention à signer (PDF)</a>
         <a href="tel:+33660989292">06 60 98 92 92</a>
       </div>
     </div>
@@ -1218,6 +1262,68 @@ function copier(txt,msg){
       },"image/png");
     }catch(e){toast("Téléchargement impossible");}
   }
+  /* ---------- PDF ----------
+     Fabrique un PDF d'une page à partir d'un canvas, sans aucune
+     bibliothèque : le canvas est encodé en JPEG et inséré tel quel dans le
+     PDF (filtre DCTDecode). Le PDF est donc imprimable à la bonne taille
+     sur n'importe quelle imprimante, contrairement à une image PNG. */
+  function pdfDepuisCanvas(canvas,largeurPt,hauteurPt,titre){
+    var dataURL=canvas.toDataURL("image/jpeg",0.92);
+    var b64=dataURL.substring(dataURL.indexOf(",")+1);
+    var bin=atob(b64),n=bin.length,img=new Uint8Array(n),i;
+    for(i=0;i<n;i++)img[i]=bin.charCodeAt(i);
+
+    var morceaux=[],taille=0;
+    function ajoute(x){
+      var u=(typeof x==="string")?nouvelleChaine(x):x;
+      morceaux.push(u);taille+=u.length;return taille;
+    }
+    function nouvelleChaine(s){
+      var a=new Uint8Array(s.length),k;
+      for(k=0;k<s.length;k++)a[k]=s.charCodeAt(k)&255;
+      return a;
+    }
+    /* Les titres PDF n'acceptent pas ( ) \ sans échappement. */
+    function ech(s){ return String(s).replace(/([\\()])/g,"\\$1"); }
+
+    var pos=[],W=largeurPt.toFixed(2),H=hauteurPt.toFixed(2);
+    var flux="q "+W+" 0 0 "+H+" 0 0 cm /Im0 Do Q\n";
+
+    ajoute("%PDF-1.4\n%\xE2\xE3\xCF\xD3\n");
+    pos[1]=taille; ajoute("1 0 obj\n<</Type/Catalog/Pages 2 0 R>>\nendobj\n");
+    pos[2]=taille; ajoute("2 0 obj\n<</Type/Pages/Kids[3 0 R]/Count 1>>\nendobj\n");
+    pos[3]=taille; ajoute("3 0 obj\n<</Type/Page/Parent 2 0 R/MediaBox[0 0 "+W+" "+H+"]"+
+      "/Resources<</XObject<</Im0 4 0 R>>/ProcSet[/PDF/ImageC]>>/Contents 5 0 R>>\nendobj\n");
+    pos[4]=taille; ajoute("4 0 obj\n<</Type/XObject/Subtype/Image/Width "+canvas.width+
+      "/Height "+canvas.height+"/ColorSpace/DeviceRGB/BitsPerComponent 8"+
+      "/Filter/DCTDecode/Length "+img.length+">>\nstream\n");
+    ajoute(img); ajoute("\nendstream\nendobj\n");
+    pos[5]=taille; ajoute("5 0 obj\n<</Length "+flux.length+">>\nstream\n"+flux+"endstream\nendobj\n");
+    pos[6]=taille; ajoute("6 0 obj\n<</Title("+ech(titre||"")+")/Producer(etudiants.idf.immo)>>\nendobj\n");
+
+    var xref=taille,t="xref\n0 7\n0000000000 65535 f \n";
+    for(i=1;i<=6;i++){
+      var o=String(pos[i]);
+      while(o.length<10)o="0"+o;
+      t+=o+" 00000 n \n";
+    }
+    t+="trailer\n<</Size 7/Root 1 0 R/Info 6 0 R>>\nstartxref\n"+xref+"\n%%EOF\n";
+    ajoute(t);
+
+    var sortie=new Uint8Array(taille),d=0;
+    for(i=0;i<morceaux.length;i++){sortie.set(morceaux[i],d);d+=morceaux[i].length;}
+    return new Blob([sortie],{type:"application/pdf"});
+  }
+  function telechargeBlob(blob,nom){
+    try{
+      var url=URL.createObjectURL(blob),a=document.createElement("a");
+      a.href=url;a.download=nom;document.body.appendChild(a);a.click();
+      document.body.removeChild(a);
+      setTimeout(function(){URL.revokeObjectURL(url);},4000);
+      toast("PDF enregistré ✓");
+    }catch(e){toast("Téléchargement impossible");}
+  }
+
   function rectArrondi(ctx,x,y,w,h,r){
     ctx.beginPath();
     ctx.moveTo(x+r,y);
@@ -1280,8 +1386,8 @@ function copier(txt,msg){
     telecharge(cv,"story-etudiants-idf-immo.png");
   });
 
-  $("b-affiche").addEventListener("click",function(){
-    if(!mat)return;
+  function dessineAffiche(){
+    if(!mat)return null;
     var W=1654,H=2339; /* A4 à 200 dpi */
     var cv=document.createElement("canvas");cv.width=W;cv.height=H;
     var ctx=cv.getContext("2d");
@@ -1306,7 +1412,20 @@ function copier(txt,msg){
     ligne(ctx,"Marie-Céline Etave — conseillère en immobilier, agent commercial (BSK Immobilier)",2190,30,"400",POLICE_C,"#6A6A80",W,60);
     ligne(ctx,"Prime versée après convention écrite. Revenu imposable à déclarer. Programme réservé aux 18 ans et +.",2235,30,"400",POLICE_C,"#6A6A80",W,60);
 
-    telecharge(cv,"affiche-etudiants-idf-immo.png");
+    return cv;
+  }
+
+  /* A4 = 595,28 × 841,89 points PostScript */
+  $("b-affiche-pdf").addEventListener("click",function(){
+    var cv=dessineAffiche();
+    if(!cv)return;
+    telechargeBlob(
+      pdfDepuisCanvas(cv,595.28,841.89,"Affiche - etudiants.idf.immo"),
+      "affiche-etudiants-idf-immo.pdf");
+  });
+  $("b-affiche").addEventListener("click",function(){
+    var cv=dessineAffiche();
+    if(cv)telecharge(cv,"affiche-etudiants-idf-immo.png");
   });
 })();
 

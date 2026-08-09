@@ -38,6 +38,31 @@ strong,b{color:var(--blanc);font-weight:600}
 .encart p:last-child{margin-bottom:0}
 footer{border-top:1px solid var(--ligne);padding:2rem 0;color:var(--gris);font-size:.88rem}
 footer a{color:var(--gris)}
+.actions{display:flex;gap:.7rem;flex-wrap:wrap;margin:1.6rem 0 2.4rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;border-radius:100px;
+  border:1.5px solid var(--ligne);background:rgba(255,255,255,.07);color:var(--blanc);
+  font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer;text-decoration:none}
+.btn:hover{background:rgba(255,255,255,.13)}
+
+/* ============================ Impression ============================ */
+@media print{
+  @page{size:A4;margin:16mm}
+  html,body{background:#fff!important;color:#000!important}
+  body{font-size:10.5pt;line-height:1.45}
+  header,footer,.actions,.retour{display:none!important}
+  main{padding:0}
+  .wrap{width:100%}
+  h1,h2{color:#000!important}
+  h1{font-size:19pt;margin-bottom:.3rem}
+  h2{font-size:12.5pt;margin:1.1rem 0 .4rem;page-break-after:avoid}
+  p,li{color:#111!important;font-size:10.5pt}
+  strong,b,em,i{color:#000!important}
+  a{color:#000!important;text-decoration:underline}
+  .encart{background:#f3f3f3!important;border:1px solid #bbb!important;border-left:3px solid #000!important;page-break-inside:avoid}
+  li,p{page-break-inside:avoid}
+  /* Le titre du document doit rester identifiable une fois imprimé */
+  h1::after{content:" — etudiants.idf.immo";font-size:11pt;font-weight:400}
+}
 </style>
 </head>
 <body>
@@ -52,6 +77,11 @@ footer a{color:var(--gris)}
 <main class="wrap">
   <h1>Mentions légales, confidentialité &amp; règlement</h1>
   <p class="chapo">Dernière mise à jour : 9 août 2026.</p>
+
+  <div class="actions">
+    <button class="btn" type="button" onclick="window.print()">🖨️ Imprimer / Enregistrer en PDF</button>
+    <a class="btn" href="convention.html">📄 Voir la convention à signer</a>
+  </div>
 
   <h2>Éditeur du site</h2>
   <p>

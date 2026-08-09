@@ -112,12 +112,18 @@ Ils sont **écrits en dur dans le site**, donc à trancher avant publication.
    vente. Il est encadré dans la convention (article 3).
 4. **Le délai de versement (15 jours)** et la **validité du code (12 mois)** : valeurs
    proposées, à ajuster si besoin.
-5. **L'adresse de contact.** Le site utilise `contact@antony.immo`, la seule adresse
-   certaine. Une adresse dédiée (`contact@idf.immo`) serait plus cohérente : dans ce cas,
-   remplacer la variable `MAIL` dans `index.html` et les mentions dans
-   `mentions-legales.html`.
-6. **Faire relire la convention** (`convention-indicateur-affaires.md`) par un juriste
+5. **Faire relire la convention** (`convention-indicateur-affaires.md`) par un juriste
    avant la première signature.
+
+### Réglé
+
+- **L'adresse de contact** est `contact@idf.immo` (confirmée le 9 août 2026). Elle figure
+  dans `index.html` (variable `MAIL`, données structurées, pied de page, bouton
+  d'estimation du mode vendeur) et dans `mentions-legales.html`. Pour en changer, c'est
+  la variable `MAIL` en tête de script qui pilote tous les liens générés — le reste est
+  du texte affiché.
+  **Vérifier que la boîte `contact@idf.immo` est bien créée et relevée avant la mise en
+  ligne** : c'est la seule voie de contact du site, tous les boutons pointent dessus.
 
 ---
 

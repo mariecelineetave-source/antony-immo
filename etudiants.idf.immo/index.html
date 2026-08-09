@@ -1329,8 +1329,18 @@ function prenomDepuisCode(code){
     ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);
     ctx.closePath();
   }
-  function centre(ctx,txt,y,max){
-    ctx.textAlign="center";ctx.fillText(txt,max/2,y);
+  var POLICE_T="'Bricolage Grotesque', Archivo, sans-serif";
+  var POLICE_C="Archivo, sans-serif";
+  /* Écrit une ligne centrée en réduisant la taille si elle dépasse la largeur
+     disponible : une phrase plus longue ne peut jamais sortir de l'image. */
+  function ligne(ctx,txt,y,taille,poids,famille,couleur,W,marge){
+    var maxW=W-(marge==null?110:marge)*2,t=taille;
+    ctx.font=poids+" "+t+"px "+famille;
+    while(t>12&&ctx.measureText(txt).width>maxW){
+      t-=2;ctx.font=poids+" "+t+"px "+famille;
+    }
+    ctx.fillStyle=couleur;ctx.textAlign="center";
+    ctx.fillText(txt,W/2,y);
   }
 
   $("b-png").addEventListener("click",function(){
@@ -1354,36 +1364,23 @@ function prenomDepuisCode(code){
     ctx.fillStyle="rgba(139,92,246,.30)";ctx.beginPath();ctx.arc(120,180,420,0,6.3);ctx.fill();
     ctx.fillStyle="rgba(212,255,63,.14)";ctx.beginPath();ctx.arc(980,1720,380,0,6.3);ctx.fill();
 
-    ctx.fillStyle="#D4FF3F";
-    ctx.font="700 46px Archivo, sans-serif";
-    centre(ctx,"ÎLE-DE-FRANCE · 18 ANS ET +",250,W);
+    ligne(ctx,"ÎLE-DE-FRANCE · 18 ANS ET +",250,46,"700",POLICE_C,"#D4FF3F",W);
 
-    ctx.fillStyle="#F4F4F8";
-    ctx.font="800 108px 'Bricolage Grotesque', Archivo, sans-serif";
-    centre(ctx,"Quelqu'un vend",400,W);
-    centre(ctx,"son bien ?",520,W);
+    ligne(ctx,"Tu connais quelqu'un",405,92,"800",POLICE_T,"#F4F4F8",W);
+    ligne(ctx,"qui veut vendre son bien :",505,92,"800",POLICE_T,"#F4F4F8",W);
 
-    ctx.fillStyle="#D4FF3F";
-    ctx.font="800 190px 'Bricolage Grotesque', Archivo, sans-serif";
-    centre(ctx,"800 €",740,W);
-    ctx.fillStyle="#A0A0B4";
-    ctx.font="500 44px Archivo, sans-serif";
-    centre(ctx,"pour toi si la vente se fait",810,W);
-    centre(ctx,"+ 50 € dès le mandat signé",876,W);
+    ligne(ctx,"800 € pour toi !",690,150,"800",POLICE_T,"#D4FF3F",W);
 
-    var qs=560,qx=(W-qs)/2,qy=1010;
+    ligne(ctx,"quand la vente est signée chez le notaire",775,42,"500",POLICE_C,"#A0A0B4",W);
+    ligne(ctx,"+ 50 € dès la signature du mandat exclusif",837,42,"500",POLICE_C,"#A0A0B4",W);
+
+    var qs=580,qx=(W-qs)/2,qy=910;
     ctx.fillStyle="#fff";rectArrondi(ctx,qx-32,qy-32,qs+64,qs+64,40);ctx.fill();
     qrToCanvas(ctx,etat.mat,qx,qy,qs,"#000");
 
-    ctx.fillStyle="#F4F4F8";
-    ctx.font="700 52px Archivo, sans-serif";
-    centre(ctx,"Scanne, ou clique sur le lien",1700,W);
-    ctx.fillStyle="#D4FF3F";
-    ctx.font="800 46px 'Bricolage Grotesque', Archivo, sans-serif";
-    centre(ctx,etat.lien.replace(/^https?:\/\//,""),1775,W);
-    ctx.fillStyle="#6A6A80";
-    ctx.font="400 34px Archivo, sans-serif";
-    centre(ctx,"Estimation offerte · sans engagement",1840,W);
+    ligne(ctx,"Scanne, ou clique sur le lien",1650,52,"700",POLICE_C,"#F4F4F8",W);
+    ligne(ctx,etat.lien.replace(/^https?:\/\//,""),1725,46,"800",POLICE_T,"#D4FF3F",W);
+    ligne(ctx,"Estimation offerte · sans engagement",1795,34,"400",POLICE_C,"#6A6A80",W);
 
     telecharge(cv,"story-"+etat.code+".png");
   });
@@ -1396,39 +1393,25 @@ function prenomDepuisCode(code){
     ctx.fillStyle="#0A0A0F";ctx.fillRect(0,0,W,H);
     ctx.fillStyle="rgba(139,92,246,.26)";ctx.beginPath();ctx.arc(180,140,520,0,6.3);ctx.fill();
 
-    ctx.fillStyle="#D4FF3F";
-    ctx.font="700 42px Archivo, sans-serif";
-    centre(ctx,"ÎLE-DE-FRANCE · RÉSERVÉ AUX MAJEURS",250,W);
+    ligne(ctx,"ÎLE-DE-FRANCE · RÉSERVÉ AUX MAJEURS",250,42,"700",POLICE_C,"#D4FF3F",W);
 
-    ctx.fillStyle="#F4F4F8";
-    ctx.font="800 118px 'Bricolage Grotesque', Archivo, sans-serif";
-    centre(ctx,"Tu connais quelqu'un",420,W);
-    centre(ctx,"qui vend son bien ?",550,W);
+    ligne(ctx,"Tu connais quelqu'un",440,112,"800",POLICE_T,"#F4F4F8",W);
+    ligne(ctx,"qui veut vendre son bien :",565,112,"800",POLICE_T,"#F4F4F8",W);
 
-    ctx.fillStyle="#D4FF3F";
-    ctx.font="800 230px 'Bricolage Grotesque', Archivo, sans-serif";
-    centre(ctx,"800 €",810,W);
+    ligne(ctx,"800 € pour toi !",790,180,"800",POLICE_T,"#D4FF3F",W);
 
-    ctx.fillStyle="#A0A0B4";
-    ctx.font="500 46px Archivo, sans-serif";
-    centre(ctx,"quand la vente est signée chez le notaire",890,W);
-    centre(ctx,"+ 50 € dès la signature du mandat exclusif",960,W);
+    ligne(ctx,"quand la vente est signée chez le notaire",885,46,"500",POLICE_C,"#A0A0B4",W);
+    ligne(ctx,"+ 50 € dès la signature du mandat exclusif",955,46,"500",POLICE_C,"#A0A0B4",W);
 
     var qs=680,qx=(W-qs)/2,qy=1090;
     ctx.fillStyle="#fff";rectArrondi(ctx,qx-36,qy-36,qs+72,qs+72,44);ctx.fill();
     qrToCanvas(ctx,etat.mat,qx,qy,qs,"#000");
 
-    ctx.fillStyle="#F4F4F8";
-    ctx.font="700 56px Archivo, sans-serif";
-    centre(ctx,"Scanne ce QR code",1930,W);
-    ctx.fillStyle="#D4FF3F";
-    ctx.font="800 52px 'Bricolage Grotesque', Archivo, sans-serif";
-    centre(ctx,etat.lien.replace(/^https?:\/\//,""),2010,W);
+    ligne(ctx,"Scanne ce QR code",1930,56,"700",POLICE_C,"#F4F4F8",W);
+    ligne(ctx,etat.lien.replace(/^https?:\/\//,""),2010,52,"800",POLICE_T,"#D4FF3F",W);
 
-    ctx.fillStyle="#6A6A80";
-    ctx.font="400 30px Archivo, sans-serif";
-    centre(ctx,"Marie-Céline Etave — conseillère en immobilier, agent commercial (BSK Immobilier)",2150,W);
-    centre(ctx,"Prime versée après convention écrite. Revenu imposable à déclarer. Programme réservé aux 18 ans et +.",2200,W);
+    ligne(ctx,"Marie-Céline Etave — conseillère en immobilier, agent commercial (BSK Immobilier)",2150,30,"400",POLICE_C,"#6A6A80",W,60);
+    ligne(ctx,"Prime versée après convention écrite. Revenu imposable à déclarer. Programme réservé aux 18 ans et +.",2200,30,"400",POLICE_C,"#6A6A80",W,60);
 
     telecharge(cv,"affiche-"+etat.code+".png");
   });

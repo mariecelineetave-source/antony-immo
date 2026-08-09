@@ -32,7 +32,7 @@ Adresse : ................................................................
 
 E-mail : ................................ Téléphone : ................................
 
-Code de recommandation : ................................
+Date du premier appel signalant la mise en relation : ......../......../....................
 
 ci-après dénommé **« l'Indicateur »**,
 
@@ -42,8 +42,10 @@ ci-après dénommé **« l'Indicateur »**,
 
 ## Article 1 — Objet
 
-L'Indicateur signale au Mandataire l'identité de personnes de son entourage susceptibles
-de vendre un bien immobilier situé en Île-de-France.
+L'Indicateur signale au Mandataire, **par téléphone**, l'identité de personnes de son
+entourage envisageant de vendre un bien immobilier situé en Île-de-France. Il communique à
+cette occasion le prénom, la commune, la nature du bien et le numéro de téléphone de la
+personne concernée.
 
 Le rôle de l'Indicateur se limite **exclusivement à la mise en relation**.
 
@@ -103,21 +105,26 @@ Aucune prime n'est due dans les cas suivants :
    bien dont il est propriétaire ou copropriétaire.
 4. La recommandation a été obtenue par démarchage non sollicité, par de fausses
    déclarations, ou en violation de l'article 1 ou de l'article 5.
+5. L'Indicateur a transmis les coordonnées d'un tiers sans l'accord préalable de
+   celui-ci.
 
-En cas de recommandations concurrentes portant sur une même personne, seule la
-**première enregistrée** ouvre droit à la prime.
+En cas de recommandations concurrentes portant sur une même personne, seul le
+**premier appel reçu** ouvre droit à la prime.
+
+Le partage du site à d'autres étudiants ne donne lieu à **aucune rémunération** : seules
+les mises en relation aboutissant à une transaction ouvrent droit aux primes de l'article 3.
 
 ## Article 5 — Protection des données personnelles
 
-Le mode de fonctionnement normal du programme est le **partage d'un lien** : la personne
-intéressée décide elle-même de prendre contact.
-
-Si l'Indicateur transmet néanmoins les coordonnées d'un tiers, il garantit au Mandataire
-en avoir informé cette personne et avoir recueilli son accord préalable.
+L'Indicateur transmet au Mandataire les coordonnées d'un tiers. Il **garantit** en avoir
+informé cette personne et avoir recueilli son **accord préalable et explicite**. Cette
+garantie est une condition essentielle de la présente convention : à défaut, aucune prime
+n'est due.
 
 Le Mandataire s'engage à n'utiliser ces coordonnées qu'**une seule fois**, à mentionner
-dans son premier message **l'identité de l'Indicateur** à l'origine de la mise en
-relation, et à ne pas les conserver si la personne ne donne pas suite.
+dès le début de son premier appel **l'identité de l'Indicateur** à l'origine de la mise en
+relation ainsi que la provenance du numéro, et à ne pas les conserver si la personne ne
+donne pas suite. Toute personne concernée peut en demander l'effacement immédiat.
 
 ## Article 6 — Fiscalité
 

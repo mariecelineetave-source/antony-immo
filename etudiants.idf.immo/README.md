@@ -5,9 +5,12 @@ Site du programme de recommandation étudiant de Marie-Céline Etave, pour l'Îl
 **Le deal :** 50 € à la signature d'un mandat exclusif (diagnostics réalisés),
 800 € à la signature de l'acte de vente chez le notaire.
 
-> ⚠️ **Ce site n'est pas en ligne.** Il est pour l'instant uniquement dans ce dossier, sur
-> la branche de travail. Rien n'a été publié, et **aucun autre site n'a été touché** :
-> `antony.immo` (les fichiers à la racine du dépôt) est strictement inchangé.
+> ✅ **Le site est en ligne** sur https://etudiants.idf.immo
+>
+> Il est publié depuis le dépôt **`mariecelineetave-source/etudiants-idf-immo`** (GitHub
+> Pages + enregistrement CNAME `etudiants` chez Gandi). Ce dossier-ci en est la copie de
+> travail : toute modification doit être reportée dans les deux dépôts.
+> `antony.immo` n'est pas concerné et reste strictement inchangé.
 
 ---
 
@@ -15,7 +18,7 @@ Site du programme de recommandation étudiant de Marie-Céline Etave, pour l'Îl
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | Le site entier — HTML, CSS et JS dans un seul fichier, comme antony.immo |
+| `index.html` | Le site entier — HTML, CSS et JS dans un seul fichier |
 | `mentions-legales.html` | Mentions légales, RGPD et **règlement complet du programme** |
 | `convention-indicateur-affaires.md` | Modèle de convention à faire signer **avant tout versement** |
 | `CNAME` | Domaine personnalisé, à utiliser une fois le site dans son propre dépôt |
@@ -25,70 +28,64 @@ Site du programme de recommandation étudiant de Marie-Céline Etave, pour l'Îl
 
 ## Ce que fait le site
 
-**Deux visages, une seule page.**
+**Le programme repose sur un appel téléphonique.** L'étudiant qui connaît un vendeur
+demande d'abord son accord à cette personne, puis téléphone à Marie-Céline pour lui
+transmettre ses coordonnées. Le vendeur ne passe jamais par le site.
 
-- **Par défaut** (`etudiants.idf.immo`) : la page s'adresse à l'étudiant. Le deal, les
-  étapes, le générateur de kit, le simulateur de gains, les règles, la FAQ.
-- **Avec un code** (`etudiants.idf.immo/?r=LEA4K2`) : la page bascule automatiquement en
-  **mode vendeur**. Un bandeau annonce « Léa vous a envoyé ici », et le contenu devient
-  une page d'estimation classique. C'est ce que voit la personne qui scanne le QR code —
-  elle ne tombe pas sur une page qui parle de primes étudiantes.
+Le site sert donc à trois choses :
 
-**Le kit de parrainage.** L'étudiant saisit son prénom et son contact, et obtient
-instantanément :
+1. **Convaincre l'étudiant** que le programme est réel et simple (le deal, les étapes,
+   le simulateur de gains, la FAQ).
+2. **Le mettre en relation par téléphone** : bouton d'appel, envoi d'un SMS pour être
+   rappelé, et surtout **enregistrement du numéro dans ses contacts** (fiche vCard). Ce
+   dernier point est le plus important : un étudiant ne connaît pas forcément un vendeur
+   aujourd'hui, mais peut-être dans six mois.
+3. **Lui donner les mots** : la phrase exacte pour demander l'accord du vendeur, et la
+   liste de ce qu'il devra dire au téléphone. C'est le vrai blocage, pas la technique.
 
-- un **code** personnel (prénom + 3 caractères de contrôle) et son **lien** ;
-- un **QR code** généré dans le navigateur ;
-- des **textes prêts à coller** (story, groupe WhatsApp familial, message direct) ;
-- le partage natif (`navigator.share`), WhatsApp, SMS, copie ;
-- trois téléchargements : **QR en PNG**, **visuel story 1080×1920**, **affiche A4** à
-  imprimer et punaiser sur un campus.
+**Le QR code sert au bouche-à-oreille entre étudiants**, pas à toucher les vendeurs. Il
+pointe vers l'adresse publique du site, sans code personnel ni suivi. Il est accompagné
+d'un visuel story 1080×1920, d'une affiche A4 pour les panneaux de campus, et de textes
+prêts à coller.
 
-**Aucune donnée ne sort du téléphone.** Tout est calculé en local ; la seule transmission
-est le `mailto:` que l'étudiant déclenche lui-même pour enregistrer son code. C'est
-volontaire : c'est la seule manière d'être honnête sur la vie privée dans un programme qui
-consiste, par nature, à parler d'autres personnes.
+**Aucune donnée ne circule par le site.** Il ne comporte aucun champ de saisie, aucun
+formulaire, aucun stockage. Tout se joue au téléphone, directement.
+
+### Le point juridique central
+
+Un étudiant transmet le numéro d'un tiers. C'est encadré : la personne doit avoir été
+informée et avoir donné son accord. Le site en fait une règle affichée, avec la phrase à
+employer. Au premier appel, Marie-Céline cite le prénom de l'étudiant et indique d'où
+vient le numéro, conformément à la doctrine CNIL sur le parrainage.
+
+### Le garde-fou anti-pyramide
+
+Partager le site à d'autres étudiants n'est **jamais rémunéré**. Seule une vente réelle
+ouvre droit à une prime. C'est écrit sur le site, dans les mentions légales et dans la
+convention.
 
 ### Pourquoi ces choix « jeunes »
 
-Ils ne sortent pas de nulle part — recherches d'août 2026 :
+Recherches d'août 2026 : Instagram touche 84 % des 16-25 ans en France, TikTok domine le
+temps passé, WhatsApp reste la messagerie principale — d'où le visuel story vertical, les
+textes prêts à coller et le partage natif. L'explication est un format vertical, muet et
+sous-titré, animé en CSS/SVG (aucune vidéo à héberger).
 
-- **Instagram** est utilisé par 84 % des 16-25 ans en France, **TikTok** domine le temps
-  passé (≈ 38 h/mois), **WhatsApp** reste la messagerie principale.
-  → d'où le visuel story vertical prêt à poster, les textes à coller, et le partage
-  natif qui ouvre la feuille de partage du téléphone (Instagram et TikTok n'ayant pas
-  d'URL de partage web fiable, on passe par « copier » + le partage système).
-- Le schéma qui marche pour un programme de recommandation en 2026 :
-  **QR code → inscription immédiate → offre à partager**. C'est exactement le parcours
-  du site.
-- L'explication est un **format vertical, muet, sous-titré, en boucle** — comme un reel.
-  Il est ici animé en CSS/SVG (aucune vidéo à héberger, aucun poids, lisible sans son).
-  Voir plus bas si vous voulez le remplacer par une vraie vidéo.
+## Où le site est publié
 
----
+| | |
+|---|---|
+| Adresse | https://etudiants.idf.immo |
+| Dépôt publié | `mariecelineetave-source/etudiants-idf-immo` (branche `main`, racine) |
+| DNS | enregistrement **CNAME** `etudiants` → `mariecelineetave-source.github.io.` chez Gandi |
+| HTTPS | actif (redirection automatique depuis `http://`) |
 
-## Mettre le site en ligne
+GitHub Pages n'acceptant qu'un domaine par dépôt, ce site ne pouvait pas être publié
+depuis le dépôt `antony-immo` : d'où un dépôt séparé.
 
-Le site est **prêt**, mais il ne peut pas être publié depuis ce dépôt : GitHub Pages
-n'accepte **qu'un seul domaine par dépôt**, et celui-ci est déjà pris par `antony.immo`
-(fichier `CNAME` à la racine). Il faut donc :
-
-1. **Créer un nouveau dépôt** GitHub, par exemple `etudiants-idf-immo`.
-2. Y copier le **contenu** de ce dossier (les fichiers à la racine du nouveau dépôt, pas
-   dans un sous-dossier).
-3. Activer **GitHub Pages** sur la branche `main` de ce nouveau dépôt.
-4. Chez le registrar du domaine `idf.immo`, ajouter un enregistrement **CNAME** :
-   `etudiants` → `<compte-github>.github.io`.
-5. Dans les réglages Pages du nouveau dépôt, renseigner le domaine
-   `etudiants.idf.immo` et cocher **Enforce HTTPS**.
-
-Le fichier `CNAME` est déjà présent dans ce dossier : il sera au bon endroit dès que le
-contenu sera à la racine du nouveau dépôt.
-
-> Le domaine accentué `étudiants.idf.immo` fonctionne aussi (IDN), mais il s'écrit
-> `xn--tudiants-c1a.idf.immo` en DNS et se copie mal dans les messages. Le site utilise
-> partout la forme sans accent. Si vous tenez à l'accentué, le plus propre est de le faire
-> **rediriger** vers `etudiants.idf.immo`.
+> Le domaine accentué `étudiants.idf.immo` s'écrit `xn--tudiants-c1a.idf.immo` en DNS et
+> se copie mal dans les messages. Le site utilise partout la forme sans accent. Pour
+> l'accentué, le plus propre est une **redirection** vers `etudiants.idf.immo`.
 
 ---
 
@@ -110,27 +107,25 @@ Ils sont **écrits en dur dans le site**, donc à trancher avant publication.
    *après* la transaction. Verser 50 € dès le mandat est votre choix et reste licite,
    mais c'est précisément le point à faire relire, car il rémunère un acte antérieur à la
    vente. Il est encadré dans la convention (article 3).
-4. **Le délai de versement (15 jours)** et la **validité du code (12 mois)** : valeurs
-   proposées, à ajuster si besoin.
+4. **Le délai de versement (15 jours)** et la **durée de validité d'une recommandation
+   (12 mois à compter de l'appel)** : valeurs proposées, à ajuster si besoin.
 5. **Faire relire la convention** (`convention-indicateur-affaires.md`) par un juriste
    avant la première signature.
 
 ### Réglé
 
 - **L'adresse de contact** est `contact@idf.immo` (confirmée le 9 août 2026). Elle figure
-  dans `index.html` (variable `MAIL`, données structurées, pied de page, bouton
-  d'estimation du mode vendeur) et dans `mentions-legales.html`. Pour en changer, c'est
-  la variable `MAIL` en tête de script qui pilote tous les liens générés — le reste est
-  du texte affiché.
-  **Vérifier que la boîte `contact@idf.immo` est bien créée et relevée avant la mise en
-  ligne** : c'est la seule voie de contact du site, tous les boutons pointent dessus.
+  dans les données structurées, les mentions légales et la fiche contact `.vcf`.
+- **Le numéro de téléphone `06 60 98 92 92`** est désormais la voie de contact principale :
+  il est en gros sur la page, dans la barre fixe, dans les boutons d'appel et de SMS, dans
+  la fiche contact et sur l'affiche. Il est piloté par la variable `TEL` en tête de script.
 
 ---
 
 ## Remplacer l'animation par une vraie vidéo
 
 L'explication animée est dans `index.html`, dans le bloc `<div class="phone" id="phone">`
-(quatre `<div class="scene">`). Pour mettre une vraie vidéo verticale à la place,
+(quatre `<div class="scene">` : le signal, l'accord, l'appel, les primes). Pour mettre une vraie vidéo verticale à la place,
 remplacer tout le contenu de ce bloc par :
 
 ```html
@@ -149,13 +144,14 @@ regardée sans le son), moins de 5 Mo. Le fichier se place dans le même dossier
 - **Aucune dépendance externe** en dehors des polices Google Fonts. Le générateur de QR
   code (mode octet, correction M, versions 1 à 10) est écrit à la main dans le fichier :
   pas de CDN, pas de service tiers qui verrait passer les liens.
-  Il a été validé en générant 200 liens de parrainage aléatoires et en les faisant
-  relire par un décodeur QR indépendant (OpenCV) : 200/200, accents compris.
+  Il a été validé en générant 200 liens aléatoires relus par un décodeur QR indépendant
+  (OpenCV) : 200/200, accents compris. Le QR affiché et ceux des visuels téléchargés ont
+  été scannés et vérifiés.
 - **Accessibilité** : contrastes vérifiés, focus visibles, `prefers-reduced-motion`
   respecté (l'animation s'arrête et affiche une image fixe), animation contrôlable au
   clavier, aucun texte porté uniquement par la couleur.
-- **Sans JavaScript**, la page reste entièrement lisible : seuls le générateur de kit et
-  le mode vendeur nécessitent JS.
-- Le code de recommandation est **déterministe** : le même prénom et le même contact
-  redonnent toujours le même code. Un étudiant qui revient sur le site retrouve son kit
-  (via `localStorage`) sans avoir à s'inscrire à nouveau.
+- **Sans JavaScript**, la page reste entièrement lisible et les boutons d'appel
+  fonctionnent : seuls le QR code, la fiche contact et les visuels nécessitent JS.
+- Le texte dessiné sur les visuels (story, affiche) **s'ajuste automatiquement** à la
+  largeur disponible : changer une formulation ne peut pas faire déborder une image.
+- La fiche contact (`.vcf`) est générée dans le navigateur, sans dépendance.

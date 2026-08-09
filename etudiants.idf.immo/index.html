@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tu connais quelqu'un qui veut vendre son bien : 800 € pour toi — etudiants.idf.immo</title>
-<meta name="description" content="Tu as 18 ans et tu connais quelqu'un qui veut vendre son bien en Île-de-France ? 50 € dès le mandat exclusif signé, et 800 € pour toi le jour de la vente chez le notaire. Crée ton lien et ton QR code en 30 secondes.">
+<meta name="description" content="Tu as 18 ans et tu connais quelqu'un qui veut vendre son bien en Île-de-France ? Tu m'appelles, je m'occupe du reste : 50 € dès le mandat exclusif signé, et 800 € pour toi le jour de la vente chez le notaire.">
 <meta name="theme-color" content="#0A0A0F">
 <meta property="og:title" content="Tu connais quelqu'un qui veut vendre son bien : 800 € pour toi !">
-<meta property="og:description" content="50 € dès le mandat exclusif signé, et 800 € pour toi le jour de la vente. Pour les étudiants d'Île-de-France, à partir de 18 ans.">
+<meta property="og:description" content="Un coup de fil, et c'est tout. 50 € dès le mandat exclusif signé, et 800 € pour toi le jour de la vente. Pour les étudiants d'Île-de-France, à partir de 18 ans.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://etudiants.idf.immo/">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="etudiants.idf.immo">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tu connais quelqu'un qui veut vendre son bien : 800 € pour toi !">
-<meta name="twitter:description" content="50 € au mandat exclusif, et 800 € pour toi à la vente. Étudiants d'Île-de-France, 18 ans et +.">
+<meta name="twitter:description" content="Un coup de fil, et c'est tout. 50 € au mandat exclusif, et 800 € pour toi à la vente. Étudiants d'Île-de-France, 18 ans et +.">
 <link rel="canonical" href="https://etudiants.idf.immo/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0F'/%3E%3Cpath d='M16 7 4 12l12 5 12-5z' fill='%23D4FF3F'/%3E%3Cpath d='M9 15v6c0 2 3.5 3.5 7 3.5s7-1.5 7-3.5v-6' fill='none' stroke='%238B5CF6' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,8 +58,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   font-family:"Archivo",system-ui,-apple-system,sans-serif;
   background:var(--nuit);color:var(--blanc);
-  line-height:1.6;overflow-x:hidden;
-  padding-bottom:76px;
+  line-height:1.6;overflow-x:hidden;padding-bottom:76px;
 }
 h1,h2,h3,.display{font-family:"Bricolage Grotesque","Archivo",sans-serif;line-height:1.02;letter-spacing:-.02em;font-weight:800}
 a{color:inherit}
@@ -71,8 +70,6 @@ img,svg{max-width:100%}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
-
-/* ============================ Fonds ============================ */
 .glow{position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
     radial-gradient(60vw 60vw at 12% -8%, rgba(139,92,246,.30), transparent 62%),
@@ -88,7 +85,7 @@ main,header,footer{position:relative;z-index:1}
 .nav-liens{display:flex;gap:1.5rem;font-size:.93rem;font-weight:500}
 .nav-liens a{color:var(--gris);text-decoration:none}
 .nav-liens a:hover{color:var(--blanc)}
-@media(max-width:820px){.nav-liens{display:none}}
+@media(max-width:900px){.nav-liens{display:none}}
 
 /* ============================ Boutons ============================ */
 .btn{
@@ -104,7 +101,7 @@ main,header,footer{position:relative;z-index:1}
 .btn-s{background:rgba(255,255,255,.07);color:var(--blanc);border:1.5px solid var(--ligne)}
 .btn-s:hover{background:rgba(255,255,255,.13)}
 .btn-sm{padding:.62rem 1.05rem;font-size:.88rem}
-.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.btn-xl{padding:1.15rem 1.8rem;font-size:1.12rem}
 
 /* ============================ Héros ============================ */
 .hero{padding:2.2rem 0 3.4rem}
@@ -115,16 +112,12 @@ main,header,footer{position:relative;z-index:1}
   font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
 }
 .hero h1{font-size:clamp(2.5rem,8.2vw,5.1rem);margin:1.3rem 0 0}
-.surli{
-  background:linear-gradient(100deg,var(--lime),var(--cyan));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.chapo{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--gris);max-width:39ch;margin:1.3rem 0 0}
+.surli{background:linear-gradient(100deg,var(--lime),var(--cyan));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.chapo{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--gris);max-width:40ch;margin:1.3rem 0 0}
 .chapo b{color:var(--blanc);font-weight:600}
 .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
 .mini{font-size:.85rem;color:var(--gris);margin-top:1rem}
-
-/* ============================ Compteurs ============================ */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin-top:3rem}
 .stat{background:var(--carte);border:1px solid var(--ligne);border-radius:var(--r);padding:1.25rem 1.1rem}
 .stat .n{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(1.5rem,4.4vw,2.2rem);color:var(--lime);letter-spacing:-.03em}
@@ -134,7 +127,7 @@ main,header,footer{position:relative;z-index:1}
 /* ============================ Sections ============================ */
 section{padding:3.6rem 0}
 .titre{font-size:clamp(1.9rem,5.2vw,3.1rem);margin-bottom:.7rem}
-.sous{color:var(--gris);max-width:56ch;margin-bottom:2.2rem;font-size:1.03rem}
+.sous{color:var(--gris);max-width:58ch;margin-bottom:2.2rem;font-size:1.03rem}
 .oeil{color:var(--lime);font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:.7rem}
 
 /* ============================ Le deal ============================ */
@@ -156,7 +149,7 @@ section{padding:3.6rem 0}
 /* ============================ Étapes ============================ */
 .etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;counter-reset:e}
 @media(max-width:820px){.etapes{grid-template-columns:1fr}}
-.etape{background:var(--carte);border:1px solid var(--ligne);border-radius:var(--r);padding:1.7rem 1.4rem;counter-increment:e;position:relative}
+.etape{background:var(--carte);border:1px solid var(--ligne);border-radius:var(--r);padding:1.7rem 1.4rem;counter-increment:e}
 .etape::before{
   content:counter(e);display:flex;align-items:center;justify-content:center;
   width:46px;height:46px;border-radius:14px;background:var(--lime);color:#0A0A0F;
@@ -164,35 +157,49 @@ section{padding:3.6rem 0}
 }
 .etape h3{font-size:1.16rem;margin-bottom:.45rem}
 .etape p{color:var(--gris);font-size:.95rem}
+.etape .rappel{margin-top:.8rem;font-size:.87rem;color:var(--lime);font-weight:600}
 
-/* ============================ Explainer vertical ============================ */
+/* ============================ Contact ============================ */
+.contact-bloc{background:linear-gradient(150deg,rgba(212,255,63,.16),var(--carte) 58%);border:1px solid rgba(212,255,63,.34);border-radius:28px;padding:clamp(1.5rem,4vw,2.6rem);text-align:center}
+.num{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(2.1rem,7.4vw,3.4rem);letter-spacing:-.03em;color:var(--lime);display:inline-block;text-decoration:none;margin:.6rem 0 .3rem}
+.contact-btns{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:1.6rem}
+.contact-note{color:var(--gris);font-size:.9rem;margin-top:1.2rem}
+
+/* ============================ Scripts à copier ============================ */
+.script{background:var(--carte);border:1px solid var(--ligne);border-radius:var(--r);padding:1.5rem 1.4rem;margin-bottom:1rem}
+.script .quoi{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:.7rem}
+.script .phrase{background:var(--carte2);border-left:3px solid var(--lime);border-radius:0 12px 12px 0;padding:1rem 1.1rem;font-size:1.02rem;line-height:1.55;margin-bottom:.9rem;white-space:pre-line}
+.script p.expl{color:var(--gris);font-size:.9rem;margin-bottom:.9rem}
+.script ul{list-style:none;margin-bottom:.9rem}
+.script li{padding-left:1.5rem;position:relative;color:var(--gris);font-size:.96rem;margin-bottom:.45rem}
+.script li::before{content:"›";position:absolute;left:.3rem;color:var(--lime);font-weight:800}
+
+/* ============================ Alerte accord ============================ */
+.accord{background:linear-gradient(150deg,rgba(255,77,141,.16),var(--carte) 60%);border:1px solid rgba(255,77,141,.4);border-radius:26px;padding:clamp(1.4rem,3.6vw,2.2rem);margin-top:1.2rem}
+.accord h3{font-size:1.3rem;margin-bottom:.7rem;display:flex;gap:.6rem;align-items:center}
+.accord p{color:var(--gris);margin-bottom:.8rem}
+.accord .phrase{background:rgba(0,0,0,.35);border-left:3px solid var(--rose);border-radius:0 12px 12px 0;padding:1rem 1.1rem;font-size:1.04rem;color:var(--blanc);margin-bottom:.9rem}
+
+/* ============================ Explainer ============================ */
 .explain{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:2.4rem;align-items:center}
 @media(max-width:820px){.explain{grid-template-columns:1fr;gap:1.6rem}.phone{margin-inline:auto}}
-.phone{
-  width:100%;max-width:300px;aspect-ratio:9/16;border-radius:34px;
-  border:8px solid #23232F;background:#07070C;position:relative;overflow:hidden;
-  box-shadow:0 26px 70px rgba(0,0,0,.6);
-}
-.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:1rem;padding:1.6rem 1.2rem;text-align:center;opacity:0}
+.phone{width:100%;max-width:300px;aspect-ratio:9/16;border-radius:34px;border:8px solid #23232F;background:#07070C;position:relative;overflow:hidden;box-shadow:0 26px 70px rgba(0,0,0,.6)}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:1.6rem 1.2rem;text-align:center;opacity:0}
 .playing .scene{animation:sc 18s infinite}
-.scene:nth-child(1){animation-delay:0s}
-.scene:nth-child(2){animation-delay:4.5s}
-.scene:nth-child(3){animation-delay:9s}
-.scene:nth-child(4){animation-delay:13.5s}
+.scene:nth-child(2){animation-delay:0s}
+.scene:nth-child(3){animation-delay:4.5s}
+.scene:nth-child(4){animation-delay:9s}
+.scene:nth-child(5){animation-delay:13.5s}
 @keyframes sc{
   0%{opacity:0;transform:translateY(14px) scale(.97)}
   3%,22%{opacity:1;transform:none}
   25%,100%{opacity:0;transform:translateY(-10px) scale(.99)}
 }
 .scene .pic{font-size:3.6rem;line-height:1}
-.scene .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:2.9rem;letter-spacing:-.04em;line-height:1}
-.scene .sub{
-  font-weight:700;font-size:1.02rem;line-height:1.3;
-  background:rgba(0,0,0,.6);padding:.5rem .8rem;border-radius:12px;
-  border-bottom:3px solid var(--lime);
-}
+.scene .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:2.5rem;letter-spacing:-.04em;line-height:1.05}
+.scene .sub{font-weight:700;font-size:1rem;line-height:1.3;background:rgba(0,0,0,.6);padding:.5rem .8rem;border-radius:12px;border-bottom:3px solid var(--lime)}
 .scene.v1 .big{color:var(--cyan)}
+.scene.v2 .big{color:#FFA8C8}
 .scene.v3 .big{color:#C9B6FF}
 .scene.v4 .big{color:var(--lime)}
 .phone .barre{position:absolute;top:0;left:0;height:3px;background:var(--lime);width:0;z-index:3}
@@ -203,36 +210,11 @@ section{padding:3.6rem 0}
 .explain-txt li b{color:var(--blanc)}
 .explain-txt .puce{flex:0 0 auto;width:26px;height:26px;border-radius:9px;background:rgba(212,255,63,.15);color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:.8rem;margin-top:.1rem}
 
-/* ============================ Kit ============================ */
-.kit{background:var(--carte);border:1px solid var(--ligne);border-radius:28px;padding:clamp(1.4rem,3.6vw,2.4rem)}
-.kit-grid{display:grid;grid-template-columns:1fr minmax(0,300px);gap:2.2rem;align-items:start}
-@media(max-width:880px){.kit-grid{grid-template-columns:1fr}}
-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:.4rem}
-label .aide{display:block;font-weight:400;font-size:.82rem;color:var(--gris);margin-top:.15rem}
-input[type=text],input[type=email]{
-  width:100%;padding:.9rem 1.05rem;border-radius:14px;border:1.5px solid var(--ligne);
-  background:var(--carte2);color:var(--blanc);font-family:inherit;font-size:1rem;
-}
-input::placeholder{color:#6A6A80}
-input:focus{border-color:var(--lime);outline:none}
-.champ{margin-bottom:1.15rem}
-.case{display:flex;gap:.7rem;align-items:flex-start;font-size:.92rem;color:var(--gris);margin-bottom:1.15rem}
-.case input{margin-top:.3rem;width:19px;height:19px;accent-color:var(--lime);flex:0 0 auto}
-.resultat{display:none}
-.resultat.on{display:block}
-.code-box{background:var(--carte2);border:1px solid var(--ligne);border-radius:16px;padding:1rem 1.15rem;margin-bottom:1rem}
-.code-box .et{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);font-weight:700}
-.code-box .val{font-family:"Bricolage Grotesque",monospace;font-weight:800;font-size:1.5rem;letter-spacing:.02em;color:var(--lime);word-break:break-all;margin-top:.2rem}
-.code-box .lien{font-size:.9rem;color:var(--blanc);word-break:break-all;margin-top:.2rem;font-weight:500}
-.partages{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
-.qr-zone{background:#fff;border-radius:20px;padding:1rem;display:grid;place-items:center}
-.qr-zone svg{display:block;width:100%;height:auto}
-.qr-legende{text-align:center;font-size:.85rem;color:var(--gris);margin-top:.7rem}
-.telech{display:flex;flex-direction:column;gap:.55rem;margin-top:.9rem}
-.textes{margin-top:1.6rem;padding-top:1.5rem;border-top:1px solid var(--ligne)}
-.txt-item{background:var(--carte2);border:1px solid var(--ligne);border-radius:14px;padding:.9rem 1.05rem;margin-bottom:.7rem}
-.txt-item .quoi{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:.4rem}
-.txt-item p{font-size:.94rem;color:var(--gris);margin-bottom:.7rem;white-space:pre-line}
+/* ============================ Radar ============================ */
+.radar{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.9rem}
+.oreille{background:var(--carte);border:1px solid var(--ligne);border-left:3px solid var(--cyan);border-radius:16px;padding:1.1rem 1.2rem}
+.oreille .dit{font-size:1rem;color:var(--blanc);font-style:italic;margin-bottom:.4rem}
+.oreille .veut{font-size:.87rem;color:var(--lime);font-weight:600}
 
 /* ============================ Simulateur ============================ */
 .simu{background:linear-gradient(150deg,rgba(139,92,246,.2),var(--carte) 55%);border:1px solid var(--ligne);border-radius:28px;padding:clamp(1.4rem,3.6vw,2.4rem)}
@@ -242,12 +224,26 @@ input[type=range]{width:100%;accent-color:var(--lime);height:26px}
 .rang{margin-bottom:1.5rem}
 .rang .haut{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.3rem}
 .rang .haut b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.35rem;color:var(--lime)}
+label{display:block;font-weight:600;font-size:.92rem;margin-bottom:.4rem}
 .gain{text-align:center}
 .gain .n{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(3.2rem,12vw,5.6rem);letter-spacing:-.05em;line-height:1;
   background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
 .gain .l{color:var(--gris);margin-top:.5rem;font-size:.95rem}
 
-/* ============================ Listes conseils ============================ */
+/* ============================ Partage ============================ */
+.partage-bloc{background:var(--carte);border:1px solid var(--ligne);border-radius:28px;padding:clamp(1.4rem,3.6vw,2.4rem)}
+.partage-grid{display:grid;grid-template-columns:1fr minmax(0,290px);gap:2.4rem;align-items:start}
+@media(max-width:880px){.partage-grid{grid-template-columns:1fr}}
+.qr-zone{background:#fff;border-radius:20px;padding:1rem;display:grid;place-items:center}
+.qr-zone svg{display:block;width:100%;height:auto}
+.qr-legende{text-align:center;font-size:.85rem;color:var(--gris);margin-top:.7rem}
+.telech{display:flex;flex-direction:column;gap:.55rem;margin-top:.9rem}
+.partages{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.6rem}
+.txt-item{background:var(--carte2);border:1px solid var(--ligne);border-radius:14px;padding:.9rem 1.05rem;margin-bottom:.7rem}
+.txt-item .quoi{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:.4rem}
+.txt-item p{font-size:.94rem;color:var(--gris);margin-bottom:.7rem;white-space:pre-line}
+
+/* ============================ Listes ============================ */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
 @media(max-width:820px){.duo{grid-template-columns:1fr}}
 .bloc{background:var(--carte);border:1px solid var(--ligne);border-radius:var(--r);padding:1.6rem 1.4rem}
@@ -259,14 +255,12 @@ input[type=range]{width:100%;accent-color:var(--lime);height:26px}
 .bloc.ok li::before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:800}
 .bloc.non li::before{content:"✕";position:absolute;left:0;color:var(--rose);font-weight:800}
 
-/* ============================ Règles ============================ */
+/* ============================ Règles & FAQ ============================ */
 .regles{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
 @media(max-width:820px){.regles{grid-template-columns:1fr}}
 .regle{background:var(--carte);border:1px solid var(--ligne);border-radius:18px;padding:1.2rem 1.3rem}
 .regle h4{font-size:1rem;margin-bottom:.35rem;font-weight:700}
 .regle p{font-size:.9rem;color:var(--gris)}
-
-/* ============================ FAQ ============================ */
 details{background:var(--carte);border:1px solid var(--ligne);border-radius:16px;margin-bottom:.7rem;overflow:hidden}
 summary{padding:1.15rem 1.3rem;cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
 summary::-webkit-details-marker{display:none}
@@ -275,50 +269,24 @@ details[open] summary::after{content:"−"}
 details .rep{padding:0 1.3rem 1.25rem;color:var(--gris);font-size:.96rem}
 details .rep a{color:var(--lime)}
 
-/* ============================ Vendeur ============================ */
-#vue-vendeur{display:none}
-body.mode-vendeur #vue-vendeur{display:block}
-body.mode-vendeur #vue-etudiant{display:none}
-.bandeau{background:linear-gradient(100deg,var(--violet),var(--rose));padding:.85rem 0;font-weight:600;text-align:center;font-size:.95rem}
-.vend-hero{padding:2.6rem 0 3rem}
-.vend-hero h1{font-size:clamp(2.2rem,6.6vw,4rem);margin:1.3rem 0 0}
-.vend-liste{list-style:none;margin:1.6rem 0 0}
-.vend-liste li{padding-left:1.7rem;position:relative;margin-bottom:.7rem;color:var(--gris)}
-.vend-liste li::before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:800}
-
-/* ============================ Barre fixe ============================ */
-.barre-fixe{
-  position:fixed;left:0;right:0;bottom:0;z-index:40;
-  background:rgba(10,10,15,.93);backdrop-filter:blur(14px);
-  border-top:1px solid var(--ligne);padding:.75rem 0;
-}
+/* ============================ Barre fixe & pied ============================ */
+.barre-fixe{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(10,10,15,.93);backdrop-filter:blur(14px);border-top:1px solid var(--ligne);padding:.75rem 0}
 .barre-fixe .in{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .barre-fixe .txt{font-size:.9rem;font-weight:600;line-height:1.25}
 .barre-fixe .txt span{display:block;color:var(--gris);font-weight:400;font-size:.82rem}
 @media(max-width:560px){.barre-fixe .txt{display:none}.barre-fixe .btn{width:100%}}
-
-/* ============================ Pied ============================ */
 footer{border-top:1px solid var(--ligne);padding:2.6rem 0;margin-top:2rem;color:var(--gris);font-size:.9rem}
 .pied-grid{display:flex;flex-wrap:wrap;gap:1.6rem;justify-content:space-between}
 footer a{color:var(--gris)}
 footer a:hover{color:var(--blanc)}
 .pied-liens{display:flex;flex-wrap:wrap;gap:1.1rem}
 .avert{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--ligne);font-size:.82rem;line-height:1.6}
-
-.toast{
-  position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(20px);
-  background:var(--lime);color:#0A0A0F;font-weight:700;padding:.75rem 1.3rem;border-radius:100px;
-  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:60;font-size:.92rem;
-  box-shadow:0 10px 34px rgba(0,0,0,.5);
-}
+.toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(20px);background:var(--lime);color:#0A0A0F;font-weight:700;padding:.75rem 1.3rem;border-radius:100px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:60;font-size:.92rem;box-shadow:0 10px 34px rgba(0,0,0,.5)}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
 <div class="glow" aria-hidden="true"></div>
-
-<!-- ===================== BANDEAU PARRAIN (mode vendeur) ===================== -->
-<div class="bandeau" id="bandeau" hidden><span id="bandeau-txt"></span></div>
 
 <header class="wrap">
   <nav class="nav" aria-label="Navigation principale">
@@ -326,17 +294,14 @@ footer a:hover{color:var(--blanc)}
     <div class="nav-liens">
       <a href="#deal">Le deal</a>
       <a href="#etapes">Comment ça marche</a>
-      <a href="#kit">Mon lien &amp; QR</a>
-      <a href="#regles">Les règles</a>
+      <a href="#appeler">M'appeler</a>
+      <a href="#quoi-dire">Quoi dire</a>
+      <a href="#partage">Faire tourner</a>
       <a href="#faq">FAQ</a>
     </div>
   </nav>
 </header>
 
-<!-- ============================================================= -->
-<!-- ==================== VUE ÉTUDIANT (défaut) ================== -->
-<!-- ============================================================= -->
-<div id="vue-etudiant">
 <main>
 
   <!-- ===================== HÉROS ===================== -->
@@ -344,20 +309,21 @@ footer a:hover{color:var(--blanc)}
     <span class="pastille">Île-de-France · 18 ans et +</span>
     <h1>Tu connais quelqu'un qui veut vendre son bien&nbsp;:<br><span class="surli">800 € pour toi&nbsp;!</span></h1>
     <p class="chapo">
-      Je suis Marie-Céline, conseillère en immobilier. Tu me présentes quelqu'un qui veut
-      vendre son bien en Île-de-France : <b>50 € dès que le mandat exclusif est signé</b>
-      (diagnostics faits), et <b>800 € pour toi</b> le jour de la vente chez le notaire&nbsp;!
+      Je suis Marie-Céline, conseillère en immobilier. Tu connais quelqu'un qui veut vendre
+      en Île-de-France&nbsp;? <b>Tu m'appelles, et c'est tout.</b> Je m'occupe du reste :
+      <b>50 € dès que le mandat exclusif est signé</b> (diagnostics faits), et
+      <b>800 € pour toi</b> le jour de la vente chez le notaire&nbsp;!
     </p>
     <div class="hero-cta">
-      <a class="btn btn-p" href="#kit">Créer mon lien + QR →</a>
-      <a class="btn btn-s" href="#etapes">Comment ça marche</a>
+      <a class="btn btn-p btn-xl" href="tel:+33660989292">📞 Appelle-moi</a>
+      <a class="btn btn-s btn-xl" href="#etapes">Comment ça marche</a>
     </div>
-    <p class="mini">Pas de compte à créer. Pas d'appli. Pas un centime à avancer. 30 secondes.</p>
+    <p class="mini">Pas de compte à créer. Pas d'appli. Pas un centime à avancer. Un coup de fil.</p>
 
     <div class="stats">
       <div class="stat"><div class="n">50 €</div><div class="l">au mandat exclusif signé</div></div>
       <div class="stat"><div class="n">800 €</div><div class="l">à la signature de la vente</div></div>
-      <div class="stat"><div class="n">0 €</div><div class="l">à avancer, jamais</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">coup de fil, rien d'autre</div></div>
       <div class="stat"><div class="n">8</div><div class="l">départements couverts</div></div>
     </div>
   </section>
@@ -366,14 +332,13 @@ footer a:hover{color:var(--blanc)}
   <section id="deal" class="wrap">
     <span class="oeil">Le deal, en clair</span>
     <h2 class="titre">Deux primes. Zéro blabla.</h2>
-    <p class="sous">Tu n'as rien à vendre et rien à gérer. Tu fais juste la présentation — le reste, c'est mon métier.</p>
-
+    <p class="sous">Tu n'as rien à vendre et rien à gérer. Tu me passes l'info au téléphone — le reste, c'est mon métier.</p>
     <div class="deal">
       <div class="dcarte a">
-        <div class="quand">Étape 1 — tout de suite</div>
+        <div class="quand">Étape 1 — assez vite</div>
         <div class="somme">50 €</div>
         <h3>Quand le mandat exclusif est signé</h3>
-        <p>La personne que tu m'as présentée me confie la vente de son bien en exclusivité,
+        <p>La personne que tu m'as signalée me confie la vente de son bien en exclusivité,
            et les diagnostics obligatoires sont réalisés. Tu touches 50 €, même si le bien
            n'est pas encore vendu.</p>
         <div class="cond">Versé par virement sous 15 jours après réception des diagnostics.</div>
@@ -397,20 +362,39 @@ footer a:hover{color:var(--blanc)}
     <p class="sous">Sérieusement, il n'y a pas de piège caché à l'étape 4.</p>
     <div class="etapes">
       <div class="etape">
-        <h3>Tu crées ton lien</h3>
-        <p>Ton prénom, ton contact, et tu obtiens ton lien personnel + ton QR code.
-           C'est ce qui prouve que la recommandation vient de toi.</p>
+        <h3>Tu repères quelqu'un</h3>
+        <p>Un proche, un voisin, le proprio de ta coloc, un collègue de job étudiant…
+           quelqu'un qui parle de vendre son appartement ou sa maison en Île-de-France.</p>
       </div>
       <div class="etape">
-        <h3>Tu le partages</h3>
-        <p>En story, en DM, dans le groupe WhatsApp de la famille, ou en QR collé sur
-           le frigo de la coloc. Ceux que ça intéresse cliquent.</p>
+        <h3>Tu lui demandes son accord</h3>
+        <p>Une phrase suffit : « je connais une conseillère immobilière sérieuse, je peux
+           lui donner ton numéro&nbsp;? ». C'est obligatoire, et c'est la seule chose
+           que je te demande de faire sérieusement.</p>
+        <p class="rappel">→ La phrase exacte est plus bas, prête à recopier</p>
       </div>
       <div class="etape">
-        <h3>Tu es payé</h3>
-        <p>La personne me contacte, on se rencontre. Mandat exclusif signé → 50 €.
-           Vente signée chez le notaire → 800 €.</p>
+        <h3>Tu m'appelles</h3>
+        <p>Tu me donnes son prénom, sa ville, le type de bien et son numéro. On raccroche.
+           Je l'appelle en disant que je viens de ta part. Mandat exclusif signé → 50 €.
+           Vente signée → 800 €.</p>
+        <p class="rappel">→ 06 60 98 92 92</p>
       </div>
+    </div>
+
+    <div class="accord">
+      <h3>⚠️ La règle à ne jamais oublier</h3>
+      <p>
+        Tu vas me donner le numéro de quelqu'un d'autre. Cette personne doit être
+        <b>au courant et d'accord</b> — sinon c'est interdit, et ça la mettrait mal à l'aise.
+        Demande-lui avant, avec cette phrase :
+      </p>
+      <div class="phrase">« Je connais une conseillère immobilière sérieuse qui travaille en Île-de-France. Je peux lui donner ton numéro pour qu'elle t'appelle ? Tu n'es engagé à rien, l'estimation est offerte. »</div>
+      <p style="margin-bottom:0">
+        S'il dit oui, tu m'appelles. S'il dit non, tu n'insistes pas et tu ne me donnes rien.
+        De mon côté, je l'appelle une seule fois et je commence toujours par
+        « je vous appelle de la part de… », en citant ton prénom.
+      </p>
     </div>
   </section>
 
@@ -425,127 +409,138 @@ footer a:hover{color:var(--blanc)}
           <div class="barre" aria-hidden="true"></div>
           <div class="scene v1">
             <div class="pic">🏠</div>
-            <div class="big">Ton pote<br>déménage</div>
-            <div class="sub">« Mes parents vendent leur appart… »</div>
+            <div class="big">« On va<br>vendre »</div>
+            <div class="sub">Ton oncle, ton voisin, le proprio de ta coloc…</div>
           </div>
           <div class="scene v2">
-            <div class="pic">📲</div>
-            <div class="big">Tu envoies<br>ton lien</div>
-            <div class="sub">Story, DM, QR code. 5 secondes.</div>
+            <div class="pic">🙋</div>
+            <div class="big">Tu demandes<br>son accord</div>
+            <div class="sub">« Je peux donner ton numéro à ma conseillère ? »</div>
           </div>
           <div class="scene v3">
-            <div class="pic">✍️</div>
-            <div class="big">+50 €</div>
-            <div class="sub">Mandat exclusif signé + diagnostics faits</div>
+            <div class="pic">📞</div>
+            <div class="big">Tu<br>m'appelles</div>
+            <div class="sub">Son prénom, sa ville, son numéro. 2 minutes.</div>
           </div>
           <div class="scene v4">
-            <div class="pic">🔑</div>
-            <div class="big">+800 €</div>
-            <div class="sub">Vente signée chez le notaire</div>
+            <div class="pic">💶</div>
+            <div class="big">50 €<br>puis 800 €</div>
+            <div class="sub">Au mandat exclusif, puis à la vente</div>
           </div>
         </div>
         <div class="ctrl">
           <button class="btn btn-s btn-sm" id="btn-pause" type="button" aria-pressed="false">⏸ Pause</button>
-          <a class="btn btn-s btn-sm" href="#kit">Je me lance</a>
+          <a class="btn btn-s btn-sm" href="#appeler">Je me lance</a>
         </div>
       </div>
       <ul class="explain-txt">
-        <li><span class="puce">1</span><div><b>Tu ne vends rien.</b> Tu ne fais pas visiter, tu ne négocies pas, tu ne donnes aucun prix. Tu présentes, point.</div></li>
+        <li><span class="puce">1</span><div><b>Tu ne vends rien.</b> Tu ne fais pas visiter, tu ne négocies pas, tu ne donnes aucun prix. Tu me passes l'info, point.</div></li>
         <li><span class="puce">2</span><div><b>Tu ne prends aucun risque.</b> Rien à avancer, aucun engagement, tu peux arrêter quand tu veux.</div></li>
-        <li><span class="puce">3</span><div><b>Ton pote est gagnant aussi.</b> Estimation offerte, sans engagement, et quelqu'un qui répond au téléphone.</div></li>
+        <li><span class="puce">3</span><div><b>La personne est gagnante aussi.</b> Estimation offerte, sans engagement, et quelqu'un qui répond au téléphone.</div></li>
         <li><span class="puce">4</span><div><b>Tu es payé par virement.</b> Pas en bons d'achat, pas en cadeaux. En euros, sur ton compte.</div></li>
       </ul>
     </div>
   </section>
 
-  <!-- ===================== KIT ===================== -->
-  <section id="kit" class="wrap">
-    <span class="oeil">Ton kit</span>
-    <h2 class="titre">Ton lien et ton QR code</h2>
-    <p class="sous">Tout est généré dans ton téléphone. Rien n'est envoyé nulle part tant que
-       tu n'as pas cliqué sur « Enregistrer mon code ».</p>
+  <!-- ===================== APPELER ===================== -->
+  <section id="appeler" class="wrap">
+    <span class="oeil">Me joindre</span>
+    <h2 class="titre">C'est par téléphone que ça se passe</h2>
+    <p class="sous">Pas de formulaire, pas de robot. Tu me parles directement — et si tu n'aimes
+       pas appeler, envoie-moi un SMS et c'est moi qui te rappelle.</p>
 
-    <div class="kit">
-      <div class="kit-grid">
-        <div>
-          <form id="form-kit" novalidate>
-            <div class="champ">
-              <label for="prenom">Ton prénom
-                <span class="aide">Il apparaîtra dans le lien, pour que la personne sache qui l'envoie.</span>
-              </label>
-              <input type="text" id="prenom" name="prenom" autocomplete="given-name" placeholder="Léa" maxlength="20" required>
-            </div>
-            <div class="champ">
-              <label for="contact">Ton e-mail (ou ton numéro)
-                <span class="aide">C'est là que je t'écris pour te payer. Il n'est pas dans le lien.</span>
-              </label>
-              <input type="text" id="contact" name="contact" autocomplete="email" placeholder="lea@exemple.fr" maxlength="60" required>
-            </div>
-            <div class="case">
-              <input type="checkbox" id="majeur" required>
-              <label for="majeur" style="font-weight:400;margin:0">J'ai 18 ans ou plus et j'ai lu <a href="#regles" style="color:var(--lime)">les règles</a>.</label>
-            </div>
-            <button class="btn btn-p" type="submit" style="width:100%">Générer mon lien + QR</button>
-          </form>
+    <div class="contact-bloc">
+      <div style="font-weight:600;color:var(--gris)">Marie-Céline Etave · conseillère en immobilier</div>
+      <a class="num" href="tel:+33660989292">06 60 98 92 92</a>
+      <div class="contact-btns">
+        <a class="btn btn-p btn-xl" href="tel:+33660989292">📞 Appeler maintenant</a>
+        <button class="btn btn-s btn-xl" type="button" id="b-sms">💬 M'envoyer un SMS</button>
+        <button class="btn btn-s btn-xl" type="button" id="b-vcard">📇 Enregistrer mon numéro</button>
+      </div>
+      <p class="contact-note">
+        <b>Le bouton le plus utile, c'est le dernier.</b> Tu ne connais peut-être personne qui
+        vend aujourd'hui — mais ton oncle en parlera peut-être dans six mois. Enregistre mon
+        numéro maintenant : tu me retrouveras en tapant « immo » dans tes contacts.
+      </p>
+    </div>
+  </section>
 
-          <div class="resultat" id="resultat">
-            <div class="code-box">
-              <div class="et">Ton code</div>
-              <div class="val" id="out-code">—</div>
-            </div>
-            <div class="code-box">
-              <div class="et">Ton lien</div>
-              <div class="lien" id="out-lien">—</div>
-              <div class="partages">
-                <button class="btn btn-p btn-sm" id="b-share" type="button" hidden>📤 Partager</button>
-                <button class="btn btn-s btn-sm" id="b-wa" type="button">WhatsApp</button>
-                <button class="btn btn-s btn-sm" id="b-sms" type="button">SMS</button>
-                <button class="btn btn-s btn-sm" id="b-copy" type="button">Copier</button>
-              </div>
-            </div>
+  <!-- ===================== QUOI DIRE ===================== -->
+  <section id="quoi-dire" class="wrap">
+    <span class="oeil">Quoi dire</span>
+    <h2 class="titre">Tu ne sais pas comment formuler&nbsp;? C'est écrit.</h2>
+    <p class="sous">Le vrai blocage, ce n'est jamais de trouver quelqu'un. C'est de savoir quoi dire.
+       Alors voilà, mot pour mot.</p>
 
-            <div class="textes">
-              <h3 style="font-size:1.05rem;margin-bottom:.8rem">Textes prêts à coller</h3>
-              <div class="txt-item">
-                <div class="quoi">Pour une story</div>
-                <p id="t1"></p>
-                <button class="btn btn-s btn-sm" type="button" data-copie="t1">Copier</button>
-              </div>
-              <div class="txt-item">
-                <div class="quoi">Pour le groupe WhatsApp de la famille</div>
-                <p id="t2"></p>
-                <button class="btn btn-s btn-sm" type="button" data-copie="t2">Copier</button>
-              </div>
-              <div class="txt-item">
-                <div class="quoi">Pour quelqu'un que tu connais bien</div>
-                <p id="t3"></p>
-                <button class="btn btn-s btn-sm" type="button" data-copie="t3">Copier</button>
-              </div>
-            </div>
+    <div class="script">
+      <div class="quoi">1. À la personne qui veut vendre</div>
+      <div class="phrase" id="s1">Je connais une conseillère immobilière sérieuse qui travaille en Île-de-France. Je peux lui donner ton numéro pour qu'elle t'appelle ? Tu n'es engagé à rien, l'estimation est offerte.</div>
+      <p class="expl">Attends sa réponse. S'il dit oui, tu peux m'appeler. S'il hésite ou dit non, tu laisses tomber — on ne force jamais.</p>
+      <button class="btn btn-s btn-sm" type="button" data-copie="s1">Copier cette phrase</button>
+    </div>
 
-            <div style="margin-top:1.6rem;padding-top:1.5rem;border-top:1px solid var(--ligne)">
-              <h3 style="font-size:1.05rem;margin-bottom:.5rem">Dernière étape : enregistre ton code</h3>
-              <p style="color:var(--gris);font-size:.94rem;margin-bottom:.9rem">
-                Sans ça, je ne peux pas savoir que le code est à toi — donc je ne peux pas te payer.
-                Ça ouvre ton appli mail avec le message déjà écrit.
-              </p>
-              <a class="btn btn-p" id="b-inscrire" href="#" style="width:100%">✉️ Enregistrer mon code</a>
-            </div>
-          </div>
-        </div>
+    <div class="script">
+      <div class="quoi">2. À moi, au téléphone</div>
+      <p class="expl">Pas besoin d'un discours. Tu me donnes juste ces cinq choses :</p>
+      <ul>
+        <li>Ton prénom, et que tu viens du site étudiants</li>
+        <li>Le prénom de la personne qui veut vendre</li>
+        <li>La ville où se trouve le bien</li>
+        <li>Le type de bien (appartement, maison) — même approximatif</li>
+        <li>Son numéro de téléphone, et qu'elle est bien d'accord</li>
+      </ul>
+      <div class="phrase" id="s2">Bonjour Marie-Céline, je viens du site étudiants.idf.immo. Je m'appelle [ton prénom]. Je connais quelqu'un qui veut vendre : [prénom], à [ville], un [appartement/maison]. Il est d'accord pour que tu l'appelles, son numéro est le [numéro].</div>
+      <button class="btn btn-s btn-sm" type="button" data-copie="s2">Copier ce texte</button>
+    </div>
 
-        <div>
-          <div class="qr-zone" id="qr-zone" aria-hidden="true">
-            <svg viewBox="0 0 100 100" role="img"><rect width="100" height="100" fill="#fff"></rect>
-              <text x="50" y="52" text-anchor="middle" font-size="7" fill="#888" font-family="sans-serif">Ton QR ici</text></svg>
-          </div>
-          <p class="qr-legende">Scannable par n'importe quel téléphone.<br>Colle-le où tu veux.</p>
-          <div class="telech">
-            <button class="btn btn-s btn-sm" id="b-png" type="button" disabled>⬇ QR en PNG</button>
-            <button class="btn btn-s btn-sm" id="b-story" type="button" disabled>⬇ Visuel story (1080×1920)</button>
-            <button class="btn btn-s btn-sm" id="b-affiche" type="button" disabled>⬇ Affiche A4 à imprimer</button>
-          </div>
-        </div>
+    <div class="script">
+      <div class="quoi">3. Si tu préfères éviter le téléphone</div>
+      <p class="expl">Envoie-moi juste un SMS avec ton prénom, et je t'appelle. Tu n'as même pas besoin de préparer quoi que ce soit.</p>
+      <div class="phrase" id="s3">Salut Marie-Céline, je suis étudiant(e) et je connais quelqu'un qui veut vendre son bien en Île-de-France. Peux-tu me rappeler ? Merci !</div>
+      <button class="btn btn-s btn-sm" type="button" id="b-sms2">💬 Envoyer ce SMS</button>
+    </div>
+  </section>
+
+  <!-- ===================== RADAR ===================== -->
+  <section class="wrap">
+    <span class="oeil">Ouvre les oreilles</span>
+    <h2 class="titre">« Je ne connais personne qui vend »</h2>
+    <p class="sous">C'est ce que tout le monde répond. Et c'est presque toujours faux : tu connais
+       des gens qui vont vendre, tu ne les as juste pas repérés. Une vente se prépare des mois
+       à l'avance, et les gens en parlent bien avant d'appeler une agence. Voilà ce que tu dois
+       entendre.</p>
+    <div class="radar">
+      <div class="oreille"><div class="dit">« On est vraiment à l'étroit ici… »</div><div class="veut">→ Une famille qui s'agrandit va vendre</div></div>
+      <div class="oreille"><div class="dit">« Mamie part en maison de retraite. »</div><div class="veut">→ Un logement va se vider</div></div>
+      <div class="oreille"><div class="dit">« Je suis muté en province en septembre. »</div><div class="veut">→ Un départ, donc une vente</div></div>
+      <div class="oreille"><div class="dit">« On a hérité d'un truc, on ne sait pas quoi en faire. »</div><div class="veut">→ Une succession à régler</div></div>
+      <div class="oreille"><div class="dit">« Avec le divorce, on va devoir vendre. »</div><div class="veut">→ Une séparation en cours</div></div>
+      <div class="oreille"><div class="dit">« Le locataire est parti, ça me fatigue. »</div><div class="veut">→ Un propriétaire lassé</div></div>
+    </div>
+
+    <div class="duo" style="margin-top:1.6rem">
+      <div class="bloc ok">
+        <h3>🎯 Où chercher en priorité</h3>
+        <ul>
+          <li><b>Tes parents et tes grands-parents</b> — de loin les plus probables, commence par là</li>
+          <li>Tes oncles et tantes, et leurs amis qui « pensent à vendre un jour »</li>
+          <li>Le proprio de ta coloc, ou celui d'un pote qui déménage</li>
+          <li>Les voisins de tes parents qui ont mis un panneau « à vendre » de particulier</li>
+          <li>Ton job étudiant : baby-sitting, cours à domicile, livraison, service en salle — tu entres chez les gens et tu entends tout</li>
+          <li>Les parents des enfants que tu gardes</li>
+        </ul>
+      </div>
+      <div class="bloc non">
+        <h3>🚫 Ce qu'il ne faut jamais faire</h3>
+        <ul>
+          <li>Donner le numéro de quelqu'un <b>sans son accord</b></li>
+          <li>Te présenter comme agent immobilier — tu ne l'es pas</li>
+          <li>Faire visiter un bien, ou t'y rendre pour « jeter un œil »</li>
+          <li>Annoncer un prix ou une estimation, même approximative</li>
+          <li>Négocier quoi que ce soit avec un vendeur ou un acheteur</li>
+          <li>Spammer des groupes, des inconnus ou des annonces de particuliers</li>
+          <li>Promettre un délai de vente ou un résultat</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -576,36 +571,50 @@ footer a:hover{color:var(--blanc)}
     </div>
   </section>
 
-  <!-- ===================== CONSEILS ===================== -->
-  <section class="wrap">
-    <span class="oeil">Concrètement</span>
-    <h2 class="titre">Où sont les vendeurs, autour de toi&nbsp;?</h2>
-    <p class="sous">Tu en connais plus que tu ne crois. Une vente, ça se prépare des mois à l'avance —
-       les gens en parlent bien avant d'appeler une agence.</p>
-    <div class="duo">
-      <div class="bloc ok">
-        <h3>🎯 Les bons réflexes</h3>
-        <ul>
-          <li>Tes parents, tes oncles et tantes, leurs amis qui « pensent à vendre un jour »</li>
-          <li>Le proprio de ta coloc, ou celui d'un pote qui déménage</li>
-          <li>Une succession dans la famille : un bien dont personne ne sait quoi faire</li>
-          <li>Un divorce, une mutation, un départ en retraite dans ton entourage</li>
-          <li>Les voisins de tes parents qui ont mis un panneau « à vendre » de particulier</li>
-          <li>Ton job étudiant : tu croises du monde toute la journée</li>
-          <li>Un QR code sur ton ordi, ta gourde, la porte du frigo de la coloc</li>
-        </ul>
-      </div>
-      <div class="bloc non">
-        <h3>🚫 Ce qu'il ne faut jamais faire</h3>
-        <ul>
-          <li>Te présenter comme agent immobilier — tu ne l'es pas</li>
-          <li>Faire visiter un bien, ou t'y rendre pour « jeter un œil »</li>
-          <li>Annoncer un prix ou une estimation, même approximative</li>
-          <li>Négocier quoi que ce soit avec un vendeur ou un acheteur</li>
-          <li>Donner le numéro de quelqu'un sans lui avoir demandé son accord</li>
-          <li>Spammer des groupes, des inconnus ou des annonces de particuliers</li>
-          <li>Promettre un délai de vente ou un résultat</li>
-        </ul>
+  <!-- ===================== PARTAGE ===================== -->
+  <section id="partage" class="wrap">
+    <span class="oeil">Fais tourner</span>
+    <h2 class="titre">Passe le mot aux autres étudiants</h2>
+    <p class="sous">Tu ne connais personne qui vend&nbsp;? Un pote, si. Partage-lui l'info :
+       le QR code, le lien, une story, ou une affiche à coller sur le panneau de ta fac.</p>
+
+    <div class="partage-bloc">
+      <div class="partage-grid">
+        <div>
+          <div class="partages">
+            <button class="btn btn-p btn-sm" id="b-share" type="button" hidden>📤 Partager</button>
+            <button class="btn btn-s btn-sm" id="b-wa" type="button">WhatsApp</button>
+            <button class="btn btn-s btn-sm" id="b-sms3" type="button">SMS</button>
+            <button class="btn btn-s btn-sm" id="b-copy" type="button">Copier le lien</button>
+          </div>
+
+          <h3 style="font-size:1.05rem;margin-bottom:.8rem">Textes prêts à coller</h3>
+          <div class="txt-item">
+            <div class="quoi">Pour une story</div>
+            <p id="t1"></p>
+            <button class="btn btn-s btn-sm" type="button" data-copie="t1">Copier</button>
+          </div>
+          <div class="txt-item">
+            <div class="quoi">Pour un groupe de classe ou de résidence</div>
+            <p id="t2"></p>
+            <button class="btn btn-s btn-sm" type="button" data-copie="t2">Copier</button>
+          </div>
+          <div class="txt-item">
+            <div class="quoi">Pour un pote en particulier</div>
+            <p id="t3"></p>
+            <button class="btn btn-s btn-sm" type="button" data-copie="t3">Copier</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="qr-zone" id="qr-zone" aria-hidden="true"></div>
+          <p class="qr-legende">Scannable par n'importe quel téléphone.<br>Colle-le où tu veux.</p>
+          <div class="telech">
+            <button class="btn btn-s btn-sm" id="b-png" type="button">⬇ QR code en PNG</button>
+            <button class="btn btn-s btn-sm" id="b-story" type="button">⬇ Visuel story (1080×1920)</button>
+            <button class="btn btn-s btn-sm" id="b-affiche" type="button">⬇ Affiche A4 à imprimer</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -620,6 +629,12 @@ footer a:hover{color:var(--blanc)}
       <div class="regle">
         <h4>18 ans minimum</h4>
         <p>Le programme est réservé aux personnes majeures. Aucune prime ne peut être versée à un mineur.</p>
+      </div>
+      <div class="regle">
+        <h4>L'accord de la personne est obligatoire</h4>
+        <p>Tu ne peux me donner le numéro de quelqu'un que si cette personne le sait et l'accepte.
+           Je ne l'appelle qu'une seule fois, en citant ton prénom, et je ne conserve pas ses
+           coordonnées si elle ne donne pas suite.</p>
       </div>
       <div class="regle">
         <h4>Tu es « indicateur d'affaires », rien de plus</h4>
@@ -646,7 +661,8 @@ footer a:hover{color:var(--blanc)}
       <div class="regle">
         <h4>La personne ne doit pas déjà me connaître</h4>
         <p>La prime récompense une mise en relation nouvelle. Si la personne est déjà en contact
-           avec moi ou a déjà signé un mandat, elle ne peut pas ouvrir droit à une prime.</p>
+           avec moi ou a déjà signé un mandat, elle ne peut pas ouvrir droit à une prime.
+           En cas de doute, appelle : c'est la date de ton appel qui fait foi.</p>
       </div>
       <div class="regle">
         <h4>Pas d'auto-recommandation</h4>
@@ -660,16 +676,9 @@ footer a:hover{color:var(--blanc)}
            est de 34 % avec un minimum de 305 €. C'est à toi de la déclarer.</p>
       </div>
       <div class="regle">
-        <h4>Le respect de la vie privée n'est pas optionnel</h4>
-        <p>Le mode d'emploi, c'est de <b>partager ton lien</b> : la personne décide elle-même de me
-           contacter. Si tu préfères me donner ses coordonnées directement, tu dois d'abord lui
-           demander son accord. Je ne les utilise qu'une seule fois, en citant ton nom, et je ne les
-           conserve pas si elle ne donne pas suite.</p>
-      </div>
-      <div class="regle">
-        <h4>Ton lien est valable 12 mois</h4>
-        <p>À compter de son enregistrement. Une recommandation compte à la date où la personne
-           me contacte, pas à la date de la vente.</p>
+        <h4>Rien n'est payé pour « recruter »</h4>
+        <p>Tu peux faire connaître le programme à d'autres étudiants, et c'est même une bonne idée.
+           Mais tu n'es jamais payé pour ça : les primes récompensent uniquement une vente réelle.</p>
       </div>
     </div>
   </section>
@@ -688,6 +697,19 @@ footer a:hover{color:var(--blanc)}
         que ça reste occasionnel. Dès qu'on s'occupe de la transaction elle-même, ou qu'on en fait
         une activité régulière, la loi Hoguet impose une carte professionnelle — que je détiens
         via mon réseau, et pas toi.</div>
+    </details>
+    <details>
+      <summary>Pourquoi il faut absolument téléphoner&nbsp;?</summary>
+      <div class="rep">Parce qu'une recommandation, ça se comprend en deux minutes de conversation :
+        où est le bien, dans quelle situation est la personne, ce qu'elle attend. Un formulaire
+        ne me dirait rien de tout ça, et je risquerais d'appeler quelqu'un au mauvais moment.
+        Si tu n'aimes pas appeler, envoie-moi un SMS avec ton prénom : c'est moi qui te rappelle.</div>
+    </details>
+    <details>
+      <summary>Je dois vraiment demander son accord à la personne&nbsp;?</summary>
+      <div class="rep">Oui, sans exception. Donner le numéro de quelqu'un sans le prévenir, c'est
+        interdit — et surtout, la personne se sentirait trahie quand je l'appellerais. Une phrase
+        suffit, elle est écrite plus haut, prête à recopier.</div>
     </details>
     <details>
       <summary>Je dois créer une auto-entreprise&nbsp;?</summary>
@@ -714,94 +736,40 @@ footer a:hover{color:var(--blanc)}
         C'est la seule condition.</div>
     </details>
     <details>
-      <summary>Mon pote a déjà contacté une autre agence, ça compte&nbsp;?</summary>
-      <div class="rep">Oui, tant qu'il n'a pas signé de mandat exclusif ailleurs et qu'il n'est pas
-        déjà en contact avec moi. En cas de doute, envoie-lui ton lien : c'est la date de ce
-        premier contact qui fait foi.</div>
+      <summary>Comment tu sais que c'est moi qui ai recommandé&nbsp;?</summary>
+      <div class="rep">Parce que c'est toi qui m'appelles, et que je note ton prénom et ton numéro
+        à ce moment-là. C'est la date de ton appel qui compte. Si deux personnes me signalent
+        le même vendeur, c'est le premier appel qui ouvre droit à la prime.</div>
     </details>
     <details>
-      <summary>Deux personnes ont recommandé le même vendeur. Qui touche&nbsp;?</summary>
-      <div class="rep">Le premier contact enregistré. C'est pour ça que le lien et le QR sont utiles :
-        ils horodatent la recommandation. Sans lien, c'est la parole du vendeur qui tranche.</div>
-    </details>
-    <details>
-      <summary>Ça marche dans toute l'Île-de-France&nbsp;?</summary>
-      <div class="rep">Oui, sur les huit départements franciliens. En dehors de l'Île-de-France,
-        je ne peux pas m'engager sur ce programme.</div>
+      <summary>La personne a déjà contacté une autre agence, ça compte&nbsp;?</summary>
+      <div class="rep">Oui, tant qu'elle n'a pas signé de mandat exclusif ailleurs et qu'elle n'est
+        pas déjà en contact avec moi. En cas de doute, appelle-moi : on vérifie ensemble en
+        deux minutes.</div>
     </details>
     <details>
       <summary>J'ai 17 ans, je peux quand même&nbsp;?</summary>
       <div class="rep">Non, il faut être majeur. Reviens à tes 18 ans, le programme sera toujours là.</div>
     </details>
     <details>
-      <summary>Comment tu sais que c'est moi qui ai recommandé&nbsp;?</summary>
-      <div class="rep">Par ton code, présent dans ton lien et dans ton QR. Quand quelqu'un arrive
-        par ton lien, ton prénom s'affiche sur la page et je vois d'où vient le contact.
-        C'est aussi pour ça qu'il faut enregistrer ton code : sinon je ne sais pas à qui il appartient.</div>
-    </details>
-    <details>
-      <summary>Je peux donner directement le numéro de quelqu'un&nbsp;?</summary>
-      <div class="rep">Seulement si cette personne est d'accord et le sait. Le plus simple et le plus
-        sûr reste de lui envoyer ton lien : c'est elle qui décide de me contacter, et personne
-        ne se sent fiché.</div>
+      <summary>Je peux gagner de l'argent en faisant connaître le programme&nbsp;?</summary>
+      <div class="rep">Non. Tu peux partager le site à d'autres étudiants, et c'est utile — mais
+        tu n'es pas payé pour ça. Les primes récompensent uniquement une vente réelle.
+        Je ne veux pas d'un système où on gagne de l'argent en recrutant des gens.</div>
     </details>
     <details>
       <summary>Et si je veux arrêter&nbsp;?</summary>
       <div class="rep">Tu arrêtes, sans rien dire à personne. Il n'y a aucun engagement, aucune durée
-        minimum, aucun objectif. Écris-moi si tu veux que je supprime ton code.</div>
+        minimum, aucun objectif.</div>
     </details>
   </section>
 
 </main>
-</div>
 
-<!-- ============================================================= -->
-<!-- ==================== VUE VENDEUR (?r=CODE) ================== -->
-<!-- ============================================================= -->
-<div id="vue-vendeur">
-<main>
-  <section class="vend-hero wrap">
-    <span class="pastille">Vous vendez en Île-de-France</span>
-    <h1>Une estimation sérieuse, <span class="surli">offerte et sans engagement.</span></h1>
-    <p class="chapo">
-      Je suis <b>Marie-Céline Etave</b>, conseillère en immobilier indépendante et expert en
-      valeur vénale, avec plus de 15 ans d'expérience. Je vous rappelle, on fait le point sur
-      votre bien, et vous décidez ensuite — ou pas.
-    </p>
-    <ul class="vend-liste">
-      <li>Une estimation argumentée, appuyée sur les ventes réelles de votre secteur</li>
-      <li>Aucun engagement tant que vous n'avez rien signé</li>
-      <li>Une seule interlocutrice, du premier appel à la signature chez le notaire</li>
-      <li>Quelqu'un qui décroche quand vous appelez</li>
-    </ul>
-    <div class="hero-cta">
-      <a class="btn btn-p" id="v-mail" href="mailto:contact@idf.immo">✉️ Demander mon estimation</a>
-      <a class="btn btn-s" href="tel:+33660989292">📞 06 60 98 92 92</a>
-    </div>
-    <p class="mini">Vos coordonnées ne servent qu'à vous répondre. Elles ne sont ni revendues, ni transmises.</p>
-
-    <div class="stats" style="margin-top:2.6rem">
-      <div class="stat"><div class="n">15 ans</div><div class="l">d'expérience en Île-de-France</div></div>
-      <div class="stat"><div class="n">0 €</div><div class="l">l'estimation, sans engagement</div></div>
-      <div class="stat"><div class="n">Expert</div><div class="l">en valeur vénale</div></div>
-      <div class="stat"><div class="n">8</div><div class="l">départements couverts</div></div>
-    </div>
-
-    <div style="margin-top:2.6rem">
-      <p style="color:var(--gris);font-size:.94rem">
-        Vous êtes étudiant et vous êtes arrivé ici par curiosité&nbsp;?
-        <a href="./" style="color:var(--lime);font-weight:600">Voir le programme de recommandation →</a>
-      </p>
-    </div>
-  </section>
-</main>
-</div>
-
-<!-- ===================== BARRE FIXE ===================== -->
 <div class="barre-fixe" id="barre">
   <div class="wrap in">
     <div class="txt">50 € au mandat · 800 € à la vente<span>Île-de-France · 18 ans et +</span></div>
-    <a class="btn btn-p btn-sm" href="#kit" id="barre-cta">Créer mon lien + QR</a>
+    <a class="btn btn-p btn-sm" href="tel:+33660989292">📞 Appelle-moi</a>
   </div>
 </div>
 
@@ -814,11 +782,12 @@ footer a:hover{color:var(--blanc)}
       </div>
       <div class="pied-liens">
         <a href="#deal">Le deal</a>
-        <a href="#kit">Mon lien</a>
+        <a href="#appeler">M'appeler</a>
+        <a href="#quoi-dire">Quoi dire</a>
         <a href="#regles">Les règles</a>
         <a href="#faq">FAQ</a>
         <a href="mentions-legales.html">Mentions légales</a>
-        <a href="mailto:contact@idf.immo">contact@idf.immo</a>
+        <a href="tel:+33660989292">06 60 98 92 92</a>
       </div>
     </div>
     <div class="avert">
@@ -838,6 +807,7 @@ footer a:hover{color:var(--blanc)}
 <script>
 (function(){
 "use strict";
+
 
 /* ============================================================
    1. Générateur de QR code (mode octet, correction M, v1-10)
@@ -1067,18 +1037,15 @@ function qrToCanvas(ctx,mat,x,y,taille,couleur){
   }
 }
 
+
 /* ============================================================
    2. Utilitaires
    ============================================================ */
 var $=function(id){return document.getElementById(id);};
-var BASE=(location.origin&&location.origin!=="null")?location.origin+location.pathname
-        :"https://etudiants.idf.immo/";
-if(!/\/$/.test(BASE)&&!/\.html$/.test(BASE))BASE+="/";
-BASE=BASE.replace(/index\.html$/,"");
+var SITE="https://etudiants.idf.immo/";
+var TEL="+33660989292";
 var MAIL="contact@idf.immo";
 
-/* Précharge les polices : sans ça, les visuels dessinés sur canvas
-   (story, affiche) partiraient sur une police de repli. */
 if(document.fonts&&document.fonts.load){
   try{
     document.fonts.load("800 100px 'Bricolage Grotesque'");
@@ -1105,57 +1072,9 @@ function copier(txt,msg){
     navigator.clipboard.writeText(txt).then(function(){toast(msg||"Copié ✓");},secours);
   } else secours();
 }
-function nettoiePrenom(v){
-  return (v||"").trim().replace(/\s+/g," ").slice(0,20);
-}
-function codeDepuis(prenom,contact){
-  var base=(prenom||"").toUpperCase();
-  if(base.normalize)base=base.normalize("NFD").replace(/[\u0300-\u036f]/g,"");
-  base=base.replace(/[^A-Z]/g,"").slice(0,9);
-  if(base.length<2)base="ETU";
-  var s=(prenom+"|"+contact).toLowerCase(),h=2166136261,i;
-  for(i=0;i<s.length;i++){h^=s.charCodeAt(i);h=(h*16777619)>>>0;}
-  var suf=h.toString(36).toUpperCase().replace(/[^A-Z0-9]/g,"");
-  suf=(suf.length>=3)?suf.slice(-3):(suf+"000").slice(0,3);
-  return base+suf;
-}
 
 /* ============================================================
-   3. Mode vendeur (arrivée par ?r=CODE)
-   ============================================================ */
-/* Le code est toujours PRENOM + 3 caractères de contrôle : on retire les 3 derniers. */
-function prenomDepuisCode(code){
-  var c=(code||"").replace(/[^A-Za-z0-9]/g,"");
-  if(c.length<5)return "";
-  var lettres=c.slice(0,-3).replace(/[^A-Za-z]/g,"");
-  if(lettres.length<2||lettres.toUpperCase()==="ETU")return "";
-  return lettres.charAt(0).toUpperCase()+lettres.slice(1).toLowerCase();
-}
-(function modeVendeur(){
-  var m=/[?&]r=([A-Za-z0-9]{2,24})/.exec(location.search);
-  if(!m)return;
-  var code=m[1].toUpperCase(),prenom=prenomDepuisCode(code);
-  document.body.classList.add("mode-vendeur");
-  var b=$("bandeau");b.hidden=false;
-  $("bandeau-txt").textContent=prenom
-    ? "🎓 "+prenom+" vous a envoyé ici — merci à "+prenom+" !"
-    : "🎓 Vous arrivez par la recommandation d'un étudiant.";
-  var suj="Estimation de mon bien (recommandation "+code+")";
-  var corps="Bonjour Marie-Céline,\n\nJe souhaite faire estimer mon bien.\n\n"+
-            "Type de bien : \nVille / code postal : \nSurface approximative : \n"+
-            "Quand souhaitez-vous vendre : \nMon téléphone : \n\n"+
-            "(Je viens de la part de "+(prenom||"votre programme étudiant")+" — code "+code+")\n\nMerci !";
-  $("v-mail").href="mailto:"+MAIL+"?subject="+encodeURIComponent(suj)+"&body="+encodeURIComponent(corps);
-  var cta=$("barre-cta");
-  cta.textContent="Demander mon estimation";
-  cta.href=$("v-mail").href;
-  var bt=document.querySelector(".barre-fixe .txt");
-  if(bt)bt.innerHTML="Estimation offerte, sans engagement<span>Marie-Céline Etave · Île-de-France</span>";
-  document.title="Estimation offerte de votre bien — etudiants.idf.immo";
-})();
-
-/* ============================================================
-   4. Explainer : pause / lecture
+   3. Explainer : pause / lecture
    ============================================================ */
 (function(){
   var ph=$("phone"),bt=$("btn-pause");
@@ -1176,7 +1095,7 @@ function prenomDepuisCode(code){
 })();
 
 /* ============================================================
-   5. Simulateur
+   4. Simulateur
    ============================================================ */
 (function(){
   var sm=$("s-mandats"),sv=$("s-ventes");
@@ -1204,100 +1123,61 @@ function prenomDepuisCode(code){
 })();
 
 /* ============================================================
-   6. Kit : génération du lien, du QR et des visuels
+   5. Contact : SMS et fiche contact à enregistrer
    ============================================================ */
 (function(){
-  var form=$("form-kit");
-  if(!form)return;
-  var etat={code:"",lien:"",prenom:"",mat:null};
+  var TXT_SMS="Salut Marie-Céline, je suis étudiant(e) et je connais quelqu'un qui veut "+
+              "vendre son bien en Île-de-France. Peux-tu me rappeler ? Merci !";
+  function sms(){ location.href="sms:"+TEL+"?&body="+encodeURIComponent(TXT_SMS); }
+  var b1=$("b-sms"),b2=$("b-sms2");
+  if(b1)b1.addEventListener("click",sms);
+  if(b2)b2.addEventListener("click",sms);
 
-  function textes(prenom,lien){
-    $("t1").textContent=
-      "Info utile 👀 Si quelqu'un autour de vous vend son appart ou sa maison en Île-de-France, "+
-      "j'ai un contact sérieux (et je touche une prime). Le lien 👉 "+lien;
-    $("t2").textContent=
-      "Coucou 👋 Je participe à un truc tout simple : si je présente quelqu'un qui vend son bien "+
-      "en Île-de-France à une conseillère immo, je touche une prime. Estimation offerte et sans "+
-      "engagement pour la personne. Si ça parle à quelqu'un : "+lien;
-    $("t3").textContent=
-      "Salut ! Tu m'avais dit que "+"tu pensais vendre — je connais quelqu'un de sérieux en immobilier "+
-      "en Île-de-France. Estimation gratuite, aucun engagement. Tu regardes ici : "+lien+" (et si ça se "+
-      "fait, ça m'aide vraiment)";
-  }
-
-  function dessineQR(){
-    var mat=qrMatrix(etat.lien);
-    etat.mat=mat;
-    if(!mat){toast("Lien trop long");return;}
-    $("qr-zone").innerHTML=qrToSvg(mat,4);
-    $("b-png").disabled=false;
-    $("b-story").disabled=false;
-    $("b-affiche").disabled=false;
-  }
-
-  function afficher(prenom,contact){
-    etat.prenom=prenom;
-    etat.code=codeDepuis(prenom,contact);
-    etat.lien=BASE+"?r="+etat.code;
-    $("out-code").textContent=etat.code;
-    $("out-lien").textContent=etat.lien;
-    textes(prenom,etat.lien);
-    dessineQR();
-
-    var suj="Enregistrement parrainage étudiant — "+etat.code;
-    var corps="Bonjour Marie-Céline,\n\nJe m'inscris au programme de recommandation étudiant.\n\n"+
-      "Prénom : "+prenom+"\nMon code : "+etat.code+"\nMon lien : "+etat.lien+"\n"+
-      "Mon contact : "+contact+"\n\n"+
-      "Je confirme avoir 18 ans ou plus et avoir lu les règles du programme "+
-      "(rôle limité à la mise en relation, caractère occasionnel, primes imposables à déclarer).\n\n"+
-      "Merci de m'envoyer la convention d'indicateur d'affaires à signer.\n\nÀ bientôt !";
-    $("b-inscrire").href="mailto:"+MAIL+"?subject="+encodeURIComponent(suj)+"&body="+encodeURIComponent(corps);
-
-    $("resultat").classList.add("on");
+  /* Fiche contact (vCard) : le visiteur enregistre le numéro dans son téléphone. */
+  function ech(s){ return String(s).replace(/([\\,;])/g,"\\$1"); }
+  $("b-vcard").addEventListener("click",function(){
+    var v=[
+      "BEGIN:VCARD","VERSION:3.0",
+      "N:Etave;Marie-Céline;;;",
+      "FN:"+ech("Marie-Céline Etave — Immo 800 €"),
+      "ORG:"+ech("Conseillère en immobilier — Île-de-France"),
+      "TEL;TYPE=CELL:"+TEL,
+      "EMAIL;TYPE=INTERNET:"+MAIL,
+      "URL:"+SITE,
+      "NOTE:"+ech("Programme étudiant : 50 € dès le mandat exclusif signé, 800 € pour toi à la vente. Appelle-moi si tu connais quelqu'un qui veut vendre en Île-de-France."),
+      "END:VCARD"
+    ].join("\r\n");
     try{
-      localStorage.setItem("kit-etudiants-idf",JSON.stringify({p:prenom,c:contact}));
-    }catch(e){}
-  }
-
-  form.addEventListener("submit",function(ev){
-    ev.preventDefault();
-    var prenom=nettoiePrenom($("prenom").value),contact=($("contact").value||"").trim();
-    if(prenom.length<2){toast("Ton prénom, s'il te plaît");$("prenom").focus();return;}
-    if(contact.length<5){toast("Un e-mail ou un numéro pour te payer");$("contact").focus();return;}
-    if(!$("majeur").checked){toast("Il faut avoir 18 ans et cocher la case");$("majeur").focus();return;}
-    afficher(prenom,contact);
-    setTimeout(function(){
-      $("resultat").scrollIntoView({behavior:"smooth",block:"start"});
-    },60);
-  });
-
-  /* Rechargement d'un kit déjà créé */
-  try{
-    var sv=JSON.parse(localStorage.getItem("kit-etudiants-idf")||"null");
-    if(sv&&sv.p&&sv.c){
-      $("prenom").value=sv.p;$("contact").value=sv.c;$("majeur").checked=true;
-      afficher(sv.p,sv.c);
+      var blob=new Blob([v],{type:"text/vcard;charset=utf-8"});
+      var url=URL.createObjectURL(blob),a=document.createElement("a");
+      a.href=url;a.download="Marie-Celine-Etave.vcf";
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+      setTimeout(function(){URL.revokeObjectURL(url);},4000);
+      toast("Contact enregistré ✓");
+    }catch(e){
+      toast("Ajoute le 06 60 98 92 92 à la main");
     }
-  }catch(e){}
+  });
+})();
 
-  /* Partages */
-  if(navigator.share)$("b-share").hidden=false;
-  $("b-share").addEventListener("click",function(){
-    navigator.share({
-      title:"800 € si tu connais quelqu'un qui vend",
-      text:"Estimation offerte et sans engagement en Île-de-France :",
-      url:etat.lien
-    }).catch(function(){});
-  });
-  $("b-wa").addEventListener("click",function(){
-    var t="Si quelqu'un autour de toi vend son bien en Île-de-France, jette un œil : "+etat.lien;
-    window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank","noopener");
-  });
-  $("b-sms").addEventListener("click",function(){
-    var t="Si quelqu'un autour de toi vend son bien en Île-de-France : "+etat.lien;
-    location.href="sms:?&body="+encodeURIComponent(t);
-  });
-  $("b-copy").addEventListener("click",function(){copier(etat.lien,"Lien copié ✓");});
+/* ============================================================
+   6. Partage : QR du site, visuels, textes
+   ============================================================ */
+(function(){
+  var mat=qrMatrix(SITE);
+  if(mat) $("qr-zone").innerHTML=qrToSvg(mat,4);
+
+  $("t1").textContent=
+    "Info utile 👀 Si quelqu'un autour de vous vend son appart ou sa maison en Île-de-France, "+
+    "il y a 800 € à gagner juste en passant un coup de fil. Tout est expliqué ici 👉 "+SITE;
+  $("t2").textContent=
+    "Coucou 👋 Je suis tombé(e) sur un truc simple : si tu connais quelqu'un qui veut vendre "+
+    "son bien en Île-de-France, tu appelles une conseillère immo et tu touches 800 € le jour "+
+    "de la vente (+ 50 € dès le mandat signé). Réservé aux majeurs. C'est ici : "+SITE;
+  $("t3").textContent=
+    "Hey, ça peut t'intéresser : 800 € si tu connais quelqu'un qui veut vendre son bien en "+
+    "Île-de-France. Tu passes juste un coup de fil, tu ne fais rien d'autre. Regarde : "+SITE;
+
   var btns=document.querySelectorAll("[data-copie]");
   for(var i=0;i<btns.length;i++){
     (function(b){
@@ -1307,7 +1187,25 @@ function prenomDepuisCode(code){
     })(btns[i]);
   }
 
-  /* Téléchargements */
+  if(navigator.share)$("b-share").hidden=false;
+  $("b-share").addEventListener("click",function(){
+    navigator.share({
+      title:"800 € si tu connais quelqu'un qui veut vendre",
+      text:"Un coup de fil, et 800 € pour toi le jour de la vente :",
+      url:SITE
+    }).catch(function(){});
+  });
+  $("b-wa").addEventListener("click",function(){
+    var t="Si quelqu'un autour de toi veut vendre son bien en Île-de-France, il y a 800 € à gagner : "+SITE;
+    window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank","noopener");
+  });
+  $("b-sms3").addEventListener("click",function(){
+    var t="800 € si tu connais quelqu'un qui veut vendre son bien en Île-de-France : "+SITE;
+    location.href="sms:?&body="+encodeURIComponent(t);
+  });
+  $("b-copy").addEventListener("click",function(){copier(SITE,"Lien copié ✓");});
+
+  /* ---------- Visuels ---------- */
   function telecharge(canvas,nom){
     try{
       canvas.toBlob(function(blob){
@@ -1344,17 +1242,17 @@ function prenomDepuisCode(code){
   }
 
   $("b-png").addEventListener("click",function(){
-    if(!etat.mat)return;
-    var n=etat.mat.length,q=4,px=16,tot=(n+2*q)*px;
+    if(!mat)return;
+    var n=mat.length,q=4,px=16,tot=(n+2*q)*px;
     var cv=document.createElement("canvas");cv.width=tot;cv.height=tot;
     var ctx=cv.getContext("2d");
     ctx.fillStyle="#fff";ctx.fillRect(0,0,tot,tot);
-    qrToCanvas(ctx,etat.mat,q*px,q*px,n*px,"#000");
-    telecharge(cv,"qr-"+etat.code+".png");
+    qrToCanvas(ctx,mat,q*px,q*px,n*px,"#000");
+    telecharge(cv,"qr-etudiants-idf-immo.png");
   });
 
   $("b-story").addEventListener("click",function(){
-    if(!etat.mat)return;
+    if(!mat)return;
     var W=1080,H=1920;
     var cv=document.createElement("canvas");cv.width=W;cv.height=H;
     var ctx=cv.getContext("2d");
@@ -1365,28 +1263,25 @@ function prenomDepuisCode(code){
     ctx.fillStyle="rgba(212,255,63,.14)";ctx.beginPath();ctx.arc(980,1720,380,0,6.3);ctx.fill();
 
     ligne(ctx,"ÎLE-DE-FRANCE · 18 ANS ET +",250,46,"700",POLICE_C,"#D4FF3F",W);
-
     ligne(ctx,"Tu connais quelqu'un",405,92,"800",POLICE_T,"#F4F4F8",W);
-    ligne(ctx,"qui veut vendre son bien :",505,92,"800",POLICE_T,"#F4F4F8",W);
-
-    ligne(ctx,"800 € pour toi !",690,150,"800",POLICE_T,"#D4FF3F",W);
-
-    ligne(ctx,"quand la vente est signée chez le notaire",775,42,"500",POLICE_C,"#A0A0B4",W);
+    ligne(ctx,"qui veut vendre son bien :",505,92,"800",POLICE_T,"#F4F4F8",W);
+    ligne(ctx,"800 € pour toi !",690,150,"800",POLICE_T,"#D4FF3F",W);
+    ligne(ctx,"Un coup de fil, et c'est tout",775,42,"500",POLICE_C,"#A0A0B4",W);
     ligne(ctx,"+ 50 € dès la signature du mandat exclusif",837,42,"500",POLICE_C,"#A0A0B4",W);
 
     var qs=580,qx=(W-qs)/2,qy=910;
     ctx.fillStyle="#fff";rectArrondi(ctx,qx-32,qy-32,qs+64,qs+64,40);ctx.fill();
-    qrToCanvas(ctx,etat.mat,qx,qy,qs,"#000");
+    qrToCanvas(ctx,mat,qx,qy,qs,"#000");
 
     ligne(ctx,"Scanne, ou clique sur le lien",1650,52,"700",POLICE_C,"#F4F4F8",W);
-    ligne(ctx,etat.lien.replace(/^https?:\/\//,""),1725,46,"800",POLICE_T,"#D4FF3F",W);
+    ligne(ctx,"etudiants.idf.immo",1725,50,"800",POLICE_T,"#D4FF3F",W);
     ligne(ctx,"Estimation offerte · sans engagement",1795,34,"400",POLICE_C,"#6A6A80",W);
 
-    telecharge(cv,"story-"+etat.code+".png");
+    telecharge(cv,"story-etudiants-idf-immo.png");
   });
 
   $("b-affiche").addEventListener("click",function(){
-    if(!etat.mat)return;
+    if(!mat)return;
     var W=1654,H=2339; /* A4 à 200 dpi */
     var cv=document.createElement("canvas");cv.width=W;cv.height=H;
     var ctx=cv.getContext("2d");
@@ -1394,26 +1289,24 @@ function prenomDepuisCode(code){
     ctx.fillStyle="rgba(139,92,246,.26)";ctx.beginPath();ctx.arc(180,140,520,0,6.3);ctx.fill();
 
     ligne(ctx,"ÎLE-DE-FRANCE · RÉSERVÉ AUX MAJEURS",250,42,"700",POLICE_C,"#D4FF3F",W);
-
     ligne(ctx,"Tu connais quelqu'un",440,112,"800",POLICE_T,"#F4F4F8",W);
     ligne(ctx,"qui veut vendre son bien :",565,112,"800",POLICE_T,"#F4F4F8",W);
-
     ligne(ctx,"800 € pour toi !",790,180,"800",POLICE_T,"#D4FF3F",W);
-
     ligne(ctx,"quand la vente est signée chez le notaire",885,46,"500",POLICE_C,"#A0A0B4",W);
     ligne(ctx,"+ 50 € dès la signature du mandat exclusif",955,46,"500",POLICE_C,"#A0A0B4",W);
 
     var qs=680,qx=(W-qs)/2,qy=1090;
     ctx.fillStyle="#fff";rectArrondi(ctx,qx-36,qy-36,qs+72,qs+72,44);ctx.fill();
-    qrToCanvas(ctx,etat.mat,qx,qy,qs,"#000");
+    qrToCanvas(ctx,mat,qx,qy,qs,"#000");
 
     ligne(ctx,"Scanne ce QR code",1930,56,"700",POLICE_C,"#F4F4F8",W);
-    ligne(ctx,etat.lien.replace(/^https?:\/\//,""),2010,52,"800",POLICE_T,"#D4FF3F",W);
+    ligne(ctx,"etudiants.idf.immo",2010,54,"800",POLICE_T,"#D4FF3F",W);
+    ligne(ctx,"06 60 98 92 92",2090,50,"700",POLICE_C,"#F4F4F8",W);
 
-    ligne(ctx,"Marie-Céline Etave — conseillère en immobilier, agent commercial (BSK Immobilier)",2150,30,"400",POLICE_C,"#6A6A80",W,60);
-    ligne(ctx,"Prime versée après convention écrite. Revenu imposable à déclarer. Programme réservé aux 18 ans et +.",2200,30,"400",POLICE_C,"#6A6A80",W,60);
+    ligne(ctx,"Marie-Céline Etave — conseillère en immobilier, agent commercial (BSK Immobilier)",2190,30,"400",POLICE_C,"#6A6A80",W,60);
+    ligne(ctx,"Prime versée après convention écrite. Revenu imposable à déclarer. Programme réservé aux 18 ans et +.",2235,30,"400",POLICE_C,"#6A6A80",W,60);
 
-    telecharge(cv,"affiche-"+etat.code+".png");
+    telecharge(cv,"affiche-etudiants-idf-immo.png");
   });
 })();
 

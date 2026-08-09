@@ -80,7 +80,9 @@ main,header,footer{position:relative;z-index:1}
 
 /* ============================ Nav ============================ */
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0}
-.marque{display:flex;align-items:center;gap:.6rem;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;letter-spacing:-.03em;font-size:1.06rem;text-decoration:none}
+/* Pas de gap ici : « etudiants » et « .idf.immo » sont deux éléments flex,
+   un gap creuserait un blanc au milieu du nom du site. */
+.marque{display:inline-flex;align-items:baseline;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;letter-spacing:-.03em;font-size:1.06rem;text-decoration:none}
 .marque .pt{color:var(--lime)}
 .nav-liens{display:flex;gap:1.5rem;font-size:.93rem;font-weight:500}
 .nav-liens a{color:var(--gris);text-decoration:none}
@@ -139,9 +141,15 @@ section{padding:3.6rem 0}
 .dcarte.a{background:linear-gradient(155deg,rgba(139,92,246,.28),rgba(21,21,31,.9) 58%);border-color:rgba(139,92,246,.45)}
 .dcarte.b{background:linear-gradient(155deg,rgba(212,255,63,.22),rgba(21,21,31,.9) 58%);border-color:rgba(212,255,63,.42)}
 .dcarte .quand{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gris)}
-.dcarte .somme{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(3.4rem,11vw,5.4rem);letter-spacing:-.045em;margin:.35rem 0 .1rem;line-height:.92}
+.dcarte .somme{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(3.2rem,10.2vw,5rem);letter-spacing:-.045em;margin:.35rem 0 .1rem;line-height:.95}
 .dcarte.a .somme{color:#C9B6FF}
 .dcarte.b .somme{color:var(--lime)}
+/* « pour toi » doit se lire d'un bloc avec le montant, sans jamais
+   déborder de la carte : d'où le retour à la ligne autorisé. */
+.dcarte .somme .pour-toi{
+  font-size:.44em;color:var(--blanc);letter-spacing:-.02em;
+  display:inline-block;margin-left:.14em;white-space:nowrap;
+}
 .dcarte h3{font-size:1.24rem;margin-bottom:.5rem}
 .dcarte p{color:var(--gris);font-size:.97rem}
 .dcarte .cond{margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--ligne);font-size:.87rem;color:var(--gris)}
@@ -294,6 +302,10 @@ footer a:hover{color:var(--blanc)}
   @page{size:A4;margin:14mm}
   html,body{background:#fff!important;color:#000!important}
   body{padding-bottom:0;font-size:11pt;line-height:1.45}
+  /* Filet de sécurité : sur fond blanc, aucun texte ne doit rester clair.
+     Les règles plus spécifiques ci-dessous reprennent la main pour les titres. */
+  *{color:#1a1a1a!important;-webkit-text-fill-color:#1a1a1a!important;
+    background-image:none!important;text-shadow:none!important;box-shadow:none!important}
   .glow,.barre-fixe,.toast,.nav-liens,.ctrl,.phone,.partages,.telech,
   .hero-cta,.contact-btns,.qr-legende,#b-share,button{display:none!important}
   a{color:#000!important;text-decoration:none}
@@ -301,7 +313,7 @@ footer a:hover{color:var(--blanc)}
   section{padding:.5rem 0;page-break-inside:avoid}
   .wrap{width:100%}
   h1,h2,h3,h4,.marque,.num{color:#000!important}
-  .surli,.gain .n,.stat .n,.dcarte .somme,.oeil,.marque .pt,
+  .surli,.gain .n,.stat .n,.dcarte .somme,.dcarte .somme .pour-toi,.oeil,.marque .pt,
   .script .quoi,.txt-item .quoi,.oreille .veut{
     -webkit-text-fill-color:#000!important;color:#000!important;background:none!important}
   .stat,.dcarte,.etape,.bloc,.regle,.script,.txt-item,.oreille,.total,
@@ -371,7 +383,7 @@ footer a:hover{color:var(--blanc)}
     <div class="deal">
       <div class="dcarte a">
         <div class="quand">Étape 1 — assez vite</div>
-        <div class="somme">50 €</div>
+        <div class="somme">50 € <span class="pour-toi">pour toi</span></div>
         <h3>Quand le mandat exclusif est signé</h3>
         <p>La personne que tu m'as signalée me confie la vente de son bien en exclusivité,
            et les diagnostics obligatoires sont réalisés. Tu touches 50 €, même si le bien
@@ -380,7 +392,7 @@ footer a:hover{color:var(--blanc)}
       </div>
       <div class="dcarte b">
         <div class="quand">Étape 2 — le vrai morceau</div>
-        <div class="somme">800 €</div>
+        <div class="somme">800 € <span class="pour-toi">pour toi</span></div>
         <h3>Quand la vente est signée chez le notaire</h3>
         <p>L'acte authentique est signé, la vente est définitive. Tu touches 800 €.
            C'est le montant plein, quelle que soit la valeur du bien.</p>
@@ -410,9 +422,9 @@ footer a:hover{color:var(--blanc)}
       </div>
       <div class="etape">
         <h3>Tu m'appelles</h3>
-        <p>Tu me donnes son prénom, sa ville, le type de bien et son numéro. On raccroche.
-           Je l'appelle en disant que je viens de ta part. Mandat exclusif signé → 50 €.
-           Vente signée → 800 €.</p>
+        <p>Tu me donnes <b>ton nom et ton prénom</b>, puis <b>le nom et le prénom</b> de la
+           personne, sa ville, le type de bien et son numéro. On raccroche. Je l'appelle en
+           disant que je viens de ta part. Mandat exclusif signé → 50 €. Vente signée → 800 €.</p>
         <p class="rappel">→ 06 60 98 92 92</p>
       </div>
     </div>
@@ -516,22 +528,23 @@ footer a:hover{color:var(--blanc)}
 
     <div class="script">
       <div class="quoi">2. À moi, au téléphone</div>
-      <p class="expl">Pas besoin d'un discours. Tu me donnes juste ces cinq choses :</p>
+      <p class="expl">Pas besoin d'un discours. Tu me donnes juste ces six choses :</p>
       <ul>
-        <li>Ton prénom, et que tu viens du site étudiants</li>
-        <li>Le prénom de la personne qui veut vendre</li>
+        <li><b>Ton nom et ton prénom</b>, et que tu viens du site étudiants</li>
+        <li><b>Le nom et le prénom</b> de la personne qui veut vendre</li>
         <li>La ville où se trouve le bien</li>
         <li>Le type de bien (appartement, maison) — même approximatif</li>
-        <li>Son numéro de téléphone, et qu'elle est bien d'accord</li>
+        <li>Son numéro de téléphone</li>
+        <li>Et que tu lui as bien demandé son accord</li>
       </ul>
-      <div class="phrase" id="s2">Bonjour Marie-Céline, je viens du site étudiants.idf.immo. Je m'appelle [ton prénom]. Je connais quelqu'un qui veut vendre : [prénom], à [ville], un [appartement/maison]. Il est d'accord pour que tu l'appelles, son numéro est le [numéro].</div>
+      <div class="phrase" id="s2">Bonjour Marie-Céline, je viens du site etudiants.idf.immo. Je m'appelle [ton prénom] [TON NOM]. Je connais quelqu'un qui veut vendre : [son prénom] [SON NOM], à [ville], un [appartement/maison]. Il est d'accord pour que tu l'appelles, son numéro est le [numéro].</div>
       <button class="btn btn-s btn-sm" type="button" data-copie="s2">Copier ce texte</button>
     </div>
 
     <div class="script">
       <div class="quoi">3. Si tu préfères éviter le téléphone</div>
-      <p class="expl">Envoie-moi juste un SMS avec ton prénom, et je t'appelle. Tu n'as même pas besoin de préparer quoi que ce soit.</p>
-      <div class="phrase" id="s3">Salut Marie-Céline, je suis étudiant(e) et je connais quelqu'un qui veut vendre son bien en Île-de-France. Peux-tu me rappeler ? Merci !</div>
+      <p class="expl">Envoie-moi un SMS avec <b>ton nom et ton prénom</b>, et je t'appelle. Tu n'as même pas besoin de préparer quoi que ce soit.</p>
+      <div class="phrase" id="s3">Salut Marie-Céline, je m'appelle [ton prénom] [TON NOM], je suis étudiant(e) et je connais quelqu'un qui veut vendre son bien en Île-de-France. Peux-tu me rappeler ? Merci !</div>
       <button class="btn btn-s btn-sm" type="button" id="b-sms2">💬 Envoyer ce SMS</button>
     </div>
   </section>
@@ -672,9 +685,9 @@ footer a:hover{color:var(--blanc)}
       </div>
       <div class="regle">
         <h4>L'accord de la personne est obligatoire</h4>
-        <p>Tu ne peux me donner le numéro de quelqu'un que si cette personne le sait et l'accepte.
-           Je ne l'appelle qu'une seule fois, en citant ton prénom, et je ne conserve pas ses
-           coordonnées si elle ne donne pas suite.</p>
+        <p>Tu ne peux me donner le nom et le numéro de quelqu'un que si cette personne le sait et
+           l'accepte. Je ne l'appelle qu'une seule fois, en citant ton nom, et je ne conserve pas
+           ses coordonnées si elle ne donne pas suite.</p>
       </div>
       <div class="regle">
         <h4>Tu es « indicateur d'affaires », rien de plus</h4>
@@ -780,8 +793,8 @@ footer a:hover{color:var(--blanc)}
     </details>
     <details>
       <summary>Comment tu sais que c'est moi qui ai recommandé&nbsp;?</summary>
-      <div class="rep">Parce que c'est toi qui m'appelles, et que je note ton prénom et ton numéro
-        à ce moment-là. C'est la date de ton appel qui compte. Si deux personnes me signalent
+      <div class="rep">Parce que c'est toi qui m'appelles, et que je note ton nom, ton prénom et
+        ton numéro à ce moment-là. C'est la date de ton appel qui compte. Si deux personnes me signalent
         le même vendeur, c'est le premier appel qui ouvre droit à la prime.</div>
     </details>
     <details>
@@ -1170,8 +1183,9 @@ function copier(txt,msg){
    5. Contact : SMS et fiche contact à enregistrer
    ============================================================ */
 (function(){
-  var TXT_SMS="Salut Marie-Céline, je suis étudiant(e) et je connais quelqu'un qui veut "+
-              "vendre son bien en Île-de-France. Peux-tu me rappeler ? Merci !";
+  var TXT_SMS="Salut Marie-Céline, je m'appelle [ton prénom] [TON NOM], je suis étudiant(e) "+
+              "et je connais quelqu'un qui veut vendre son bien en Île-de-France. "+
+              "Peux-tu me rappeler ? Merci !";
   function sms(){ location.href="sms:"+TEL+"?&body="+encodeURIComponent(TXT_SMS); }
   var b1=$("b-sms"),b2=$("b-sms2");
   if(b1)b1.addEventListener("click",sms);

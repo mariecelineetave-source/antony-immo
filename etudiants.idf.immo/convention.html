@@ -61,6 +61,10 @@ footer a{color:var(--gris)}
   @page{size:A4;margin:16mm}
   html,body{background:#fff!important;color:#000!important}
   body{font-size:10pt;line-height:1.4}
+  /* Filet de sécurité : sur fond blanc, aucun texte ne doit rester clair.
+     Les règles plus spécifiques ci-dessous reprennent la main pour les titres. */
+  *{color:#1a1a1a!important;-webkit-text-fill-color:#1a1a1a!important;
+    background-image:none!important;text-shadow:none!important;box-shadow:none!important}
   header,footer,.actions,.retour,.avis.ecran{display:none!important}
   main{padding:0}
   .wrap{width:100%}
@@ -131,8 +135,8 @@ footer a{color:var(--gris)}
   <p>
     L'Indicateur signale au Mandataire, <b>par téléphone</b>, l'identité de personnes de son
     entourage envisageant de vendre un bien immobilier situé en Île-de-France. Il communique à
-    cette occasion le prénom, la commune, la nature du bien et le numéro de téléphone de la
-    personne concernée.
+    cette occasion ses propres nom et prénom, ainsi que les nom, prénom, commune, nature du
+    bien et numéro de téléphone de la personne concernée.
   </p>
   <p>Le rôle de l'Indicateur se limite <b>exclusivement à la mise en relation</b>.</p>
   <p>Il est expressément convenu que l'Indicateur <b>ne peut en aucun cas</b> :</p>

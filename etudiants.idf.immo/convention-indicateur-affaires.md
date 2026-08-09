@@ -44,8 +44,8 @@ ci-après dénommé **« l'Indicateur »**,
 
 L'Indicateur signale au Mandataire, **par téléphone**, l'identité de personnes de son
 entourage envisageant de vendre un bien immobilier situé en Île-de-France. Il communique à
-cette occasion le prénom, la commune, la nature du bien et le numéro de téléphone de la
-personne concernée.
+cette occasion ses propres nom et prénom, ainsi que les nom, prénom, commune, nature du bien
+et numéro de téléphone de la personne concernée.
 
 Le rôle de l'Indicateur se limite **exclusivement à la mise en relation**.
 

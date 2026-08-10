@@ -54,6 +54,18 @@ th{background:var(--carte);color:var(--blanc);font-weight:700}
 footer{border-top:1px solid var(--ligne);padding:2rem 0;color:var(--gris);font-size:.88rem}
 footer a{color:var(--gris)}
 
+/* En-tête du document lui-même (papier à en-tête), visible aussi à l'impression */
+.entete{display:flex;justify-content:space-between;align-items:flex-start;gap:1.4rem;
+  flex-wrap:wrap;padding-bottom:1.1rem;margin-bottom:1.6rem;border-bottom:2px solid var(--ligne)}
+.entete .bloc-logo{display:flex;align-items:center;gap:.75rem}
+.entete svg{flex:0 0 auto;display:block}
+.entete .nom{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;
+  letter-spacing:-.02em;line-height:1.15;display:block;color:var(--blanc)}
+.entete .sous-nom{font-size:.82rem;color:var(--gris);display:block;margin-top:.1rem}
+.entete .coord{font-size:.82rem;color:var(--gris);line-height:1.5;text-align:right}
+.entete .coord b{color:var(--blanc);font-weight:700}
+@media(max-width:560px){.entete .coord{text-align:left}}
+
 /* ============================ Impression ============================
    Ce document est fait pour être imprimé et signé : en A4, noir sur blanc,
    avec les articles qui ne se coupent pas au milieu d'une page. */
@@ -68,6 +80,12 @@ footer a{color:var(--gris)}
   header,footer,.actions,.retour,.avis.ecran{display:none!important}
   main{padding:0}
   .wrap{width:100%}
+  /* Le papier à en-tête doit rester sur le document imprimé */
+  .entete{border-bottom:2px solid #000!important;padding-bottom:.5rem;margin-bottom:.9rem;
+    page-break-after:avoid;page-break-inside:avoid}
+  .entete .nom{font-size:12pt;color:#000!important}
+  .entete .sous-nom,.entete .coord{font-size:8.5pt;color:#333!important}
+  .entete .coord b{color:#000!important}
   h1{font-size:17pt;margin-bottom:.2rem;color:#000!important}
   h2{font-size:11.5pt;margin:.9rem 0 .3rem;color:#000!important;page-break-after:avoid;
      border-bottom:1px solid #000;padding-bottom:.15rem}
@@ -94,6 +112,26 @@ footer a{color:var(--gris)}
 </header>
 
 <main class="wrap">
+
+  <div class="entete">
+    <div class="bloc-logo">
+      <svg viewBox="0 0 32 32" width="46" height="46" role="img" aria-label="Logo etudiants.idf.immo">
+        <rect width="32" height="32" rx="8" fill="#D4FF3F"></rect>
+        <path d="M16 7 4 12l12 5 12-5z" fill="#0A0A0F"></path>
+        <path d="M9 15v6c0 2 3.5 3.5 7 3.5s7-1.5 7-3.5v-6" fill="none" stroke="#0A0A0F" stroke-width="2.2" stroke-linecap="round"></path>
+      </svg>
+      <span>
+        <span class="nom">etudiants.idf.immo</span>
+        <span class="sous-nom">Programme de recommandation étudiant — Île-de-France</span>
+      </span>
+    </div>
+    <div class="coord">
+      <b>Marie-Céline ETAVE</b><br>
+      Conseillère en immobilier · Agent commercial<br>
+      06 60 98 92 92 · contact@idf.immo
+    </div>
+  </div>
+
   <h1>Convention d'indicateur d'affaires</h1>
   <p class="chapo">Document à signer en deux exemplaires <b>avant tout versement de prime</b>.</p>
 

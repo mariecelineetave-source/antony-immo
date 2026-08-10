@@ -631,10 +631,19 @@ footer a:hover{color:var(--blanc)}
         <div>
           <div class="partages">
             <button class="btn btn-p btn-sm" id="b-share" type="button" hidden>📤 Partager</button>
+            <button class="btn btn-s btn-sm" id="b-snap" type="button">👻 Snapchat</button>
+            <button class="btn btn-s btn-sm" id="b-tiktok" type="button">🎵 TikTok</button>
+            <button class="btn btn-s btn-sm" id="b-insta" type="button">📸 Instagram</button>
             <button class="btn btn-s btn-sm" id="b-wa" type="button">WhatsApp</button>
             <button class="btn btn-s btn-sm" id="b-sms3" type="button">SMS</button>
             <button class="btn btn-s btn-sm" id="b-copy" type="button">Copier le lien</button>
           </div>
+          <p style="color:var(--gris);font-size:.86rem;margin:-.9rem 0 1.6rem">
+            Pour <b>TikTok</b> et <b>Instagram</b>, le lien est copié dans ton presse-papiers :
+            ces deux applis ne permettent pas de pré-remplir une publication depuis un site.
+            Colle-le dans ta bio, en commentaire ou en message — et poste le
+            <b>visuel story</b> à télécharger juste à côté.
+          </p>
 
           <h3 style="font-size:1.05rem;margin-bottom:.8rem">Textes prêts à coller</h3>
           <div class="txt-item">
@@ -1253,6 +1262,28 @@ function copier(txt,msg){
       url:SITE
     }).catch(function(){});
   });
+  /* Snapchat accepte un lien en pièce jointe depuis le web : sur mobile
+     l'application s'ouvre, sur ordinateur c'est le site de Snapchat. */
+  $("b-snap").addEventListener("click",function(){
+    window.open("https://www.snapchat.com/scan?attachmentUrl="+encodeURIComponent(SITE),
+                "_blank","noopener");
+  });
+  /* TikTok et Instagram n'offrent aucune URL de partage permettant de
+     pré-remplir une publication depuis un site : on copie le lien, et on dit
+     quoi en faire. Sur mobile, le partage natif reste le chemin le plus court. */
+  function copierPour(appli){
+    copier(SITE,"Lien copié — colle-le dans "+appli);
+    if(navigator.share){
+      navigator.share({
+        title:"800 € si tu connais quelqu'un qui veut vendre",
+        text:"Un coup de fil, et 800 € pour toi le jour de la vente :",
+        url:SITE
+      }).catch(function(){});
+    }
+  }
+  $("b-tiktok").addEventListener("click",function(){copierPour("ta bio ou un commentaire TikTok");});
+  $("b-insta").addEventListener("click",function(){copierPour("ta story ou ta bio Instagram");});
+
   $("b-wa").addEventListener("click",function(){
     var t="Si quelqu'un autour de toi veut vendre son bien en Île-de-France, il y a 800 € à gagner : "+SITE;
     window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank","noopener");

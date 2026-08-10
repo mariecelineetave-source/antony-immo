@@ -211,7 +211,9 @@ section{padding:3.6rem 0}
 .scene.v1 .big{color:var(--cyan)}
 .scene.v2 .big{color:#FFA8C8}
 .scene.v3 .big{color:#C9B6FF}
-.scene.v4 .big{color:var(--lime)}
+.scene.v4 .big{color:var(--lime);font-size:2.2rem}
+/* « pour toi ! » en blanc pour ressortir sous les deux montants */
+.scene .pt-video{color:var(--blanc);display:inline-block;margin-top:.15em}
 .phone .barre{position:absolute;top:0;left:0;height:3px;background:var(--lime);width:0;z-index:3}
 .playing .barre{animation:bar 18s linear infinite}
 @keyframes bar{from{width:0}to{width:100%}}
@@ -467,11 +469,11 @@ footer a:hover{color:var(--blanc)}
           <div class="scene v3">
             <div class="pic">📞</div>
             <div class="big">Tu<br>m'appelles</div>
-            <div class="sub">Son prénom, sa ville, son numéro. 2 minutes.</div>
+            <div class="sub">Ton nom et ton prénom, son nom et son prénom, sa ville, son numéro. 2 minutes.</div>
           </div>
           <div class="scene v4">
             <div class="pic">💶</div>
-            <div class="big">50 €<br>puis 800 €</div>
+            <div class="big">50 €<br>puis 800 €<br><span class="pt-video">pour toi&nbsp;!</span></div>
             <div class="sub">Au mandat exclusif, puis à la vente</div>
           </div>
         </div>

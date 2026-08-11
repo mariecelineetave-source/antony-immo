@@ -7,6 +7,42 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-08-11
+
+Une piste potentiellement nouvelle par rapport aux veilles précédentes :
+
+- **Appartement 4 pièces, 74 m², résidence La Fontaine, Antony (92160) —
+  375 200 €**, annonce entre particuliers, 2ᵉ étage, traversant, proche du
+  parc de Sceaux. [Voir l'annonce (PAP)](https://www.pap.fr/annonces/appartement-antony-92160-r458203223)
+  — Ce bien apparaissait déjà dans les résultats de recherche depuis le 28
+  juillet, mais uniquement via une page de catégorie, sans lien individuel
+  ni prix vérifiables ; il dispose désormais d'un lien direct et d'un prix
+  affiché, ce qui en fait une piste confirmée pour la première fois
+  aujourd'hui.
+
+Les autres pistes déjà connues restent en ligne aux mêmes conditions : la
+maison PAP à 775 000 €, la maison 155 m² quartier Beauvallon / Bois de
+l'Aurore à 670 000 €, la maison 9 pièces 422 m² aux enchères en ligne près
+du parc Heller à 1 300 000 €, et les lots aux enchères notariales 36h-immo
+déjà signalés (dont AI19530, appartement 2 p. 30 m² à 159 000 €, et
+AI21793, appartement 2 p. 52 m² à 210 000 €). Les recherches par quartier
+(Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville) et
+sur les communes limitrophes (Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent toujours que des
+pages d'agrégateurs (SeLoger, PAP, leboncoin, ParuVendu, Logic-Immo,
+entreparticuliers, Belles Demeures), sans autre annonce individuelle
+nouvelle et identifiable avec certitude. Aucun nouveau signal de
+succession, de permis de construire ou de projet urbain distinct de ceux
+déjà connus (Antonypole / ligne 18).
+
+Signal réglementaire à noter pour la pratique de prospection : la loi n°
+2025-594 du 30 juin 2025 fait entrer en vigueur ce jour l'interdiction de
+principe du démarchage téléphonique sans consentement préalable — la
+publication d'une annonce par un vendeur ne vaut plus consentement pour
+être appelé (voir la rubrique Actu immo).
+
+---
+
 ## 2026-08-10
 
 Rien de nouveau par rapport à la veille du 7 août : la maison PAP à

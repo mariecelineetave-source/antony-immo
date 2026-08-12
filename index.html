@@ -10,9 +10,21 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://antony.immo/">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="antony.immo">
 <meta property="og:image" content="https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=1200">
 <meta property="og:image:alt" content="La place Saint-Saturnin à Antony (Hauts-de-Seine)">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="821">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="antony.immo — Marie-Céline Etave, conseillère immobilière à Antony">
+<meta name="twitter:description" content="Vendre ou acheter à Antony (92) : estimation offerte, accompagnement de A à Z, connaissance fine des quartiers.">
+<meta name="twitter:image" content="https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=1200">
+<meta name="twitter:image:alt" content="La place Saint-Saturnin à Antony (Hauts-de-Seine)">
+<meta name="theme-color" content="#0E2E52">
+<meta name="geo.region" content="FR-92">
+<meta name="geo.placename" content="Antony">
+<meta name="geo.position" content="48.7538;2.2977">
+<meta name="ICBM" content="48.7538, 2.2977">
 <link rel="canonical" href="https://antony.immo/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E2E52'/%3E%3Crect x='9' y='9' width='14' height='14' fill='none' stroke='%23EBF2F9' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%231E88E5'/%3E%3C/svg%3E">
 <script type="application/ld+json">
@@ -21,6 +33,7 @@
   "@type": "RealEstateAgent",
   "name": "Marie-Céline Etave — antony.immo",
   "url": "https://antony.immo/",
+  "image": "https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=1200",
   "telephone": "+33660989292",
   "email": "contact@antony.immo",
   "areaServed": [
@@ -54,6 +67,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://upload.wikimedia.org">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============ Base ============ */
@@ -263,6 +277,7 @@ h3{font-size:1.5rem;font-weight:600}
   padding:.3rem .65rem;cursor:pointer;transition:border-color .2s ease,color .2s ease;
 }
 .partage:hover{border-color:var(--meuliere);color:var(--meuliere-fonce)}
+.q-lien-prix{display:block;margin-top:1.1rem;font-size:.85rem;font-weight:600}
 @media (max-width:900px){.q-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.q-grid{grid-template-columns:1fr}.q-card p{min-height:0}}
 
@@ -324,22 +339,25 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a class="brand" href="#haut">antony<span class="dot">.</span>immo</a>
-    <ul class="nav-links" id="menu">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#actus">Actu immo</a></li>
-      <li><a href="#prix">Prix du m²</a></li>
-      <li><a href="expertise.html">Expertise</a></li>
-      <li><a href="#apropos">Votre conseillère</a></li>
-      <li><a href="estimation.html" class="btn btn-solid">⚡ Estimer en ligne</a></li>
-    </ul>
+    <nav aria-label="Navigation principale">
+      <ul class="nav-links" id="menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#actus">Actu immo</a></li>
+        <li><a href="#prix">Prix du m²</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="#apropos">Votre conseillère</a></li>
+        <li><a href="estimation.html" class="btn btn-solid">⚡ Estimer en ligne</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
+<main id="contenu">
 <!-- ================= HÉROS ================= -->
 <section class="hero" id="haut">
   <!-- Photo : la place Saint-Saturnin, cœur historique d'Antony (Wikimedia Commons).
        En cas d'échec de chargement, le fond bleu marine (--ombre) prend le relais. -->
-  <img class="hero-plan" src="https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=1800" alt="" aria-hidden="true" fetchpriority="high">
+  <img class="hero-plan" src="https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=1800" srcset="https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=800 800w, https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=1200 1200w, https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=1800 1800w, https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=2400 2400w" sizes="100vw" alt="" aria-hidden="true" fetchpriority="high">
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="eyebrow rise d1">Antony · Hauts-de-Seine (92)</p>
@@ -572,35 +590,41 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
       <p>À vingt minutes de Paris par le RER B, Antony cultive un esprit de ville-jardin. Chaque quartier a son marché, son ambiance — et sa clientèle.</p>
     </div>
     <div class="q-grid">
-      <article class="q-card reveal">
+      <article class="q-card reveal" id="quartier-centre-ville">
         <h3>Centre-ville</h3>
         <p>Marché, commerces et vie de quartier autour de l'église Saint-Saturnin.</p>
         <span class="chip">RER Antony · Orlyval</span>
+        <a class="q-lien-prix" href="#prix" data-quartier="centre" aria-label="Voir les prix du quartier Centre-ville">Voir les prix du quartier →</a>
       </article>
-      <article class="q-card reveal">
+      <article class="q-card reveal" id="quartier-parc-de-sceaux">
         <h3>Parc de Sceaux</h3>
         <p>Des adresses recherchées aux portes du domaine et de ses perspectives.</p>
         <span class="chip">RER Parc de Sceaux</span>
+        <a class="q-lien-prix" href="#prix" data-quartier="sceaux" aria-label="Voir les prix du quartier Parc de Sceaux">Voir les prix du quartier →</a>
       </article>
-      <article class="q-card reveal">
+      <article class="q-card reveal" id="quartier-croix-de-berny">
         <h3>La Croix de Berny</h3>
         <p>Résidences bien desservies, entre le parc et les grands axes.</p>
         <span class="chip">RER B · Tram T10</span>
+        <a class="q-lien-prix" href="#prix" data-quartier="croix" aria-label="Voir les prix du quartier La Croix de Berny">Voir les prix du quartier →</a>
       </article>
-      <article class="q-card reveal">
+      <article class="q-card reveal" id="quartier-fontaine-michalon">
         <h3>Fontaine Michalon</h3>
         <p>Esprit village, pavillons et maisons en meulière.</p>
         <span class="chip">RER Fontaine Michalon</span>
+        <a class="q-lien-prix" href="#prix" data-quartier="pajeaud" aria-label="Voir les prix du quartier Fontaine Michalon">Voir les prix du quartier →</a>
       </article>
-      <article class="q-card reveal">
+      <article class="q-card reveal" id="quartier-les-baconnets">
         <h3>Les Baconnets</h3>
         <p>Un quartier résidentiel calme, prisé des familles.</p>
         <span class="chip">RER Les Baconnets</span>
+        <a class="q-lien-prix" href="#prix" data-quartier="baconnets" aria-label="Voir les prix du quartier Les Baconnets">Voir les prix du quartier →</a>
       </article>
-      <article class="q-card reveal">
+      <article class="q-card reveal" id="quartier-pajeaud-les-rabats">
         <h3>Pajeaud &amp; les Rabats</h3>
         <p>Verdure, écoles et maisons familiales au sud de la ville.</p>
         <span class="chip">Écoles &amp; espaces verts</span>
+        <a class="q-lien-prix" href="#prix" data-quartier="pajeaud" aria-label="Voir les prix du quartier Pajeaud et les Rabats">Voir les prix du quartier →</a>
       </article>
     </div>
   </div>
@@ -739,6 +763,7 @@ footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 
     </div>
   </div>
 </section>
+</main>
 
 <!-- ================= PIED DE PAGE ================= -->
 <footer>
@@ -830,6 +855,12 @@ function majPrix(){
 selQ.addEventListener('change', majPrix);
 selT.addEventListener('change', majPrix);
 majPrix();
+
+// Liens "Voir les prix du quartier" : présélectionne le quartier dans l'outil de prix
+document.querySelectorAll('.q-lien-prix').forEach(a => a.addEventListener('click', () => {
+  selQ.value = a.dataset.quartier;
+  majPrix();
+}));
 
 // Partage des actualités : lien permanent antony.immo (menu natif sur mobile, copie sinon)
 document.querySelectorAll('.partage').forEach(b => b.addEventListener('click', async () => {

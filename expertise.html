@@ -41,6 +41,9 @@
   --stone:#EBF2F9; --craie:#F7FAFD; --parterre:#DCE8F4; --buis:#1C5A9E;
   --ombre:#0E2E52; --meuliere:#1E88E5; --meuliere-fonce:#1668B5;
   --cuivre:#8FC6F2; --encre:#12263C; --mousse:#4C6B8A; --ligne:#C5D6E6;
+  --or:#A9814A;         /* or de la charte de Marie-Céline — relevé sur son logo */
+  --or-clair:#C9A167;   /* or lisible sur le bleu marine */
+  --or-fonce:#8C6A38;   /* or lisible sur fond clair : contraste suffisant */
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -57,17 +60,17 @@ h3{font-size:1.25rem;font-weight:600}
 .btn{display:inline-block;font-weight:600;font-size:.95rem;padding:.95rem 1.7rem;border-radius:3px;border:1px solid transparent;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
 .btn-solid{background:var(--meuliere);color:#fff}
 .btn-solid:hover{background:var(--meuliere-fonce)}
-.btn-ghost{border-color:rgba(235,242,249,.5);color:var(--stone)}
-.btn-ghost:hover{border-color:var(--stone);color:#fff}
+.btn-ghost{border-color:rgba(201,161,103,.75);color:var(--stone)}
+.btn-ghost:hover{border-color:var(--or-clair);color:#fff}
 
 /* En-tête */
 .entete{background:var(--ombre);padding:2.2rem 0 3.4rem}
 .entete-nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;margin-bottom:2.8rem}
 .brand{font-family:"Fraunces",serif;font-size:1.28rem;font-weight:600;color:#F5F9FD}
-.brand .dot{color:var(--cuivre)}
+.brand .dot{color:var(--or-clair)}
 .retour{color:rgba(235,242,249,.88);font-size:.93rem;font-weight:500}
 .retour:hover{color:#fff}
-.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--cuivre);margin-bottom:1rem}
+.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--or-clair);margin-bottom:1rem}
 .entete p.intro{margin-top:1.2rem;max-width:64ch;color:rgba(235,242,249,.85)}
 .entete .btn{margin-top:1.8rem}
 
@@ -113,9 +116,10 @@ main p{margin-top:.8rem;color:#33465C}
 @media (max-width:760px){.compare{grid-template-columns:1fr}.cas{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
 
 /* Pied de page */
-footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:2.4rem;font-size:.9rem;margin-top:3rem}
+footer{position:relative;background:var(--ombre);color:rgba(235,242,249,.75);padding-block:2.4rem;font-size:.9rem;margin-top:3rem}
+footer::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--or)}
 footer a{color:rgba(235,242,249,.88);text-decoration:underline}
-.legal{border-top:1px solid rgba(235,242,249,.18);margin-top:1.4rem;padding-top:1.4rem;font-size:.8rem;line-height:1.9;color:rgba(235,242,249,.6)}
+.legal{position:relative;border-top:1px solid rgba(198,161,91,.30);margin-top:1.4rem;padding-top:1.4rem;font-size:.8rem;line-height:1.9;color:rgba(235,242,249,.6)}
 </style>
 </head>
 <body>

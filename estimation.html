@@ -21,6 +21,9 @@
   --stone:#EBF2F9;--craie:#F7FAFD;--parterre:#DCE8F4;--buis:#1C5A9E;--ombre:#0E2E52;
   --meuliere:#1E88E5;--meuliere-fonce:#1668B5;--cuivre:#8FC6F2;--encre:#12263C;
   --mousse:#4C6B8A;--ligne:#C5D6E6;
+  --or:#A9814A;         /* or de la charte de Marie-Céline — relevé sur son logo */
+  --or-clair:#C9A167;   /* or lisible sur le bleu marine */
+  --or-fonce:#8C6A38;   /* or lisible sur fond clair : contraste suffisant */
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -37,13 +40,13 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.12;l
 h1{font-size:clamp(2.1rem,5vw,3.4rem)}
 h2{font-size:clamp(1.7rem,3.2vw,2.4rem)}
 h3{font-size:1.22rem;font-weight:600}
-.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--meuliere);margin-bottom:1.1rem}
+.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--or-fonce);margin-bottom:1.1rem}
 .lead{font-size:1.08rem;color:var(--mousse);max-width:58ch}
 .btn{display:inline-block;font-weight:600;font-size:.95rem;padding:.95rem 1.7rem;border-radius:3px;border:1px solid transparent;transition:background-color .2s ease,color .2s ease,border-color .2s ease;cursor:pointer}
 .btn-solid{background:var(--meuliere);color:var(--craie)}
 .btn-solid:hover{background:var(--meuliere-fonce);color:var(--craie)}
-.btn-ghost{border-color:rgba(235,242,249,.5);color:var(--stone)}
-.btn-ghost:hover{border-color:var(--stone);color:#fff}
+.btn-ghost{border-color:rgba(201,161,103,.75);color:var(--stone)}
+.btn-ghost:hover{border-color:var(--or-clair);color:#fff}
 .btn-vert{background:var(--buis);color:var(--craie)}
 .btn-vert:hover{background:var(--ombre);color:var(--craie)}
 
@@ -51,7 +54,7 @@ h3{font-size:1.22rem;font-weight:600}
 .nav{position:fixed;inset-inline:0;top:0;z-index:50;transition:background-color .25s ease,box-shadow .25s ease}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding-block:1.05rem}
 .brand{font-family:"Fraunces",serif;font-size:1.28rem;font-weight:600;color:var(--stone);letter-spacing:.01em}
-.brand .dot{color:var(--cuivre)}
+.brand .dot{color:var(--or-clair)}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
 .nav-links a{color:rgba(235,242,249,.88);font-size:.93rem;font-weight:500}
 .nav-links a:hover{color:#fff}
@@ -59,7 +62,7 @@ h3{font-size:1.22rem;font-weight:600}
 .nav-links .btn{padding:.62rem 1.15rem}
 .nav.scrolled{background:rgba(247,250,253,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--ligne)}
 .nav.scrolled .brand{color:var(--buis)}
-.nav.scrolled .brand .dot{color:var(--meuliere)}
+.nav.scrolled .brand .dot{color:var(--or)}
 .nav.scrolled .nav-links a{color:var(--encre)}
 .nav.scrolled .nav-links a:hover{color:var(--meuliere)}
 .nav.scrolled .nav-links a.active{color:var(--buis);border-color:var(--meuliere)}
@@ -73,7 +76,7 @@ h3{font-size:1.22rem;font-weight:600}
 
 /* ============ En-tête ============ */
 .tete{background:var(--ombre);color:var(--stone);padding:9rem 0 3.4rem;text-align:center}
-.tete .eyebrow{color:var(--cuivre)}
+.tete .eyebrow{color:var(--or-clair)}
 .tete h1{color:#F5F9FD}
 .tete h1 em{font-style:italic;font-weight:400;color:var(--cuivre)}
 .tete p{margin:1.3rem auto 0;max-width:56ch;color:rgba(235,242,249,.85);font-size:1.06rem}
@@ -121,27 +124,29 @@ h3{font-size:1.22rem;font-weight:600}
 .alt{background:var(--parterre)}
 .section-head{max-width:640px;margin-bottom:2.6rem}
 .section-head p{color:var(--mousse);margin-top:1rem}
+.section-head .eyebrow{color:var(--or-fonce)}
 .meth{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .meth-card{background:var(--craie);border:1px solid var(--ligne);border-radius:4px;padding:1.8rem 1.6rem}
 .meth-card h3{font-size:1.1rem;margin-bottom:.5rem}
 .meth-card p{font-size:.93rem;color:#33465C}
-.mark{width:13px;height:13px;border:2px solid var(--meuliere);transform:rotate(45deg);margin-bottom:1rem}
+.mark{width:13px;height:13px;border:2px solid var(--or);transform:rotate(45deg);margin-bottom:1rem}
 @media (max-width:760px){.meth{grid-template-columns:1fr}}
 
 /* ============ Bande CTA ============ */
 .band{background:var(--buis);color:var(--stone);text-align:center;padding-block:5rem}
-.band .eyebrow{color:var(--cuivre)}
+.band .eyebrow{color:var(--or-clair)}
 .band h2{color:#F5F9FD}
 .band p{margin:1.1rem auto 2rem;max-width:52ch;color:rgba(235,242,249,.82)}
 
 /* ============ Pied de page ============ */
-footer{background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 2.2rem;font-size:.9rem}
+footer{position:relative;background:var(--ombre);color:rgba(235,242,249,.75);padding-block:3.5rem 2.2rem;font-size:.9rem}
+footer::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--or)}
 .foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start;margin-bottom:2.5rem}
 .foot-top .brand{font-size:1.4rem}
 .foot-nav{display:flex;gap:1.6rem;list-style:none;flex-wrap:wrap}
 .foot-nav a{color:rgba(235,242,249,.75)}
 .foot-nav a:hover{color:#fff}
-.legal{border-top:1px solid rgba(235,242,249,.18);padding-top:1.6rem;font-size:.8rem;line-height:1.9;color:rgba(235,242,249,.55)}
+.legal{position:relative;border-top:1px solid rgba(198,161,91,.30);padding-top:1.6rem;font-size:.8rem;line-height:1.9;color:rgba(235,242,249,.55)}
 </style>
 </head>
 <body>

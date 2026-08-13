@@ -61,39 +61,57 @@
         </div>
       </div>
       <div aria-hidden="true">
-        <!-- La façade : une fenêtre allumée, c'est l'opportunité que vous connaissez. -->
-        <svg class="facade" viewBox="0 0 420 400" role="presentation" focusable="false">
-          <rect class="mur" x="30" y="30" width="360" height="330" rx="4"/>
-          <line class="mur" x1="14" y1="360" x2="406" y2="360"/>
+        <!-- La façade : une seule fenêtre allumée, c'est l'opportunité que vous
+             êtes seul à connaître. Tout est en SVG, aucune image externe. -->
+        <svg class="facade" viewBox="0 0 400 420" role="presentation" focusable="false">
+          <defs>
+            <radialGradient id="lueur" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#C9A167" stop-opacity=".38"/>
+              <stop offset="55%"  stop-color="#C9A167" stop-opacity=".12"/>
+              <stop offset="100%" stop-color="#C9A167" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- la lueur, derrière tout le reste -->
+          <circle class="lueur" cx="237" cy="152" r="118" fill="url(#lueur)"/>
+
+          <!-- le corps du bâtiment -->
+          <rect class="mur" x="40" y="30" width="320" height="320" rx="3"/>
           <g class="mur">
-            <line x1="30" y1="112" x2="390" y2="112"/>
-            <line x1="30" y1="184" x2="390" y2="184"/>
-            <line x1="30" y1="256" x2="390" y2="256"/>
+            <line x1="40" y1="111" x2="360" y2="111"/>
+            <line x1="40" y1="190" x2="360" y2="190"/>
+            <line x1="40" y1="269" x2="360" y2="269"/>
           </g>
+
+          <!-- les fenêtres -->
           <g>
-            <rect class="vitre mur" x="58"  y="52"  width="56" height="44" rx="2"/>
-            <rect class="vitre mur" x="140" y="52"  width="56" height="44" rx="2"/>
-            <rect class="vitre mur" x="222" y="52"  width="56" height="44" rx="2"/>
-            <rect class="vitre mur" x="304" y="52"  width="56" height="44" rx="2"/>
+            <rect class="vitre mur" x="66"  y="49"  width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="139" y="49"  width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="213" y="49"  width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="286" y="49"  width="48" height="52" rx="2"/>
 
-            <rect class="vitre mur" x="58"  y="124" width="56" height="44" rx="2"/>
-            <rect class="vitre mur" x="140" y="124" width="56" height="44" rx="2"/>
-            <rect class="halo"     x="210" y="112" width="80" height="68" rx="6"/>
-            <rect class="allumee"  x="222" y="124" width="56" height="44" rx="2"/>
-            <rect class="vitre mur" x="304" y="124" width="56" height="44" rx="2"/>
+            <rect class="vitre mur" x="66"  y="128" width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="139" y="128" width="48" height="52" rx="2"/>
+            <rect class="allumee"  x="213" y="128" width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="286" y="128" width="48" height="52" rx="2"/>
 
-            <rect class="vitre mur" x="58"  y="196" width="56" height="44" rx="2"/>
-            <rect class="vitre mur" x="140" y="196" width="56" height="44" rx="2"/>
-            <rect class="vitre mur" x="222" y="196" width="56" height="44" rx="2"/>
-            <rect class="vitre mur" x="304" y="196" width="56" height="44" rx="2"/>
+            <rect class="vitre mur" x="66"  y="207" width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="139" y="207" width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="213" y="207" width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="286" y="207" width="48" height="52" rx="2"/>
 
-            <rect class="vitre mur" x="58"  y="268" width="56" height="44" rx="2"/>
-            <rect class="vitre mur" x="140" y="268" width="56" height="44" rx="2"/>
-            <rect class="vitre mur" x="304" y="268" width="56" height="44" rx="2"/>
+            <rect class="vitre mur" x="66"  y="286" width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="139" y="286" width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="213" y="286" width="48" height="52" rx="2"/>
+            <rect class="vitre mur" x="286" y="286" width="48" height="52" rx="2"/>
           </g>
-          <!-- la loge, au rez-de-chaussée -->
-          <rect class="vitre mur" x="222" y="268" width="56" height="92" rx="2"/>
-          <line class="mur" x1="250" y1="268" x2="250" y2="360"/>
+
+          <!-- le rez-de-chaussée : le porche et la loge -->
+          <rect class="mur" x="40" y="350" width="320" height="46" rx="3"/>
+          <path class="porche" d="M172 396 v-30 a28 28 0 0 1 56 0 v30 z"/>
+          <line class="mur" x1="200" y1="366" x2="200" y2="396"/>
+          <rect class="vitre mur" x="262" y="364" width="52" height="22" rx="2"/>
+          <line class="mur" x1="16" y1="396" x2="384" y2="396"/>
         </svg>
       </div>
     </div>

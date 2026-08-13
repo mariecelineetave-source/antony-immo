@@ -126,11 +126,13 @@ p{text-wrap:pretty}
 .facade{width:100%;height:auto}
 .facade .mur{fill:none;stroke:rgba(143,198,242,.28);stroke-width:1.2}
 .facade .vitre{fill:rgba(143,198,242,.07)}
-.facade .allumee{fill:var(--or-clair);opacity:.9}
-.facade .halo{fill:var(--or-clair);opacity:.16}
+.facade .allumee{fill:var(--or-clair);stroke:#E4CBA0;stroke-width:1.2}
+.facade .porche{fill:rgba(143,198,242,.1);stroke:rgba(143,198,242,.4);stroke-width:1.2}
 @media (prefers-reduced-motion:no-preference){
-  .facade .allumee{animation:respire 4.5s ease-in-out infinite}
-  @keyframes respire{0%,100%{opacity:.9}50%{opacity:.62}}
+  .facade .allumee{animation:respire 5s ease-in-out infinite}
+  .facade .lueur{animation:respire-lueur 5s ease-in-out infinite}
+  @keyframes respire{0%,100%{opacity:1}50%{opacity:.78}}
+  @keyframes respire-lueur{0%,100%{opacity:1}50%{opacity:.55}}
 }
 
 /* ---------------- sections ---------------- */
@@ -318,3 +320,6 @@ td strong{color:var(--ombre)}
 .frise .nom{font-weight:650;color:var(--ombre)}
 .frise .det{font-size:.9rem;color:var(--mousse)}
 .frise .pas:last-child .nom{color:var(--or)}
+
+/* l'en-tête est collante : les ancres ne doivent pas passer dessous */
+[id]{scroll-margin-top:82px}

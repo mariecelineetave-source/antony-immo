@@ -12,6 +12,26 @@ Rien n'est codé tant que les décisions du § 12 ne sont pas tranchées.
 
 ---
 
+## 0. Décisions arbitrées par Marie-Céline — 13 août 2026
+
+| # | Question | Décision |
+|---|---|---|
+| 1 | Plafond de ventes primées par an | **Aucune limite** — voir § 9.2, la contrepartie |
+| 2 | Formulaire en ligne ou téléphone | **Formulaire** |
+| 3 | Prime intermédiaire au mandat | **Non.** 1 000 € à la vente, et rien avant |
+| 4 | Écart avec les 850 € étudiants | **Assumé** — ce n'est pas le même apport |
+| 5 | Position de BSK Immobilier | **Pas de position** — pas de blocage de ce côté |
+| 6 | Espace personnel | **Dès le lancement** (contre la recommandation initiale — voir § 10) |
+| 7 | Fenêtre d'attribution | **24 mois glissants** |
+| 8 | Deux gardiens sur le même bien | **Premier arrivé** |
+| 9 | Vente réalisée par un autre conseiller | **Prime due quand même** |
+| 10 | Nom du gardien communiqué au propriétaire | **Jamais sans son accord**, opportunité par opportunité |
+
+Ces décisions sont reportées dans les sections concernées. Ce qui reste ouvert
+est regroupé au § 12.
+
+---
+
 ## 1. Le précédent qui change la conception : etudiants.idf.immo
 
 Avant toute chose : ce projet n'est pas un terrain vierge. `etudiants.idf.immo`
@@ -368,26 +388,29 @@ de prise de rendez-vous de visite, pas d'outil de suivi de négociation. La form
 
 ### 9.2 Non réglé, et structurant : le caractère occasionnel
 
-Chez les étudiants, le plafond de **3 ventes primées par an** existe pour préserver
-le caractère *occasionnel* de l'activité — au-delà, l'apport d'affaires régulier
-pose la question de la carte professionnelle.
+**Décision : aucun plafond.** Le nombre de ventes primées par gardien et par an
+n'est pas limité.
 
-**Or la promesse de gardiens.idf.immo est exactement l'inverse : un gardien bien
-placé dans une résidence de 200 lots peut faire remonter plusieurs opportunités par
-an, et c'est le but recherché.** Plus le réseau fonctionne, plus l'argument du
-caractère occasionnel s'affaiblit. C'est la tension de fond du projet.
+Chez les étudiants, un plafond de 3 ventes par an existe pour préserver le
+caractère *occasionnel* de l'activité. Ici, la promesse est l'inverse : un gardien
+bien placé peut faire remonter plusieurs opportunités par an, et c'est le but.
 
-Trois pistes, à arbitrer avec un juriste :
+**La contrepartie de cette décision est une obligation d'information, pas une
+limite.** Elle doit être tenue dans trois endroits :
 
-1. **Reprendre le plafond de 3 ventes primées par an et par gardien.** Cohérent
-   avec la famille, prudent, mais bride le modèle et devra être dit sur le site.
-2. **Plafond plus élevé assumé**, avec un point d'information clair : au-delà d'un
-   certain niveau de revenus, le gardien doit déclarer une activité indépendante.
-3. **Deux régimes** : occasionnel par défaut, et un statut « gardien partenaire »
-   pour les plus actifs, qui facturent en auto-entrepreneur.
+1. **Sur le site** (`/la-prime`), en clair et sans dramatiser : les primes sont un
+   revenu imposable à déclarer (BNC non professionnels, formulaire 2042-C-PRO) ;
+   au-delà d'un rythme régulier, le gardien relève d'une activité indépendante à
+   déclarer, et il lui appartient de s'en assurer.
+2. **Dans la convention** : l'article 2 du modèle étudiants fonde le caractère
+   occasionnel sur le plafond de 3. Ce plafond disparaissant, **cet article doit
+   être réécrit** — c'est le point précis à soumettre au juriste.
+3. **Dans le suivi** : le back-office doit afficher le cumul annuel versé à chaque
+   gardien, pour que la question puisse être posée au bon moment plutôt que
+   découverte après coup.
 
-**Ce point doit être tranché avant l'écriture des textes du site** : il change la
-promesse affichée. Ne rien inventer en attendant — c'est la règle de la famille.
+Rien de tout cela ne bride le modèle. Mais ne pas traiter le sujet le fragiliserait
+davantage qu'un plafond ne l'aurait bridé.
 
 ### 9.3 RGPD
 
@@ -434,6 +457,25 @@ Toute la famille `.immo` est faite de sites statiques (un `index.html`, GitHub
 Pages, aucun stockage). Le brief demande comptes, statuts et primes : **cela exige
 une base de données et un backend.** Deux natures de projet à ne pas mélanger dans
 une même livraison.
+
+> **Arbitrage du 13 août 2026 : l'espace personnel est livré dès le lancement.**
+> Les étapes 1 à 3 ci-dessous fusionnent donc en une seule mise en ligne, de
+> l'ordre de 5 à 6 semaines. Le raisonnement qui justifie ce choix : ce qui
+> déclenche le *deuxième* partage d'un gardien, c'est de voir le premier avancer
+> et de voir un montant s'afficher. Dans ce modèle, l'espace personnel n'est pas
+> un confort, c'est le moteur de rétention — donc c'est le produit.
+>
+> **La conséquence à ne pas sous-estimer : le back-office part en même temps.** Un
+> statut n'existe que si quelqu'un le fait avancer. Un espace personnel qui
+> affiche « Reçue » pendant six mois est pire que pas d'espace du tout — il
+> transforme une promesse en preuve d'abandon. Le back-office doit donc être
+> volontairement minimal : une liste, un statut qui se change d'un geste, la
+> notification qui part toute seule.
+>
+> **Étape 0, livrable immédiat :** le site public complet, en statique, avec le
+> formulaire fonctionnel transmis par `mailto:` — comme le reste de la famille.
+> Il permet de commencer à distribuer les QR codes et à recueillir de vraies
+> opportunités pendant que la partie applicative se construit.
 
 ### Étape 1 — Le site et la collecte (1 à 2 semaines)
 

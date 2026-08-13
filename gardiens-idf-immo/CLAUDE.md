@@ -13,7 +13,11 @@ mélanger les contenus, ne jamais modifier un autre dépôt depuis celui-ci.**
 Le **site public** est écrit et fonctionnel en statique. L'**espace personnel**
 (comptes, statuts, primes) et le **back-office** sont décidés mais restent à
 construire : ils exigent une base de données, ce que GitHub Pages ne fait pas.
-Voir `ARCHITECTURE.md`, qui est le document de référence du produit.
+
+Le document de référence du produit — parcours, mécanisme d'attribution des
+primes, cadre juridique, phasage — est **tenu hors du dépôt** à la demande de
+Marie-Céline : ce dépôt est public et ce document contient des arbitrages
+internes. Le demander avant toute évolution structurante.
 
 En attendant, le formulaire de `partager.html` compose un message `mailto:` vers
 `contact@idf.immo` — comme le reste de la famille, rien n'est stocké côté site.
@@ -37,7 +41,7 @@ le texte visible. La promesse se formule en positif.
 Ces valeurs sont écrites en dur dans les pages. **Ne jamais les modifier sans
 validation explicite de Marie-Céline** — et si l'une change, la changer partout :
 `index.html`, `la-prime.html`, `conditions-de-la-prime.html`, `vos-questions.html`,
-les 8 pages départementales et `ARCHITECTURE.md`.
+les 8 pages départementales, ainsi que le document de référence tenu hors dépôt.
 
 | Règle | Valeur |
 |---|---|
@@ -72,8 +76,6 @@ programme crédible.
 - `mentions-legales.html` — éditeur, hébergeur, RGPD.
 - `ile-de-france/*.html` — 8 pages départementales (SEO local).
 - `styles.css` — feuille commune. `site.js` — barre d'action mobile.
-- `ARCHITECTURE.md` — le document produit : parcours, attribution des primes,
-  cadre juridique, phasage, décisions arbitrées.
 - `CNAME`, `robots.txt`, `sitemap.xml`.
 
 ## Palette

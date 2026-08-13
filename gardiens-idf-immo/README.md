@@ -23,8 +23,9 @@ L'**espace personnel** du gardien (mes opportunités, statuts, primes) et le
 **back-office** qui les fait avancer. Ils sont décidés et spécifiés, mais exigent
 une base de données : GitHub Pages ne suffit pas.
 
-Voir **`ARCHITECTURE.md`** — parcours, mécanisme d'attribution des primes, cadre
-juridique, phasage, décisions arbitrées. C'est le document de référence.
+Le document de référence du produit — parcours, mécanisme d'attribution des
+primes, cadre juridique, phasage — est tenu hors du dépôt : celui-ci est public,
+et ce document contient des arbitrages internes.
 
 ## Mise en ligne
 

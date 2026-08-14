@@ -7,6 +7,54 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-08-14
+
+Rien de nouveau par rapport à la veille du 13 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP à 775 000 €, maison
+155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €, maison 9
+pièces 422 m² aux enchères en ligne près du parc Heller à 1 300 000 €,
+appartement 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les lots
+aux enchères notariales 36h-immo déjà signalés dont AI19530 et AI21793).
+
+Les recherches par quartier (Croix-de-Berny, Pajeaud/Fontaine-Michalon,
+Les Baconnets, centre-ville) et sur les communes limitrophes
+(Bourg-la-Reine, Sceaux, Fresnes, Verrières-le-Buisson, L'Haÿ-les-Roses,
+Massy) ne remontent que des pages d'agrégateurs (SeLoger, PAP, leboncoin,
+ParuVendu, Logic-Immo, entreparticuliers, Bien'ici, Orpi), sans annonce
+individuelle nouvelle et identifiable avec certitude. Aucun nouveau
+signal de succession, de permis de construire ou de projet urbain
+distinct de ceux déjà connus (Antonypole / ligne 18).
+
+---
+
+## 2026-08-13
+
+Rien de nouveau par rapport à la veille du 12 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP à 775 000 €, maison
+155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €, maison 9
+pièces 422 m² aux enchères en ligne près du parc Heller à 1 300 000 €,
+appartement 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les lots
+aux enchères notariales 36h-immo déjà signalés dont AI19530 et AI21793).
+
+Deux annonces PAP sont apparues dans les résultats de recherche sans lien
+individuel ni prix récupérables (uniquement des pages de catégorie
+g43266) : un appartement traversant de 69 m² dans une petite rue calme
+près de la mairie, à 300 m du RER B Antony-Centre ; un appartement au 4ᵉ
+et dernier étage d'une copropriété récente, avec terrasse et balcon.
+Non retenues comme pistes confirmées à ce stade — à vérifier
+manuellement sur pap.fr.
+
+Les recherches par quartier (Croix-de-Berny, Pajeaud/Fontaine-Michalon,
+Les Baconnets, centre-ville) et sur les communes limitrophes
+(Bourg-la-Reine, Sceaux, Fresnes, Verrières-le-Buisson, L'Haÿ-les-Roses,
+Massy) ne remontent que des pages d'agrégateurs (SeLoger, PAP, leboncoin,
+ParuVendu, Logic-Immo, entreparticuliers, Belles Demeures), sans annonce
+individuelle nouvelle et identifiable avec certitude. Aucun nouveau
+signal de succession, de permis de construire ou de projet urbain
+distinct de ceux déjà connus.
+
+---
+
 ## 2026-08-12
 
 Rien de nouveau par rapport à la veille du 11 août : les mêmes pistes

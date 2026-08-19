@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /base/
+
+Sitemap: https://nounous.idf.immo/sitemap.xml

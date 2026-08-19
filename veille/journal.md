@@ -7,6 +7,52 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-08-19
+
+Rien de nouveau par rapport à la veille du 15 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP à 775 000 €, maison
+155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €, maison 9
+pièces 422 m² aux enchères en ligne près du parc Heller à 1 300 000 €,
+appartement 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les lots
+aux enchères notariales 36h-immo déjà signalés dont AI19530 et AI21793).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (SeLoger, PAP, ParuVendu, leboncoin, entreparticuliers,
+Foncia, Fnaim), sans annonce individuelle nouvelle et identifiable avec
+certitude. Aucun nouveau signal de succession, d'enchère, de permis de
+construire ou de projet urbain distinct de ceux déjà connus (Antonypole /
+ligne 18).
+
+---
+
+## 2026-08-15
+
+Rien de nouveau par rapport à la veille du 14 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP à 775 000 €, maison
+155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €, maison 9
+pièces 422 m² aux enchères en ligne près du parc Heller à 1 300 000 €,
+appartement 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les lots
+aux enchères notariales 36h-immo déjà signalés dont AI19530 et AI21793).
+
+Les recherches sur les communes limitrophes ont fait remonter des
+descriptions générales sans lien individuel vers une annonce précise
+(une meulière familiale à Bourg-la-Reine / limite Sceaux, un bien 5
+pièces à 469 000 € quartier du Petit-Chambord à Bourg-la-Reine, une
+maison 8/9 pièces 206 m² à Fresnes ou Verrières-le-Buisson) : non
+retenues comme pistes exploitables en l'état, à vérifier manuellement.
+
+Les recherches par quartier (Croix-de-Berny, Pajeaud/Fontaine-Michalon,
+Les Baconnets, centre-ville) ne remontent que des pages d'agrégateurs
+(SeLoger, PAP, leboncoin, ParuVendu, entreparticuliers, Bien'ici), sans
+annonce individuelle nouvelle et identifiable avec certitude. Aucun
+nouveau signal de succession, de permis de construire ou de projet
+urbain distinct de ceux déjà connus (Antonypole / ligne 18).
+
+---
+
 ## 2026-08-14
 
 Rien de nouveau par rapport à la veille du 13 août : les mêmes pistes

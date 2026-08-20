@@ -37,7 +37,7 @@
         "Três ecrãs, menos de um minuto. Pode parar e retomar mais tarde: o que escreve fica no seu telemóvel.",
 
       "Où se trouve le bien ?": "Onde fica o imóvel?",
-      "L'adresse suffit. Si vous connaissez le bâtiment ou l'étage, c'est encore mieux — cela évite les confusions dans une grande résidence.":
+      "L'adresse suffit. Si vous connaissez le bâtiment ou l'étage, c'est encore mieux — cela évite les confusions dans un grand immeuble.":
         "A morada basta. Se souber o bloco ou o andar, ainda melhor — evita confusões num prédio grande.",
       "Adresse du bien": "Morada do imóvel",
       "Commencez à taper, puis choisissez dans la liste.": "Comece a escrever e escolha na lista.",
@@ -176,7 +176,7 @@
         "Three screens, under a minute. You can stop and come back later: what you type stays on your phone.",
 
       "Où se trouve le bien ?": "Where is the property?",
-      "L'adresse suffit. Si vous connaissez le bâtiment ou l'étage, c'est encore mieux — cela évite les confusions dans une grande résidence.":
+      "L'adresse suffit. Si vous connaissez le bâtiment ou l'étage, c'est encore mieux — cela évite les confusions dans un grand immeuble.":
         "The address is enough. If you know the block or the floor, better still — it avoids mix-ups in a large building.",
       "Adresse du bien": "Address of the property",
       "Commencez à taper, puis choisissez dans la liste.": "Start typing, then pick from the list.",

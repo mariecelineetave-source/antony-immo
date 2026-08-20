@@ -112,8 +112,7 @@
         "6. Montante e facto gerador",
       "La prime est de":
         "O prémio é de",
-      "1 000 € nets, forfaitaires":
-        "1 000 € líquidos, fixos",
+      "1 000 € toutes taxes comprises, forfaitaires": "1 000 € com todos os impostos incluídos, fixos",
       ", indépendants du prix du bien et des honoraires perçus.":
         ", independentes do preço do imóvel e dos honorários recebidos.",
       "Elle est due à la":
@@ -138,8 +137,8 @@
         "O participante registado (SIREN) emite para o efeito uma",
       "facture d'apport d'affaires":
         "fatura de angariação de negócio",
-      "; le participant qui n'exerce aucune activité indépendante reçoit la prime sans facture. Le montant et le délai sont identiques dans les deux cas.":
-        "; o participante que não exerce qualquer atividade independente recebe o prémio sem fatura. O valor e o prazo são idênticos nos dois casos.",
+      "; le participant qui n'exerce aucune activité indépendante reçoit la prime sans facture. Le montant et le délai sont identiques dans les deux cas, la facture étant établie pour 1 000 € toutes taxes comprises, la taxe sur la valeur ajoutée étant, le cas échéant, comprise dans ce montant.":
+        "; o participante que não exerce qualquer atividade independente recebe o prémio sem fatura. O valor e o prazo são idênticos nos dois casos, sendo a fatura emitida por 1 000 € com todos os impostos incluídos, estando o imposto sobre o valor acrescentado, se aplicável, incluído nesse valor.",
       "8. Cas dans lesquels aucune prime n'est due":
         "8. Casos em que nenhum prémio é devido",
       "La personne concernée était déjà en relation d'affaires avec Marie-Céline Etave, ou avait déjà signé un mandat avec elle, antérieurement au partage.":
@@ -266,8 +265,7 @@
         "6. Amount and triggering event",
       "La prime est de":
         "The bonus is",
-      "1 000 € nets, forfaitaires":
-        "€1,000 net, flat rate",
+      "1 000 € toutes taxes comprises, forfaitaires": "€1,000 including all taxes, a flat amount",
       ", indépendants du prix du bien et des honoraires perçus.":
         ", independent of the price of the property and of the fees received.",
       "Elle est due à la":
@@ -292,8 +290,8 @@
         "A participant registered as a business (SIREN) issues for this purpose an",
       "facture d'apport d'affaires":
         "introducer's invoice",
-      "; le participant qui n'exerce aucune activité indépendante reçoit la prime sans facture. Le montant et le délai sont identiques dans les deux cas.":
-        "; a participant with no self-employed activity receives the bonus without an invoice. The amount and the deadline are identical in both cases.",
+      "; le participant qui n'exerce aucune activité indépendante reçoit la prime sans facture. Le montant et le délai sont identiques dans les deux cas, la facture étant établie pour 1 000 € toutes taxes comprises, la taxe sur la valeur ajoutée étant, le cas échéant, comprise dans ce montant.":
+        "; a participant with no self-employed activity receives the bonus without an invoice. The amount and the deadline are identical in both cases, the invoice being issued for €1,000 including all taxes, value added tax being included in that amount where applicable.",
       "8. Cas dans lesquels aucune prime n'est due":
         "8. Cases in which no bonus is due",
       "La personne concernée était déjà en relation d'affaires avec Marie-Céline Etave, ou avait déjà signé un mandat avec elle, antérieurement au partage.":

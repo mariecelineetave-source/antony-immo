@@ -345,7 +345,7 @@
       (v.cite ? " (autorizou-nos a dizer o seu nome)." : " (não diremos o seu nome).") + "\n" +
       (v.numeroDonne ? "   (deu-lhe o meu número: se for ele a telefonar, a sua partilha continua registada e o prémio é seu)\n" : "") +
       "3. Vai sendo informado por e-mail em cada etapa.\n" +
-      "4. Se a venda se concretizar, recebe 1 000 € líquidos, nos 15 dias seguintes à escritura.\n" +
+      "4. Se a venda se concretizar, recebe 1 000 € com IVA incluído, nos 15 dias seguintes à escritura.\n" +
       "   (se trabalha com um número SIREN, o prémio passa por uma fatura de angariação de negócio: lembrá-lo-emos na altura)\n\n" +
       "Guarde esta mensagem: é a sua prova de anterioridade se alguém partilhar o mesmo imóvel depois de si.\n\n" +
       "Alguma dúvida? 06 60 98 92 92 ou contact@idf.immo\n(o atendimento é em francês)\n\n" +
@@ -359,7 +359,7 @@
       (v.cite ? " (you allowed us to name you)." : " (we will not say your name).") + "\n" +
       (v.numeroDonne ? "   (you gave them my number: if they call me themselves, your share stays registered and the bonus is yours)\n" : "") +
       "3. You'll be kept posted by email at every stage.\n" +
-      "4. If the sale completes, you receive €1,000 net, within 15 days of the signing.\n" +
+      "4. If the sale completes, you receive €1,000 including VAT, within 15 days of the signing.\n" +
       "   (if you trade under a SIREN business number, the bonus is paid against an introducer\'s invoice: we will remind you when the time comes)\n\n" +
       "Keep this message: it is your proof of priority if someone shares the same property after you.\n\n" +
       "Any questions? 06 60 98 92 92 or contact@idf.immo\n(we answer in French)\n\n" +

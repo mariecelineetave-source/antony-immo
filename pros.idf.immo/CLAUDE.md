@@ -81,7 +81,7 @@ et les dictionnaires correspondants.
 
 | Règle | Valeur |
 |---|---|
-| Montant de la prime | **1 000 € nets forfaitaires**, par vente |
+| Montant de la prime | **1 000 € TTC forfaitaires**, par vente — TVA comprise pour qui facture (arbitré le 20 août 2026) |
 | Fait générateur | **Signature de l'acte authentique** — jamais le compromis ni le mandat |
 | Prime intermédiaire au mandat | **Aucune** |
 | Plafond annuel | **Aucun** (contrepartie : l'information fiscale, voir plus bas) |
@@ -96,7 +96,8 @@ et les dictionnaires correspondants.
 
 **Le plafond ayant été supprimé, l'information fiscale n'est pas optionnelle.**
 Elle doit rester visible sur `la-prime.html` et `vos-questions.html`, dans ses
-deux cas : recette professionnelle pour qui facture ; bénéfices non commerciaux
+deux cas : recette professionnelle pour qui facture, TVA comprise dans les
+1 000 € ; bénéfices non commerciaux
 non professionnels et formulaire 2042-C-PRO pour qui n'a pas d'activité
 indépendante. Ne pas la supprimer pour rendre le discours plus vendeur — c'est
 ce qui rend le programme crédible.
@@ -214,9 +215,6 @@ d'images.
 Volontairement absents du site tant qu'ils ne sont pas tranchés — ne rien
 inventer en attendant.
 
-- **La prime de 1 000 € est-elle HT ou TTC pour un participant assujetti à la
-  TVA ?** Le site dit « 1 000 € nets » et renvoie le participant à son comptable
-  pour la TVA, sans trancher : c'est une décision commerciale, pas technique.
 - **Relecture juridique de la convention d'indicateur d'affaires transposée.**
   Le modèle de gardiens.idf.immo est réutilisable, mais deux points changent :
   le participant est le plus souvent une **entreprise** (facture, TVA), et la

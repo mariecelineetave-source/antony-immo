@@ -6,7 +6,7 @@ Le réseau des commerçants, artisans et professionnels de proximité d'Île-de-
 > passer leur quartier toute la journée. Quand un client envisage de vendre, ils
 > partagent l'opportunité. Ils ne vendent rien, ne font pas visiter, ne donnent
 > aucun prix — ils transmettent une information.
-> **Si la vente se réalise, ils reçoivent 1 000 €.**
+> **Si la vente se réalise, ils reçoivent 1 000 € TTC.**
 
 Site jumeau de [gardiens.idf.immo](https://gardiens.idf.immo) : même mécanique,
 même prime, mêmes règles ; seuls les textes changent, parce que le métier change.
@@ -31,9 +31,7 @@ les liens d'appel fonctionnent sans JavaScript.
 2. **Vérifier l'activation FormSubmit** pour `contact@idf.immo` : sans elle, le
    formulaire n'envoie rien. Elle a déjà été faite pour gardiens.idf.immo ; à
    confirmer depuis ce site avec un envoi de test.
-3. **Trancher la question de la TVA et du HT/TTC** pour les participants qui
-   facturent (voir `CLAUDE.md`, « Points à confirmer »).
-4. **L'espace personnel** (`mon-espace.html`) attend un projet Supabase propre à
+3. **L'espace personnel** (`mon-espace.html`) attend un projet Supabase propre à
    `pros.idf.immo`. Tant que `base/config.js` est vide, la page l'annonce
    franchement au visiteur au lieu de tomber en panne.
 

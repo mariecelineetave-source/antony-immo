@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mon espace — pros.idf.immo</title>
+<meta name="description" content="Retrouvez vos opportunités partagées, leur avancement et vos primes.">
+<link rel="canonical" href="https://pros.idf.immo/mon-espace.html">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#0E2E52">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ---------- connexion ---------- */
+  .connexion{max-width:460px;margin:0 auto;padding:44px 0 64px}
+  .connexion h1{color:var(--ombre);font-size:clamp(1.7rem,4.4vw,2.4rem);margin-bottom:10px}
+  .connexion .aide{color:var(--mousse);margin-bottom:28px}
+  .connexion label{display:block;font-weight:650;color:var(--ombre);margin-bottom:7px}
+  .connexion input{
+    width:100%;font-family:inherit;font-size:1.05rem;color:var(--encre);
+    background:var(--craie);border:1.5px solid var(--ligne);border-radius:10px;
+    padding:14px 16px;min-height:52px;margin-bottom:14px;
+  }
+  .connexion input:focus{border-color:var(--azur);outline:none;box-shadow:0 0 0 3px rgba(30,136,229,.18)}
+  .connexion .bouton{width:100%}
+  .message{margin-top:18px;padding:15px 17px;border-radius:11px;font-size:.95rem;display:none}
+  .message.on{display:block}
+  .message.ok{background:#E8F5EC;border:1px solid #A8D8BB;color:#20502F}
+  .message.ko{background:#FBF4E8;border:1px solid var(--or-clair);color:#6B4F26}
+
+  /* ---------- tableau de bord ---------- */
+  .accueil-perso{background:var(--ombre);color:#fff;padding:32px 0 28px}
+  .accueil-perso h1{color:#fff;font-size:clamp(1.5rem,4.2vw,2.1rem);margin-bottom:6px}
+  .accueil-perso p{color:#C9DDF2;font-size:.95rem}
+  .compteurs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+  .compteur{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:14px 12px}
+  .compteur .val{font-family:"Fraunces",Georgia,serif;font-size:1.6rem;line-height:1.1;color:#fff;font-variant-numeric:tabular-nums}
+  .compteur .lib{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#9FBBD6;margin-top:5px;display:block}
+  .compteur.or .val{color:var(--or-clair)}
+  .compteur.or{border-color:rgba(201,161,103,.45);background:rgba(201,161,103,.1)}
+
+  .oppo{background:var(--craie);border:1px solid var(--ligne);border-radius:12px;
+        padding:18px 20px;margin-bottom:12px;box-shadow:var(--ombre-carte)}
+  .oppo .haut{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+  .oppo .ref{font-family:"Fraunces",Georgia,serif;font-size:1.02rem;color:var(--ombre)}
+  .oppo .lieu{font-weight:600;color:var(--encre);margin-top:6px}
+  .oppo .meta{font-size:.85rem;color:var(--mousse);margin-top:4px}
+  .oppo .motif{font-size:.9rem;color:var(--mousse);margin-top:10px;border-top:1px solid var(--ligne-fine);padding-top:10px}
+
+  .etat{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;font-size:.8rem;font-weight:600;white-space:nowrap}
+  .etat::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+  .etat.recue  {background:rgba(76,107,138,.12);color:#3C5A78}
+  .etat.encours{background:rgba(30,136,229,.13);color:var(--azur-fonce)}
+  .etat.mandat {background:rgba(28,90,158,.14); color:var(--buis)}
+  .etat.vendue {background:rgba(140,106,56,.13);color:var(--or)}
+  .etat.prime  {background:#FBF4E8;color:var(--or);border:1px solid var(--or-clair)}
+  .etat.close  {background:var(--parterre);color:var(--mousse)}
+
+  .jalons{list-style:none;margin:18px 0 0;padding:0;position:relative}
+  .jalons::before{content:"";position:absolute;left:9px;top:8px;bottom:18px;width:2px;background:var(--ligne)}
+  .jalons li{position:relative;padding:0 0 18px 34px}
+  .jalons li::before{content:"";position:absolute;left:2px;top:3px;width:16px;height:16px;border-radius:50%;
+                     background:var(--craie);border:2px solid var(--ligne)}
+  .jalons li.fait::before{background:var(--azur);border-color:var(--azur)}
+  .jalons li.prime::before{background:var(--or);border-color:var(--or)}
+  .jalons .quoi{font-weight:650;color:var(--ombre);font-size:.95rem}
+  .jalons .quand{font-size:.82rem;color:var(--mousse);margin-top:2px}
+  .jalons .mot{font-size:.89rem;color:var(--mousse);margin-top:5px;font-style:italic}
+
+  .prime-carte{background:linear-gradient(160deg,#FFFDF8,#FBF4E8);border:1px solid var(--or-clair);
+               border-radius:12px;padding:18px 20px;margin-bottom:12px}
+  .prime-carte .montant{font-family:"Fraunces",Georgia,serif;font-size:1.7rem;color:var(--or);line-height:1.1}
+  .prime-carte .quoi{font-size:.88rem;color:var(--mousse);margin-top:6px}
+
+  .fiscal{font-size:.87rem;color:var(--mousse);background:var(--parterre);border-radius:10px;padding:14px 16px;margin-top:18px}
+  .vide{text-align:center;padding:40px 20px;color:var(--mousse);background:var(--craie);
+        border:1px dashed var(--ligne);border-radius:12px}
+  .chargement{text-align:center;padding:50px 20px;color:var(--mousse)}
+  .deconnexion{background:none;border:0;color:var(--mousse);font-family:inherit;font-size:.9rem;
+               cursor:pointer;text-decoration:underline;padding:8px 0}
+</style>
+</head>
+<body>
+<a class="saut" href="#principal">Aller au contenu</a>
+
+<header class="entete">
+  <div class="conteneur">
+    <a class="logo" href="/">pros<span class="pt">.</span>idf<span class="pt">.</span>immo</a>
+    <nav class="nav-p" aria-label="Navigation principale">
+      <a href="comment-ca-marche.html">Comment ça marche</a>
+      <a href="la-prime.html">La prime</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="bouton bouton-1" href="partager.html">Partager une opportunité</a>
+  </div>
+  <div class="langues">
+    <div class="conteneur">
+      <a href="mon-espace.html" aria-current="page"><span class="drapeau">🇫🇷</span><span class="mot">Français</span></a>
+      <a href="mon-espace.html?lang=pt"><span class="drapeau">🇵🇹</span><span class="mot">Português</span></a>
+      <a href="mon-espace.html?lang=en"><span class="drapeau">🇬🇧</span><span class="mot">English</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="principal">
+
+  <!-- ================= NON CONNECTÉ ================= -->
+  <section id="ecran-connexion" hidden>
+    <div class="conteneur">
+      <div class="connexion">
+        <h1>Vos opportunités</h1>
+        <p class="aide">Indiquez l'adresse e-mail avec laquelle vous avez partagé. Nous vous envoyons un lien de connexion&nbsp;— il n'y a pas de mot de passe à retenir.</p>
+
+        <form id="form-connexion" novalidate>
+          <label for="email">Votre e-mail</label>
+          <input type="email" id="email" autocomplete="email" placeholder="sophie@exemple.fr" required>
+          <button class="bouton bouton-1" type="submit" id="envoyer">Recevoir mon lien de connexion</button>
+        </form>
+
+        <div class="message" id="message-connexion"></div>
+
+        <p class="note" style="margin-top:26px;font-size:.9rem;color:var(--mousse)">
+          Un souci pour vous connecter&nbsp;? Appelez le <a href="tel:+33660989292">06 60 98 92 92</a>
+          ou écrivez à <a href="mailto:contact@idf.immo">contact@idf.immo</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CHARGEMENT ================= -->
+  <section id="ecran-attente">
+    <div class="conteneur">
+      <p class="chargement">Un instant…</p>
+    </div>
+  </section>
+
+  <!-- ================= CONNECTÉ ================= -->
+  <section id="ecran-espace" hidden>
+    <div class="accueil-perso">
+      <div class="conteneur etroit">
+        <h1 id="salut">Bonjour</h1>
+        <p id="sous-salut"></p>
+        <div class="compteurs">
+          <div class="compteur"><span class="val" id="n-total">—</span><span class="lib">partagées</span></div>
+          <div class="compteur"><span class="val" id="n-cours">—</span><span class="lib">en cours</span></div>
+          <div class="compteur or"><span class="val" id="n-primes">—</span><span class="lib">reçus</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contenu">
+      <div class="conteneur etroit">
+        <h2 style="margin-top:0">Mes opportunités</h2>
+        <div id="liste"></div>
+
+        <div id="bloc-primes" hidden>
+          <h2>Mes primes</h2>
+          <div id="liste-primes"></div>
+          <div class="fiscal" id="fiscal"></div>
+        </div>
+
+        <p style="margin-top:34px;font-size:.9rem;color:var(--mousse)">
+          Une question sur l'une de ces opportunités&nbsp;?
+          <a href="tel:+33660989292">06 60 98 92 92</a> —
+          <a href="sms:+33660989292">SMS</a> —
+          <a href="mailto:contact@idf.immo">contact@idf.immo</a>
+        </p>
+        <button class="deconnexion" id="deconnexion">Me déconnecter</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="bas" style="margin-top:0;border-top:0;padding-top:0">
+      <span><a href="/">pros.idf.immo</a></span>
+      <span><a href="la-prime.html">La prime</a></span>
+      <span><a href="notre-engagement.html">Notre engagement</a></span>
+      <span><a href="mentions-legales.html">Mentions légales</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="dico-commun.js"></script>
+<script src="dico-mon-espace.js"></script>
+<script src="i18n.js"></script>
+<script src="base/config.js"></script>
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/+esm";
+
+/* Tant que le projet Supabase de pros.idf.immo n'est pas créé, la page le dit
+   au lieu de tomber en panne : voir base/config.js et base/installer.html. */
+if (!window.CONFIG_BASE || !window.CONFIG_BASE.url || !window.CONFIG_BASE.cle){
+  document.getElementById("ecran-attente").hidden = true;
+  const zone = document.getElementById("ecran-connexion");
+  zone.hidden = false;
+  zone.querySelector("#form-connexion").hidden = true;
+  const m = zone.querySelector("#message-connexion");
+  m.className = "message ok on";
+  const dis = window.T || ((x) => x);
+  m.innerHTML = dis("<strong>L'espace personnel n'est pas encore ouvert.</strong> " +
+    "En attendant, vous recevez le suivi de chaque opportunité par e-mail, et vous pouvez " +
+    "appeler le 06 60 98 92 92 à tout moment pour savoir où elle en est.");
+  throw new Error("base non configurée");
+}
+
+const base = createClient(window.CONFIG_BASE.url, window.CONFIG_BASE.cle);
+
+/* Le texte fabriqué ici est traduit comme celui de la page. */
+const T = window.T || ((s) => s);
+const LOCALE = window.LOCALE || "fr-FR";
+
+/* Les états, tels que le professionnel doit les lire. */
+const ETATS = {
+  recue:                [T("Reçue"),              "recue"],
+  qualifiee:            [T("Qualifiée"),          "encours"],
+  contact_en_cours:     [T("Contact en cours"),   "encours"],
+  projet_immobilier:    [T("Projet immobilier"),  "mandat"],
+  vente_realisee:       [T("Vente réalisée"),     "vendue"],
+  prime_versee:         [T("Prime versée"),       "prime"],
+  deja_partagee:        [T("Déjà partagée"),      "close"],
+  deja_en_portefeuille: [T("Déjà en portefeuille"),"close"],
+  hors_zone:            [T("Hors Île-de-France"), "close"],
+  sans_suite:           [T("Sans suite"),         "close"],
+  vendu_ailleurs:       [T("Vendu ailleurs"),     "close"]
+};
+const PARCOURS = ["recue","qualifiee","contact_en_cours","projet_immobilier","vente_realisee","prime_versee"];
+const EN_COURS = ["recue","qualifiee","contact_en_cours","projet_immobilier"];
+
+const $ = (id) => document.getElementById(id);
+const montre = (id) => { ["ecran-connexion","ecran-attente","ecran-espace"].forEach(e => $(e).hidden = (e !== id)); };
+
+function date(v, avecHeure){
+  if (!v) return "";
+  const o = { day:"numeric", month:"long", year:"numeric" };
+  if (avecHeure){ o.hour = "2-digit"; o.minute = "2-digit"; }
+  return new Date(v).toLocaleDateString(LOCALE, o);
+}
+function texte(el, t){ el.textContent = t; return el; }
+
+/* ---------------- connexion ---------------- */
+$("form-connexion").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = $("email").value.trim();
+  const msg = $("message-connexion");
+  const bouton = $("envoyer");
+  if (!email || email.indexOf("@") < 1){
+    msg.className = "message ko on";
+    msg.textContent = T("Indiquez une adresse e-mail valide.");
+    return;
+  }
+  bouton.disabled = true;
+  bouton.textContent = T("Envoi en cours…");
+  const { error } = await base.auth.signInWithOtp({
+    email,
+    options: { emailRedirectTo: window.location.origin + "/mon-espace.html" }
+  });
+  bouton.disabled = false;
+  bouton.textContent = T("Recevoir mon lien de connexion");
+  if (error){
+    msg.className = "message ko on";
+    msg.textContent = T("L'envoi n'a pas fonctionné. Réessayez dans un instant, ou appelez le 06 60 98 92 92.");
+    return;
+  }
+  msg.className = "message ok on";
+  msg.innerHTML = T("<strong>C'est envoyé.</strong> Ouvrez le message reçu à <strong>{email}</strong> " +
+                    "et cliquez sur le lien qu'il contient. S'il n'arrive pas, regardez dans les indésirables.")
+                  .replace("{email}", email.replace(/[<>&]/g, ""));
+});
+
+$("deconnexion").addEventListener("click", async () => {
+  await base.auth.signOut();
+  window.location.href = "mon-espace.html";
+});
+
+/* ---------------- l'espace ---------------- */
+async function ouvrir(session){
+  const utilisateur = session.user;
+
+  // La fiche du professionnel est créée au premier passage, jamais avant.
+  let { data: fiche } = await base.from("pros").select("*").eq("id", utilisateur.id).maybeSingle();
+  if (!fiche){
+    const prenom = (utilisateur.email || "").split("@")[0];
+    const { data } = await base.from("pros")
+      .insert({ id: utilisateur.id, email: utilisateur.email, prenom })
+      .select().maybeSingle();
+    fiche = data || { prenom, email: utilisateur.email };
+  }
+
+  texte($("salut"), T("Bonjour") + " " + (fiche.prenom || ""));
+  texte($("sous-salut"), [fiche.enseigne, fiche.metier, fiche.commune].filter(Boolean).join(" · ") || fiche.email);
+
+  const [{ data: opportunites }, { data: primes }] = await Promise.all([
+    base.from("opportunites").select("*").order("partagee_le", { ascending: false }),
+    base.from("primes").select("*").order("cree_le", { ascending: false })
+  ]);
+
+  const opps = opportunites || [];
+  const prs  = primes || [];
+  const versees = prs.filter(p => p.statut === "versee");
+  const total = versees.reduce((s, p) => s + (p.montant_euros || 0), 0);
+
+  texte($("n-total"), String(opps.length));
+  texte($("n-cours"), String(opps.filter(o => EN_COURS.includes(o.statut)).length));
+  texte($("n-primes"), total.toLocaleString(LOCALE) + " €");
+
+  // --- les opportunités ---
+  const liste = $("liste");
+  liste.innerHTML = "";
+  if (!opps.length){
+    const v = document.createElement("div");
+    v.className = "vide";
+    v.innerHTML = "<p>" + T("Vous n'avez pas encore partagé d'opportunité.") + "</p>" +
+                  '<p style="margin-top:14px"><a class="bouton bouton-1" href="partager.html">' +
+                  T("Partager une opportunité") + "</a></p>";
+    liste.appendChild(v);
+  } else {
+    for (const o of opps) liste.appendChild(await carte(o));
+  }
+
+  // --- les primes ---
+  if (prs.length){
+    $("bloc-primes").hidden = false;
+    const lp = $("liste-primes");
+    lp.innerHTML = "";
+    for (const p of prs){
+      const d = document.createElement("div");
+      if (p.statut === "versee"){
+        d.className = "prime-carte";
+        d.innerHTML = '<div class="montant"></div><div class="quoi"></div>';
+        texte(d.querySelector(".montant"), p.montant_euros.toLocaleString(LOCALE) + " €");
+        texte(d.querySelector(".quoi"), T("Versée le") + " " + date(p.versee_le));
+      } else {
+        d.className = "oppo";
+        d.innerHTML = '<div class="haut"><div><div class="ref"></div><div class="meta"></div></div>' +
+                      '<span class="etat close"></span></div>';
+        texte(d.querySelector(".etat"), T("En attente"));
+        texte(d.querySelector(".ref"), p.montant_euros.toLocaleString(LOCALE) + " €");
+        texte(d.querySelector(".meta"), T(p.statut === "a_verser" ? "À verser" : "À venir si la vente se réalise"));
+      }
+      lp.appendChild(d);
+    }
+    const annee = new Date().getFullYear();
+    const cumul = versees.filter(p => p.versee_le && new Date(p.versee_le).getFullYear() === annee)
+                         .reduce((s, p) => s + p.montant_euros, 0);
+    $("fiscal").innerHTML =
+      T("<strong>Cumul versé en {annee} : {cumul} €.</strong> À déclarer sur votre feuille d'impôts " +
+        "(formulaire 2042-C-PRO, bénéfices non commerciaux non professionnels). Nous tenons ce compte à jour " +
+        "pour que la question ne vous tombe pas dessus en fin d'année.")
+       .replace("{annee}", annee).replace("{cumul}", cumul.toLocaleString(LOCALE)) +
+      ' <a href="la-prime.html">' + T("En savoir plus") + "</a>";
+  }
+
+  montre("ecran-espace");
+}
+
+async function carte(o){
+  const d = document.createElement("div");
+  d.className = "oppo";
+  const [libelle, classe] = ETATS[o.statut] || [o.statut, "close"];
+
+  const haut = document.createElement("div");
+  haut.className = "haut";
+  const g = document.createElement("div");
+  g.appendChild(texte(document.createElement("div"), o.reference)).className = "ref";
+  const lieu = texte(document.createElement("div"), o.adresse_saisie); lieu.className = "lieu";
+  const meta = texte(document.createElement("div"),
+    [o.type_bien, [o.batiment, o.escalier, o.etage].filter(Boolean).join(" · "),
+     T("partagée le") + " " + date(o.partagee_le)].filter(Boolean).join(" · "));
+  meta.className = "meta";
+  g.appendChild(lieu); g.appendChild(meta);
+  const chip = texte(document.createElement("span"), libelle);
+  chip.className = "etat " + classe;
+  haut.appendChild(g); haut.appendChild(chip);
+  d.appendChild(haut);
+
+  // La frise, seulement pour les opportunités encore vivantes.
+  if (PARCOURS.includes(o.statut)){
+    const { data: evenements } = await base.from("evenements")
+      .select("*").eq("opportunite_id", o.id).order("cree_le", { ascending: true });
+    const atteint = PARCOURS.indexOf(o.statut);
+    const ul = document.createElement("ul");
+    ul.className = "jalons";
+    PARCOURS.forEach((etape, i) => {
+      const li = document.createElement("li");
+      if (i <= atteint) li.className = (etape === "prime_versee" ? "prime" : "fait");
+      const ev = (evenements || []).find(e => e.statut === etape);
+      const quoi = texte(document.createElement("div"), ETATS[etape][0]); quoi.className = "quoi";
+      const quand = texte(document.createElement("div"),
+        ev ? date(ev.cree_le, true) : (i <= atteint ? "" : T("à venir"))); quand.className = "quand";
+      li.appendChild(quoi); li.appendChild(quand);
+      if (ev && ev.message){
+        const mot = texte(document.createElement("div"), "« " + ev.message + " »"); mot.className = "mot";
+        li.appendChild(mot);
+      }
+      ul.appendChild(li);
+    });
+    d.appendChild(ul);
+  } else if (o.motif){
+    const m = texte(document.createElement("div"), T("Motif :") + " " + o.motif);
+    m.className = "motif";
+    d.appendChild(m);
+  }
+
+  if (o.expire_le){
+    const e = texte(document.createElement("div"), T("Enregistrée jusqu'au") + " " + date(o.expire_le) + ".");
+    e.className = "meta"; e.style.marginTop = "12px";
+    d.appendChild(e);
+  }
+  return d;
+}
+
+/* ---------------- au chargement ---------------- */
+base.auth.onAuthStateChange((_, session) => {
+  if (session) ouvrir(session).catch(rate);
+});
+
+(async () => {
+  const { data: { session } } = await base.auth.getSession();
+  if (session) { ouvrir(session).catch(rate); }
+  else { montre("ecran-connexion"); }
+})();
+
+function rate(e){
+  console.error(e);
+  montre("ecran-connexion");
+  const msg = $("message-connexion");
+  msg.className = "message ko on";
+  msg.textContent = T("Vos opportunités n'ont pas pu être chargées. Réessayez, ou appelez le 06 60 98 92 92.");
+}
+</script>
+</body>
+</html>

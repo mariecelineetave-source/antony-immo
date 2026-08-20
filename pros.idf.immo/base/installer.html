@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installer la base — pros.idf.immo</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0E2E52">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .bandeau{background:#6B4F26;color:#FBF4E8;padding:11px 0;font-size:.86rem;text-align:center}
+  .bandeau strong{color:#fff}
+
+  .gros-bouton{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    width:100%;min-height:72px;padding:20px 24px;margin:8px 0 4px;
+    font-family:inherit;font-size:1.15rem;font-weight:700;cursor:pointer;
+    background:var(--azur);color:#fff;border:0;border-radius:14px;
+    box-shadow:0 8px 24px -10px rgba(30,136,229,.8);
+    transition:background .15s ease, transform .12s ease;
+  }
+  .gros-bouton:hover{background:var(--azur-fonce)}
+  .gros-bouton:active{transform:scale(.99)}
+  .gros-bouton.fait{background:#1B7A4B;box-shadow:none}
+  .gros-bouton[disabled]{background:var(--mousse);cursor:default;box-shadow:none}
+
+  .etat-copie{font-size:.9rem;color:var(--mousse);margin:0 0 26px;text-align:center;min-height:1.4em}
+  .etat-copie.ok{color:#1B7A4B;font-weight:600}
+  .etat-copie.ko{color:#A32A2A;font-weight:600}
+
+  .etapes{counter-reset:e;list-style:none;padding:0;margin:22px 0;display:flex;flex-direction:column;gap:0}
+  .etapes li{
+    counter-increment:e;position:relative;padding:16px 0 16px 52px;
+    border-bottom:1px solid var(--ligne-fine);
+  }
+  .etapes li:last-child{border-bottom:0}
+  .etapes li::before{
+    content:counter(e);position:absolute;left:0;top:14px;
+    width:34px;height:34px;border-radius:50%;
+    background:var(--ombre);color:#fff;
+    display:grid;place-items:center;font-weight:700;font-size:.95rem;
+  }
+  .etapes strong{color:var(--ombre)}
+  .etapes .quoi{font-size:.9rem;color:var(--mousse);margin-top:5px}
+
+  .attendu{
+    background:#E8F5EC;border:1px solid #A8D8BB;border-left:4px solid #1B7A4B;
+    border-radius:12px;padding:18px 20px;margin:26px 0;
+  }
+  .attendu .etiq{display:block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1B7A4B;margin-bottom:8px}
+  .attendu p{color:#20502F;margin-bottom:0}
+  .attendu code{background:#fff;border:1px solid #A8D8BB;color:#1B7A4B;padding:2px 8px;border-radius:5px;font-size:.92em}
+
+  .secours{
+    background:var(--parterre);border-radius:12px;padding:18px 20px;margin:26px 0;font-size:.94rem;
+  }
+  .secours p:last-child{margin-bottom:0}
+
+  pre.script{
+    background:var(--ombre);color:#C9DDF2;border-radius:12px;
+    padding:16px;overflow:auto;max-height:260px;
+    font-size:.75rem;line-height:1.5;margin:0 0 22px;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  details.voir summary{
+    cursor:pointer;font-size:.9rem;font-weight:600;color:var(--azur-fonce);
+    padding:10px 0;list-style:none;
+  }
+  details.voir summary::-webkit-details-marker{display:none}
+  details.voir summary::before{content:"▸ ";}
+  details.voir[open] summary::before{content:"▾ ";}
+</style>
+</head>
+<body>
+
+<div class="bandeau">
+  <strong>PAGE TECHNIQUE</strong> — réservée à l'installation. Aucun professionnel n'a à venir ici.
+</div>
+
+<header class="entete">
+  <div class="conteneur">
+    <a class="logo" href="../index.html">pros<span class="pt">.</span>idf<span class="pt">.</span>immo</a>
+    <a class="bouton bouton-2" href="https://supabase.com/dashboard" target="_blank" rel="noopener">Ouvrir Supabase ↗</a>
+  </div>
+</header>
+
+<main>
+  <div class="page-tete">
+    <div class="conteneur etroit">
+      <h1>Installer la base</h1>
+      <p>Un bouton pour copier, huit clics pour coller. À faire une seule fois.</p>
+    </div>
+  </div>
+
+  <div class="contenu">
+    <div class="conteneur etroit">
+
+      <h2 style="margin-top:0">Étape 1 — Copier le script</h2>
+      <p>Appuie sur ce bouton. Tout le script part dans le presse-papiers d'un seul coup, il n'y a rien à sélectionner.</p>
+
+      <button class="gros-bouton" id="copier-schema" disabled>Chargement du script…</button>
+      <p class="etat-copie" id="etat-schema"></p>
+
+      <details class="voir">
+        <summary>Voir ce que contient le script</summary>
+        <pre class="script" id="apercu">…</pre>
+      </details>
+
+      <h2>Étape 2 — Le coller dans Supabase</h2>
+      <ol class="etapes">
+        <li><strong>Ouvre supabase.com</strong> et ton projet <strong>pros-idf-immo</strong>.
+          <div class="quoi">Le bouton en haut de cette page t'y emmène directement.</div></li>
+        <li><strong>Dans la colonne de gauche, clique sur l'icône <code>&gt;_</code></strong>
+          <div class="quoi">C'est le « SQL Editor ». Elle ressemble à un petit écran noir, vers le haut de la colonne.</div></li>
+        <li><strong>Clique sur « New query »</strong>
+          <div class="quoi">Ou sur le bouton <strong>+</strong>. Un grand cadre vide s'ouvre.</div></li>
+        <li><strong>Appuie longuement dans le grand cadre vide, puis « Coller »</strong>
+          <div class="quoi">Le script apparaît. Il est long, c'est normal.</div></li>
+        <li><strong>Clique sur « Run »</strong>
+          <div class="quoi">Le bouton vert, en bas à droite du cadre.</div></li>
+      </ol>
+
+      <div class="attendu">
+        <span class="etiq">✓ Ce que tu dois voir</span>
+        <p>Un bandeau vert avec écrit <code>Success. No rows returned</code>.</p>
+        <p style="margin-top:10px">C'est le message normal&nbsp;: ce script crée des tables, il ne renvoie donc aucun résultat à afficher. La base est installée.</p>
+      </div>
+
+      <div class="secours">
+        <p><strong>Si tu vois du rouge&nbsp;:</strong> ne recommence pas, et ne modifie rien. Fais-moi une capture du message d'erreur, je corrige et je te redonne un bouton.</p>
+        <p style="margin-top:10px">Le script est conçu pour être relancé sans dégât&nbsp;: le rejouer ne crée jamais de doublon et n'efface rien.</p>
+      </div>
+
+      <h2>Étape 3 — Te déclarer administratrice</h2>
+      <p>Cette seconde commande te donne accès au back-office. <strong>Elle ne fonctionnera qu'après ta première connexion au site avec <code>contact@idf.immo</code></strong> — sinon elle ne trouvera personne à qui donner les droits.</p>
+      <p>Garde-la de côté&nbsp;: je te dirai quand la lancer.</p>
+
+      <button class="gros-bouton" id="copier-admin" style="background:var(--buis);box-shadow:none">Copier la commande d'administratrice</button>
+      <p class="etat-copie" id="etat-admin"></p>
+
+      <h2>Étape 4 — Me le dire</h2>
+      <p>Écris-moi <strong>« la base est installée »</strong>. Je vérifierai de mon côté que les tables répondent, et je brancherai les écrans dessus.</p>
+
+    </div>
+  </div>
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="bas" style="margin-top:0;border-top:0;padding-top:0">
+      <span>pros.idf.immo — page d'installation</span>
+      <span><a href="schema.sql">Voir le fichier source</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var COMMANDE_ADMIN =
+    "insert into administrateurs (id, nom)\n" +
+    "select id, 'Marie-Céline Etave' from auth.users\n" +
+    "where email = 'contact@idf.immo'\n" +
+    "on conflict (id) do nothing;";
+
+  var schema = null;
+  var bSchema = document.getElementById("copier-schema");
+  var eSchema = document.getElementById("etat-schema");
+  var bAdmin  = document.getElementById("copier-admin");
+  var eAdmin  = document.getElementById("etat-admin");
+
+  // On va chercher le script à la source : aucun risque qu'il diverge du fichier.
+  fetch("schema.sql", { cache: "no-store" })
+    .then(function(r){ if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(function(t){
+      schema = t;
+      document.getElementById("apercu").textContent = t;
+      bSchema.disabled = false;
+      bSchema.textContent = "📋 Copier le script d'installation";
+      var lignes = t.split("\n").length;
+      eSchema.textContent = lignes + " lignes prêtes à copier.";
+    })
+    .catch(function(){
+      bSchema.textContent = "Le script n'a pas pu être chargé";
+      eSchema.className = "etat-copie ko";
+      eSchema.innerHTML = 'Ouvre <a href="schema.sql">le fichier</a> et copie-le à la main, ou préviens-moi.';
+    });
+
+  function copier(texte, bouton, etat, motDeFin){
+    function reussi(){
+      bouton.classList.add("fait");
+      bouton.textContent = "✓ Copié";
+      etat.className = "etat-copie ok";
+      etat.textContent = motDeFin;
+      setTimeout(function(){
+        bouton.classList.remove("fait");
+        bouton.textContent = bouton.dataset.texte;
+      }, 4000);
+    }
+    function rate(){
+      etat.className = "etat-copie ko";
+      etat.textContent = "La copie a échoué. Sélectionne le texte à la main dans « Voir ce que contient le script ».";
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(texte).then(reussi).catch(secours);
+    } else {
+      secours();
+    }
+    // Repli pour les navigateurs qui refusent le presse-papiers moderne.
+    function secours(){
+      try{
+        var z = document.createElement("textarea");
+        z.value = texte;
+        z.style.position = "fixed"; z.style.opacity = "0";
+        document.body.appendChild(z);
+        z.select(); z.setSelectionRange(0, texte.length);
+        var ok = document.execCommand("copy");
+        document.body.removeChild(z);
+        ok ? reussi() : rate();
+      }catch(e){ rate(); }
+    }
+  }
+
+  bSchema.addEventListener("click", function(){
+    if (!schema) return;
+    bSchema.dataset.texte = "📋 Copier le script d'installation";
+    copier(schema, bSchema, eSchema, "C'est dans le presse-papiers. Passe à l'étape 2.");
+  });
+
+  bAdmin.addEventListener("click", function(){
+    bAdmin.dataset.texte = "Copier la commande d'administratrice";
+    copier(COMMANDE_ADMIN, bAdmin, eAdmin, "Copiée. À lancer seulement après ta première connexion.");
+  });
+})();
+</script>
+</body>
+</html>

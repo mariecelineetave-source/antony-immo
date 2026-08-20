@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /maquettes/
+Disallow: /base/
+Disallow: /outils/
+
+Sitemap: https://pros.idf.immo/sitemap.xml

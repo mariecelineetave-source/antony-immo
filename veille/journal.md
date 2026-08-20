@@ -7,6 +7,29 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-08-20
+
+Rien de nouveau par rapport à la veille du 19 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €,
+appartement PAP 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les
+lots aux enchères notariales 36h-immo déjà signalés — AI19530, AI18987,
+AI18703, et les références 17104/17941).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (SeLoger, PAP, ParuVendu, Logic-Immo, Bien'ici,
+entreparticuliers, Foncia, l'Adresse, iad, Optimhome) et des simulateurs
+de prix, sans annonce individuelle nouvelle et identifiable avec
+certitude. Rien de neuf non plus côté permis de construire ou projet
+urbain : les chiffres 2025-2026 de la ville (36 permis délivrés en 2025)
+sont des statistiques agrégées, pas des signaux individuels exploitables.
+Aucun nouveau signal de succession ou d'enchère distinct de ceux déjà
+connus.
+
+---
+
 ## 2026-08-19
 
 Rien de nouveau par rapport à la veille du 15 août : les mêmes pistes

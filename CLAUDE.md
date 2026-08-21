@@ -4,6 +4,25 @@ Site vitrine de Marie-Céline Etave, conseillère immobilière indépendante à
 Antony (92160). Hébergé sur GitHub Pages : la branche `main` est le site en
 ligne (https://antony.immo). Branche de travail : `claude/anthony-imo-setup-dev-wzo4h1`.
 
+## antony.immo ne fait pas partie de la famille `idf.immo`
+
+Arbitré par Marie-Céline le 21 août 2026, et à ne jamais réintroduire.
+
+La famille `idf.immo`, ce sont **les réseaux de prescripteurs et leur socle** :
+`gardiens.idf.immo`, `etudiants.idf.immo`, `associations.idf.immo`,
+`nounous.idf.immo`, `pros.idf.immo` (à créer), et `app.idf.immo` — la base
+commune et le back-office.
+
+**`antony.immo`, `paris7e.immo` et `cse.immo` en sont exclus** : ce sont les
+sites de Marie-Céline elle-même — vitrines et offre commerciale — sans
+prescripteurs et sans compte dans la base commune. La charte graphique est
+partagée, l'architecture ne l'est pas.
+
+Conséquences pour ce dépôt : ne jamais brancher antony.immo sur la base Supabase
+de la famille, ne jamais le citer comme membre, et ne jamais recopier ici le
+contenu d'un site de réseau (ni l'inverse). Site jumeau d'antony.immo :
+`paris7e.immo`, qui est lui aussi hors famille.
+
 ## Structure
 
 - `index.html` — page d'accueil (tout-en-un : CSS et JS inclus).

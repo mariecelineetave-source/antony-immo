@@ -204,6 +204,11 @@ d'images.
 
 ## Divers
 
+- **Marie-Céline travaille sur iPad, où le copier-coller à la main est pénible :**
+  tout ce qu'elle doit recopier (nom de dépôt, adresse à ouvrir, enregistrement
+  DNS, commande, texte de message) doit être donné dans un **bloc de code**, qui
+  affiche un bouton « copier ». Jamais au fil du texte. Un élément à copier = un
+  bloc, pour qu'un seul appui suffise.
 - Tout en français. Commits clairs en français.
 - Le proxy réseau bloque le fetch HTTP direct (curl) : utiliser WebSearch ; un
   échec curl ne signifie PAS que le site est en panne.

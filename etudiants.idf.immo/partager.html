@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partager une opportunité — etudiants.idf.immo</title>
+<meta name="description" content="Tu connais quelqu'un qui vend son bien en Île-de-France ? Partage l'info en une minute : 50 € à la signature du mandat, 800 € à la vente.">
+<link rel="canonical" href="https://etudiants.idf.immo/partager.html">
+<meta name="theme-color" content="#0A0A0F">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Partager une opportunité — etudiants.idf.immo">
+<meta property="og:description" content="Une minute, et 850 € possibles. Tu transmets, Marie-Céline s'occupe du reste.">
+<meta property="og:url" content="https://etudiants.idf.immo/partager.html">
+<meta property="og:locale" content="fr_FR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Reprise exacte des jetons de etudiants.idf.immo — la page doit être
+   indiscernable du reste du site. index.html n'est pas touché. */
+:root{
+  --nuit:#0A0A0F; --carte:#15151F; --ligne:#2C2C3D; --blanc:#F4F4F8;
+  --gris:#A0A0B4; --lime:#D4FF3F; --violet:#8B5CF6; --rose:#FF4D8D;
+  --cyan:#4DE1FF; --r:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Archivo",system-ui,-apple-system,sans-serif;background:var(--nuit);
+  color:var(--blanc);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","Archivo",sans-serif;line-height:1.02;
+  letter-spacing:-.02em;font-weight:800}
+a{color:var(--lime)}
+.wrap{width:min(760px,100% - 2.4rem);margin-inline:auto}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0}
+.marque{display:inline-flex;align-items:baseline;font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:700;letter-spacing:-.03em;font-size:1.06rem;text-decoration:none;color:var(--blanc)}
+.marque i{font-style:normal;color:var(--lime)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.95rem 1.5rem;border-radius:100px;border:0;cursor:pointer;
+  font-family:"Archivo",sans-serif;font-weight:700;font-size:1rem;text-decoration:none;
+  transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-p{background:var(--lime);color:#0A0A0F;box-shadow:0 8px 30px rgba(212,255,63,.28)}
+.btn-p:hover{box-shadow:0 12px 38px rgba(212,255,63,.42)}
+.btn-s{background:rgba(255,255,255,.07);color:var(--blanc);border:1.5px solid var(--ligne)}
+.btn-sm{padding:.62rem 1.05rem;font-size:.88rem}
+.btn-xl{padding:1.15rem 1.8rem;font-size:1.12rem;width:100%}
+.btn:disabled{opacity:.55;transform:none;cursor:default}
+
+.hero{padding:1.6rem 0 2.2rem}
+.oeil{display:inline-block;border:1px solid var(--ligne);background:rgba(212,255,63,.07);
+  color:var(--lime);padding:.42rem 1rem;border-radius:100px;font-size:.78rem;
+  font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
+.hero h1{font-size:clamp(2.1rem,7vw,3.1rem)}
+.hero p{color:var(--gris);margin-top:.9rem;font-size:1.05rem}
+.rappel{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.4rem}
+.rappel div{background:var(--carte);border:1px solid var(--ligne);border-radius:14px;
+  padding:.7rem 1rem;font-size:.9rem;color:var(--gris);flex:1 1 190px}
+.rappel b{font-family:"Bricolage Grotesque",sans-serif;color:var(--lime);font-size:1.25rem;
+  display:block;letter-spacing:-.02em}
+
+form{padding-bottom:4rem}
+fieldset{border:1px solid var(--ligne);background:var(--carte);border-radius:var(--r);
+  padding:1.5rem 1.3rem;margin-bottom:1.1rem}
+legend{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.25rem;
+  padding:0 .5rem;letter-spacing:-.02em}
+.aide{color:var(--gris);font-size:.92rem;margin:.3rem 0 1.2rem}
+label.ch{display:block;margin-bottom:1.05rem}
+label.ch>span{display:block;font-weight:700;font-size:.95rem;margin-bottom:.35rem}
+label.ch em{display:block;font-style:normal;color:var(--gris);font-size:.85rem;
+  font-weight:400;margin-bottom:.4rem}
+input[type=text],input[type=tel],input[type=email],select,textarea{
+  width:100%;font:inherit;font-size:1rem;padding:.85rem 1rem;border-radius:14px;
+  border:1.5px solid var(--ligne);background:#0F0F17;color:var(--blanc)}
+input::placeholder,textarea::placeholder{color:#6A6A80}
+textarea{min-height:92px;resize:vertical;line-height:1.5}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0 1rem}
+
+.coche{display:flex;gap:.75rem;align-items:flex-start;background:#0F0F17;
+  border:1.5px solid var(--ligne);border-radius:14px;padding:.9rem 1rem;margin-bottom:.8rem;
+  cursor:pointer}
+.coche input{margin-top:.25rem;width:20px;height:20px;flex:none;accent-color:var(--lime)}
+.coche span{font-size:.94rem}
+.coche b{display:block}
+.coche em{font-style:normal;color:var(--gris);font-size:.86rem}
+.coche.on{border-color:var(--lime)}
+
+.liste-ban{list-style:none;margin:.4rem 0 0;padding:0;border:1.5px solid var(--ligne);
+  border-radius:14px;overflow:hidden;background:#0F0F17}
+.liste-ban li{padding:.75rem 1rem;cursor:pointer;font-size:.94rem;border-top:1px solid var(--ligne)}
+.liste-ban li:first-child{border-top:0}
+.liste-ban li:hover,.liste-ban li[aria-selected=true]{background:rgba(212,255,63,.12)}
+
+.err{color:var(--rose);font-size:.88rem;font-weight:600;margin-top:.35rem;display:none}
+.err.on{display:block}
+.msg{border-radius:14px;padding:1rem 1.1rem;margin-bottom:1.1rem;font-size:.95rem;display:none}
+.msg.on{display:block}
+.msg.ko{background:rgba(255,77,141,.12);border:1px solid var(--rose);color:#FFB9D2}
+.msg.ok{background:rgba(212,255,63,.1);border:1px solid var(--lime);color:var(--lime)}
+
+.fin{text-align:center;padding:3rem 0 4rem;display:none}
+.fin.on{display:block}
+.fin .grand{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(2rem,7vw,2.9rem);
+  font-weight:800;letter-spacing:-.03em;margin-bottom:.8rem}
+.fin p{color:var(--gris);margin-bottom:1.4rem}
+.ref{display:inline-block;background:var(--carte);border:1px dashed var(--ligne);
+  border-radius:14px;padding:.8rem 1.3rem;font-family:"Bricolage Grotesque",sans-serif;
+  font-size:1.2rem;color:var(--lime);margin-bottom:1.4rem}
+
+.pied{border-top:1px solid var(--ligne);padding:1.6rem 0 2.4rem;color:var(--gris);font-size:.88rem}
+.pied a{color:var(--gris);text-decoration:underline;margin-right:1rem}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="marque" href="/">etudiants<i>.</i>idf<i>.</i>immo</a>
+    <a class="btn btn-s btn-sm" href="/">Retour</a>
+  </nav>
+</div>
+
+<main>
+<div class="wrap">
+
+  <section class="hero">
+    <span class="oeil">Une minute, pas plus</span>
+    <h1>Partager une opportunité</h1>
+    <p>Tu connais quelqu'un qui envisage de vendre son bien en Île-de-France&nbsp;? Dis-le-nous ici. Tu n'as rien d'autre à faire&nbsp;: Marie-Céline prend le relais.</p>
+    <div class="rappel">
+      <div><b>50 €</b>à la signature du mandat exclusif, diagnostics faits</div>
+      <div><b>800 €</b>à la signature de la vente chez le notaire</div>
+    </div>
+  </section>
+
+  <div class="msg ko" id="echec"></div>
+
+  <form id="opp" novalidate>
+
+    <fieldset>
+      <legend>Toi</legend>
+      <p class="aide">Ces coordonnées servent à te tenir au courant et à te verser la prime. Elles ne servent à rien d'autre.</p>
+      <div class="duo">
+        <label class="ch"><span>Ton prénom</span>
+          <input type="text" id="prenom" autocomplete="given-name" placeholder="Léa"></label>
+        <label class="ch"><span>Ton nom</span>
+          <input type="text" id="nom" autocomplete="family-name" placeholder="Martin"></label>
+      </div>
+      <div class="duo">
+        <label class="ch"><span>Ton téléphone</span>
+          <em>Pour te joindre si on a une question.</em>
+          <input type="tel" id="tel" autocomplete="tel" placeholder="06 12 34 56 78"></label>
+        <label class="ch"><span>Ton e-mail</span>
+          <em>C'est là que tu recevras le suivi.</em>
+          <input type="email" id="email" autocomplete="email" placeholder="lea@exemple.fr"></label>
+      </div>
+      <label class="ch"><span>Ton école ou ta ville <em style="display:inline">(facultatif)</em></span>
+        <input type="text" id="ecole" placeholder="Université Paris-Saclay"></label>
+      <p class="err" id="e-toi"></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Le bien</legend>
+      <p class="aide">L'adresse suffit. Si tu n'es sûr de rien, partage quand même&nbsp;: trier, c'est notre travail.</p>
+      <label class="ch"><span>Adresse du bien</span>
+        <em>Commence à taper, puis choisis dans la liste.</em>
+        <input type="text" id="adresse" autocomplete="off" placeholder="12 rue des Rabats, Antony">
+      </label>
+      <ul class="liste-ban" id="suggestions" hidden></ul>
+      <p class="err" id="e-adresse"></p>
+      <div class="duo">
+        <label class="ch"><span>Type de bien</span>
+          <select id="type">
+            <option value="">Je ne sais pas</option>
+            <option>Appartement</option>
+            <option>Maison</option>
+            <option>Studio</option>
+            <option>Terrain</option>
+            <option>Local ou autre</option>
+          </select></label>
+        <label class="ch"><span>Étage, bâtiment <em style="display:inline">(facultatif)</em></span>
+          <input type="text" id="precision" placeholder="Bât. A, 3e étage"></label>
+      </div>
+      <label class="ch"><span>Ce que tu sais</span>
+        <em>Même une phrase vague est utile.</em>
+        <textarea id="details" placeholder="Ils ont parlé de partir en province l'été prochain."></textarea></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Le propriétaire</legend>
+      <p class="aide">Sans son nom et son numéro, on ne peut rien faire — et la prime n'est pas due. Demande-lui son accord avant&nbsp;: « je connais une conseillère immobilière sérieuse, je peux lui donner ton numéro&nbsp;? »</p>
+      <div class="duo">
+        <label class="ch"><span>Son nom</span>
+          <input type="text" id="p-nom" placeholder="M. Durand"></label>
+        <label class="ch"><span>Son téléphone</span>
+          <input type="tel" id="p-tel" placeholder="06 11 22 33 44"></label>
+      </div>
+      <p class="err" id="e-proprio"></p>
+
+      <label class="coche" id="l-accord">
+        <input type="checkbox" id="accord">
+        <span><b>Je lui ai demandé son accord</b>
+        <em>Il sait qu'on va l'appeler. C'est la condition de la prime, et c'est ce qui fait que l'appel se passe bien.</em></span>
+      </label>
+      <p class="err" id="e-accord"></p>
+
+      <label class="ch" style="margin-top:1.2rem"><span>Peut-on dire que ça vient de toi&nbsp;?</span></label>
+      <label class="coche"><input type="radio" name="citation" value="oui" id="cite-oui">
+        <span><b>Oui, vous pouvez me citer</b>
+        <em>« C'est Léa qui m'a donné votre numéro, avec votre accord. »</em></span></label>
+      <label class="coche"><input type="radio" name="citation" value="non" id="cite-non">
+        <span><b>Non, ne dites pas mon nom</b>
+        <em>« J'ai eu votre numéro par quelqu'un qui m'a dit que vous étiez d'accord. » Ton nom n'est jamais prononcé — la prime est la même.</em></span></label>
+      <p class="err" id="e-citation"></p>
+
+      <label class="coche" style="margin-top:1rem"><input type="checkbox" id="numero">
+        <span><b>Je lui ai aussi donné le 06 60 98 92 92</b>
+        <em>S'il appelle de lui-même, le rapprochement est automatique et la prime te revient quand même.</em></span></label>
+    </fieldset>
+
+    <button class="btn btn-p btn-xl" type="submit" id="envoyer">Partager cette opportunité</button>
+    <p class="aide" style="text-align:center;margin-top:.9rem">Tu recevras un e-mail de confirmation avec ton numéro d'opportunité.</p>
+  </form>
+
+  <section class="fin" id="fin">
+    <div class="grand">C'est parti&nbsp;!</div>
+    <div class="ref" id="ref"></div>
+    <p>Marie-Céline te répond en moins de 24 heures. Tu recevras un e-mail de confirmation — regarde aussi dans tes indésirables.</p>
+    <a class="btn btn-s" href="/">Revenir à l'accueil</a>
+  </section>
+
+</div>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <a href="/">etudiants.idf.immo</a>
+    <a href="convention.html">La convention</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="tel:+33660989292">06 60 98 92 92</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var DEPTS = ["75","77","78","91","92","93","94","95"];
+  var choisie = null;   // l'adresse retenue dans la Base Adresse Nationale
+
+  /* ---------- autocomplétion d'adresse (Base Adresse Nationale) ---------- */
+  var minuteur, liste = $("suggestions");
+  $("adresse").addEventListener("input", function(){
+    choisie = null;
+    var q = this.value.trim();
+    clearTimeout(minuteur);
+    if (q.length < 4){ liste.hidden = true; return; }
+    minuteur = setTimeout(function(){
+      fetch("https://api-adresse.data.gouv.fr/search/?limit=5&q=" + encodeURIComponent(q))
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var f = (d && d.features) || [];
+          if (!f.length){ liste.hidden = true; return; }
+          liste.innerHTML = f.map(function(x, i){
+            return '<li data-i="' + i + '">' + x.properties.label + "</li>";
+          }).join("");
+          liste.hidden = false;
+          liste.querySelectorAll("li").forEach(function(li){
+            li.addEventListener("click", function(){
+              var p = f[li.dataset.i].properties;
+              choisie = p;
+              $("adresse").value = p.label;
+              liste.hidden = true;
+              verifieZone();
+            });
+          });
+        })
+        .catch(function(){ liste.hidden = true; });
+    }, 250);
+  });
+
+  function verifieZone(){
+    var e = $("e-adresse");
+    if (choisie && DEPTS.indexOf(String(choisie.postcode).slice(0,2)) === -1){
+      e.textContent = "Cette adresse ne semble pas être en Île-de-France. Le programme ne couvre que les huit départements franciliens.";
+      e.classList.add("on");
+      return false;
+    }
+    e.classList.remove("on");
+    return true;
+  }
+
+  /* ---------- validation ---------- */
+  function dire(id, texte){
+    var e = $(id);
+    e.textContent = texte || "";
+    e.classList.toggle("on", !!texte);
+    return !texte;
+  }
+
+  function valide(){
+    var ok = true;
+    ok = dire("e-toi",
+      (!$("prenom").value.trim() || !$("tel").value.trim() || !$("email").value.trim() ||
+       $("email").value.indexOf("@") < 1)
+        ? "Il nous faut ton prénom, ton téléphone et un e-mail valide." : "") && ok;
+    ok = dire("e-adresse", !$("adresse").value.trim() ? "Indique l'adresse du bien." : "") && ok;
+    if (ok) ok = verifieZone();
+    ok = dire("e-proprio",
+      (!$("p-nom").value.trim() || !$("p-tel").value.trim())
+        ? "Le nom et le téléphone du propriétaire sont indispensables : sans eux, on ne peut pas l'appeler." : "") && ok;
+    ok = dire("e-accord", !$("accord").checked
+        ? "Coche la case : il faut avoir demandé son accord au propriétaire." : "") && ok;
+    ok = dire("e-citation", !($("cite-oui").checked || $("cite-non").checked)
+        ? "Dis-nous si on peut te citer." : "") && ok;
+    return ok;
+  }
+
+  // L'erreur disparaît dès que la personne corrige.
+  ["prenom","tel","email","adresse","p-nom","p-tel"].forEach(function(id){
+    $(id).addEventListener("input", function(){
+      var e = document.querySelector(".err.on");
+      if (e) valide();
+    });
+  });
+  $("accord").addEventListener("change", function(){
+    $("l-accord").classList.toggle("on", this.checked);
+    if ($("e-accord").classList.contains("on")) valide();
+  });
+
+  /* ---------- envoi ---------- */
+  $("opp").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    $("echec").classList.remove("on");
+    if (!valide()){
+      var p = document.querySelector(".err.on");
+      if (p) p.scrollIntoView({behavior:"smooth", block:"center"});
+      return;
+    }
+    var b = $("envoyer");
+    b.disabled = true; b.textContent = "Envoi…";
+
+    var ref = "ETU-" + new Date().getFullYear() + "-" +
+              String(Math.floor(Math.random()*9000)+1000);
+    var cite = $("cite-oui").checked;
+
+    var d = new FormData();
+    d.append("_subject", "Opportunité étudiant " + ref + " — " + $("adresse").value.trim());
+    d.append("_captcha", "false");
+    d.append("_template", "table");
+    d.append("email", $("email").value.trim());
+    d.append("Référence", ref);
+    d.append("Réseau", "etudiants.idf.immo");
+    d.append("Étudiant", $("prenom").value.trim() + " " + $("nom").value.trim());
+    d.append("Téléphone étudiant", $("tel").value.trim());
+    d.append("E-mail étudiant", $("email").value.trim());
+    d.append("École ou ville", $("ecole").value.trim());
+    d.append("Adresse du bien", $("adresse").value.trim());
+    d.append("Identifiant BAN", choisie ? choisie.id : "");
+    d.append("Commune", choisie ? choisie.city : "");
+    d.append("Code postal", choisie ? choisie.postcode : "");
+    d.append("Type de bien", $("type").value);
+    d.append("Précision", $("precision").value.trim());
+    d.append("Ce qu'il sait", $("details").value.trim());
+    d.append("Propriétaire", $("p-nom").value.trim());
+    d.append("Téléphone propriétaire", $("p-tel").value.trim());
+    d.append("Accord recueilli", "oui");
+    d.append("Peut-on citer l'étudiant", cite ? "OUI" : "NON — ne jamais le nommer");
+    d.append("A donné notre numéro", $("numero").checked ? "oui" : "non");
+    d.append("_autoresponse",
+      "Bonjour " + $("prenom").value.trim() + ",\n\n" +
+      "C'est bien reçu. Ton opportunité porte le numéro " + ref + ".\n\n" +
+      "Je te réponds en moins de 24 heures : je te dirai si je donne suite, et pourquoi. " +
+      "Ensuite je m'occupe de tout — tu n'as plus rien à faire.\n\n" +
+      "Pour rappel : 50 € à la signature d'un mandat exclusif (diagnostics réalisés), " +
+      "800 € à la signature de la vente chez le notaire.\n\n" +
+      "Une question ? Appelle-moi au 06 60 98 92 92.\n\n" +
+      "Marie-Céline Etave\nConseillère en immobilier — Île-de-France\netudiants.idf.immo");
+
+    fetch("https://formsubmit.co/ajax/contact@idf.immo", {
+      method:"POST", headers:{ "Accept":"application/json" }, body:d
+    })
+    .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(rep){
+      // Le service peut répondre 200 en refusant l'envoi — un formulaire non
+      // activé, par exemple. Sans ce contrôle, l'écran de confirmation
+      // s'afficherait alors que rien n'est parti.
+      if (!rep || (rep.success !== "true" && rep.success !== true)) {
+        var refus = new Error((rep && rep.message) ? rep.message : "le service d'envoi a refusé l'envoi");
+        refus.refusDuService = true;
+        throw refus;
+      }
+      $("opp").style.display = "none";
+      document.querySelector(".hero").style.display = "none";
+      $("ref").textContent = ref;
+      $("fin").classList.add("on");
+      window.scrollTo(0,0);
+    })
+    .catch(function(e){
+      b.disabled = false; b.textContent = "Partager cette opportunité";
+      var m = $("echec");
+      // Dire ce qui s'est réellement passé : un refus du service d'envoi et une
+      // panne de réseau ne se corrigent pas de la même façon.
+      var detail = (e && e.refusDuService)
+        ? "Le service d'envoi a répondu : " + e.message
+        : "La connexion au service d'envoi n'a pas abouti.";
+      m.innerHTML = "<strong>L'envoi n'a pas fonctionné.</strong> Rien n'est perdu : " +
+        "réessaie dans un instant, ou appelle Marie-Céline au " +
+        '<a href="tel:+33660989292">06 60 98 92 92</a>. Elle enregistrera ton opportunité avec toi, ' +
+        "et la date de ton appel comptera de la même façon." +
+        '<span style="display:block;margin-top:8px;font-size:.85rem;opacity:.85">' + detail + "</span>";
+      m.classList.add("on");
+      m.scrollIntoView({behavior:"smooth", block:"center"});
+    });
+  });
+})();
+</script>
+</body>
+</html>

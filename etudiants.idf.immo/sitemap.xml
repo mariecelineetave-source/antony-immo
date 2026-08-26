@@ -20,7 +20,13 @@
   </url>
   <url>
     <loc>https://etudiants.idf.immo/mon-espace.html</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://etudiants.idf.immo/partager.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

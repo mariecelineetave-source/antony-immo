@@ -32,7 +32,7 @@ Adresse : ................................................................
 
 E-mail : ................................ Téléphone : ................................
 
-Date du premier appel signalant la mise en relation : ......../......../....................
+Date du premier signalement de la mise en relation : ......../......../....................
 
 ci-après dénommé **« l'Indicateur »**,
 
@@ -44,8 +44,8 @@ ci-après dénommé **« l'Indicateur »**,
 
 L'Indicateur signale au Mandataire, **par le formulaire en ligne du site ou par téléphone**, l'identité de personnes de son
 entourage envisageant de vendre un bien immobilier situé en Île-de-France. Il communique à
-cette occasion le prénom, la commune, la nature du bien et le numéro de téléphone de la
-personne concernée.
+cette occasion ses propres nom et prénom, ainsi que les nom, prénom, commune, nature du bien
+et numéro de téléphone de la personne concernée.
 
 Le rôle de l'Indicateur se limite **exclusivement à la mise en relation**.
 
@@ -109,7 +109,7 @@ Aucune prime n'est due dans les cas suivants :
    celui-ci.
 
 En cas de recommandations concurrentes portant sur une même personne, seul le
-**premier appel reçu** ouvre droit à la prime.
+**premier signalement reçu** ouvre droit à la prime.
 
 Le partage du site à d'autres étudiants ne donne lieu à **aucune rémunération** : seules
 les mises en relation aboutissant à une transaction ouvrent droit aux primes de l'article 3.
@@ -122,7 +122,7 @@ garantie est une condition essentielle de la présente convention : à défaut, 
 n'est due.
 
 Le Mandataire s'engage à n'utiliser ces coordonnées qu'**une seule fois**, à mentionner
-dès le début de son premier appel **l'identité de l'Indicateur** à l'origine de la mise en
+dès le début de son premier contact **l'identité de l'Indicateur** à l'origine de la mise en
 relation ainsi que la provenance du numéro, et à ne pas les conserver si la personne ne
 donne pas suite. Toute personne concernée peut en demander l'effacement immédiat.
 

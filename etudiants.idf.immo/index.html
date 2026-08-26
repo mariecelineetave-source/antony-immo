@@ -332,6 +332,21 @@ footer a:hover{color:var(--blanc)}
   /* L'adresse et le numéro doivent survivre à l'impression */
   .marque::after{content:" — etudiants.idf.immo · 06 60 98 92 92";font-size:9pt;font-weight:400}
 }
+
+/* ---- Bouton « Mon espace » ---- */
+.btn-espace{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:var(--rose);color:#0A0A0F;
+  padding:.6rem 1.15rem;border-radius:100px;
+  font-family:"Archivo",sans-serif;font-weight:700;font-size:.92rem;
+  text-decoration:none;white-space:nowrap;
+  box-shadow:0 6px 22px rgba(255,77,141,.33);
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.btn-espace:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,77,141,.47)}
+/* Le bouton reste visible sur mobile, alors que le menu disparaît */
+.nav-droite{display:flex;align-items:center;gap:1.5rem}
+@media(max-width:900px){.nav-droite{gap:0}}
 </style>
 </head>
 <body>
@@ -340,13 +355,16 @@ footer a:hover{color:var(--blanc)}
 <header class="wrap">
   <nav class="nav" aria-label="Navigation principale">
     <a class="marque" href="/">etudiants<span class="pt">.idf.immo</span></a>
-    <div class="nav-liens">
+    <div class="nav-droite">
+      <div class="nav-liens">
       <a href="#deal">Le deal</a>
       <a href="#etapes">Comment ça marche</a>
       <a href="#appeler">M'appeler</a>
       <a href="#quoi-dire">Quoi dire</a>
       <a href="#partage">Faire tourner</a>
       <a href="#faq">FAQ</a>
+      </div>
+      <a class="btn-espace" href="mon-espace.html">Mon espace</a>
     </div>
   </nav>
 </header>

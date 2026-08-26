@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tu connais quelqu'un qui veut vendre son bien : 800 € pour toi — etudiants.idf.immo</title>
-<meta name="description" content="Tu es étudiant en Île-de-France et tu connais quelqu'un qui veut vendre son bien ? Tu m'appelles, je m'occupe du reste : 50 € dès le mandat exclusif signé, et 800 € pour toi le jour de la vente chez le notaire.">
+<meta name="description" content="Tu es étudiant en Île-de-France et tu connais quelqu'un qui veut vendre son bien ? Tu me le signales en ligne ou par téléphone, je m'occupe du reste : 50 € dès le mandat exclusif signé, et 800 € pour toi le jour de la vente chez le notaire.">
 <meta name="theme-color" content="#0A0A0F">
 <meta property="og:title" content="Tu connais quelqu'un qui veut vendre son bien : 800 € pour toi !">
 <meta property="og:description" content="Un coup de fil, et c'est tout. 50 € dès le mandat exclusif signé, et 800 € pour toi le jour de la vente. Un programme pour les étudiants d'Île-de-France.">
@@ -347,6 +347,30 @@ footer a:hover{color:var(--blanc)}
 /* Le bouton reste visible sur mobile, alors que le menu disparaît */
 .nav-droite{display:flex;align-items:center;gap:1.5rem}
 @media(max-width:900px){.nav-droite{gap:0}}
+
+/* ---- Deux chemins : au téléphone ou tout en ligne ---- */
+.chemins{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:820px){.chemins{grid-template-columns:1fr}}
+.chemin{border-radius:26px;padding:2rem 1.7rem 1.8rem;border:1px solid var(--ligne);
+  background:var(--carte);display:flex;flex-direction:column;text-align:center}
+.chemin.tel{background:linear-gradient(155deg,rgba(212,255,63,.2),rgba(21,21,31,.92) 60%);
+  border-color:rgba(212,255,63,.42)}
+.chemin.web{background:linear-gradient(155deg,rgba(255,77,141,.2),rgba(21,21,31,.92) 60%);
+  border-color:rgba(255,77,141,.42)}
+.chemin .ico{font-size:2.3rem;line-height:1;margin-bottom:.6rem}
+.chemin h3{font-size:1.35rem;margin-bottom:.5rem}
+.chemin.tel h3{color:var(--lime)}
+.chemin.web h3{color:var(--rose)}
+.chemin p{color:var(--gris);font-size:.96rem;margin-bottom:1.2rem}
+.chemin .num{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+  font-size:clamp(1.8rem,5.6vw,2.5rem);color:var(--lime);text-decoration:none;
+  letter-spacing:-.03em;display:block;margin-bottom:1rem}
+.chemin .actions{margin-top:auto;display:flex;flex-direction:column;gap:.6rem}
+.btn-rose{background:var(--rose);color:#0A0A0F;border:0;
+  box-shadow:0 8px 30px rgba(255,77,141,.3)}
+.btn-rose:hover{box-shadow:0 12px 38px rgba(255,77,141,.45)}
+.ou{text-align:center;color:var(--gris);font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;font-size:.8rem;margin:1.1rem 0}
 </style>
 </head>
 <body>
@@ -378,13 +402,13 @@ footer a:hover{color:var(--blanc)}
     <h1>Tu connais quelqu'un qui veut vendre son bien&nbsp;:<br><span class="surli">800 € pour toi&nbsp;!</span></h1>
     <p class="chapo">
       Je suis Marie-Céline, conseillère en immobilier. Tu connais quelqu'un qui veut vendre
-      en Île-de-France&nbsp;? <b>Tu m'appelles, et c'est tout.</b> Je m'occupe du reste :
+      en Île-de-France&nbsp;? <b>Tu me le signales, en ligne ou par téléphone.</b> Je m'occupe du reste :
       <b>50 € dès que le mandat exclusif est signé</b> (diagnostics faits), et
       <b>800 € pour toi</b> le jour de la vente chez le notaire&nbsp;!
     </p>
     <div class="hero-cta">
-      <a class="btn btn-p btn-xl" href="tel:+33660989292">📞 Appelle-moi</a>
-      <a class="btn btn-s btn-xl" href="#etapes">Comment ça marche</a>
+      <a class="btn btn-rose btn-xl" href="partager.html">✍️ Signaler en ligne</a>
+      <a class="btn btn-p btn-xl" href="tel:+33660989292">📞 Ou appelle-moi</a>
     </div>
     <p class="mini">Pas de compte à créer. Pas d'appli. Pas un centime à avancer. Un coup de fil.</p>
 
@@ -400,7 +424,7 @@ footer a:hover{color:var(--blanc)}
   <section id="deal" class="wrap">
     <span class="oeil">Le deal, en clair</span>
     <h2 class="titre">Deux primes. Zéro blabla.</h2>
-    <p class="sous">Tu n'as rien à vendre et rien à gérer. Tu me passes l'info au téléphone — le reste, c'est mon métier.</p>
+    <p class="sous">Tu n'as rien à vendre et rien à gérer. Tu me passes l'info, en ligne ou au téléphone — le reste, c'est mon métier.</p>
     <div class="deal">
       <div class="dcarte a">
         <div class="quand">Étape 1 — assez vite</div>
@@ -442,11 +466,12 @@ footer a:hover{color:var(--blanc)}
         <p class="rappel">→ La phrase exacte est plus bas, prête à recopier</p>
       </div>
       <div class="etape">
-        <h3>Tu m'appelles</h3>
-        <p>Tu me donnes <b>ton nom et ton prénom</b>, puis <b>le nom et le prénom</b> de la
-           personne, sa ville, le type de bien et son numéro. On raccroche. Je l'appelle en
-           disant que je viens de ta part. Mandat exclusif signé → 50 €. Vente signée → 800 €.</p>
-        <p class="rappel">→ 06 60 98 92 92</p>
+        <h3>Tu me le signales</h3>
+        <p>En ligne en deux minutes, ou par téléphone si tu préfères parler. Tu me donnes
+           <b>ton nom et ton prénom</b>, puis <b>le nom et le prénom</b> de la personne, sa
+           ville, le type de bien et son numéro. Je l'appelle en disant que je viens de ta
+           part. Mandat exclusif signé → 50 €. Vente signée → 800 €.</p>
+        <p class="rappel">→ En ligne, ou au 06 60 98 92 92</p>
       </div>
     </div>
 
@@ -486,9 +511,9 @@ footer a:hover{color:var(--blanc)}
             <div class="sub">« Je peux donner ton numéro à ma conseillère ? »</div>
           </div>
           <div class="scene v3">
-            <div class="pic">📞</div>
-            <div class="big">Tu<br>m'appelles</div>
-            <div class="sub">Ton nom et ton prénom, son nom et son prénom, sa ville, son numéro. 2 minutes.</div>
+            <div class="pic">📲</div>
+            <div class="big">Tu me le<br>signales</div>
+            <div class="sub">En ligne ou par téléphone. Ton nom, son nom, sa ville, son numéro. 2 minutes.</div>
           </div>
           <div class="scene v4">
             <div class="pic">💶</div>
@@ -513,24 +538,44 @@ footer a:hover{color:var(--blanc)}
   <!-- ===================== APPELER ===================== -->
   <section id="appeler" class="wrap">
     <span class="oeil">Me joindre</span>
-    <h2 class="titre">C'est par téléphone que ça se passe</h2>
-    <p class="sous">Pas de formulaire, pas de robot. Tu me parles directement — et si tu n'aimes
-       pas appeler, envoie-moi un SMS et c'est moi qui te rappelle.</p>
+    <h2 class="titre">Comme tu préfères&nbsp;: au téléphone, ou tout en ligne</h2>
+    <p class="sous">Les deux marchent aussi bien et donnent droit aux mêmes primes.
+       Choisis simplement celui qui te met le plus à l'aise.</p>
 
-    <div class="contact-bloc">
-      <div style="font-weight:600;color:var(--gris)">Marie-Céline Etave · conseillère en immobilier</div>
-      <a class="num" href="tel:+33660989292">06 60 98 92 92</a>
-      <div class="contact-btns">
-        <a class="btn btn-p btn-xl" href="tel:+33660989292">📞 Appeler maintenant</a>
-        <button class="btn btn-s btn-xl" type="button" id="b-sms">💬 M'envoyer un SMS</button>
-        <button class="btn btn-s btn-xl" type="button" id="b-vcard">📇 Enregistrer mon numéro</button>
+    <div class="chemins">
+
+      <div class="chemin tel">
+        <div class="ico">📞</div>
+        <h3>Par téléphone</h3>
+        <p>Le plus rapide, et on règle tout en deux minutes. Si tu n'aimes pas appeler,
+           envoie-moi un SMS avec ton nom et ton prénom : c'est moi qui te rappelle.</p>
+        <a class="num" href="tel:+33660989292">06 60 98 92 92</a>
+        <div class="actions">
+          <a class="btn btn-p" href="tel:+33660989292">📞 Appeler maintenant</a>
+          <button class="btn btn-s" type="button" id="b-sms">💬 M'envoyer un SMS</button>
+          <button class="btn btn-s" type="button" id="b-vcard">📇 Enregistrer mon numéro</button>
+        </div>
       </div>
-      <p class="contact-note">
-        <b>Le bouton le plus utile, c'est le dernier.</b> Tu ne connais peut-être personne qui
-        vend aujourd'hui — mais ton oncle en parlera peut-être dans six mois. Enregistre mon
-        numéro maintenant : tu me retrouveras en tapant « immo » dans tes contacts.
-      </p>
+
+      <div class="chemin web">
+        <div class="ico">💻</div>
+        <h3>Tout en ligne</h3>
+        <p>Tu remplis un formulaire à ton rythme, sans parler à personne. Ensuite tu suis
+           ta recommandation étape par étape dans ton espace : contact pris, mandat signé,
+           vente conclue, prime versée.</p>
+        <div class="actions">
+          <a class="btn btn-rose" href="partager.html">✍️ Signaler en ligne</a>
+          <a class="btn btn-s" href="mon-espace.html">👤 Mon espace</a>
+        </div>
+      </div>
+
     </div>
+
+    <p class="contact-note" style="text-align:center;max-width:60ch;margin:1.4rem auto 0">
+      <b>Et dans les deux cas, enregistre mon numéro.</b> Tu ne connais peut-être personne
+      qui vend aujourd'hui — mais ton oncle en parlera peut-être dans six mois. Tu me
+      retrouveras en tapant « immo » dans tes contacts.
+    </p>
   </section>
 
   <!-- ===================== QUOI DIRE ===================== -->
@@ -548,8 +593,8 @@ footer a:hover{color:var(--blanc)}
     </div>
 
     <div class="script">
-      <div class="quoi">2. À moi, au téléphone</div>
-      <p class="expl">Pas besoin d'un discours. Tu me donnes juste ces six choses :</p>
+      <div class="quoi">2. À moi, en ligne ou au téléphone</div>
+      <p class="expl">Que tu remplisses le formulaire en ligne ou que tu m'appelles, c'est la même chose. Il me faut juste ces six informations :</p>
       <ul>
         <li><b>Ton nom et ton prénom</b>, et que tu viens du site étudiants</li>
         <li><b>Le nom et le prénom</b> de la personne qui veut vendre</li>
@@ -564,7 +609,7 @@ footer a:hover{color:var(--blanc)}
 
     <div class="script">
       <div class="quoi">3. Si tu préfères éviter le téléphone</div>
-      <p class="expl">Envoie-moi un SMS avec <b>ton nom et ton prénom</b>, et je t'appelle. Tu n'as même pas besoin de préparer quoi que ce soit.</p>
+      <p class="expl">Deux solutions : tu remplis le <a href="partager.html" style="color:var(--rose);font-weight:600">formulaire en ligne</a>, ou tu m'envoies un SMS avec <b>ton nom et ton prénom</b> et je t'appelle.</p>
       <div class="phrase" id="s3">Salut Marie-Céline, je m'appelle [ton prénom] [TON NOM], je suis étudiant(e) et je connais quelqu'un qui veut vendre son bien en Île-de-France. Peux-tu me rappeler ? Merci !</div>
       <button class="btn btn-s btn-sm" type="button" id="b-sms2">💬 Envoyer ce SMS</button>
     </div>
@@ -748,7 +793,7 @@ footer a:hover{color:var(--blanc)}
         <h4>La personne ne doit pas déjà me connaître</h4>
         <p>La prime récompense une mise en relation nouvelle. Si la personne est déjà en contact
            avec moi ou a déjà signé un mandat, elle ne peut pas ouvrir droit à une prime.
-           En cas de doute, appelle : c'est la date de ton appel qui fait foi.</p>
+           En cas de doute, signale-la quand même : c'est la date de ton signalement qui fait foi.</p>
       </div>
       <div class="regle">
         <h4>Pas d'auto-recommandation</h4>
@@ -785,11 +830,11 @@ footer a:hover{color:var(--blanc)}
         via mon réseau, et pas toi.</div>
     </details>
     <details>
-      <summary>Pourquoi il faut absolument téléphoner&nbsp;?</summary>
-      <div class="rep">Parce qu'une recommandation, ça se comprend en deux minutes de conversation :
-        où est le bien, dans quelle situation est la personne, ce qu'elle attend. Un formulaire
-        ne me dirait rien de tout ça, et je risquerais d'appeler quelqu'un au mauvais moment.
-        Si tu n'aimes pas appeler, envoie-moi un SMS avec ton prénom : c'est moi qui te rappelle.</div>
+      <summary>Je dois téléphoner, ou je peux faire ça en ligne&nbsp;?</summary>
+      <div class="rep">Comme tu veux, les deux donnent droit aux mêmes primes. En ligne, tu
+        remplis le formulaire à ton rythme et tu suis ensuite ta recommandation dans ton espace.
+        Au téléphone, on règle tout en deux minutes et je peux te poser mes questions
+        directement. Beaucoup commencent en ligne et on s'appelle ensuite.</div>
     </details>
     <details>
       <summary>Je dois vraiment demander son accord à la personne&nbsp;?</summary>
@@ -823,8 +868,8 @@ footer a:hover{color:var(--blanc)}
     </details>
     <details>
       <summary>Comment tu sais que c'est moi qui ai recommandé&nbsp;?</summary>
-      <div class="rep">Parce que c'est toi qui m'appelles, et que je note ton nom, ton prénom et
-        ton numéro à ce moment-là. C'est la date de ton appel qui compte. Si deux personnes me signalent
+      <div class="rep">Parce que c'est toi qui me la signales, en ligne ou par téléphone, avec
+        ton nom et ton prénom. C'est la date de ce signalement qui compte. Si deux personnes me signalent
         le même vendeur, c'est le premier appel qui ouvre droit à la prime.</div>
     </details>
     <details>
@@ -855,7 +900,7 @@ footer a:hover{color:var(--blanc)}
 <div class="barre-fixe" id="barre">
   <div class="wrap in">
     <div class="txt">50 € au mandat · 800 € à la vente<span>Programme étudiant · Île-de-France</span></div>
-    <a class="btn btn-p btn-sm" href="tel:+33660989292">📞 Appelle-moi</a>
+    <a class="btn btn-rose btn-sm" href="#appeler">Signaler une vente</a>
   </div>
 </div>
 

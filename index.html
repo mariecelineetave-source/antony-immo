@@ -873,19 +873,24 @@ document.querySelectorAll('.q-lien-prix').forEach(a => a.addEventListener('click
 }));
 
 // Partage des actualités : lien permanent antony.immo (menu natif sur mobile, copie sinon)
-document.querySelectorAll('.partage').forEach(b => b.addEventListener('click', async () => {
-  const url = new URL(b.dataset.url, 'https://antony.immo/').href;
-  const titre = b.closest('article').querySelector('h3').textContent;
-  if (navigator.share) {
-    try { await navigator.share({title: titre, text: titre + ' — antony.immo', url}); } catch (e) {}
-    return;
-  }
-  try {
-    await navigator.clipboard.writeText(url);
-    const t = b.textContent; b.textContent = 'Lien copié !';
-    setTimeout(() => { b.textContent = t; }, 2000);
-  } catch (e) { window.prompt('Copiez le lien :', url); }
-}));
+document.querySelectorAll('.partage').forEach(b => {
+  // Accessibilité : les cartes changent chaque jour, ce libellé suit sans retouche manuelle.
+  const titreCarte = b.closest('article').querySelector('h3')?.textContent.trim();
+  if (titreCarte) b.setAttribute('aria-label', 'Partager cet article : ' + titreCarte);
+  b.addEventListener('click', async () => {
+    const url = new URL(b.dataset.url, 'https://antony.immo/').href;
+    const titre = b.closest('article').querySelector('h3').textContent;
+    if (navigator.share) {
+      try { await navigator.share({title: titre, text: titre + ' — antony.immo', url}); } catch (e) {}
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      const t = b.textContent; b.textContent = 'Lien copié !';
+      setTimeout(() => { b.textContent = t; }, 2000);
+    } catch (e) { window.prompt('Copiez le lien :', url); }
+  });
+});
 
 // Année courante
 document.getElementById('annee').textContent = new Date().getFullYear();

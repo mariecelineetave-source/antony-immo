@@ -7,6 +7,42 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-08-29
+
+Rien de nouveau par rapport à la dernière veille journalisée (19 août) :
+les mêmes pistes restent en ligne aux mêmes conditions (maison PAP à
+775 000 €, maison 155 m² quartier Beauvallon / Bois de l'Aurore à
+670 000 €, maison 9 pièces 422 m² aux enchères en ligne près du parc
+Heller à 1 300 000 €, appartement 4 pièces 74 m² résidence La Fontaine à
+375 200 €, et les lots aux enchères notariales 36h-immo déjà signalés
+dont AI19530 et AI21793).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (PAP, SeLoger, leboncoin, ParuVendu, entreparticuliers,
+FNAIM, Logic-Immo, lesclefsdechezmoi, Bien'ici), sans annonce
+individuelle nouvelle et identifiable avec certitude. Un bien à 469 000 €
+quartier du Petit-Chambord à Bourg-la-Reine, déjà relevé le 15 août sans
+lien individuel exploitable, reste dans la même situation.
+
+Une recherche sur les enchères notariales a fait remonter un pavillon de
+211,91 m² au 30 rue Florian à Antony, mais il s'agit d'une vente
+judiciaire du 20 mai 2021 (Tribunal judiciaire de Nanterre) : non
+retenu, sans lien avec une piste actuelle.
+
+Aucun nouveau signal de succession, de permis de construire ou de projet
+urbain distinct de ceux déjà connus (Antonypole / ligne 18 du Grand Paris
+Express).
+
+**Note de suivi** : aucune entrée n'avait été journalisée entre le 20 et
+le 28 août — la routine ne semble pas s'être exécutée (ou n'a rien
+committé) sur cette période. À vérifier côté planification si l'absence
+se reproduit.
+
+---
+
 ## 2026-08-19
 
 Rien de nouveau par rapport à la veille du 15 août : les mêmes pistes

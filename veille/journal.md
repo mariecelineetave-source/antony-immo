@@ -7,6 +7,36 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-08-30
+
+Rien de nouveau par rapport à la veille du 29 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €,
+maison 155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €, maison
+9 pièces 422 m² aux enchères en ligne près du parc Heller à 1 300 000 €,
+appartement 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les
+lots aux enchères notariales 36h-immo déjà signalés — AI19530, AI21793,
+et les références 17104/17941).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (PAP, SeLoger, leboncoin, ParuVendu, Logic-Immo, Belles
+Demeures), sans annonce individuelle nouvelle et identifiable avec
+certitude. Aucun nouveau signal de succession, d'enchère ou de permis de
+construire distinct de ceux déjà connus (Antonypole / ligne 18 du Grand
+Paris Express).
+
+**Note de réconciliation** : ce journal existait, depuis le 20 août, en
+deux versions divergentes selon la branche (les entrées du 20, 21, 22, 26,
+27 et 28 août n'avaient été committées que sur la branche de travail
+claude/anthony-imo-setup-dev-wzo4h1, jamais sur main, pendant que main
+recevait une entrée séparée le 29 août sans les voir). Les entrées
+manquantes ont été réintégrées ci-dessous dans l'ordre chronologique ; le
+journal ne fait plus foi que sur main désormais.
+
+---
+
 ## 2026-08-29
 
 Rien de nouveau par rapport à la dernière veille journalisée (19 août) :
@@ -40,6 +70,128 @@ Express).
 le 28 août — la routine ne semble pas s'être exécutée (ou n'a rien
 committé) sur cette période. À vérifier côté planification si l'absence
 se reproduit.
+
+---
+
+## 2026-08-28
+
+Rien de nouveau par rapport à la veille du 27 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €, lots
+aux enchères notariales 36h-immo déjà signalés — AI21793, AI18703, et les
+références 17104/17941).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (SeLoger, PAP, ParuVendu, leboncoin, entreparticuliers),
+sans annonce individuelle nouvelle et identifiable avec certitude. Aucun
+nouveau signal de succession, d'enchère ou de permis de construire
+distinct de ceux déjà connus (Antonypole / ligne 18 ; 36 permis délivrés
+en 2025, +38,5 % sur 2024).
+
+---
+
+## 2026-08-27
+
+Rien de nouveau par rapport à la veille du 26 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €, lots
+aux enchères notariales 36h-immo déjà signalés — AI21793, AI18703, et les
+références 17104/17941).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (SeLoger, PAP, ParuVendu, Logic-Immo, Orpi, Belles Demeures),
+sans annonce individuelle nouvelle et identifiable avec certitude. Aucun
+nouveau signal de succession, d'enchère ou de permis de construire distinct
+de ceux déjà connus (Antonypole / ligne 18 ; 36 permis délivrés en 2025).
+
+---
+
+## 2026-08-26
+
+Rien de nouveau par rapport à la veille du 22 août (dernière exécution
+disponible) : les mêmes pistes restent en ligne aux mêmes conditions
+(maison PAP 162 m² à 775 000 €, lots aux enchères notariales 36h-immo déjà
+signalés — AI21793, AI18703, et les références 17104/17941).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (SeLoger, PAP, ParuVendu, leboncoin, entreparticuliers), sans
+annonce individuelle nouvelle et identifiable avec certitude. Aucun nouveau
+signal de succession, d'enchère ou de permis de construire distinct de
+ceux déjà connus (Antonypole / ligne 18).
+
+---
+
+## 2026-08-22
+
+Rien de nouveau par rapport à la veille du 21 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €,
+appartement PAP 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les
+lots aux enchères notariales 36h-immo déjà signalés — AI19530, AI18987,
+AI18703, et les références 17104/17941). La maison PAP 130 m² rue de la
+Mutualité reste toujours introuvable via un lien individuel direct.
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (SeLoger, PAP, ParuVendu), sans annonce individuelle
+nouvelle et identifiable avec certitude. Côté permis de construire, les
+seules données disponibles restent des statistiques agrégées (36
+autorisations délivrées en 2025, +38,5 % sur 2024), sans signal
+individuel exploitable. Aucun nouveau signal de succession ou d'enchère
+distinct de ceux déjà connus (Antonypole / ligne 18).
+
+---
+
+## 2026-08-21
+
+Rien de nouveau par rapport à la veille du 20 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €,
+appartement PAP 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les
+lots aux enchères notariales 36h-immo déjà signalés — AI19530, AI18987,
+AI18703, et les références 17104/17941). La maison PAP 130 m² rue de la
+Mutualité, apparue à plusieurs reprises depuis début août, reste elle
+aussi introuvable via un lien individuel direct (uniquement des pages de
+catégorie g43266) : toujours non retenue comme piste confirmée.
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (SeLoger, PAP, ParuVendu, leboncoin, entreparticuliers), sans
+annonce individuelle nouvelle et identifiable avec certitude. Aucun
+nouveau signal de succession, d'enchère ou de permis de construire
+distinct de ceux déjà connus (Antonypole / ligne 18).
+
+---
+
+## 2026-08-20
+
+Rien de nouveau par rapport à la veille du 19 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €,
+appartement PAP 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les
+lots aux enchères notariales 36h-immo déjà signalés — AI19530, AI18987,
+AI18703, et les références 17104/17941).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (SeLoger, PAP, ParuVendu, Logic-Immo, Bien'ici,
+entreparticuliers, Foncia, l'Adresse, iad, Optimhome) et des simulateurs
+de prix, sans annonce individuelle nouvelle et identifiable avec
+certitude. Rien de neuf non plus côté permis de construire ou projet
+urbain : les chiffres 2025-2026 de la ville (36 permis délivrés en 2025)
+sont des statistiques agrégées, pas des signaux individuels exploitables.
+Aucun nouveau signal de succession ou d'enchère distinct de ceux déjà
+connus.
 
 ---
 

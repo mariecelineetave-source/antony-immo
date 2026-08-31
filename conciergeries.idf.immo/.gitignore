@@ -1,0 +1,3 @@
+# Le cache de Python, créé quand on lance les scripts de outils/
+__pycache__/
+*.pyc

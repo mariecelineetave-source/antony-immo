@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partager une opportunité — conciergeries.idf.immo</title>
+<meta name="description" content="Partagez une opportunité en trois écrans : le logement, le projet du propriétaire, vos coordonnées. 10 % de mes honoraires nets si l'opération se conclut.">
+<link rel="canonical" href="https://conciergeries.idf.immo/partager.html">
+<meta name="theme-color" content="#0E2E52">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .form-tete{background:var(--ombre);color:#fff;padding:30px 0 26px}
+  .form-tete h1{color:#fff;font-size:clamp(1.6rem,4.4vw,2.2rem)}
+  .form-tete p{color:#C9DDF2;margin-top:10px;font-size:.98rem;max-width:52ch}
+  .jauge{display:flex;gap:6px;margin-top:22px}
+  .jauge span{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.18)}
+  .jauge span.faite{background:var(--ciel)}
+  .jauge span.active{background:var(--or-clair)}
+
+  .ecran{display:none;padding:34px 0 56px}
+  .ecran.actif{display:block}
+  .ecran h2{color:var(--ombre);font-size:clamp(1.35rem,3.4vw,1.8rem);margin-bottom:6px}
+  .ecran .aide{color:var(--mousse);margin-bottom:26px;max-width:56ch}
+
+  .champ{margin-bottom:24px}
+  .champ > label,.legende{display:block;font-weight:650;color:var(--ombre);margin-bottom:7px;font-size:1rem}
+  .champ .note{display:block;font-size:.87rem;color:var(--mousse);margin-bottom:9px;font-weight:400}
+  input[type=text],input[type=tel],input[type=email],textarea{
+    width:100%;font-family:inherit;font-size:1.05rem;color:var(--encre);
+    background:var(--craie);border:1.5px solid var(--ligne);border-radius:10px;
+    padding:14px 16px;min-height:52px;
+  }
+  textarea{min-height:120px;resize:vertical;line-height:1.55}
+  input:focus,textarea:focus{border-color:var(--azur);outline:none;box-shadow:0 0 0 3px rgba(30,136,229,.18)}
+  input::placeholder,textarea::placeholder{color:#8FA6BC}
+
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .trio input{font-size:1rem}
+
+  /* choix en pastilles */
+  fieldset{border:0}
+  .choix{display:flex;flex-wrap:wrap;gap:9px}
+  .choix input{position:absolute;opacity:0;width:0;height:0}
+  .choix label{
+    display:inline-flex;align-items:center;min-height:48px;padding:11px 18px;
+    background:var(--craie);border:1.5px solid var(--ligne);border-radius:999px;
+    cursor:pointer;font-size:.97rem;transition:border-color .15s,background .15s;
+  }
+  .choix label:hover{border-color:var(--azur)}
+  .choix input:checked + label{border-color:var(--azur);background:rgba(30,136,229,.1);color:var(--ombre);font-weight:600}
+  .choix input:focus-visible + label{outline:3px solid var(--azur);outline-offset:3px}
+
+  /* choix empilés (le propriétaire) */
+  .empile{display:flex;flex-direction:column;gap:11px}
+  .empile input{position:absolute;opacity:0;width:0;height:0}
+  .empile label{
+    display:block;padding:17px 19px;background:var(--craie);
+    border:1.5px solid var(--ligne);border-radius:12px;cursor:pointer;
+  }
+  .empile label b{display:block;color:var(--ombre);font-size:1rem;margin-bottom:3px}
+  .empile label span{display:block;font-size:.9rem;color:var(--mousse);line-height:1.5}
+  .empile input:checked + label{border-color:var(--azur);background:rgba(30,136,229,.08)}
+  .empile input:focus-visible + label{outline:3px solid var(--azur);outline-offset:3px}
+
+  /* suggestions d'adresse */
+  .boite{position:relative}
+  .suggestions{
+    position:absolute;left:0;right:0;top:calc(100% + 5px);z-index:30;
+    background:#fff;border:1px solid var(--ligne);border-radius:10px;
+    box-shadow:0 12px 32px -14px rgba(14,46,82,.45);overflow:hidden;
+  }
+  .suggestions:empty{display:none}
+  .suggestions button{
+    display:block;width:100%;text-align:left;background:none;border:0;
+    padding:12px 16px;font-family:inherit;font-size:.97rem;color:var(--encre);cursor:pointer;
+    border-bottom:1px solid var(--ligne-fine);
+  }
+  .suggestions button:last-child{border-bottom:0}
+  .suggestions button:hover,.suggestions button:focus{background:var(--parterre);outline:none}
+  .suggestions button small{display:block;color:var(--mousse);font-size:.83rem}
+
+  .retenue{
+    display:none;align-items:flex-start;gap:11px;margin-top:11px;padding:13px 15px;
+    background:rgba(30,136,229,.09);border:1px solid rgba(30,136,229,.3);border-radius:10px;font-size:.95rem;
+  }
+  .retenue.on{display:flex}
+  .retenue b{color:var(--ombre)}
+  .retenue button{background:none;border:0;color:var(--azur-fonce);font-family:inherit;font-size:.88rem;cursor:pointer;text-decoration:underline;padding:0;margin-top:3px}
+
+  .detail-technique{display:none;margin-top:8px;font-size:.85rem;opacity:.85}
+  .detail-technique.on{display:block}
+  .alerte{
+    display:none;margin-top:12px;padding:14px 16px;border-radius:10px;
+    background:#FBF4E8;border:1px solid var(--or-clair);color:#6B4F26;font-size:.94rem;
+  }
+  .alerte.on{display:block}
+  .erreur{display:none;margin-top:9px;color:#A32A2A;font-size:.9rem;font-weight:600}
+  .erreur.on{display:block}
+
+  .barre-nav{display:flex;gap:11px;align-items:center;margin-top:34px;flex-wrap:wrap}
+  .barre-nav .bouton{flex:1;min-width:150px}
+  .retour{background:none;border:0;color:var(--mousse);font-family:inherit;font-size:.95rem;cursor:pointer;padding:12px 4px;text-decoration:underline}
+
+  .encart-info{
+    background:rgba(30,136,229,.07);border:1px solid rgba(30,136,229,.28);
+    border-radius:12px;padding:15px 17px;margin:14px 0 22px;
+    font-size:.94rem;line-height:1.6;color:var(--encre);
+  }
+  .encart-info strong{color:var(--ombre)}
+
+  .phrase{
+    background:var(--parterre);border-radius:12px;padding:18px 20px;margin:6px 0 4px;
+    font-family:"Fraunces",Georgia,serif;font-size:1.05rem;line-height:1.5;color:var(--ombre);
+  }
+
+  /* confirmation */
+  .recu{text-align:center;padding:44px 0 64px}
+  .recu .sceau{
+    width:70px;height:70px;border-radius:50%;margin:0 auto 22px;
+    background:rgba(30,136,229,.12);color:var(--azur-fonce);
+    display:grid;place-items:center;font-size:2rem;
+  }
+  .recu h2{color:var(--ombre);margin-bottom:12px}
+  .recu > p{color:var(--mousse);max-width:48ch;margin:0 auto 12px}
+  .ref{
+    display:inline-block;margin:22px 0 6px;padding:16px 26px;
+    background:var(--craie);border:1px solid var(--ligne);border-radius:12px;
+  }
+  .ref .etiq{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mousse);margin-bottom:5px}
+  .ref .code{font-family:"Fraunces",Georgia,serif;font-size:1.5rem;color:var(--ombre);letter-spacing:.02em}
+  .ref .date{display:block;font-size:.86rem;color:var(--mousse);margin-top:5px}
+  .suite{max-width:520px;margin:30px auto 0;text-align:left}
+</style>
+</head>
+<body>
+<a class="saut" href="#form">Aller au formulaire</a>
+
+<header class="entete">
+  <div class="conteneur">
+    <a class="logo" href="/">conciergeries<span class="pt">.</span>idf<span class="pt">.</span>immo</a>
+    <nav class="nav-p" aria-label="Navigation principale">
+      <a href="comment-ca-marche.html">Comment ça marche</a>
+      <a href="la-remuneration.html">La rémunération</a>
+      <a href="vos-questions.html">Vos questions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="bouton bouton-2" href="tel:+33660989292">06 60 98 92 92</a>
+  </div>
+</header>
+
+<div class="form-tete" id="form">
+  <div class="conteneur etroit">
+    <h1 id="titre-form">Partager une opportunité</h1>
+    <p id="sous-titre-form">Trois écrans, deux minutes. Vous pouvez vous interrompre et reprendre plus tard&nbsp;: la saisie reste sur votre appareil.</p>
+    <div class="jauge" aria-hidden="true">
+      <span id="j1" class="active"></span><span id="j2"></span><span id="j3"></span>
+    </div>
+  </div>
+</div>
+
+<main>
+<form id="opportunite" action="https://formsubmit.co/contact@idf.immo" method="POST" novalidate>
+
+  <!-- ================= ÉCRAN 1 ================= -->
+  <section class="ecran actif" id="ecran1" aria-labelledby="t1">
+    <div class="conteneur etroit">
+      <h2 id="t1">De quel logement s'agit-il&nbsp;?</h2>
+      <p class="aide">L'adresse suffit. Le bâtiment et l'étage évitent les confusions dans un immeuble où vous gérez plusieurs lots.</p>
+
+      <div class="champ">
+        <label for="adresse">Adresse du logement</label>
+        <span class="note">Commencez à taper, puis choisissez dans la liste.</span>
+        <div class="boite">
+          <input type="text" id="adresse" name="adresse" autocomplete="off" spellcheck="false"
+                 placeholder="12 rue Oberkampf, 75011 Paris" aria-describedby="err-adresse">
+          <div class="suggestions" id="suggestions" role="listbox" aria-label="Adresses proposées"></div>
+        </div>
+        <div class="retenue" id="retenue">
+          <span>📍</span>
+          <div>
+            <b id="retenue-txt"></b>
+            <button type="button" id="changer">Changer d'adresse</button>
+          </div>
+        </div>
+        <div class="alerte" id="hors-zone">
+          Cette adresse ne semble pas être en Île-de-France. Nous n'intervenons que dans les huit départements franciliens&nbsp;: 75, 77, 78, 91, 92, 93, 94 et 95.
+        </div>
+        <div class="erreur" id="err-adresse">Indiquez l'adresse du logement pour continuer.</div>
+      </div>
+
+      <div class="champ">
+        <span class="legende" id="lbl-prec">Bâtiment, escalier, étage</span>
+        <span class="note">Facultatif.</span>
+        <div class="trio" role="group" aria-labelledby="lbl-prec">
+          <input type="text" id="batiment" name="batiment" placeholder="Bât. B" aria-label="Bâtiment">
+          <input type="text" id="escalier" name="escalier" placeholder="Esc. 2" aria-label="Escalier">
+          <input type="text" id="etage" name="etage" placeholder="3e étage" aria-label="Étage">
+        </div>
+      </div>
+
+      <div class="champ">
+        <fieldset>
+          <legend class="legende">Ce logement est-il dans votre portefeuille&nbsp;?</legend>
+          <div class="choix">
+            <input type="radio" name="portefeuille" id="pf-oui" value="Oui, je le gère"><label for="pf-oui">Oui, je le gère</label>
+            <input type="radio" name="portefeuille" id="pf-autre" value="Non, autre bien du propriétaire"><label for="pf-autre">Non, autre bien du propriétaire</label>
+          </div>
+        </fieldset>
+        <span class="note" style="margin-top:9px">Un propriétaire dont vous gérez un studio peut très bien vouloir vendre un tout autre logement. Les deux cas ouvrent les mêmes droits.</span>
+        <div class="erreur" id="err-portefeuille">Indiquez si ce logement est dans votre portefeuille.</div>
+      </div>
+
+      <div class="barre-nav">
+        <button type="button" class="bouton bouton-1" data-va="2">Continuer</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ÉCRAN 2 ================= -->
+  <section class="ecran" id="ecran2" aria-labelledby="t2">
+    <div class="conteneur etroit">
+      <h2 id="t2">Ce que vous savez du projet</h2>
+      <p class="aide">Nous avons besoin de savoir qu'un projet existe, et de quelle nature. Rien sur la vie privée du propriétaire.</p>
+
+      <div class="champ">
+        <fieldset>
+          <legend class="legende">De quel type de bien s'agit-il&nbsp;?</legend>
+          <div class="choix">
+            <input type="radio" name="type" id="t-appart" value="Appartement"><label for="t-appart">Appartement</label>
+            <input type="radio" name="type" id="t-maison" value="Maison"><label for="t-maison">Maison</label>
+            <input type="radio" name="type" id="t-immeuble" value="Immeuble ou lot multiple"><label for="t-immeuble">Immeuble ou lot multiple</label>
+            <input type="radio" name="type" id="t-autre" value="Autre"><label for="t-autre">Autre</label>
+          </div>
+        </fieldset>
+        <div class="erreur" id="err-type">Choisissez le type de bien.</div>
+      </div>
+
+      <div class="champ">
+        <fieldset>
+          <legend class="legende">De quoi le propriétaire a-t-il besoin&nbsp;?</legend>
+          <span class="note">Les trois missions ouvrent droit aux mêmes 10 %.</span>
+          <div class="choix">
+            <input type="radio" name="besoin" id="b-vente" value="Vendre"><label for="b-vente">Vendre</label>
+            <input type="radio" name="besoin" id="b-recherche" value="Acquérir un autre bien"><label for="b-recherche">Acquérir un autre bien</label>
+            <input type="radio" name="besoin" id="b-expertise" value="Expertise en valeur vénale"><label for="b-expertise">Une valeur écrite (expertise)</label>
+            <input type="radio" name="besoin" id="b-flou" value="Pas encore arrêté"><label for="b-flou">Ce n'est pas encore arrêté</label>
+          </div>
+        </fieldset>
+        <div class="erreur" id="err-besoin">Indiquez la nature du besoin, même approximativement.</div>
+      </div>
+
+      <div class="champ">
+        <fieldset>
+          <legend class="legende">Où en est la réflexion, à votre connaissance&nbsp;?</legend>
+          <div class="choix">
+            <input type="radio" name="etat" id="e-parle" value="Il en parle"><label for="e-parle">Il en parle</label>
+            <input type="radio" name="etat" id="e-decide" value="C'est décidé"><label for="e-decide">C'est décidé</label>
+            <input type="radio" name="etat" id="e-consulte" value="Il consulte déjà"><label for="e-consulte">Il consulte déjà</label>
+            <input type="radio" name="etat" id="e-marche" value="Déjà sur le marché"><label for="e-marche">Déjà sur le marché</label>
+          </div>
+        </fieldset>
+        <div class="erreur" id="err-etat">Choisissez où en est la réflexion.</div>
+      </div>
+
+      <div class="champ">
+        <fieldset>
+          <legend class="legende">Des réservations sont-elles déjà prises&nbsp;?</legend>
+          <span class="note">Facultatif, mais précieux&nbsp;: un calendrier chargé se traite très différemment au moment de la mise en vente.</span>
+          <div class="choix">
+            <input type="radio" name="reservations" id="r-oui" value="Oui"><label for="r-oui">Oui</label>
+            <input type="radio" name="reservations" id="r-non" value="Non"><label for="r-non">Non</label>
+            <input type="radio" name="reservations" id="r-nsp" value="Je ne sais pas"><label for="r-nsp">Je ne sais pas</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="champ">
+        <label for="details">Ce que vous savez</label>
+        <span class="note">Deux lignes suffisent. C'est ce qui nous permet d'appeler au bon moment et avec le bon angle.</span>
+        <textarea id="details" name="details" placeholder="Rendement en baisse depuis deux saisons, il a parlé de recentrer sur la petite couronne."></textarea>
+      </div>
+
+      <div class="barre-nav">
+        <button type="button" class="retour" data-va="1">← Revenir</button>
+        <button type="button" class="bouton bouton-1" data-va="3">Continuer</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ÉCRAN 3 ================= -->
+  <section class="ecran" id="ecran3" aria-labelledby="t3">
+    <div class="conteneur etroit">
+      <h2 id="t3">Vous, et le propriétaire</h2>
+      <p class="aide">Vos coordonnées servent au suivi du dossier et au règlement de la commission. Elles ne servent à rien d'autre.</p>
+
+      <div class="champ">
+        <label for="nom">Vos nom et prénom</label>
+        <input type="text" id="nom" name="nom" autocomplete="name" placeholder="Claire Vasseur">
+        <div class="erreur" id="err-nom">Indiquez vos nom et prénom.</div>
+      </div>
+
+      <div class="champ">
+        <label for="societe">Votre conciergerie</label>
+        <span class="note">La raison sociale, telle qu'elle figurera sur la convention et sur la facture.</span>
+        <input type="text" id="societe" name="societe" placeholder="Clefs de Seine, Boulogne-Billancourt">
+        <div class="erreur" id="err-societe">Indiquez le nom de votre société.</div>
+      </div>
+
+      <div class="champ">
+        <label for="fonction">Votre fonction</label>
+        <span class="note">C'est ce que nous dirons au propriétaire si vous nous autorisez à vous citer.</span>
+        <input type="text" id="fonction" name="fonction" placeholder="Gérante, responsable de portefeuille…">
+        <div class="erreur" id="err-fonction">Indiquez votre fonction.</div>
+      </div>
+
+      <div class="champ">
+        <label for="tel">Votre téléphone</label>
+        <input type="tel" id="tel" name="tel" autocomplete="tel" placeholder="06 12 34 56 78">
+        <div class="erreur" id="err-tel">Indiquez un numéro de téléphone.</div>
+      </div>
+
+      <div class="champ">
+        <label for="email">Votre e-mail professionnel</label>
+        <span class="note">C'est là qu'arrivent l'accusé de réception, puis le suivi du dossier.</span>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="c.vasseur@exemple.fr">
+        <div class="erreur" id="err-email">Indiquez une adresse e-mail : c'est par là que se fait le suivi.</div>
+      </div>
+
+      <div class="champ">
+        <label for="siren">Votre SIREN</label>
+        <span class="note">Facultatif à ce stade. Il sera demandé au moment de la convention, la commission étant réglée sur facture d'apport d'affaires.</span>
+        <input type="text" id="siren" name="siren" placeholder="812 345 678">
+      </div>
+
+      <div>
+        <span class="legende" style="font-size:1.05rem;margin-bottom:10px">Le propriétaire</span>
+        <p class="note" style="margin-bottom:14px">Pour instruire le dossier, il nous faut son nom et son numéro. <strong>Recueillez son accord au préalable</strong>&nbsp;— c'est une condition du versement, et c'est ce qui fait que le premier appel se passe bien.</p>
+
+        <div class="phrase">
+          « Je travaille avec une conseillère en immobilier spécialisée sur l'Île-de-France, qui suit régulièrement des propriétaires investisseurs. Si votre réflexion se précise, je peux lui transmettre vos coordonnées pour qu'elle vous appelle&nbsp;? »
+        </div>
+        <p class="note">Tant qu'il n'a pas dit oui, ne nous transmettez pas ses coordonnées.</p>
+        <div class="encart-info">
+          <strong>Vous pouvez aussi lui communiquer directement mon numéro</strong> — le 06 60 98 92 92. Beaucoup de propriétaires préfèrent faire la démarche eux-mêmes, à leur rythme.
+          Du moment que vous avez partagé l'opportunité ici <strong>avec ses coordonnées</strong>, le rapprochement est automatique&nbsp;: c'est la date de votre partage qui compte, et la commission vous revient même si c'est lui qui appelle.
+        </div>
+
+        <div class="champ">
+          <label for="p-nom">Son nom</label>
+          <input type="text" id="p-nom" name="p-nom" placeholder="M. Ferrand">
+          <div class="erreur" id="err-pnom">Indiquez le nom du propriétaire.</div>
+        </div>
+        <div class="champ">
+          <label for="p-tel">Son téléphone</label>
+          <input type="tel" id="p-tel" name="p-tel" placeholder="06 98 76 54 32">
+          <div class="erreur" id="err-ptel">Indiquez son numéro de téléphone.</div>
+        </div>
+        <div class="champ">
+          <label for="atteste" style="display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-weight:400">
+            <input type="checkbox" id="atteste" style="width:22px;height:22px;min-height:0;flex:0 0 auto;margin-top:3px;accent-color:#1E88E5">
+            <span>Je confirme lui en avoir parlé et avoir son accord pour que Marie-Céline Etave le contacte.</span>
+          </label>
+          <div class="erreur" id="err-atteste">Sans son accord, nous ne pouvons pas utiliser ses coordonnées.</div>
+        </div>
+        <div class="champ">
+          <label for="numero-donne" style="display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-weight:400">
+            <input type="checkbox" id="numero-donne" style="width:22px;height:22px;min-height:0;flex:0 0 auto;margin-top:3px;accent-color:#1E88E5">
+            <span>Je lui ai aussi communiqué le 06 60 98 92 92&nbsp;: il appellera peut-être de lui-même.</span>
+          </label>
+          <span class="note" style="margin:8px 0 0 34px">Cochez si vous lui avez transmis le numéro. Cela évite qu'un appel arrive sans qu'on sache d'où il vient.</span>
+        </div>
+      </div>
+
+      <div class="champ">
+        <fieldset>
+          <legend class="legende">Lors de notre appel, pouvons-nous vous citer&nbsp;?</legend>
+          <span class="note">Dans les deux cas nous indiquons d'où vient l'information&nbsp;— c'est la règle. Seul votre nom change.</span>
+          <div class="empile">
+            <input type="radio" name="citation" id="c-oui" value="oui">
+            <label for="c-oui">
+              <b>Oui, vous pouvez nous citer</b>
+              <span>«&nbsp;C'est votre conciergerie qui m'a transmis vos coordonnées, avec votre accord.&nbsp;»</span>
+            </label>
+            <input type="radio" name="citation" id="c-non" value="non">
+            <label for="c-non">
+              <b>Non, ne nous citez pas</b>
+              <span>«&nbsp;J'ai eu vos coordonnées par un professionnel qui travaille avec vous, et qui m'a indiqué que vous étiez d'accord pour que je vous appelle.&nbsp;» Ni votre nom ni celui de la société ne sont prononcés.</span>
+            </label>
+          </div>
+        </fieldset>
+        <div class="erreur" id="err-citation">Dites-nous si nous pouvons vous citer.</div>
+      </div>
+
+      <div class="alerte" id="echec-envoi">
+        <strong>Votre opportunité n'est pas partie.</strong> Vos réponses sont conservées sur cet appareil&nbsp;: réessayez dans un instant, ou appelez le <a href="tel:+33660989292">06 60 98 92 92</a>.
+        <span id="echec-detail" class="detail-technique"></span>
+      </div>
+
+      <div class="barre-nav">
+        <button type="button" class="retour" data-va="2">← Revenir</button>
+        <button type="submit" class="bouton bouton-1">Envoyer l'opportunité</button>
+      </div>
+      <p class="note" style="margin-top:16px">En envoyant, vous acceptez les <a href="conditions-du-partenariat.html">conditions du partenariat</a>. Vous recevez aussitôt un e-mail de confirmation avec votre numéro d'opportunité.</p>
+    </div>
+  </section>
+
+</form>
+
+<!-- ================= CONFIRMATION ================= -->
+<section class="ecran" id="ecran4" aria-labelledby="t4">
+  <div class="conteneur etroit recu">
+    <div class="sceau" aria-hidden="true">✓</div>
+    <h2 id="t4">Opportunité enregistrée.</h2>
+    <p>Un e-mail de confirmation vient de partir vers <strong id="adresse-confirmation">votre adresse</strong>&nbsp;— s'il n'apparaît pas, regardez dans les indésirables.</p>
+    <div class="ref">
+      <span class="etiq">Votre numéro d'opportunité</span>
+      <span class="code" id="code-ref">—</span>
+      <span class="date" id="date-ref"></span>
+    </div>
+    <p style="font-size:.9rem">Ce numéro est votre repère, et votre preuve d'antériorité. Conservez le message.</p>
+
+    <div class="suite">
+      <div class="frise">
+        <div class="pas"><span class="rond">1</span><div><span class="nom">Reçue</span><br><span class="det">Accusé de réception immédiat.</span></div></div>
+        <div class="pas"><span class="rond">2</span><div><span class="nom">Qualifiée</span><br><span class="det">Réponse motivée sous 24 heures.</span></div></div>
+        <div class="pas"><span class="rond">3</span><div><span class="nom">Contact établi</span><br><span class="det">Le propriétaire a été approché.</span></div></div>
+        <div class="pas"><span class="rond">4</span><div><span class="nom">Mission engagée</span><br><span class="det">Mandat ou lettre de mission signée.</span></div></div>
+        <div class="pas"><span class="rond">5</span><div><span class="nom">Opération conclue</span><br><span class="det">Acte authentique, ou rapport remis et réglé.</span></div></div>
+        <div class="pas"><span class="rond">✓</span><div><span class="nom">Commission de 10 %</span><br><span class="det">Réglée sous 15 jours, sur facture.</span></div></div>
+      </div>
+      <div class="actions" style="justify-content:center">
+        <a class="bouton bouton-2" href="partager.html">Partager une autre opportunité</a>
+        <a class="bouton bouton-2" href="/">Revenir à l'accueil</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="bas" style="margin-top:0;border-top:0;padding-top:0">
+      <span><a href="/">conciergeries.idf.immo</a></span>
+      <span><a href="tel:+33660989292">06 60 98 92 92</a></span>
+      <span><a href="mailto:contact@idf.immo">contact@idf.immo</a></span>
+      <span><a href="conditions-du-partenariat.html">Conditions du partenariat</a></span>
+      <span><a href="mentions-legales.html">Mentions légales</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var DEPS_IDF = ["75","77","78","91","92","93","94","95"];
+  var CLE = "conciergeries-brouillon";
+  var form = document.getElementById("opportunite");
+  var ecrans = [null, document.getElementById("ecran1"), document.getElementById("ecran2"),
+                document.getElementById("ecran3"), document.getElementById("ecran4")];
+  var jauges = [null, document.getElementById("j1"), document.getElementById("j2"), document.getElementById("j3")];
+  var adresse = document.getElementById("adresse");
+  var suggestions = document.getElementById("suggestions");
+  var retenue = document.getElementById("retenue");
+  var retenueTxt = document.getElementById("retenue-txt");
+  var horsZone = document.getElementById("hors-zone");
+  var choisie = null;   // l'adresse validée dans la liste
+
+  /* ---------- navigation entre écrans ---------- */
+  function va(n){
+    for (var i=1;i<=4;i++){ ecrans[i].classList.toggle("actif", i===n); }
+    for (var j=1;j<=3;j++){
+      jauges[j].className = (j < n ? "faite" : (j === n ? "active" : ""));
+    }
+    if (n === 4){
+      document.getElementById("titre-form").textContent = "Opportunité partagée";
+      document.getElementById("sous-titre-form").textContent = "Voici ce qui va se passer maintenant.";
+      document.querySelector(".jauge").style.display = "none";
+    }
+    window.scrollTo({top:0, behavior:"smooth"});
+    var h = ecrans[n].querySelector("h2");
+    if (h){ h.setAttribute("tabindex","-1"); h.focus({preventScroll:true}); }
+  }
+
+  document.addEventListener("click", function(e){
+    var b = e.target.closest("[data-va]");
+    if (!b) return;
+    var cible = parseInt(b.getAttribute("data-va"), 10);
+    // on ne valide qu'en avançant
+    if (cible > 1 && b.classList.contains("bouton") && !valide(cible - 1)) return;
+    va(cible);
+  });
+
+  /* ---------- messages d'erreur ---------- */
+  function erreur(id, montre){
+    var el = document.getElementById(id);
+    if (el) el.classList.toggle("on", !!montre);
+    return !montre;
+  }
+
+  function valide(n, discret){
+    var ok = true;
+    if (n === 1){
+      ok = erreur("err-adresse", !adresse.value.trim()) && ok;
+      ok = erreur("err-portefeuille", !form.querySelector("input[name=portefeuille]:checked")) && ok;
+    }
+    if (n === 2){
+      ok = erreur("err-type", !form.querySelector("input[name=type]:checked")) && ok;
+      ok = erreur("err-besoin", !form.querySelector("input[name=besoin]:checked")) && ok;
+      ok = erreur("err-etat", !form.querySelector("input[name=etat]:checked")) && ok;
+    }
+    if (n === 3){
+      ok = erreur("err-nom", !document.getElementById("nom").value.trim()) && ok;
+      ok = erreur("err-societe", !document.getElementById("societe").value.trim()) && ok;
+      ok = erreur("err-fonction", !document.getElementById("fonction").value.trim()) && ok;
+      ok = erreur("err-tel", !document.getElementById("tel").value.trim()) && ok;
+      var mail = document.getElementById("email").value.trim();
+      ok = erreur("err-email", !mail || mail.indexOf("@") < 1) && ok;
+      // Les coordonnées du propriétaire sont demandées dans tous les cas ;
+      // son accord préalable est la condition du versement (convention, art. 5).
+      ok = erreur("err-pnom", !document.getElementById("p-nom").value.trim()) && ok;
+      ok = erreur("err-ptel", !document.getElementById("p-tel").value.trim()) && ok;
+      ok = erreur("err-atteste", !document.getElementById("atteste").checked) && ok;
+      ok = erreur("err-citation", !form.querySelector("input[name=citation]:checked")) && ok;
+    }
+    if (!ok && !discret){
+      var prem = ecrans[n].querySelector(".erreur.on");
+      if (prem) prem.scrollIntoView({block:"center", behavior:"smooth"});
+    }
+    return ok;
+  }
+
+  // Une fois qu'une erreur est affichée, elle disparaît dès que le champ est
+  // corrigé — sans faire sauter la page sous les doigts.
+  function relit(){
+    var actif = document.querySelector(".ecran.actif");
+    if (!actif || !actif.querySelector(".erreur.on")) return;
+    valide(parseInt(actif.id.replace("ecran", ""), 10), true);
+  }
+
+  form.addEventListener("change", function(){ sauve(); relit(); });
+  form.addEventListener("input", function(){ sauve(); relit(); });
+
+  /* ---------- autocomplétion Base Adresse Nationale ---------- */
+  var minuteur = null;
+  adresse.addEventListener("input", function(){
+    choisie = null;
+    retenue.classList.remove("on");
+    horsZone.classList.remove("on");
+    clearTimeout(minuteur);
+    var q = adresse.value.trim();
+    if (q.length < 4){ suggestions.innerHTML = ""; return; }
+    minuteur = setTimeout(function(){ cherche(q); }, 260);
+  });
+
+  function cherche(q){
+    var url = "https://api-adresse.data.gouv.fr/search/?limit=5&q=" + encodeURIComponent(q);
+    fetch(url).then(function(r){ return r.json(); }).then(function(d){
+      suggestions.innerHTML = "";
+      (d.features || []).forEach(function(f){
+        var p = f.properties;
+        var b = document.createElement("button");
+        b.type = "button";
+        var fort = document.createElement("span");
+        fort.textContent = p.name || p.label;
+        var pet = document.createElement("small");
+        pet.textContent = (p.postcode || "") + " " + (p.city || "");
+        b.appendChild(fort); b.appendChild(pet);
+        b.addEventListener("click", function(){ retiens(p); });
+        suggestions.appendChild(b);
+      });
+    }).catch(function(){
+      // Hors ligne ou service indisponible : on garde la saisie libre,
+      // le formulaire reste utilisable.
+      suggestions.innerHTML = "";
+    });
+  }
+
+  function retiens(p){
+    choisie = p;
+    adresse.value = p.label;
+    suggestions.innerHTML = "";
+    retenueTxt.textContent = p.label;
+    retenue.classList.add("on");
+    var dep = (p.postcode || "").slice(0,2);
+    horsZone.classList.toggle("on", DEPS_IDF.indexOf(dep) === -1);
+    erreur("err-adresse", false);
+    sauve();
+  }
+
+  document.getElementById("changer").addEventListener("click", function(){
+    choisie = null;
+    retenue.classList.remove("on");
+    horsZone.classList.remove("on");
+    adresse.value = "";
+    adresse.focus();
+  });
+
+  document.addEventListener("click", function(e){
+    if (!e.target.closest(".boite")) suggestions.innerHTML = "";
+  });
+
+  /* ---------- brouillon local ---------- */
+  var champs = ["adresse","batiment","escalier","etage","details",
+                "nom","societe","fonction","tel","email","siren","p-nom","p-tel"];
+  var groupes = ["portefeuille","type","besoin","etat","reservations","citation"];
+  function sauve(){
+    try{
+      var d = {};
+      champs.forEach(function(id){ d[id] = document.getElementById(id).value; });
+      groupes.forEach(function(nom){
+        var el = form.querySelector("input[name=" + nom + "]:checked");
+        d[nom] = el ? el.id : "";
+      });
+      d.atteste = document.getElementById("atteste").checked;
+      d.numeroDonne = document.getElementById("numero-donne").checked;
+      localStorage.setItem(CLE, JSON.stringify(d));
+    }catch(err){ /* navigation privée : on continue sans brouillon */ }
+  }
+  function reprends(){
+    try{
+      var d = JSON.parse(localStorage.getItem(CLE) || "{}");
+      champs.forEach(function(id){ if (d[id]) document.getElementById(id).value = d[id]; });
+      groupes.forEach(function(nom){
+        if (d[nom]){ var el = document.getElementById(d[nom]); if (el) el.checked = true; }
+      });
+      if (d.atteste) document.getElementById("atteste").checked = true;
+      if (d.numeroDonne) document.getElementById("numero-donne").checked = true;
+    }catch(err){ /* rien à reprendre */ }
+  }
+  reprends();
+
+  /* ---------- envoi ---------- */
+  function reference(){
+    var n = new Date();
+    var alea = String(Math.floor(Math.random()*9000)+1000);
+    return "OPP-" + n.getFullYear() + "-" + alea;
+  }
+
+  var envoi = form.querySelector("button[type=submit]");
+  var echec = document.getElementById("echec-envoi");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (!valide(3)) return;
+
+    var ref = reference();
+    var v = function(id){ return document.getElementById(id).value.trim(); };
+    var coche = function(nom){
+      var el = form.querySelector("input[name=" + nom + "]:checked");
+      return el ? el.value : "";
+    };
+
+    var quand = new Date().toLocaleDateString("fr-FR", {
+      day:"numeric", month:"long", year:"numeric", hour:"2-digit", minute:"2-digit"
+    });
+    var cite = coche("citation") === "oui";
+    var donneNumero = document.getElementById("numero-donne").checked;
+
+    // Le message de confirmation envoyé automatiquement à la conciergerie.
+    var confirmation =
+      "Bonjour,\n\n" +
+      "Nous avons bien reçu votre opportunité.\n\n" +
+      "Numéro : " + ref + "\n" +
+      "Enregistrée le : " + quand + "\n" +
+      "Logement concerné : " + v("adresse") + "\n" +
+      "Partagée par : " + v("nom") + " — " + v("societe") + "\n\n" +
+      "Ce qui se passe maintenant :\n" +
+      "1. Nous vous répondons sous 24 heures : nous vous disons si nous donnons suite, et pourquoi.\n" +
+      "2. Nous approchons le propriétaire, en respectant ce que vous avez choisi" +
+      (cite ? " (vous nous avez autorisés à vous citer)." : " (ni votre nom ni celui de votre société ne seront prononcés).") + "\n" +
+      (donneNumero ? "   (vous lui avez communiqué mon numéro : s'il appelle de lui-même, votre partage reste enregistré et la commission vous revient)\n" : "") +
+      "3. Vous êtes informé par e-mail à chaque changement d'étape.\n" +
+      "4. Si l'opération se conclut, vous percevez 10 % de mes honoraires nets hors taxes, dans les 15 jours\n" +
+      "   suivant leur encaissement, sur facture d'apport d'affaires (la TVA s'ajoute si vous y êtes assujetti).\n" +
+      "   Pour une vente ou une acquisition, le fait générateur est la signature de l'acte authentique ;\n" +
+      "   pour une expertise en valeur vénale, la remise et le règlement du rapport, sans qu'une vente soit nécessaire.\n\n" +
+      "Conservez ce message : c'est votre preuve d'antériorité si le même logement était partagé après vous.\n\n" +
+      "Une question ? 06 60 98 92 92 ou contact@idf.immo\n\n" +
+      "Marie-Céline Etave\n" +
+      "conciergeries.idf.immo";
+
+    var d = new FormData();
+    d.append("_subject", "Opportunité " + ref + " — " + (choisie && choisie.city ? choisie.city : v("adresse")));
+    d.append("_template", "table");
+    d.append("_captcha", "false");
+    d.append("_autoresponse", confirmation);
+    d.append("email", v("email"));           // sert de destinataire à la confirmation
+    d.append("Référence", ref);
+    d.append("Enregistrée le", quand);
+    d.append("Adresse du logement", v("adresse"));
+    d.append("Bâtiment / escalier / étage", [v("batiment"), v("escalier"), v("etage")].filter(Boolean).join(" / ") || "—");
+    d.append("Dans le portefeuille", coche("portefeuille"));
+    d.append("Type de bien", coche("type"));
+    d.append("Nature du besoin", coche("besoin"));
+    d.append("Où en est la réflexion", coche("etat"));
+    d.append("Réservations en cours", coche("reservations") || "—");
+    d.append("Ce que sait la conciergerie", v("details") || "—");
+    d.append("Conciergerie — contact", v("nom"));
+    d.append("Conciergerie — société", v("societe"));
+    d.append("Conciergerie — fonction", v("fonction"));
+    d.append("Conciergerie — téléphone", v("tel"));
+    d.append("Conciergerie — SIREN", v("siren") || "—");
+    d.append("Propriétaire — nom", v("p-nom"));
+    d.append("Propriétaire — téléphone", v("p-tel"));
+    d.append("Accord du propriétaire", "Attesté par la conciergerie");
+    d.append("A reçu votre numéro", donneNumero ? "OUI — il peut vous appeler directement" : "Non");
+    d.append("Puis-je citer la conciergerie", cite ? "OUI — vous pouvez nous citer" : "NON — ne nous citez pas");
+
+    echec.classList.remove("on");
+    envoi.disabled = true;
+    var texteInitial = envoi.textContent;
+    envoi.textContent = "Envoi en cours…";
+
+    fetch("https://formsubmit.co/ajax/contact@idf.immo", {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: d
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(rep){
+      if (!rep || (rep.success !== "true" && rep.success !== true)) {
+        var refus = new Error((rep && rep.message) ? rep.message : "le service d'envoi a refusé l'envoi");
+        refus.refusDuService = true;
+        throw refus;
+      }
+      document.getElementById("code-ref").textContent = ref;
+      document.getElementById("date-ref").textContent = "Partagée le " + quand;
+      document.getElementById("adresse-confirmation").textContent = v("email");
+      try{ localStorage.removeItem(CLE); }catch(err){}
+      va(4);
+    })
+    .catch(function(e){
+      // On ne vide surtout pas le brouillon : la saisie doit être récupérable.
+      envoi.disabled = false;
+      envoi.textContent = texteInitial;
+      // Dire ce qui s'est réellement passé : un refus du service d'envoi et une
+      // panne de réseau ne se corrigent pas de la même façon.
+      var detail = document.getElementById("echec-detail");
+      if (detail){
+        detail.textContent = (e && e.refusDuService)
+          ? "Le service d'envoi a répondu : " + e.message
+          : "La connexion au service d'envoi n'a pas abouti.";
+        detail.classList.add("on");
+      }
+      echec.classList.add("on");
+      echec.scrollIntoView({block:"center", behavior:"smooth"});
+    });
+  });
+})();
+</script>
+</body>
+</html>

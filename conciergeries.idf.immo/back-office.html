@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Back-office — conciergeries.idf.immo</title>
+<meta name="description" content="Le pilotage du réseau des conciergeries : opportunités, pipeline, commissions dues.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0E2E52">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Le back-office n'est pas une page publique : pas de barre d'action,
+     pas d'appel à l'action, et un en-tête qui le distingue au premier
+     coup d'œil de ce que voient les partenaires. */
+  .entete-bo{background:var(--ombre);border-bottom:0}
+  .entete-bo .logo{color:#fff}
+  .entete-bo .logo .pt{color:var(--ciel)}
+  .entete-bo .marque-bo{
+    font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ombre);background:var(--or-clair);padding:5px 11px;border-radius:999px;
+  }
+  .alerte-bo{
+    background:var(--craie);border:1px solid var(--ligne);border-left:3px solid var(--azur);
+    border-radius:10px;padding:18px 20px;margin-bottom:28px;
+  }
+  .alerte-bo h2{font-size:1.05rem;font-family:"Archivo",system-ui,sans-serif;font-weight:650;color:var(--ombre);margin-bottom:10px;letter-spacing:0}
+  .alerte-bo ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .alerte-bo li{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;font-size:.94rem}
+  .alerte-bo .retard{color:#A32A2A;font-weight:650}
+  .bloc{margin-top:42px}
+  .bloc > h2{margin-bottom:18px;color:var(--ombre)}
+</style>
+</head>
+<body>
+<a class="saut" href="#principal">Aller au contenu</a>
+
+<header class="entete entete-bo">
+  <div class="conteneur">
+    <a class="logo" href="/">conciergeries<span class="pt">.</span>idf<span class="pt">.</span>immo</a>
+    <span class="marque-bo">Back-office</span>
+  </div>
+</header>
+
+<div class="bandeau-demo" id="bandeau" hidden>
+  <div class="conteneur">
+    <strong>Écran de démonstration.</strong> Les conciergeries, les opportunités et les montants affichés sont <strong>fictifs</strong>&nbsp;: le back-office n'est pas encore raccordé à la base de la famille. Il sert à valider l'écran avant l'ouverture du réseau.
+  </div>
+</div>
+
+<main id="principal">
+  <div class="page-tete">
+    <div class="conteneur">
+      <h1>Le réseau en un écran</h1>
+      <p>Ce qui attend une réponse, ce qui avance, et ce qui doit être réglé.</p>
+    </div>
+  </div>
+
+  <div class="contenu">
+    <div class="conteneur">
+
+      <div class="alerte-bo" id="a-traiter"></div>
+
+      <div class="chiffres" id="chiffres"></div>
+
+      <div class="bloc">
+        <h2>Le pipeline</h2>
+        <div class="filtres" id="filtres" role="group" aria-label="Filtrer par statut"></div>
+        <div id="liste"></div>
+      </div>
+
+      <div class="bloc">
+        <h2>Les conciergeries du réseau</h2>
+        <div id="partenaires"></div>
+      </div>
+
+      <div class="encart" style="margin-top:34px">
+        <span class="etiq">Règles rappelées ici pour ne pas les perdre de vue</span>
+        <p><strong>Réponse sous 24 heures</strong> à toute opportunité reçue&nbsp;: c'est l'engagement pris sur le site. Les opportunités en retard sont remontées en haut de cet écran.</p>
+        <p><strong>Antériorité&nbsp;:</strong> en cas de partages concurrents sur un même bien, seule la première opportunité enregistrée ouvre droit. Une opportunité reste valable vingt-quatre mois, et chaque contact effectif fait repartir le compteur.</p>
+        <p><strong>Commission&nbsp;:</strong> 10 % des honoraires nets hors taxes, réglés sous quinze jours après encaissement, sur facture d'apport d'affaires.</p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="bas" style="margin-top:0;border-top:0;padding-top:0">
+      <span><a href="/">conciergeries.idf.immo</a></span>
+      <span><a href="mon-espace.html">L'espace vu par une conciergerie</a></span>
+      <span><a href="conditions-du-partenariat.html">Conditions du partenariat</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="base/config.js"></script>
+<script src="base/demonstration.js"></script>
+<script src="base/socle.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  var FILTRES = [
+    ["tout",    "Tout"],
+    ["attente", "À qualifier"],
+    ["encours", "Contact en cours"],
+    ["mandat",  "Mission engagée"],
+    ["conclue", "À facturer"],
+    ["versee",  "Versées"],
+    ["close",   "Sans suite"]
+  ];
+  var filtreActif = "tout";
+  var donnees = null;
+
+  function el(balise, classe, texte){
+    var n = document.createElement(balise);
+    if (classe) n.className = classe;
+    if (texte !== undefined) n.textContent = texte;
+    return n;
+  }
+  function jeton(statut){
+    return el("span", "jeton-statut " + statut, Socle.STATUTS[statut] || statut);
+  }
+
+  /* ---------- ce qui attend une réponse ---------- */
+  function aTraiter(){
+    var zone = document.getElementById("a-traiter");
+    zone.innerHTML = "";
+    var en_retard = donnees.reseau
+      .filter(function(x){ return x.statut === "attente"; })
+      .sort(function(a,b){ return b.jours - a.jours; });
+
+    zone.appendChild(el("h2", null, "À qualifier — réponse due sous 24 heures"));
+    if (!en_retard.length){
+      zone.appendChild(el("p", null, "Rien en attente. Tout ce qui est arrivé a reçu une réponse."));
+      return;
+    }
+    var ul = document.createElement("ul");
+    en_retard.forEach(function(x){
+      var li = document.createElement("li");
+      li.appendChild(el("strong", null, x.ref));
+      li.appendChild(el("span", null, x.societe));
+      li.appendChild(el("span", null, x.ville + " · " + x.mission));
+      var age = x.jours <= 1
+        ? el("span", null, "reçue aujourd'hui")
+        : el("span", x.jours > 1 ? "retard" : null, "en attente depuis " + x.jours + " jours");
+      li.appendChild(age);
+      ul.appendChild(li);
+    });
+    zone.appendChild(ul);
+  }
+
+  /* ---------- les chiffres ---------- */
+  function chiffres(){
+    var r = donnees.reseau;
+    var somme = function(f){ return r.filter(f).reduce(function(s,x){ return s + (x.commission || 0); }, 0); };
+
+    var cases = [
+      ["Opportunités vivantes",
+       String(r.filter(function(x){ return ["attente","encours","mandat","conclue"].indexOf(x.statut) !== -1; }).length),
+       "sur " + r.length + " enregistrées"],
+      ["Missions engagées",
+       String(r.filter(function(x){ return x.statut === "mandat"; }).length),
+       "mandats et lettres de mission signés"],
+      ["Commissions à régler",
+       Socle.euros(somme(function(x){ return x.statut === "conclue"; })),
+       "opérations conclues, facture attendue"],
+      ["Commissions versées",
+       Socle.euros(somme(function(x){ return x.statut === "versee"; })),
+       "depuis l'ouverture du réseau", true]
+    ];
+
+    var zone = document.getElementById("chiffres");
+    zone.innerHTML = "";
+    cases.forEach(function(c){
+      var d = el("div", "chiffre" + (c[3] ? " gain" : ""));
+      d.appendChild(el("p", "t", c[0]));
+      d.appendChild(el("p", "n", c[1]));
+      d.appendChild(el("p", "d", c[2]));
+      zone.appendChild(d);
+    });
+  }
+
+  /* ---------- filtres et pipeline ---------- */
+  function filtres(){
+    var zone = document.getElementById("filtres");
+    zone.innerHTML = "";
+    FILTRES.forEach(function(f){
+      var b = el("button", null, f[1]);
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(f[0] === filtreActif));
+      b.addEventListener("click", function(){
+        filtreActif = f[0];
+        filtres();
+        pipeline();
+      });
+      zone.appendChild(b);
+    });
+  }
+
+  function pipeline(){
+    var zone = document.getElementById("liste");
+    zone.innerHTML = "";
+    var lignes = (filtreActif === "tout")
+      ? donnees.reseau
+      : donnees.reseau.filter(function(x){ return x.statut === filtreActif; });
+
+    if (!lignes.length){
+      zone.appendChild(el("div", "vide", "Aucune opportunité dans cette catégorie."));
+      return;
+    }
+
+    var large = el("div", "tableau-large");
+    var enveloppe = el("div", "tableau");
+    var t = document.createElement("table");
+    var thead = document.createElement("thead");
+    var tr = document.createElement("tr");
+    ["Référence","Conciergerie","Secteur","Mission","Ancienneté","Statut","Commission"].forEach(function(h){
+      var th = document.createElement("th"); th.textContent = h; tr.appendChild(th);
+    });
+    thead.appendChild(tr); t.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    lignes.forEach(function(x){
+      var r = document.createElement("tr");
+      var cellules = [x.ref, x.societe, x.ville, x.mission, x.jours + " j", null, Socle.euros(x.commission)];
+      cellules.forEach(function(v, i){
+        var td = document.createElement("td");
+        if (i === 5) td.appendChild(jeton(x.statut));
+        else if (i === 0) td.appendChild(el("strong", null, v));
+        else td.textContent = v;
+        r.appendChild(td);
+      });
+      tbody.appendChild(r);
+    });
+    t.appendChild(tbody);
+    enveloppe.appendChild(t);
+    large.appendChild(enveloppe);
+    zone.appendChild(large);
+
+    var pile = el("div", "rangs");
+    lignes.forEach(function(x){
+      var f = el("div", "rang");
+      var haut = el("div", "haut");
+      haut.appendChild(el("span", "ref", x.ref));
+      haut.appendChild(jeton(x.statut));
+      f.appendChild(haut);
+      f.appendChild(el("p", "lieu", x.societe));
+      f.appendChild(el("p", null, x.ville));
+      var dl = document.createElement("dl");
+      [["Mission", x.mission], ["Ancienneté", x.jours + " jours"], ["Commission", Socle.euros(x.commission)]]
+        .forEach(function(p){
+          dl.appendChild(el("dt", null, p[0]));
+          dl.appendChild(el("dd", null, p[1]));
+        });
+      f.appendChild(dl);
+      pile.appendChild(f);
+    });
+    zone.appendChild(pile);
+  }
+
+  /* ---------- les conciergeries ---------- */
+  function partenaires(){
+    var zone = document.getElementById("partenaires");
+    zone.innerHTML = "";
+    var enveloppe = el("div", "tableau");
+    var t = document.createElement("table");
+    var thead = document.createElement("thead");
+    var tr = document.createElement("tr");
+    ["Conciergerie","Secteur","Logements gérés","Opportunités partagées","Commissions versées"].forEach(function(h){
+      var th = document.createElement("th"); th.textContent = h; tr.appendChild(th);
+    });
+    thead.appendChild(tr); t.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    donnees.conciergeries.forEach(function(c){
+      var r = document.createElement("tr");
+      [c.societe, c.ville, String(c.logements), String(c.partagees), Socle.euros(c.versees)]
+        .forEach(function(v, i){
+          var td = document.createElement("td");
+          if (i === 0) td.appendChild(el("strong", null, v));
+          else td.textContent = v;
+          r.appendChild(td);
+        });
+      tbody.appendChild(r);
+    });
+    t.appendChild(tbody);
+    enveloppe.appendChild(t);
+    zone.appendChild(enveloppe);
+  }
+
+  /* ---------- au chargement ---------- */
+  Socle.charger().then(function(d){
+    donnees = d;
+    if (d.mode === "demonstration") document.getElementById("bandeau").hidden = false;
+    if (d.mode === "panne"){
+      document.getElementById("liste").appendChild(
+        el("div", "vide", "Le back-office n'a pas pu être chargé : " + d.erreur));
+      return;
+    }
+    aTraiter();
+    chiffres();
+    filtres();
+    pipeline();
+    partenaires();
+  });
+})();
+</script>
+</body>
+</html>

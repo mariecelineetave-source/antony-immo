@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mon espace — conciergeries.idf.immo</title>
+<meta name="description" content="Le suivi de vos opportunités et de vos commissions.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0E2E52">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="saut" href="#principal">Aller au contenu</a>
+
+<header class="entete">
+  <div class="conteneur">
+    <a class="logo" href="/">conciergeries<span class="pt">.</span>idf<span class="pt">.</span>immo</a>
+    <nav class="nav-p" aria-label="Navigation principale">
+      <a href="comment-ca-marche.html">Comment ça marche</a>
+      <a href="la-remuneration.html">La rémunération</a>
+      <a href="vos-questions.html">Vos questions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="bouton bouton-1" href="partager.html">Partager une opportunité</a>
+  </div>
+</header>
+
+<div class="bandeau-demo" id="bandeau" hidden>
+  <div class="conteneur">
+    <strong>Écran de démonstration.</strong> Les opportunités, les sociétés et les montants affichés ci-dessous sont <strong>fictifs</strong>&nbsp;: cet espace n'est pas encore raccordé à une base de données. Il sert à valider l'écran avant l'ouverture du réseau.
+  </div>
+</div>
+
+<main id="principal">
+  <div class="page-tete">
+    <div class="conteneur">
+      <h1>Mon espace</h1>
+      <p id="identite">Le suivi de vos opportunités et de vos commissions.</p>
+    </div>
+  </div>
+
+  <div class="contenu">
+    <div class="conteneur">
+
+      <div class="chiffres" id="chiffres"></div>
+
+      <h2 style="margin-bottom:18px">Vos opportunités</h2>
+      <div class="filtres" id="filtres" role="group" aria-label="Filtrer par statut"></div>
+
+      <div id="liste"></div>
+
+      <div class="encart" style="margin-top:34px">
+        <span class="etiq">Comment ce suivi fonctionne</span>
+        <p>Chaque changement d'étape vous est notifié par e-mail&nbsp;; cet écran en est le reflet permanent. Les montants marqués «&nbsp;estimation&nbsp;» sont indicatifs tant que l'acte n'est pas signé&nbsp;: ils sont calculés sur les honoraires prévus au mandat, et se figent au moment de l'encaissement.</p>
+        <p>Une opportunité «&nbsp;<strong>Conclue — à facturer</strong>&nbsp;» attend votre facture d'apport d'affaires. Le montant net hors taxes retenu vous est communiqué par e-mail&nbsp;; le règlement intervient dans les quinze jours. <a href="la-remuneration.html">Le détail du circuit →</a></p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="bas" style="margin-top:0;border-top:0;padding-top:0">
+      <span><a href="/">conciergeries.idf.immo</a></span>
+      <span><a href="tel:+33660989292">06 60 98 92 92</a></span>
+      <span><a href="mailto:contact@idf.immo">contact@idf.immo</a></span>
+      <span><a href="conditions-du-partenariat.html">Conditions du partenariat</a></span>
+      <span><a href="mentions-legales.html">Mentions légales</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="base/config.js"></script>
+<script src="base/demonstration.js"></script>
+<script src="base/socle.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  var FILTRES = [
+    ["tout",    "Toutes"],
+    ["actives", "En cours"],
+    ["conclue", "À facturer"],
+    ["versee",  "Versées"],
+    ["close",   "Sans suite"]
+  ];
+  var EN_COURS = ["attente","encours","mandat"];
+  var filtreActif = "tout";
+  var donnees = null;
+
+  function el(balise, classe, texte){
+    var n = document.createElement(balise);
+    if (classe) n.className = classe;
+    if (texte !== undefined) n.textContent = texte;
+    return n;
+  }
+
+  function retenues(){
+    var o = donnees.opportunites;
+    if (filtreActif === "tout")    return o;
+    if (filtreActif === "actives") return o.filter(function(x){ return EN_COURS.indexOf(x.statut) !== -1; });
+    return o.filter(function(x){ return x.statut === filtreActif; });
+  }
+
+  /* ---------- les quatre chiffres du haut ---------- */
+  function chiffres(){
+    var o = donnees.opportunites;
+    var actives = o.filter(function(x){ return EN_COURS.indexOf(x.statut) !== -1 || x.statut === "conclue"; }).length;
+    var versees = o.filter(function(x){ return x.statut === "versee"; });
+    var totalVerse = versees.reduce(function(s,x){ return s + (x.commission || 0); }, 0);
+    var estime = o.filter(function(x){ return x.statut === "mandat" || x.statut === "conclue"; })
+                  .reduce(function(s,x){ return s + (x.commission || 0); }, 0);
+    var aFacturer = o.filter(function(x){ return x.statut === "conclue"; }).length;
+
+    var cases = [
+      ["Opportunités actives", String(actives), "sur " + o.length + " partagées au total"],
+      ["Commissions versées",  Socle.euros(totalVerse), versees.length + " opération(s) conclue(s)", true],
+      ["En cours, estimation", Socle.euros(estime), "indicatif jusqu'à l'encaissement"],
+      ["À facturer",           String(aFacturer), aFacturer ? "facture d'apport d'affaires attendue" : "rien en attente"]
+    ];
+
+    var zone = document.getElementById("chiffres");
+    zone.innerHTML = "";
+    cases.forEach(function(c){
+      var d = el("div", "chiffre" + (c[3] ? " gain" : ""));
+      d.appendChild(el("p", "t", c[0]));
+      d.appendChild(el("p", "n", c[1]));
+      d.appendChild(el("p", "d", c[2]));
+      zone.appendChild(d);
+    });
+  }
+
+  /* ---------- les filtres ---------- */
+  function filtres(){
+    var zone = document.getElementById("filtres");
+    zone.innerHTML = "";
+    FILTRES.forEach(function(f){
+      var b = el("button", null, f[1]);
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(f[0] === filtreActif));
+      b.addEventListener("click", function(){
+        filtreActif = f[0];
+        filtres();
+        liste();
+      });
+      zone.appendChild(b);
+    });
+  }
+
+  /* ---------- la liste : un tableau sur grand écran, des fiches sinon ---------- */
+  function jeton(statut){
+    var s = el("span", "jeton-statut " + statut, Socle.STATUTS[statut] || statut);
+    return s;
+  }
+
+  function montant(x){
+    if (x.commission === null) return "—";
+    var t = Socle.euros(x.commission);
+    if (x.statut === "mandat" || x.statut === "conclue") t += " (estimation)";
+    return t;
+  }
+
+  function liste(){
+    var zone = document.getElementById("liste");
+    zone.innerHTML = "";
+    var lignes = retenues();
+
+    if (!lignes.length){
+      zone.appendChild(el("div", "vide", "Aucune opportunité dans cette catégorie."));
+      return;
+    }
+
+    // grand écran : un tableau
+    var large = el("div", "tableau-large");
+    var enveloppe = el("div", "tableau");
+    var t = document.createElement("table");
+    var thead = document.createElement("thead");
+    var tr = document.createElement("tr");
+    ["Référence","Partagée le","Logement","Mission","Statut","Commission"].forEach(function(h){
+      var th = document.createElement("th"); th.textContent = h; tr.appendChild(th);
+    });
+    thead.appendChild(tr); t.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    lignes.forEach(function(x){
+      var r = document.createElement("tr");
+      var cellules = [x.ref, Socle.jour(x.date), x.adresse + ", " + x.ville, x.mission, null, montant(x)];
+      cellules.forEach(function(v, i){
+        var td = document.createElement("td");
+        if (i === 4) td.appendChild(jeton(x.statut));
+        else if (i === 0){ var b = el("strong", null, v); td.appendChild(b); }
+        else td.textContent = v;
+        r.appendChild(td);
+      });
+      tbody.appendChild(r);
+    });
+    t.appendChild(tbody);
+    enveloppe.appendChild(t);
+    large.appendChild(enveloppe);
+    zone.appendChild(large);
+
+    // petit écran : des fiches
+    var pile = el("div", "rangs");
+    lignes.forEach(function(x){
+      var f = el("div", "rang");
+      var haut = el("div", "haut");
+      haut.appendChild(el("span", "ref", x.ref));
+      haut.appendChild(jeton(x.statut));
+      f.appendChild(haut);
+      f.appendChild(el("p", "lieu", x.adresse));
+      f.appendChild(el("p", null, x.ville));
+      var dl = document.createElement("dl");
+      [["Partagée le", Socle.jour(x.date)], ["Mission", x.mission], ["Commission", montant(x)]]
+        .forEach(function(p){
+          dl.appendChild(el("dt", null, p[0]));
+          dl.appendChild(el("dd", null, p[1]));
+        });
+      f.appendChild(dl);
+      pile.appendChild(f);
+    });
+    zone.appendChild(pile);
+  }
+
+  /* ---------- au chargement ---------- */
+  Socle.charger().then(function(d){
+    donnees = d;
+
+    if (d.mode === "demonstration"){
+      document.getElementById("bandeau").hidden = false;
+    }
+    if (d.mode === "panne"){
+      document.getElementById("liste").appendChild(
+        el("div", "vide", "Le suivi n'a pas pu être chargé : " + d.erreur + ". Appelez le 06 60 98 92 92."));
+      return;
+    }
+    if (d.conciergerie){
+      document.getElementById("identite").textContent =
+        d.conciergerie.societe + " — " + d.conciergerie.contact + ", " + d.conciergerie.fonction;
+    }
+
+    chiffres();
+    filtres();
+    liste();
+  });
+})();
+</script>
+</body>
+</html>

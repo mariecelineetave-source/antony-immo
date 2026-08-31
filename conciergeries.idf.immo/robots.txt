@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /base/
+Disallow: /outils/
+Disallow: /back-office.html
+
+Sitemap: https://conciergeries.idf.immo/sitemap.xml

@@ -252,6 +252,18 @@ inventer en attendant.
 
 ## Divers
 
+- **Sauvegarder n'est jamais une question ; publier en est une.** Les deux ne se
+  confondent pas. Renvoyer le travail dans le dépôt (`git push` sur la branche
+  de travail) ne rend rien visible de personne : c'est le geste ordinaire qui
+  clôt une session, et il se fait sans rien demander. Ce qui demande l'accord
+  explicite de Marie-Céline, c'est la **mise en ligne** : créer le dépôt dédié,
+  activer GitHub Pages, ajouter l'enregistrement DNS. Ne jamais lui faire
+  arbitrer la sauvegarde — la session tourne sur une machine temporaire, et ne
+  rien renvoyer, c'est perdre le travail.
+- **Pas de jargon.** Ne pas écrire « commit », « push », « branche » sans dire
+  en français ce que cela fait. Marie-Céline n'est pas développeuse, et un mot
+  qu'elle ne comprend pas l'empêche de décider.
+
 - **Marie-Céline travaille sur iPad, où le copier-coller à la main est
   pénible :** tout ce qu'elle doit recopier (nom de dépôt, adresse à ouvrir,
   enregistrement DNS, commande, texte de message) doit être donné dans un

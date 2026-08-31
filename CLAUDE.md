@@ -119,6 +119,18 @@ contenu d'un site de réseau (ni l'inverse). Site jumeau d'antony.immo :
 
 ## Divers
 
+- **Sauvegarder n'est jamais une question ; publier en est une.** Les deux ne se
+  confondent pas. Renvoyer le travail dans le dépôt (`git push` sur la branche
+  de travail) ne rend rien visible de personne : c'est le geste ordinaire qui
+  clôt une session, et il se fait sans rien demander. Ce qui demande l'accord
+  explicite de Marie-Céline, c'est la **mise en ligne** : créer le dépôt dédié,
+  activer GitHub Pages, ajouter l'enregistrement DNS. Ne jamais lui faire
+  arbitrer la sauvegarde — la session tourne sur une machine temporaire, et ne
+  rien renvoyer, c'est perdre le travail.
+- **Pas de jargon.** Ne pas écrire « commit », « push », « branche » sans dire
+  en français ce que cela fait. Marie-Céline n'est pas développeuse, et un mot
+  qu'elle ne comprend pas l'empêche de décider.
+
 - Tout en français. Commits clairs en français.
 - Le proxy réseau bloque le fetch HTTP direct (curl/WebFetch) vers l'extérieur :
   utiliser WebSearch uniquement ; un échec curl ne signifie PAS que le site est

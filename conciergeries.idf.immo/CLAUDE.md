@@ -135,7 +135,10 @@ d'un logement signalé. Ne pas transformer cela en promesse commerciale.
 - `contact.html`, `mentions-legales.html`.
 - `mon-espace.html` — le tableau de bord d'une conciergerie.
 - `back-office.html` — l'écran de pilotage de Marie-Céline (`noindex`).
-- `base/` — le raccordement à la base : voir `base/LISEZMOI.md`.
+- `base/` — le raccordement à la base : `correctif-3a-enum.sql` et
+  `correctif-3.sql` à passer dans Supabase (dans cet ordre), `config.js`
+  volontairement vide, `socle.js` qui bascule tout seul une fois rempli.
+  Voir `base/LISEZMOI.md`, qui dit ce qui a été vérifié et comment.
 - `styles.css` — feuille commune. `site.js` — barre d'action mobile.
   `calculette.js` — le calcul des 10 %.
 - `outils/verifier.py` — le contrôle avant commit.

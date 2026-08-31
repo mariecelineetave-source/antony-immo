@@ -62,10 +62,12 @@ les liens d'appel fonctionnent sans JavaScript.
    pas été faite, et le premier envoi de test échouera — c'est lui qui
    déclenche l'e-mail d'activation. À faire depuis un vrai navigateur : le
    proxy des sessions Claude bloque FormSubmit.
-3. **Passer le correctif SQL** dans le projet Supabase de la famille (dépôt
-   `app-idf-immo`) pour ouvrir le réseau « conciergeries », puis renseigner
-   `base/config.js`. Le chemin « base réelle » de `base/socle.js` n'a jamais pu
-   être essayé : il devra être vérifié au premier raccordement.
+3. **Passer les deux scripts SQL** de `base/` dans le projet Supabase de la
+   famille — `correctif-3a-enum.sql` puis `correctif-3.sql` —, puis renseigner
+   `base/config.js`. Les deux scripts ont été exécutés pour de vrai sur un
+   PostgreSQL 16 monté pour l'occasion (voir `base/LISEZMOI.md`) ; en revanche
+   l'appel du navigateur à Supabase n'a pas pu être essayé, le proxy des
+   sessions Claude le bloquant.
 4. **Trancher les points laissés ouverts**, listés en fin de `CLAUDE.md`.
 
 ## La mise en ligne, le jour venu

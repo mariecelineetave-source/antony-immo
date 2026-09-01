@@ -7,6 +7,58 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-09-01
+
+Rien de nouveau par rapport à la veille du 31 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €,
+maison 155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €, maison
+9 pièces 422 m² aux enchères en ligne près du parc Heller à 1 300 000 €,
+appartement 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les
+lots aux enchères notariales 36h-immo déjà signalés — AI19530, AI21793,
+17104/17941, AI18703).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (PAP, SeLoger, leboncoin, ParuVendu, Logic-Immo,
+Bien'ici), sans annonce individuelle nouvelle et identifiable avec
+certitude — y compris les résultats affichant des horodatages « du
+jour » (ex. 309 000 €, 299 000 €, 849 000 €), qui ne pointent que vers
+des pages de recherche sans lien direct vers une annonce individuelle
+vérifiable. Aucun nouveau signal de succession, d'enchère ou de permis
+de construire distinct de ceux déjà connus (Antonypole / ligne 18 du
+Grand Paris Express).
+
+---
+
+## 2026-08-31
+
+Rien de nouveau par rapport à la veille du 30 août : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €,
+maison 155 m² quartier Beauvallon / Bois de l'Aurore à 670 000 €, maison
+9 pièces 422 m² aux enchères en ligne près du parc Heller à 1 300 000 €,
+appartement 4 pièces 74 m² résidence La Fontaine à 375 200 €, et les
+lots aux enchères notariales 36h-immo déjà signalés — AI19530, AI21793,
+17104/17941, AI18703).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, Les Baconnets, centre-ville —
+ainsi que sur les communes limitrophes Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs (PAP, SeLoger, leboncoin, Logic-Immo, Bien'ici,
+Les Clefs de Chez Moi), sans annonce individuelle nouvelle et
+identifiable avec certitude. Aucun nouveau signal de succession,
+d'enchère ou de permis de construire distinct de ceux déjà connus
+(Antonypole / ligne 18 du Grand Paris Express).
+
+**Note de synchronisation** : cette entrée du 31 août n'avait été
+committée que sur la branche de travail claude/anthony-imo-setup-dev-wzo4h1,
+jamais sur main ; elle est réintégrée ici a posteriori, le 1ᵉʳ septembre,
+pour que le journal reste complet et cohérent sur main, qui seul fait foi.
+
+---
+
 ## 2026-08-30
 
 Rien de nouveau par rapport à la veille du 29 août : les mêmes pistes

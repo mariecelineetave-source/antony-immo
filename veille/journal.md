@@ -7,6 +7,25 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-09-03
+
+Rien de nouveau par rapport à la veille du 2 septembre : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €,
+maison 137 m² rue des Rabats et maison 130 m² rue de la Mutualité (PAP),
+et les lots aux enchères notariales 36h-immo déjà signalés — AI19530,
+AI21793, 17104/17941, AI18703).
+
+Les recherches du jour (particuliers à Antony et par quartier —
+Croix-de-Berny, Pajeaud/Fontaine-Michalon, centre-ville — ainsi que les
+enchères notariales et les permis de construire) ne remontent que des
+pages d'agrégateurs (SeLoger, PAP, ParuVendu, Logic-Immo, Orpi, Les
+Clefs de Chez Moi, EtreProprio), sans annonce individuelle nouvelle et
+identifiable avec certitude. Aucun nouveau signal de succession,
+d'enchère ou de permis de construire distinct de ceux déjà connus
+(Antonypole / ligne 18 du Grand Paris Express).
+
+---
+
 ## 2026-09-02
 
 Rien de nouveau par rapport à la veille du 1ᵉʳ septembre : les mêmes pistes

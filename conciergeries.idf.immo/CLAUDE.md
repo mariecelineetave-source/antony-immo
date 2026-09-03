@@ -189,6 +189,25 @@ L'encart d'échec affiche la réponse exacte du service (« Le service d'envoi a
 répondu : … »), ce qui rend le diagnostic immédiat. Ne pas revenir à un message
 générique.
 
+## Le reçu, et pas l'accusé de réception — décision du 3 septembre 2026
+
+**Ne jamais réécrire que le partenaire « reçoit un e-mail de confirmation ».**
+
+Les cinq sites de la famille le promettent, trois fois par page, et cet e-mail
+**ne part pas** : `partager.html` poste en AJAX avec `_captcha = false`, et la
+documentation de FormSubmit dit que l'autoresponse ne fonctionne dans aucun de
+ces deux cas. Constat relevé le 22 août 2026 dans `app-idf-immo/CLAUDE.md`, et
+jamais corrigé sur les sites en ligne, qui sont gelés.
+
+Ce site ne reproduit pas cette promesse. À la place, l'écran final affiche un
+**reçu** — numéro, date, logement, mission, partenaire — présenté comme ce qui
+fait foi, avec un bouton « Copier mon reçu » et un bouton « Imprimer ». Le
+champ `_autoresponse` continue d'être envoyé (il ne coûte rien et fonctionnera
+si le service l'accepte un jour), mais **la page ne s'engage plus dessus**.
+
+Une promesse qu'on ne tient pas vaut moins que pas de promesse du tout — et
+ici, ce qui est promis, c'est la preuve d'antériorité d'une commission.
+
 ## L'échelle — toute l'Île-de-France, jamais une ville
 
 Le site couvre les **huit départements**. Les exemples (villes, adresses des

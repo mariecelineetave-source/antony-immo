@@ -62,6 +62,10 @@ les liens d'appel fonctionnent sans JavaScript.
    pas été faite, et le premier envoi de test échouera — c'est lui qui
    déclenche l'e-mail d'activation. À faire depuis un vrai navigateur : le
    proxy des sessions Claude bloque FormSubmit.
+   À noter : contrairement aux cinq autres sites, celui-ci **ne promet aucun
+   accusé de réception par e-mail**, parce que FormSubmit ne l'envoie pas dans
+   ce montage. L'écran final donne un reçu, à copier ou à imprimer. Voir
+   `CLAUDE.md`.
 3. **Passer les deux scripts SQL** de `base/` dans le projet Supabase de la
    famille — `correctif-3a-enum.sql` puis `correctif-3.sql` —, puis renseigner
    `base/config.js`. Les deux scripts ont été exécutés pour de vrai sur un

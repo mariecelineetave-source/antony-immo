@@ -134,6 +134,12 @@
   .ref .code{font-family:"Fraunces",Georgia,serif;font-size:1.5rem;color:var(--ombre);letter-spacing:.02em}
   .ref .date{display:block;font-size:.86rem;color:var(--mousse);margin-top:5px}
   .suite{max-width:520px;margin:30px auto 0;text-align:left}
+  .recu-actions{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+  .recu-actions .bouton{font-size:.94rem;padding:12px 20px;min-height:46px}
+  @media print{
+    .entete,.form-tete,.pied,.recu-actions,.suite .actions{display:none!important}
+    body{background:#fff}
+  }
 </style>
 </head>
 <body>
@@ -325,7 +331,7 @@
 
       <div class="champ">
         <label for="email">Votre e-mail professionnel</label>
-        <span class="note">C'est là qu'arrivent l'accusé de réception, puis le suivi du dossier.</span>
+        <span class="note">C'est par là que se fait le suivi du dossier, étape par étape.</span>
         <input type="email" id="email" name="email" autocomplete="email" placeholder="c.vasseur@exemple.fr">
         <div class="erreur" id="err-email">Indiquez une adresse e-mail : c'est par là que se fait le suivi.</div>
       </div>
@@ -404,7 +410,7 @@
         <button type="button" class="retour" data-va="2">← Revenir</button>
         <button type="submit" class="bouton bouton-1">Envoyer l'opportunité</button>
       </div>
-      <p class="note" style="margin-top:16px">En envoyant, vous acceptez les <a href="conditions-du-partenariat.html">conditions du partenariat</a>. Vous recevez aussitôt un e-mail de confirmation avec votre numéro d'opportunité.</p>
+      <p class="note" style="margin-top:16px">En envoyant, vous acceptez les <a href="conditions-du-partenariat.html">conditions du partenariat</a>. L'écran suivant vous donne votre numéro d'opportunité&nbsp;: c'est lui qui fait foi, gardez-le.</p>
     </div>
   </section>
 
@@ -415,17 +421,21 @@
   <div class="conteneur etroit recu">
     <div class="sceau" aria-hidden="true">✓</div>
     <h2 id="t4">Opportunité enregistrée.</h2>
-    <p>Un e-mail de confirmation vient de partir vers <strong id="adresse-confirmation">votre adresse</strong>&nbsp;— s'il n'apparaît pas, regardez dans les indésirables.</p>
+    <p>Voici votre reçu. <strong>C'est lui qui fait foi</strong> en cas de partage concurrent sur le même logement&nbsp;: gardez-le.</p>
     <div class="ref">
       <span class="etiq">Votre numéro d'opportunité</span>
       <span class="code" id="code-ref">—</span>
       <span class="date" id="date-ref"></span>
     </div>
-    <p style="font-size:.9rem">Ce numéro est votre repère, et votre preuve d'antériorité. Conservez le message.</p>
+    <div class="recu-actions">
+      <button type="button" class="bouton bouton-2" id="copier-recu">Copier mon reçu</button>
+      <button type="button" class="bouton bouton-2" id="imprimer-recu">Imprimer</button>
+    </div>
+    <p style="font-size:.9rem;max-width:44ch;margin:14px auto 0">Copiez-le dans vos notes, ou imprimez-le. Nous vous écrivons sous 24 heures à <strong id="adresse-confirmation">votre adresse</strong>&nbsp;; si rien n'arrive, appelez le <a href="tel:+33660989292">06 60 98 92 92</a> avec ce numéro.</p>
 
     <div class="suite">
       <div class="frise">
-        <div class="pas"><span class="rond">1</span><div><span class="nom">Reçue</span><br><span class="det">Accusé de réception immédiat.</span></div></div>
+        <div class="pas"><span class="rond">1</span><div><span class="nom">Reçue</span><br><span class="det">Votre numéro d'opportunité, ci-dessus.</span></div></div>
         <div class="pas"><span class="rond">2</span><div><span class="nom">Qualifiée</span><br><span class="det">Réponse motivée sous 24 heures.</span></div></div>
         <div class="pas"><span class="rond">3</span><div><span class="nom">Contact établi</span><br><span class="det">Le propriétaire a été approché.</span></div></div>
         <div class="pas"><span class="rond">4</span><div><span class="nom">Mission engagée</span><br><span class="det">Mandat ou lettre de mission signée.</span></div></div>
@@ -641,6 +651,41 @@
     return "OPP-" + n.getFullYear() + "-" + alea;
   }
 
+  /* Le reçu affiché à l'écran est la seule preuve sur laquelle nous nous
+     engageons : l'e-mail dépend d'un service tiers, et une promesse qu'on ne
+     tient pas vaut moins que pas de promesse du tout. */
+  var recu = "";
+
+  var boutonCopier = document.getElementById("copier-recu");
+  if (boutonCopier){
+    boutonCopier.addEventListener("click", function(){
+      var fini = function(){
+        var avant = boutonCopier.textContent;
+        boutonCopier.textContent = "Reçu copié";
+        setTimeout(function(){ boutonCopier.textContent = avant; }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(recu).then(fini, function(){ selectionne(); });
+      } else { selectionne(); }
+    });
+  }
+  function selectionne(){
+    // Presse-papier refusé (courant sur iPad) : on sélectionne le texte pour
+    // que le « Copier » du menu de l'appareil prenne le relais.
+    var z = document.createElement("textarea");
+    z.value = recu; z.setAttribute("readonly", "");
+    z.style.position = "fixed"; z.style.top = "-1000px";
+    document.body.appendChild(z);
+    z.select(); z.setSelectionRange(0, recu.length);
+    try { document.execCommand("copy"); } catch (e) { /* rien */ }
+    document.body.removeChild(z);
+  }
+
+  var boutonImprimer = document.getElementById("imprimer-recu");
+  if (boutonImprimer){
+    boutonImprimer.addEventListener("click", function(){ window.print(); });
+  }
+
   var envoi = form.querySelector("button[type=submit]");
   var echec = document.getElementById("echec-envoi");
 
@@ -731,6 +776,20 @@
       document.getElementById("code-ref").textContent = ref;
       document.getElementById("date-ref").textContent = "Partagée le " + quand;
       document.getElementById("adresse-confirmation").textContent = v("email");
+      recu = [
+        "Reçu de partage d'opportunité — conciergeries.idf.immo",
+        "",
+        "Numéro : " + ref,
+        "Enregistrée le : " + quand,
+        "Logement : " + v("adresse"),
+        "Mission : " + coche("besoin"),
+        "Partagée par : " + v("nom") + " — " + v("societe"),
+        "",
+        "Ce reçu est votre preuve d'antériorité : en cas de partage concurrent",
+        "sur le même logement, c'est la date ci-dessus qui tranche.",
+        "",
+        "Marie-Céline Etave — 06 60 98 92 92 — contact@idf.immo"
+      ].join("\n");
       try{ localStorage.removeItem(CLE); }catch(err){}
       va(4);
     })

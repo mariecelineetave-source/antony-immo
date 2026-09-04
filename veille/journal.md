@@ -7,6 +7,49 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-09-04
+
+### Opportunités du jour
+
+- **Appartement 4 pièces, 75 m², Antony (92160) — vente aux enchères, mise à
+  prix 180 000 €**. [Voir l'annonce (36h-immo, réf. AI18987)](https://www.36h-immo.com/annonce/AI18987/appartement-vente-encheres-92160-antony-4-pieces-75m2-180000euros.html)
+  — Séjour lumineux, 3 chambres, 2 places de parking (dont une en sous-sol),
+  cave, à 7 min à pied du RER B. Portée par une agence (Next House
+  Immobilier), pas un mandat classique, mais référence distincte des
+  enchères déjà suivies (AI19530, AI21793, 17104/17941, AI18703) : à noter
+  comme signal de vente sous contrainte de calendrier.
+
+- **Maison atypique, plus de 150 m² (véranda comprise), terrain de 510 m²,
+  centre-ville d'Antony — vente aux enchères**.
+  [Voir l'annonce (encheres-immo.com)](https://encheres-immo.com/annonce/maison-centre-ville-sur-antony-antony-92160-365?display_header=true)
+  — Sans vis-à-vis, présentée à fort potentiel ; prix non confirmé avec
+  certitude via les recherches du jour, à vérifier directement sur le lien.
+  Plateforme et référence (ID 365) distinctes des enchères 36h-immo déjà
+  suivies et de la maison 9 pièces / 422 m² du parc Heller déjà connue.
+
+Comme pour les autres pistes déjà signalées (voir jours précédents), il
+s'agit ici de ventes aux enchères où une agence ou un notaire est déjà en
+jeu — pas d'un mandat de gré à gré classique. Intérêt : informer un
+éventuel vendeur inquiet de ce type de procédure, ou repérer un futur
+acquéreur pour un mandat de recherche.
+
+### Recherches sans résultat nouveau
+
+Les recherches génériques par quartier (Croix-de-Berny, Pajeaud/Fontaine-
+Michalon, centre-ville, Les Baconnets) et sur les communes limitrophes
+(Bourg-la-Reine, Sceaux, Fresnes, Verrières-le-Buisson, L'Haÿ-les-Roses)
+ne remontent que des pages d'agrégateurs, sans annonce individuelle de
+particulier nouvelle et vérifiable — les pistes déjà connues (maison PAP
+162 m² à 775 000 €, maison 137 m² rue des Rabats, maison 130 m² rue de la
+Mutualité, et les enchères notariales déjà listées) restent en ligne aux
+mêmes conditions. La base des permis de construire signale 17
+autorisations enregistrées pour 2026 (donnée provisoire, non détaillée par
+adresse) — rien d'assez précis pour en tirer une piste. Aucun nouveau
+signal de succession. Rien de nouveau non plus sur le projet Antonypole /
+ligne 18, au-delà de ce qui est déjà connu.
+
+---
+
 ## 2026-09-03
 
 Rien de nouveau par rapport à la veille du 2 septembre : les mêmes pistes

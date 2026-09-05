@@ -93,16 +93,27 @@ empêchent le numéro de se couper en fin de ligne sur un téléphone. Les liens
 `tel:` et les données structurées portent la forme internationale
 `+33765675007`, qui ne s'affiche jamais.
 
-`tools/verifie_site.py` refuse le commit si une autre écriture apparaît, y
-compris le numéro d'antony.immo (06 60 98 92 92), qui n'a rien à faire ici.
+**Un pictogramme téléphone précède toujours le numéro** (`<svg class="i-tel">`,
+défini dans la feuille de style). Ce numéro ne se lit pas d'emblée comme un
+téléphone : sans le pictogramme, le visiteur ne le reconnaît pas. Il figure
+aussi sur le bouton « Appeler » de la barre mobile.
+
+`tools/verifie_site.py` refuse le commit si une autre écriture apparaît — y
+compris le numéro d'antony.immo (06 60 98 92 92), qui n'a rien à faire ici — ou
+si un numéro s'affiche sans son pictogramme.
 
 ## Forme des boutons
 
-Les boutons d'action (`.btn` et la barre d'action mobile) sont **arrondis**
-(`border-radius:999px`) — demandé par Marie-Céline le 5 septembre 2026. Les
-cartes, les encadrés et les champs de formulaire gardent leurs angles à 4 px :
-seuls les boutons sont arrondis. C'est le seul écart assumé avec la charte de
-paris7e.immo, qui utilise des boutons à angles droits.
+Les boutons d'action (`.btn`, le bouton « Menu », la barre d'action mobile) sont
+des **rectangles à angles arrondis** : `border-radius:8px`. Arbitré par
+Marie-Céline le 5 septembre 2026, en deux temps — d'abord « arrondis », puis,
+devant une première version en forme de gélule : « rectangle mais rectangle avec
+le bout arrondi ». **Ni angles droits, ni gélule** (`999px`) : un rectangle dont
+les coins sont adoucis.
+
+Les cartes, les encadrés et les champs de formulaire gardent leurs angles à
+4 px : seuls les boutons sont arrondis. C'est le seul écart assumé avec la
+charte de paris7e.immo, qui utilise des boutons à angles droits.
 
 ## Structure
 

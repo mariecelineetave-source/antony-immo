@@ -228,6 +228,12 @@ def main():
         for ancien_format in ANCIENS_FORMATS:
             verifie(ancien_format not in html,
                     "Aucun ancien format de numéro — %s" % rel, ancien_format)
+        # Le pictogramme précède toujours le numéro : « 07. 656. 75007 » ne se
+        # lit pas d'emblée comme un téléphone, le pictogramme le dit.
+        affiches = html.count(TEL_AFFICHE)
+        avec_icone = len(re.findall(r"</svg>\s*" + re.escape(TEL_AFFICHE), html))
+        verifie(affiches == avec_icone, "Pictogramme devant chaque numéro — %s" % rel,
+                "%d numéro(s) affiché(s), %d précédé(s) du pictogramme" % (affiches, avec_icone))
         # Toute suite de dix chiffres commençant par 0 doit être LE numéro,
         # écrit de LA bonne façon.
         # Les bornes (?<!\d) et (?!\d) évitent de confondre le numéro avec un

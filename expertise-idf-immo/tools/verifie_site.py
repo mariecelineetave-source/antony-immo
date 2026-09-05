@@ -28,7 +28,9 @@ from html.parser import HTMLParser
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SITE = "https://expertise.idf.immo"
-TEL_AFFICHE = "07 65 67 50 07"
+TEL_AFFICHE = "07.&nbsp;656.&nbsp;75007"   # écriture voulue par Marie-Céline
+TEL_LISIBLE = "07. 656. 75007"             # la même, espaces normales
+ANCIENS_FORMATS = ["07 65 67 50 07", "07 656 75007", "06 60 98 92 92"]
 TEL_LIEN = "+33765675007"
 MAIL = "contact@paris7e.immo"
 PRIX = "1&nbsp;190&nbsp;€"
@@ -218,10 +220,22 @@ def main():
             verifie(existe, "Lien interne valide — %s" % rel, lien)
 
         # 10. Coordonnées cohérentes
+        #     Le numéro s'écrit « 07. 656. 75007 » et pas autrement : c'est la
+        #     forme voulue par Marie-Céline. Un reformatage passerait inaperçu
+        #     sans ce contrôle — c'est déjà arrivé une fois.
         for tel in re.findall(r'href="tel:([^"]+)"', html):
             verifie(tel == TEL_LIEN, "Lien tel: conforme — %s" % rel, tel)
-        for affiche in re.findall(r"0\d(?:[ .]?\d\d){4}", html):
-            verifie(affiche == TEL_AFFICHE, "Numéro affiché conforme — %s" % rel, affiche)
+        for ancien_format in ANCIENS_FORMATS:
+            verifie(ancien_format not in html,
+                    "Aucun ancien format de numéro — %s" % rel, ancien_format)
+        # Toute suite de dix chiffres commençant par 0 doit être LE numéro,
+        # écrit de LA bonne façon.
+        # Les bornes (?<!\d) et (?!\d) évitent de confondre le numéro avec un
+        # fragment d'un autre nombre — la carte professionnelle BSK, par exemple.
+        for suite in re.findall(r"(?<!\d)0[1-9](?:(?:&nbsp;|[ .\u00a0])*\d){8}(?!\d)", html):
+            lisible = suite.replace("&nbsp;", " ").replace("\u00a0", " ")
+            verifie(lisible == TEL_LISIBLE, "Numéro affiché conforme — %s" % rel,
+                    repr(suite))
         for adresse in re.findall(r'mailto:([^"?]+)', html):
             verifie(adresse == MAIL, "Adresse e-mail conforme — %s" % rel, adresse)
 

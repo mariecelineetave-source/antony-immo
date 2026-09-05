@@ -80,6 +80,30 @@ Deux règles absolues :
 2. **Les attributs `width` et `height` d'une `<img>` doivent correspondre
    exactement aux pixels du fichier.** `tools/verifie_site.py` le contrôle.
 
+## Le numéro de téléphone — ne jamais le reformater
+
+Le site affiche **07. 656. 75007**, écrit exactement ainsi : deux points, deux
+espaces insécables. C'est l'écriture voulue par Marie-Céline (arbitrée le
+5 septembre 2026, après un reformatage automatique qu'elle a fait corriger).
+Ne jamais le réécrire en `07 65 67 50 07`, en `07 656 75007`, ni sous aucune
+autre forme.
+
+En HTML, cela s'écrit `07.&nbsp;656.&nbsp;75007` — les espaces insécables
+empêchent le numéro de se couper en fin de ligne sur un téléphone. Les liens
+`tel:` et les données structurées portent la forme internationale
+`+33765675007`, qui ne s'affiche jamais.
+
+`tools/verifie_site.py` refuse le commit si une autre écriture apparaît, y
+compris le numéro d'antony.immo (06 60 98 92 92), qui n'a rien à faire ici.
+
+## Forme des boutons
+
+Les boutons d'action (`.btn` et la barre d'action mobile) sont **arrondis**
+(`border-radius:999px`) — demandé par Marie-Céline le 5 septembre 2026. Les
+cartes, les encadrés et les champs de formulaire gardent leurs angles à 4 px :
+seuls les boutons sont arrondis. C'est le seul écart assumé avec la charte de
+paris7e.immo, qui utilise des boutons à angles droits.
+
 ## Structure
 
 Chaque page est un fichier HTML complet, modifiable à la main. Une seule feuille

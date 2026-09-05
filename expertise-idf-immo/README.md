@@ -99,6 +99,45 @@ non héberger une copie du site. Le plus simple est une redirection web (301) au
 niveau du registrar. Ne jamais publier quatre fois le même contenu : Google
 sanctionne, et les quatre copies divergent au premier changement.
 
+## Adresse e-mail et délivrabilité
+
+**Adresse retenue** (à confirmer par Marie-Céline) :
+
+- `marie-celine.etave@expertise.idf.immo` — l'adresse d'envoi, nominative ;
+- `contact@expertise.idf.immo` — alias redirigé vers la précédente, utilisé par
+  les formulaires du site et les mentions légales. **Jamais en expéditeur.**
+
+Pourquoi pas `@idf.immo` : ce domaine est partagé avec les sites de réseau
+(`gardiens`, `etudiants`, `associations`, `nounous`, `app`). Si l'un d'eux envoie
+un jour des courriels en nombre et récolte des plaintes, la réputation du
+domaine entier en pâtit — y compris le courrier d'expertise. Un sous-domaine
+dédié isole cette réputation.
+
+### Ce qui décide vraiment du classement en indésirables
+
+Le nom avant l'arobase n'y est presque pour rien. Ce qui compte :
+
+1. **SPF, DKIM et DMARC**, sans exception. Proton fournit les enregistrements
+   exacts à la déclaration du domaine. **Sans DKIM, Gmail et Outlook classent en
+   indésirable ou refusent** — c'est leur exigence depuis 2024.
+2. Un **DMARC** au départ permissif, puis resserré :
+   `v=DMARC1; p=none; rua=mailto:...` pendant deux à quatre semaines, puis
+   `p=quarantine`.
+3. **Le site doit être en ligne avant les premiers envois.** Une signature qui
+   renvoie vers un domaine qui ne résout pas est un signal négatif net.
+4. **Montée en charge progressive** : un domaine neuf qui envoie beaucoup d'un
+   coup est suspect. Quelques courriels par jour les deux premières semaines.
+5. **Jamais d'envoi en nombre depuis cette boîte.** Une campagne vers des études
+   notariales se fait avec un outil dédié et un sous-domaine séparé.
+6. Objet factuel, pas de capitales ni de points d'exclamation ; peu de liens ;
+   pas de pièce jointe au premier courriel à un inconnu (proposer le
+   rapport-modèle, l'envoyer sur réponse).
+7. Vérifier la configuration sur `mail-tester.com` avant de commencer : viser 10/10.
+
+Le domaine personnalisé Proton suppose une offre payante — à vérifier dans
+l'abonnement en cours, une offre d'entrée de gamme ne couvre parfois qu'un seul
+domaine.
+
 ## Deux sites, deux périmètres
 
 `paris7e.immo` reste le site de l'activité immobilière locale (7ᵉ

@@ -101,17 +101,30 @@ sanctionne, et les quatre copies divergent au premier changement.
 
 ## Adresse e-mail et délivrabilité
 
-**Adresse retenue** (à confirmer par Marie-Céline) :
+**Arbitré par Marie-Céline le 5 septembre 2026 :**
 
-- `marie-celine.etave@expertise.idf.immo` — l'adresse d'envoi, nominative ;
-- `contact@expertise.idf.immo` — alias redirigé vers la précédente, utilisé par
-  les formulaires du site et les mentions légales. **Jamais en expéditeur.**
+- adresse : **`marieceline.expertise@idf.immo`** ;
+- nom d'affichage : **`Marie-Céline Etave | Expertise IDF`** — à régler dans
+  Proton, adresse par adresse. Le nom d'abord, la marque ensuite : c'est ce que
+  le destinataire lit en tête de sa boîte de réception.
 
-Pourquoi pas `@idf.immo` : ce domaine est partagé avec les sites de réseau
-(`gardiens`, `etudiants`, `associations`, `nounous`, `app`). Si l'un d'eux envoie
-un jour des courriels en nombre et récolte des plaintes, la réputation du
-domaine entier en pâtit — y compris le courrier d'expertise. Un sous-domaine
-dédié isole cette réputation.
+Cette adresse figure sur tout le site (contact, formulaire, mentions légales,
+confidentialité, données structurées) et dans les trois signatures de courriel.
+`tools/verifie_site.py` refuse toute autre adresse.
+
+### Avertissement : `idf.immo` est un domaine partagé
+
+Le courrier passe par le domaine **racine**, commun aux sites de réseau
+(`gardiens`, `etudiants`, `associations`, `nounous`, `app`). Deux conséquences :
+
+1. **Avant de déclarer le domaine chez Proton**, vérifier qu'aucune adresse
+   `@idf.immo` n'existe déjà ailleurs. Changer les enregistrements MX la
+   couperait, et un SPF limité à Proton ferait tomber en indésirable tout ce qui
+   envoie depuis un autre service avec ce domaine.
+2. La réputation d'envoi est **commune**. Si un site de réseau envoie un jour en
+   nombre et récolte des plaintes, le courrier d'expertise en pâtit. Un
+   sous-domaine dédié (`@expertise.idf.immo`) isolerait cette réputation — c'est
+   le repli si le problème se pose.
 
 ### Ce qui décide vraiment du classement en indésirables
 

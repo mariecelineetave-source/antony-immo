@@ -102,6 +102,19 @@ aussi sur le bouton « Appeler » de la barre mobile.
 compris le numéro d'antony.immo (06 60 98 92 92), qui n'a rien à faire ici — ou
 si un numéro s'affiche sans son pictogramme.
 
+## L'adresse e-mail — arbitrée, ne pas la changer
+
+Le site et les signatures affichent **`marieceline.expertise@idf.immo`**, et le
+nom d'affichage à régler dans Proton est **`Marie-Céline Etave | Expertise IDF`**
+(le nom d'abord, la marque ensuite). Arbitré par Marie-Céline le 5 septembre
+2026, après avoir écarté `contact@`, `expertise@` et `MCexpertise@`.
+
+`tools/verifie_site.py` refuse toute autre adresse dans un lien `mailto:`.
+
+Le courrier passe par le domaine **racine** `idf.immo`, partagé avec les sites de
+réseau : la réputation d'envoi est commune, et toute modification des
+enregistrements MX ou SPF de `idf.immo` touche aussi ces sites. Voir le README.
+
 ## Forme des boutons
 
 Les boutons d'action (`.btn`, le bouton « Menu », la barre d'action mobile) sont

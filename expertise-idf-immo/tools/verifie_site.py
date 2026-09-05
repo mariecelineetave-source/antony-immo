@@ -32,7 +32,7 @@ TEL_AFFICHE = "07.&nbsp;656.&nbsp;75007"   # écriture voulue par Marie-Céline
 TEL_LISIBLE = "07. 656. 75007"             # la même, espaces normales
 ANCIENS_FORMATS = ["07 65 67 50 07", "07 656 75007", "06 60 98 92 92"]
 TEL_LIEN = "+33765675007"
-MAIL = "contact@paris7e.immo"
+MAIL = "marieceline.expertise@idf.immo"
 PRIX = "1&nbsp;190&nbsp;€"
 OUTIL = "signature-mail/index.html"   # page-outil : règles assouplies, voir plus bas
 

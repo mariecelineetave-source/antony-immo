@@ -7,6 +7,34 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-09-05
+
+Rien de nouveau par rapport à la veille du 4 septembre : les mêmes pistes
+restent en ligne aux mêmes conditions (maison PAP 162 m² à 775 000 €, maison
+137 m² rue des Rabats et maison 130 m² rue de la Mutualité (PAP), et les lots
+aux enchères notariales déjà signalés — AI18987, AI19530, AI21793, 17104/17941,
+AI18703, ainsi que la maison atypique du centre-ville sur encheres-immo.com,
+réf. 365).
+
+Les recherches par quartier (Croix-de-Berny, Pajeaud/Fontaine-Michalon,
+centre-ville, Les Baconnets) et sur les communes limitrophes (Bourg-la-Reine,
+Sceaux, Fresnes, Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent
+que des pages d'agrégateurs (SeLoger, PAP, Logic-Immo, ParuVendu, EtreProprio,
+Bien'ici) : aucun lien vers une annonce individuelle nouvelle et identifiable
+avec certitude. Une mention d'une maison non mitoyenne de 65 m² sur terrain de
+315 m² à la Croix-de-Berny apparaît dans un résumé PAP, mais sans lien direct
+vérifiable vers l'annonce : non retenue en l'état, à vérifier manuellement.
+Deux ventes aux enchères repérées (appartement 70,2 m² et pavillon de
+211,91 m² au 30 rue Floria) correspondent à des dates déjà passées (juin et
+janvier 2026) : pas des pistes nouvelles.
+
+Aucun nouveau signal de succession. Sur les permis de construire, la même
+tendance à la hausse déjà connue se confirme (36 permis délivrés en 2025,
++38,5 % sur 2024) mais sans détail par adresse permettant d'en tirer une
+piste. Rien de nouveau sur Antonypole / ligne 18.
+
+---
+
 ## 2026-09-04
 
 ### Opportunités du jour

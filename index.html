@@ -78,6 +78,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://upload.wikimedia.org">
+<!-- Précharge la photo héros (LCP) : le navigateur peut la demander avant même
+     d'avoir fini de parser le <style> inline ci-dessous. -->
+<link rel="preload" as="image" fetchpriority="high"
+      href="https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=1800"
+      imagesrcset="https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=800 800w, https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=1200 1200w, https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=1800 1800w, https://fr.wikipedia.org/wiki/Special:FilePath/92-Antony-place-St-Saturnin.jpg?width=2400 2400w"
+      imagesizes="100vw">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============ Base ============ */

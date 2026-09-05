@@ -161,14 +161,20 @@ document.querySelectorAll('button[data-cible]').forEach(function (b) {
       await navigator.clipboard.write([new ClipboardItem({
         'text/html': new Blob([n.innerHTML], {type: 'text/html'}),
         'text/plain': new Blob([n.innerText], {type: 'text/plain'})})]);
+      b.dataset.libelle = b.dataset.libelle || b.textContent;
+      b.textContent = 'Copiée !'; b.classList.add('fait');
     } catch (e) {
+      // Presse-papiers refusé (navigateur ancien, page dans un cadre) : on
+      // sélectionne la signature et on laisse le Ctrl+C à l'utilisatrice —
+      // surtout ne pas désélectionner, ce serait lui retirer son seul recours.
       var s = window.getSelection(), r = document.createRange();
       r.selectNodeContents(n); s.removeAllRanges(); s.addRange(r);
-      document.execCommand('copy'); s.removeAllRanges();
+      b.dataset.libelle = b.dataset.libelle || b.textContent;
+      b.textContent = 'Sélectionnée — faites Ctrl+C';
     }
-    var t = b.textContent;
-    b.textContent = 'Copiée !'; b.classList.add('fait');
-    setTimeout(function () { b.textContent = t; b.classList.remove('fait'); }, 2200);
+    setTimeout(function () {
+      b.textContent = b.dataset.libelle; b.classList.remove('fait');
+    }, 3000);
   });
 });
 </script>

@@ -47,7 +47,7 @@ domaine personnalisé — voir « Mise en ligne » plus bas).
 | `signature-mail/` | Trois signatures de courriel prêtes à coller (Proton Mail). Page-outil, en `noindex` et exclue du sitemap |
 | `404.html` | Page d'erreur |
 | `assets/site.css`, `assets/site.js` | La feuille de style et le script, uniques et partagés |
-| `images/` | Logo, monogramme, icônes, portrait — copiés de paris7e.immo |
+| `images/` | Logo, icônes et portrait (repris de paris7e.immo), plus `logo-signature.png` et `portrait-carre.jpg` pour les signatures |
 | `sitemap.xml`, `robots.txt`, `CNAME` | Référencement et domaine |
 | `tools/verifie_site.py` | Contrôle d'intégrité avant publication |
 

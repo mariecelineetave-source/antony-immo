@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /signature-mail/
 
 Sitemap: https://expertise.idf.immo/sitemap.xml

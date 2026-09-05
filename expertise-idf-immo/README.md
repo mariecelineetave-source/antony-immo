@@ -44,6 +44,7 @@ domaine personnalisé — voir « Mise en ligne » plus bas).
 | `secteurs/` | Les huit départements franciliens |
 | `expertise-*/` | Les huit pages « situation » |
 | `mentions-legales/`, `confidentialite/` | Pages légales |
+| `signature-mail/` | Trois signatures de courriel prêtes à coller (Proton Mail). Page-outil, en `noindex` et exclue du sitemap |
 | `404.html` | Page d'erreur |
 | `assets/site.css`, `assets/site.js` | La feuille de style et le script, uniques et partagés |
 | `images/` | Logo, monogramme, icônes, portrait — copiés de paris7e.immo |

@@ -34,6 +34,7 @@ ANCIENS_FORMATS = ["07 65 67 50 07", "07 656 75007", "06 60 98 92 92"]
 TEL_LIEN = "+33765675007"
 MAIL = "contact@paris7e.immo"
 PRIX = "1&nbsp;190&nbsp;€"
+OUTIL = "signature-mail/index.html"   # page-outil : règles assouplies, voir plus bas
 
 BALISES_VIDES = {"area", "base", "br", "col", "embed", "hr", "img", "input",
                  "link", "meta", "param", "source", "track", "wbr"}
@@ -201,11 +202,20 @@ def main():
         # 7. Dimensions des images
         for src, largeur, hauteur in re.findall(
                 r'<img src="([^"]+)"\s+width="(\d+)"\s+height="(\d+)"', html):
-            fichier = os.path.join(RACINE, src.lstrip("/"))
+            chemin_local = src.replace(SITE, "").lstrip("/")
+            if "//" in chemin_local:      # image hébergée ailleurs
+                continue
+            fichier = os.path.join(RACINE, chemin_local)
             reelles = dimensions(fichier) if os.path.exists(fichier) else None
-            verifie(reelles == (int(largeur), int(hauteur)),
-                    "Dimensions de %s — %s" % (src, rel),
-                    "déclarées %sx%s, réelles %s" % (largeur, hauteur, reelles))
+            if rel == OUTIL:
+                ok = reelles is not None and abs(
+                    int(largeur) / int(hauteur) - reelles[0] / reelles[1]) < 0.01
+                verifie(ok, "Proportion de %s — %s" % (src, rel),
+                        "déclarées %sx%s, réelles %s" % (largeur, hauteur, reelles))
+            else:
+                verifie(reelles == (int(largeur), int(hauteur)),
+                        "Dimensions de %s — %s" % (src, rel),
+                        "déclarées %sx%s, réelles %s" % (largeur, hauteur, reelles))
 
         # 8. Texte alternatif sur chaque image
         for balise in re.findall(r"<img\b[^>]*>", html):
@@ -231,9 +241,14 @@ def main():
         # Le pictogramme précède toujours le numéro : « 07. 656. 75007 » ne se
         # lit pas d'emblée comme un téléphone, le pictogramme le dit.
         affiches = html.count(TEL_AFFICHE)
-        avec_icone = len(re.findall(r"</svg>\s*" + re.escape(TEL_AFFICHE), html))
-        verifie(affiches == avec_icone, "Pictogramme devant chaque numéro — %s" % rel,
-                "%d numéro(s) affiché(s), %d précédé(s) du pictogramme" % (affiches, avec_icone))
+        if rel == OUTIL:
+            annonces = len(re.findall(r"Tél\.</span>\s*<a[^>]*>" + re.escape(TEL_AFFICHE), html))
+            verifie(affiches == annonces, "« Tél. » devant chaque numéro — %s" % rel,
+                    "%d numéro(s) affiché(s), %d annoncé(s)" % (affiches, annonces))
+        else:
+            avec_icone = len(re.findall(r"</svg>\s*" + re.escape(TEL_AFFICHE), html))
+            verifie(affiches == avec_icone, "Pictogramme devant chaque numéro — %s" % rel,
+                    "%d numéro(s) affiché(s), %d précédé(s) du pictogramme" % (affiches, avec_icone))
         # Toute suite de dix chiffres commençant par 0 doit être LE numéro,
         # écrit de LA bonne façon.
         # Les bornes (?<!\d) et (?!\d) évitent de confondre le numéro avec un
@@ -261,7 +276,8 @@ def main():
     # 13. Le sitemap liste exactement les pages publiées (hors 404)
     sitemap = lire("sitemap.xml")
     dans_sitemap = set(re.findall(r"<loc>(.*?)</loc>", sitemap))
-    attendues = {url_de(r) for r in liste if not r.endswith("404.html")}
+    attendues = {url_de(r) for r in liste
+                 if not r.endswith("404.html") and "noindex" not in lire(r)}
     verifie(dans_sitemap == attendues, "Sitemap complet",
             "manquantes : %s · en trop : %s"
             % (sorted(attendues - dans_sitemap), sorted(dans_sitemap - attendues)))

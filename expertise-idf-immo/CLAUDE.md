@@ -127,6 +127,14 @@ Les URL sont des dossiers avec un `index.html` (`/methode/`, `/expertise-ifi/`�
 En ajouter une impose : le fichier, le lien dans le menu de **toutes** les pages,
 le `canonical`, et une entrée dans `sitemap.xml`.
 
+`signature-mail/` est une **page-outil** : les signatures de courriel de
+Marie-Céline. Elle est en `noindex`, absente du menu et du sitemap, interdite
+dans `robots.txt`. Ses signatures n'utilisent que des tableaux et des styles en
+ligne — c'est tout ce qu'une messagerie sait afficher de façon fiable : ni
+feuille de style externe, ni SVG, ni classe CSS. `tools/verifie_site.py` y
+assouplit deux contrôles (proportion des images au lieu des dimensions exactes,
+mention « Tél. » au lieu du pictogramme SVG).
+
 `assets/site.js` masque les blocs `.reveal` seulement si la classe `js` est
 posée sur `<html>` par le script en-tête. **Ne jamais masquer de contenu par
 défaut en CSS** : sans JavaScript, le site doit rester entièrement lisible.

@@ -81,17 +81,20 @@ p{margin-top:.85rem;color:var(--texte)}
 .btn-fin:hover{border-color:var(--meuliere);color:var(--meuliere-fonce)}
 
 /* ============ Bandeau de marque (papier à en-tête) ============ */
+/* Papier à en-tête : le logo occupe toute la largeur de l'en-tête, comme sur
+   une feuille à en-tête. La ligne de contact passe au-dessus, en petit. */
 .marque{background:#fff;border-bottom:4px solid var(--or)}
-.marque-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem 2rem;padding-block:1.25rem}
+.marque .container{max-width:1180px}
+.marque-inner{padding-block:.7rem 1.1rem}
 .marque-logo{display:block;line-height:0}
-.marque-logo img{width:min(380px,68vw);height:auto}
-.marque-coord{display:flex;align-items:center;gap:1.5rem;font-size:.88rem;color:var(--mousse)}
+.marque-logo img{width:100%;height:auto}
+.marque-coord{display:flex;align-items:center;justify-content:flex-end;gap:1.5rem;
+  font-size:.86rem;color:var(--mousse);margin:0 0 .55rem}
 .marque-coord a{color:var(--encre);font-weight:600}
 .marque-coord a:hover{color:var(--meuliere)}
 @media (max-width:700px){
   .marque-coord{display:none}
-  .marque-inner{padding-block:.95rem}
-  .marque-logo img{width:min(270px,64vw)}
+  .marque-inner{padding-block:.9rem}
 }
 
 /* ============ Navigation ============ */

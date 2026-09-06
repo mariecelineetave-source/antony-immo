@@ -7,6 +7,50 @@ Aucune coordonnée n'est jamais collectée ni contactée par la routine.
 
 ---
 
+## 2026-09-06
+
+### Opportunités du jour
+
+Six annonces PAP (particulier à particulier) nouvellement repérées, absentes
+des veilles précédentes — à noter : les recherches ne permettent pas de
+garantir leur date de première publication, seulement leur présence en ligne
+aujourd'hui et leur absence du suivi jusqu'ici.
+
+- **Maison de style architecte, 150 m², 7 pièces dont 5 chambres — 880 000 €**.
+  [Voir l'annonce (PAP)](https://www.pap.fr/annonces/maison-antony-92160-r426001297)
+  — Bien haut de gamme, piste de mandat classique entre particuliers.
+
+- **Appartement 3 pièces, 87 m², séjour double de 50 m² sur jardin — 340 000 €**.
+  [Voir l'annonce (PAP)](https://www.pap.fr/annonces/appartement-antony-92160-r425501577)
+
+- **Appartement 3 pièces, 62,5 m² — environ 340 000 €**.
+  [Voir l'annonce (PAP)](https://www.pap.fr/annonces/appartement-antony-92160-r452200617)
+
+- **Appartement 4 pièces, 82 m² — 418 000 €**.
+  [Voir l'annonce (PAP)](https://www.pap.fr/annonces/appartement-antony-92160-r431102527)
+
+- **Appartement 5 pièces, 114 m² — 575 000 €**.
+  [Voir l'annonce (PAP)](https://www.pap.fr/annonces/appartement-antony-92160-r455300349)
+
+- **Appartement 4 pièces, 99 m² — 730 000 €**.
+  [Voir l'annonce (PAP)](https://www.pap.fr/annonces/appartement-antony-92160-r435000229)
+
+### Recherches sans résultat nouveau
+
+Deux annonces PAP repérées dans les mêmes recherches sont en réalité déjà
+suivies : la maison de 155 m² secteur Beauvallon / Bois de l'Aurore
+(annonce r452301068, déjà connue comme « maison 137 m² rue des Rabats ») et
+l'appartement 4 p. 74 m² résidence La Fontaine (r458203223, déjà connu). Les
+enchères notariales 36h-immo déjà suivies (17104/17941, AI18703, AI19530)
+restent en ligne, sans lot nouveau identifié. Aucun signal nouveau de
+succession ou de permis de construire au-delà de la tendance déjà connue
+(36 permis en 2025). Rien de nouveau sur Antonypole / ligne 18. Les
+recherches sur les communes limitrophes (Bourg-la-Reine, Sceaux, Fresnes,
+Verrières-le-Buisson, L'Haÿ-les-Roses, Massy) ne remontent que des pages
+d'agrégateurs, sans annonce individuelle vérifiable.
+
+---
+
 ## 2026-09-05
 
 Rien de nouveau par rapport à la veille du 4 septembre : les mêmes pistes
